@@ -4,13 +4,13 @@
 
 ```sh
 # Install dependencies
-yarn install
+npm ci
 
 # Enable husky
-yarn husky install
+npm husky install
 
 # Start dev server
-yarn dev
+npm run dev
 ```
 
 ## Features
