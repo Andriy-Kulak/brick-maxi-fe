@@ -10,7 +10,7 @@ const StyledNav = styled.div`
   top: 0;
   left: 0;
   height: 120px;
-  position: absolute;
+  position: fixed;
   background-color: black;
   color: white;
   width: 100%;
