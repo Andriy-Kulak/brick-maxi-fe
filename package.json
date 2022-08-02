@@ -9,6 +9,10 @@
     "lint": "next eslint ."
   },
   "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@mui/base": "^5.0.0-alpha.92",
+    "@mui/material": "^5.9.3",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
