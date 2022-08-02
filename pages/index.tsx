@@ -54,7 +54,7 @@ export default function Home() {
             height={200}
             width={200}
           />
-          <TitleH2>ART THAT PAYS DIVIDENS</TitleH2>
+          <TitleH2>ART THAT PAYS DIVIDENS.</TitleH2>
         </Main>
       </Container>
       <ColorBackground color="white">
