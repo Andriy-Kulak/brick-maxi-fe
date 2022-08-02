@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { grey1 } from './utils/colors'
+import { avenirNextCondensed, gillSans } from './utils/fontConfigs'
 
 const Container = styled.div`
   padding: 0 0.5rem;
@@ -66,13 +68,53 @@ const TitleH1 = styled.h1`
   color: white;
 `
 
-const TitleH3 = styled.h3`
+const TitleH2 = styled.h2`
   margin: 0;
   line-height: 1.15;
   font-size: 2rem;
   text-align: center;
   text-decoration: none;
   color: white;
+`
+
+const TitleH3 = styled.h3`
+  margin: 0;
+  line-height: 1.15;
+  font-size: 36px;
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
+  font-family: ${avenirNextCondensed};
+  margin-bottom: 15px;
+`
+
+const TitleH4 = styled.h4`
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: ${grey1};
+  text-decoration: none;
+  letter-spacing: 0.1rem;
+  font-family: ${gillSans};
+
+  font-style: normal;
+  line-height: 23px;
+`
+
+const StyledP = styled.p`
+  margin: 0;
+  font-size: 20px;
+  font-weight: ${(props: { weight?: number }) => props.weight || 400};
+  color: black;
+  text-decoration: none;
+  letter-spacing: normal;
+  font-family: ${gillSans};
+
+  font-style: normal;
+  font-size: 20px;
+  line-height: 23px;
+
+  color: #000000;
 `
 
 const Description = styled.p`
@@ -105,9 +147,12 @@ export {
   Title,
   Description,
   CodeTag,
+  TitleH2,
   TitleH3,
+  TitleH4,
   BlackContainer,
   ColorBackground,
   TitleH1,
   FlexRow,
+  StyledP,
 }

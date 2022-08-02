@@ -10,10 +10,11 @@ const StyledNav = styled.div`
   top: 0;
   left: 0;
   height: 120px;
-  position: fixed;
+  position: sticky;
   background-color: black;
   color: white;
   width: 100%;
+  z-index: 1;
 `
 
 const StyledButton = styled(Button)`

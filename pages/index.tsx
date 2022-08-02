@@ -6,10 +6,13 @@ import {
   Description,
   CodeTag,
   TitleH3,
+  TitleH2,
   BlackContainer,
   ColorBackground,
   TitleH1,
   FlexRow,
+  TitleH4,
+  StyledP,
 } from '../components/sharedstyles'
 import { Cards, Divider } from '../components'
 import Nav from '../components/Navigation'
@@ -17,6 +20,9 @@ import Image from 'next/image'
 // import { Divider } from '@mui/material'
 import brickMaxiLogo from '../public/assets/logo.png'
 import artImg from '../public/assets/art1.png'
+import { weight } from '../components/utils/fontConfigs'
+
+const { bold } = weight
 
 export default function Home() {
   return (
@@ -30,7 +36,7 @@ export default function Home() {
             height={200}
             width={200}
           />
-          <TitleH3>ART THAT PAYS DIVIDENS</TitleH3>
+          <TitleH2>ART THAT PAYS DIVIDENS</TitleH2>
         </Main>
       </Container>
       <ColorBackground color="white">
@@ -39,29 +45,33 @@ export default function Home() {
             <Image alt="art image 1" width={500} height={500} src={artImg} />
           </div>
           <div style={{ border: '1px solid red ', width: '50%' }}>
-            <h3>Token Name</h3>
-            <h4>ARTIST</h4>
-            <p>bottoproject</p>
-            <h4>DESCRIPTION</h4>
-            <p>
+            <TitleH3>TOKEN NAME</TitleH3>
+            <div>
+              <TitleH4>ARTIST</TitleH4>
+              <StyledP weight={600}>bottoproject</StyledP>
+              <br />
+            </div>
+
+            <TitleH4>DESCRIPTION</TitleH4>
+            <StyledP>
               This is the info that goes here that is the info that people want
               to know when they are looking for all the info about what they are
               looking at.
-            </p>
+            </StyledP>
             <Divider />
             <FlexRow>
               <div style={{ width: '50%' }}>
-                <h4>REMAINING</h4>
-                <p>100 / 100</p>
-                <p>Mint Price: 5</p>
+                <TitleH4>REMAINING</TitleH4>
+                <StyledP weight={bold}>100 / 100</StyledP>
+                <StyledP weight={bold}>Mint Price: 5</StyledP>
               </div>
               <div style={{ width: '50%' }}>
-                <h4>ASSET TYPE</h4>
-                <p>property</p>
-                <p>Mint Price: 5</p>
+                <TitleH4>ASSET TYPE</TitleH4>
+                <StyledP weight={bold}>property</StyledP>
+                <StyledP weight={bold}>Mint Price: 5</StyledP>
               </div>
             </FlexRow>
-            <Divider thick={0.5} />
+            <Divider thick={1} />
           </div>
         </FlexRow>
       </ColorBackground>
