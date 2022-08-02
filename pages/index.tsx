@@ -6,7 +6,7 @@ import {
   Description,
   CodeTag,
 } from '../components/sharedstyles'
-import Cards from '../components/cards'
+import { Cards } from '../components'
 
 export default function Home() {
   return (
