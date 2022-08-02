@@ -32,12 +32,14 @@ const ColorBackground = styled.div`
   min-height: 100vh;
 `
 
-const Main = styled.main`
+const Main = styled.div`
+  border: 2px solid green;
   padding: 5rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: ${(props: { justifyContent?: string }) =>
+    props.justifyContent || 'center'};
   align-items: center;
 `
 
@@ -61,20 +63,38 @@ const Title = styled.h1`
 
 const TitleH1 = styled.h1`
   margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+  font-family: ${gillSans};
   text-align: center;
   text-decoration: none;
   color: white;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 80px;
+  line-height: 95px;
 `
 
 const TitleH2 = styled.h2`
   margin: 0;
-  line-height: 1.15;
-  font-size: 2rem;
   text-align: center;
   text-decoration: none;
   color: white;
+  font-style: italic;
+  font-family: ${avenirNextCondensed};
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 82px;
+`
+
+const TitleH2Small = styled.h2`
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-style: italic;
+  font-family: ${avenirNextCondensed};
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 49px;
 `
 
 const TitleH3 = styled.h3`
@@ -86,13 +106,14 @@ const TitleH3 = styled.h3`
   text-decoration: none;
   font-family: ${avenirNextCondensed};
   margin-bottom: 15px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `
 
 const TitleH4 = styled.h4`
   margin: 0;
   font-size: 20px;
   font-weight: 400;
-  color: ${grey1};
+  color: ${(props: { color?: string }) => props.color || grey1};
   text-decoration: none;
   letter-spacing: 0.1rem;
   font-family: ${gillSans};
@@ -128,7 +149,15 @@ const FlexRow = styled.div`
   flex-flow: row nowrap;
   justify-content: ${(props: { justifyContent?: string }) =>
     props.justifyContent || 'center'};
-  align-items: center;
+  align-items: flex-start;
+`
+
+const FlexColumn = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  /* justify-content: ${(props: { justifyContent?: string }) =>
+    props.justifyContent || 'center'};
+  align-items: center; */
 `
 
 const CodeTag = styled.code`
@@ -148,6 +177,7 @@ export {
   Description,
   CodeTag,
   TitleH2,
+  TitleH2Small,
   TitleH3,
   TitleH4,
   BlackContainer,
@@ -155,4 +185,5 @@ export {
   TitleH1,
   FlexRow,
   StyledP,
+  FlexColumn,
 }
