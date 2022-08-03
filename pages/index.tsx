@@ -24,6 +24,7 @@ import { Cards, Divider, Select, Nav } from '../components'
 // import { Divider } from '@mui/material'
 import brickMaxiLogo from '../public/assets/logo.png'
 import bgArt1 from '../public/assets/bgArt1.png'
+import bgArt2 from '../public/assets/bgArt2s.png'
 import artImg from '../public/assets/artCut.png'
 import { weight } from '../components/utils/fontConfigs'
 
@@ -134,7 +135,13 @@ export default function Home() {
           </FlexRow>
         </Main>
       </ColorBackground>
-      <CustomBlackContainer>
+      <div style={{ position: 'relative' }}>
+        <Image
+          src={bgArt2}
+          objectFit="cover"
+          objectPosition="center"
+          layout="fill"
+        />
         <div style={{ width: '100%', padding: '0px 50px' }}>
           <br />
           <TitleH2Small>ART THAT PAYS DIVIDENDS.</TitleH2Small>
@@ -153,7 +160,7 @@ export default function Home() {
             <TitleH1>TEST 3</TitleH1>
           </div>
         </Main>
-      </CustomBlackContainer>
+      </div>
     </div>
   )
 }
