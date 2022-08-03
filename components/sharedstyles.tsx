@@ -22,8 +22,8 @@ const BlackContainer = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  height: 80vh;
-  min-height: 80vh;
+  height: 70vh;
+  min-height: 70vh;
 `
 
 const ColorBackground = styled.div`
@@ -47,7 +47,6 @@ const Main100h = styled.div`
 `
 
 const Main = styled.div`
-  border: 2px solid green;
   padding: 5rem 0;
   flex: 1;
   display: flex;

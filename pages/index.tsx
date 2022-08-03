@@ -147,17 +147,9 @@ export default function Home() {
           <Divider thick={1} color="white" />
         </div>
         <Main>
-          {/* <div> */}
           <TitleH1>You collect art.</TitleH1>
           <TitleH1>We purchase real estate.</TitleH1>
           <TitleH1>You earn USDC rewards.</TitleH1>
-          {/* </div> */}
-          {/* <div>
-            <TitleH1>TEST 2</TitleH1>
-          </div>
-          <div>
-            <TitleH1>TEST 3</TitleH1>
-          </div> */}
         </Main>
       </BlackContainer>
       <div

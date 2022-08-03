@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { BasicButton } from '../index'
 import { Container } from '../sharedstyles'
 import brickMaxiLogo from '../../public/assets/logo.png'
-import ButtonUnstyled from '@mui/base/ButtonUnstyled'
 import Button from '@mui/material/Button'
 
 const StyledNav = styled.div`
@@ -14,7 +13,7 @@ const StyledNav = styled.div`
   background-color: black;
   color: white;
   width: 100%;
-  z-index: 2;
+  z-index: 5;
 `
 
 const StyledButton = styled(Button)`

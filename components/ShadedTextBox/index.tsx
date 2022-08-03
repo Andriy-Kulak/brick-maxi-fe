@@ -30,15 +30,33 @@ const StyledP = styled.p`
   color: #000000;
 `
 
+const StyledPItalic = styled.p`
+  font-family: ${gillSans};
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+
+  color: #808080;
+`
+
 const FlexBox = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 100px;
 
   div {
-    background-color: rgba(255, 255, 255, 0.95);
-    margin: 50px 75px;
+    background-clip: content-box, padding-box, border-box;
+
+    background: rgba(255, 255, 255, 0.95);
+    margin: 50px 150px;
   }
+`
+
+const Divider = styled.hr`
+  border: 1px solid black;
+  margin: 50px 150px;
 `
 
 const ShadedTextBox = () => {
@@ -72,6 +90,16 @@ const ShadedTextBox = () => {
               receive rewards in excessive of your original token price… and you
               get to keep the art.*
             </StyledP>
+          </div>
+          <Divider />
+          <div>
+            <StyledPItalic>
+              *Actual rewards are based on each individual asset's performance.
+              Due to risks associated with these types of investments, Brick
+              Maxi does not guarantee any amount of rewards. Further, asset
+              performance is heavily impacted by governance decisions made by
+              token holders.
+            </StyledPItalic>
           </div>
         </div>
         <div>
