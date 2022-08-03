@@ -14,6 +14,8 @@
     "@mui/base": "^5.0.0-alpha.92",
     "@mui/material": "^5.9.3",
     "next": "12.2.2",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^7.7.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "styled-components": "^5.3.5"
