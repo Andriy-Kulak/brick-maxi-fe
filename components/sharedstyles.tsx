@@ -22,8 +22,8 @@ const BlackContainer = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  height: 50vh;
-  min-height: 50vh;
+  height: 80vh;
+  min-height: 80vh;
 `
 
 const ColorBackground = styled.div`
@@ -166,13 +166,13 @@ const FlexRow = styled.div`
   align-items: flex-start;
 `
 
-const FlexColumn = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-  /* justify-content: ${(props: { justifyContent?: string }) =>
-    props.justifyContent || 'center'};
-  align-items: center; */
-`
+// const FlexColumn = styled.div`
+//   display: flex;
+//   flex-flow: column nowrap;
+//   /* justify-content: ${(props: { justifyContent?: string }) =>
+//     props.justifyContent || 'center'};
+//   align-items: center; */
+// `
 
 const CodeTag = styled.code`
   background: #fafafa;
@@ -199,6 +199,6 @@ export {
   TitleH1,
   FlexRow,
   StyledP,
-  FlexColumn,
+  // FlexColumn,
   Main100h,
 }

@@ -27,6 +27,7 @@ import bgArt1 from '../public/assets/bgArt1.png'
 import bgArt2 from '../public/assets/bgArt2s.png'
 import artImg from '../public/assets/artCut.png'
 import { weight } from '../components/utils/fontConfigs'
+import ShadedTextBox from '../components/ShadedTextBox'
 
 const { bold } = weight
 
@@ -145,27 +146,37 @@ export default function Home() {
           <TitleH2Small>ART THAT PAYS DIVIDENDS.</TitleH2Small>
           <Divider thick={1} color="white" />
         </div>
-        <Main justifyContent="space-between">
-          <div>
-            <TitleH1>You collect art.</TitleH1>
-            <TitleH1>We purchas real estate.</TitleH1>
-            <TitleH1>You earn USDC rewards.</TitleH1>
-          </div>
-          <div>
+        <Main>
+          {/* <div> */}
+          <TitleH1>You collect art.</TitleH1>
+          <TitleH1>We purchase real estate.</TitleH1>
+          <TitleH1>You earn USDC rewards.</TitleH1>
+          {/* </div> */}
+          {/* <div>
             <TitleH1>TEST 2</TitleH1>
           </div>
           <div>
             <TitleH1>TEST 3</TitleH1>
-          </div>
+          </div> */}
         </Main>
       </BlackContainer>
-      <div style={{ position: 'relative' }}>
+      <div
+        style={{
+          position: 'relative',
+          height: '200vh',
+          backgroundColor: 'black',
+        }}
+      >
         <Image
           src={bgArt2}
           objectFit="cover"
           objectPosition="center"
           layout="fill"
         />
+        <ShadedTextBox />
+        {/* <div style={{ position: 'relative', zIndex: 2 }}>
+          <TitleH1>Test</TitleH1>
+        </div> */}
       </div>
     </div>
   )
