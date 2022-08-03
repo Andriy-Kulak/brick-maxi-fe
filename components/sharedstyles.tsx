@@ -33,6 +33,19 @@ const ColorBackground = styled.div`
   min-height: 100vh;
 `
 
+const Main100h = styled.div`
+  border: 2px solid green;
+  padding: 5rem 0;
+  height: 100%;
+  min-height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: ${(props: { justifyContent?: string }) =>
+    props.justifyContent || 'center'};
+  align-items: center;
+`
+
 const Main = styled.div`
   border: 2px solid green;
   padding: 5rem 0;
@@ -187,4 +200,5 @@ export {
   FlexRow,
   StyledP,
   FlexColumn,
+  Main100h,
 }

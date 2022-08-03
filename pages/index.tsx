@@ -16,12 +16,14 @@ import {
   StyledP,
   // FlexColumn,
   TitleH2Small,
+  Main100h,
 } from '../components/sharedstyles'
 
 import { Cards, Divider, Select, Nav } from '../components'
 
 // import { Divider } from '@mui/material'
 import brickMaxiLogo from '../public/assets/logo.png'
+import bgArt1 from '../public/assets/bgArt1.png'
 import artImg from '../public/assets/artCut.png'
 import { weight } from '../components/utils/fontConfigs'
 
@@ -46,17 +48,34 @@ export default function Home() {
   return (
     <div>
       <Nav />
-      <Container imgUrl="/assets/bgArt1.png">
-        <Main>
+      {/* <Container imgUrl="/assets/bgArt1.png"> */}
+      <div
+        style={{
+          position: 'relative',
+          height: '90vh',
+          border: '2px solid red',
+        }}
+      >
+        <Image
+          src={bgArt1}
+          objectFit="cover"
+          objectPosition="center"
+          layout="fill"
+        />
+        <Main100h>
           <Image
             alt="Brick Maxi Logo"
             src={brickMaxiLogo}
             height={200}
             width={200}
           />
-          <TitleH2>ART THAT PAYS DIVIDENS.</TitleH2>
-        </Main>
-      </Container>
+          <TitleH2 style={{ position: 'relative', zIndex: 1 }}>
+            ART THAT PAYS DIVIDENS.
+          </TitleH2>
+        </Main100h>
+      </div>
+
+      {/* </Container> */}
       <ColorBackground color="white">
         <Main>
           <FlexRow>
