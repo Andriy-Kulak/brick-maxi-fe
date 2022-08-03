@@ -5,7 +5,7 @@ import {
   Main,
   Title,
   Description,
-  CodeTag,
+  // CodeTag,
   TitleH3,
   TitleH2,
   // BlackContainer,
