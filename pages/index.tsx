@@ -8,7 +8,7 @@ import {
   // CodeTag,
   TitleH3,
   TitleH2,
-  // BlackContainer,
+  BlackContainer,
   ColorBackground,
   TitleH1,
   FlexRow,
@@ -54,7 +54,6 @@ export default function Home() {
         style={{
           position: 'relative',
           height: '90vh',
-          border: '2px solid red',
         }}
       >
         <Image
@@ -135,14 +134,13 @@ export default function Home() {
           </FlexRow>
         </Main>
       </ColorBackground>
-      <div style={{ position: 'relative' }}>
-        <Image
-          src={bgArt2}
-          objectFit="cover"
-          objectPosition="center"
-          layout="fill"
-        />
-        <div style={{ width: '100%', padding: '0px 50px' }}>
+      <BlackContainer>
+        <div
+          style={{
+            width: '100%',
+            padding: '0px 50px',
+          }}
+        >
           <br />
           <TitleH2Small>ART THAT PAYS DIVIDENDS.</TitleH2Small>
           <Divider thick={1} color="white" />
@@ -160,6 +158,14 @@ export default function Home() {
             <TitleH1>TEST 3</TitleH1>
           </div>
         </Main>
+      </BlackContainer>
+      <div style={{ position: 'relative' }}>
+        <Image
+          src={bgArt2}
+          objectFit="cover"
+          objectPosition="center"
+          layout="fill"
+        />
       </div>
     </div>
   )

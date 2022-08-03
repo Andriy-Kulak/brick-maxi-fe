@@ -1,4 +1,4 @@
-export const avenirNext = 'Avenir Next'
+// export const avenirNext = 'Avenir Next'
 export const avenirNextCondensed = 'Avenir Next Condensed'
 export const gillSans = 'Gill Sans'
 
