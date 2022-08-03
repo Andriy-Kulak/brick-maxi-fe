@@ -38,7 +38,7 @@ const CustomBlackContainer = styled.div`
   min-height: 350vh;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url('/assets/bgArt2.png');
+  background-image: url('/assets/bgArt2s.png');
   background-position: left center;
 `
 
@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <div>
       <Nav />
-      <Container imgUrl="/assets/bgArt1.png">
+      <Container imgUrl="/assets/bgArt1s.png">
         <Main>
           <Image
             alt="Brick Maxi Logo"
@@ -135,9 +135,6 @@ export default function Home() {
           </div>
         </Main>
       </CustomBlackContainer>
-      <Container imgUrl="/assets/bgArt2.png">
-        <h4>test</h4>
-      </Container>
     </div>
   )
 }
