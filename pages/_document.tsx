@@ -29,19 +29,19 @@ export default class MyDocument extends Document {
     }
   }
 
-  // render() {
-  //   return (
-  //     <Html>
-  //       <Head>
-  //         <link href="fonts/AvenirNext.ttc" rel="stylesheet" />
-  //         <link href="fonts/AvenirNextCondensed.ttc" rel="stylesheet" />
-  //         <link href="fonts/GillSans.ttc" rel="stylesheet" />
-  //       </Head>
-  //       <body>
-  //         <Main />
-  //         <NextScript />
-  //       </body>
-  //     </Html>
-  //   )
-  // }
+  render() {
+    return (
+      <Html>
+        <Head>
+          <link href="fonts/AvenirNext.ttc" rel="stylesheet" />
+          <link href="fonts/AvenirNextCondensed.ttc" rel="stylesheet" />
+          <link href="fonts/GillSans.ttc" rel="stylesheet" />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
 }
