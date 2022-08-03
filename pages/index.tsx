@@ -4,7 +4,7 @@ import {
   Container,
   Main,
   Title,
-  Description,
+  // Description,
   // CodeTag,
   TitleH3,
   TitleH2,
