@@ -14,7 +14,7 @@ import {
   FlexRow,
   TitleH4,
   StyledP,
-  FlexColumn,
+  // FlexColumn,
   TitleH2Small,
 } from '../components/sharedstyles'
 
