@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <div>
       <Nav />
-      <Container imgUrl="/assets/bgArt1s.png">
+      <Container imgUrl="/assets/bgArt1.png">
         <Main>
           <Image
             alt="Brick Maxi Logo"
