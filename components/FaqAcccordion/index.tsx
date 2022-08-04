@@ -18,7 +18,7 @@ const StyledPwMargin = styled(StyledP)`
 
 const content = [
   {
-    title: 'How Investments are made',
+    title: 'How Investments are made?',
     p: `  Each artwork minted through the platform represents a unique
   investment, with its own set of token holders, P&L, and subsequent
   rewards. As part of our services, we vet and negotiate investment

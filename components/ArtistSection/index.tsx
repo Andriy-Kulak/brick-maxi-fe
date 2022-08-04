@@ -25,7 +25,7 @@ const content = [
   },
   {
     key: 3,
-    name: 'Artist 2',
+    name: 'Artist 3',
   },
 ] as const
 
