@@ -15,6 +15,7 @@ const H1 = styled.h1`
 const StyledContainer = styled.div`
   width: 100%;
   position: absolute;
+  height: 100%;
   z-index: 2;
 `
 
@@ -42,14 +43,21 @@ const StyledPItalic = styled.p`
 `
 
 const FlexBox = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  justify-content: center;
+  align-items: center;
 
-  div {
-    background-clip: content-box, padding-box, border-box;
-
+  > div {
     background: rgba(255, 255, 255, 0.95);
+    margin: 50px 10px;
+    padding: 50px;
+    width: 80%;
+  }
+
+  > div > div {
+    margin: 10px 50px;
     margin: 50px 150px;
   }
 `

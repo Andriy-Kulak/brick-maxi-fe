@@ -22,19 +22,19 @@ const BlackContainer = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  height: 70vh;
-  min-height: 70vh;
+  height: ${(props: { height?: string }) => props.height || '80vh'};
+  min-height: ${(props: { height?: string }) => props.height || '80vh'};
 `
 
 const ColorBackground = styled.div`
   background-color: ${(props) => props.color || 'black'};
   padding: 0 0.5rem;
-  height: 100vh;
-  min-height: 100vh;
+
+  height: ${(props: { height?: string }) => props.height || '100vh'};
+  min-height: ${(props: { height?: string }) => props.height || '100vh'};
 `
 
 const Main100h = styled.div`
-  border: 2px solid green;
   padding: 5rem 0;
   height: 100%;
   min-height: 100%;
@@ -115,7 +115,7 @@ const TitleH3 = styled.h3`
   line-height: 1.15;
   font-size: 36px;
   font-weight: 600;
-  color: black;
+  color: ${(props: { color?: string }) => props.color || 'black'};
   text-decoration: none;
   font-family: ${avenirNextCondensed};
   margin-bottom: 15px;
@@ -181,6 +181,22 @@ const CodeTag = styled.code`
     Bitstream Vera Sans Mono, Courier New, monospace;
 `
 
+const WhiteContentBox = styled.div`
+  z-index: 2;
+  width: 80%;
+  padding: 100px 70px;
+  /* height: 80%; */
+  /* height: 100%; */
+  background-color: white;
+  flex: 1;
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  justify-content: ${(props: { justifyContent?: string }) =>
+    props.justifyContent || 'center'};
+  align-items: center;
+`
+
 export {
   Container,
   Main,
@@ -197,5 +213,6 @@ export {
   FlexRow,
   StyledP,
   // FlexColumn,
+  WhiteContentBox,
   Main100h,
 }

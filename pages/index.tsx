@@ -16,6 +16,7 @@ import {
   StyledP,
   TitleH2Small,
   Main100h,
+  WhiteContentBox,
 } from '../components/sharedstyles'
 
 import { Cards, Divider, FaqAcccordion, Nav, Select } from '../components'
@@ -28,6 +29,7 @@ import { weight } from '../components/utils/fontConfigs'
 import ShadedTextBox from '../components/ShadedTextBox'
 import StyledSwitch from '../components/Switch'
 import MintBtn from '../components/MintBtn'
+import ArtistSection from '../components/ArtistSection'
 
 const { bold } = weight
 
@@ -83,7 +85,17 @@ export default function Home() {
               <FlexRow justifyContent="space-between">
                 <div>
                   <StyledP weight={700}>
-                    04/28/1983 4:40PM PST <span> LIVE</span>
+                    04/28/1983 4:40PM PST
+                    <span
+                      style={{
+                        backgroundColor: '#F5F5F5',
+                        fontWeight: 400,
+                        marginLeft: '10px',
+                        padding: '0px 10px',
+                      }}
+                    >
+                      LIVE
+                    </span>
                   </StyledP>
                 </div>
                 <div>
@@ -167,6 +179,9 @@ export default function Home() {
         />
         <ShadedTextBox />
       </div>
+      <ColorBackground height="90vh">
+        <ArtistSection />
+      </ColorBackground>
       <div
         style={{
           position: 'relative',
@@ -181,7 +196,9 @@ export default function Home() {
           layout="fill"
         />
         <Main100h>
-          <FaqAcccordion />
+          <WhiteContentBox>
+            <FaqAcccordion />
+          </WhiteContentBox>
         </Main100h>
       </div>
     </div>
