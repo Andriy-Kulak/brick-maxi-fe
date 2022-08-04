@@ -49,24 +49,6 @@ const FaqAcccordion = () => (
     allowToggle
     style={{ zIndex: 20, backgroundColor: 'white', width: '80%' }}
   >
-    {/* <AccordionItem>
-      <AccordionButton>
-        <AccordionIcon />
-        <StyledPwMargin>How Investments are made</StyledPwMargin>
-      </AccordionButton>
-
-      <AccordionPanel pb={4}>
-        <StyledP weight={normal}>
-          Each artwork minted through the platform represents a unique
-          investment, with its own set of token holders, P&L, and subsequent
-          rewards. As part of our services, we vet and negotiate investment
-          oppurtunities, hire day-to-day management, and facilitate the voting
-          process. In some cases, we may consolidate funds from multiple mints
-          into one investment.
-        </StyledP>
-      </AccordionPanel>
-    </AccordionItem> */}
-
     {content.map((x) => (
       <AccordionItem key={x.key}>
         <AccordionButton>
@@ -79,22 +61,7 @@ const FaqAcccordion = () => (
         </AccordionPanel>
       </AccordionItem>
     ))}
-
-    {/* <AccordionItem>
-
-        <AccordionButton>
-          <AccordionIcon />
-          <StyledPwMargin>How Investments are made</StyledPwMargin>
-        </AccordionButton>
-      </h2>
-      <AccordionPanel pb={4}>
-        <StyledP weight={normal}>
-          ..tbd
-        </StyledP>
-      </AccordionPanel>
-    </AccordionItem> */}
   </Accordion>
-  // </div>
 )
 
 export default FaqAcccordion
