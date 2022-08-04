@@ -19,7 +19,7 @@ import {
   Main100h,
 } from '../components/sharedstyles'
 
-import { Cards, Divider, Select, Nav } from '../components'
+import { Cards, Divider, FaqAcccordion, Nav } from '../components'
 
 // import { Divider } from '@mui/material'
 import brickMaxiLogo from '../public/assets/logo.png'
@@ -50,7 +50,6 @@ export default function Home() {
   return (
     <div>
       <Nav />
-      {/* <Container imgUrl="/assets/bgArt1.png"> */}
       <div
         style={{
           position: 'relative',
@@ -75,8 +74,6 @@ export default function Home() {
           </TitleH2>
         </Main100h>
       </div>
-
-      {/* </Container> */}
       <ColorBackground color="white">
         <Main>
           <FlexRow>
@@ -114,7 +111,7 @@ export default function Home() {
                 want to know when they are looking for all the info about what
                 they are looking at.
               </StyledP>
-              <Divider />
+              {/* <Divider /> */}
 
               <FlexRow>
                 <div style={{ width: '50%' }}>
@@ -130,7 +127,7 @@ export default function Home() {
               </FlexRow>
               <Divider thick={1} />
 
-              <Select />
+              {/* <Select /> */}
             </div>
           </FlexRow>
         </Main>
@@ -166,9 +163,31 @@ export default function Home() {
           layout="fill"
         />
         <ShadedTextBox />
-        {/* <div style={{ position: 'relative', zIndex: 2 }}>
-          <TitleH1>Test</TitleH1>
-        </div> */}
+      </div>
+      <div
+        style={{
+          position: 'relative',
+          height: '90vh',
+        }}
+      >
+        <Image
+          src={bgArt1}
+          objectFit="cover"
+          objectPosition="center"
+          layout="fill"
+        />
+        <Main100h>
+          <FaqAcccordion />
+          {/* <Image
+            alt="Brick Maxi Logo"
+            src={brickMaxiLogo}
+            height={200}
+            width={200}
+          />
+          <TitleH2 style={{ position: 'relative', zIndex: 1 }}>
+            ART THAT PAYS DIVIDENS.
+          </TitleH2> */}
+        </Main100h>
       </div>
     </div>
   )

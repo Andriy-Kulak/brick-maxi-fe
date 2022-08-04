@@ -3,20 +3,27 @@ import Image from 'next/image'
 import { BasicButton } from '../index'
 import { Container } from '../sharedstyles'
 import brickMaxiLogo from '../../public/assets/logo.png'
-import Button from '@mui/material/Button'
+import { Button, ButtonProps } from '@chakra-ui/react'
+// import Button from '@mui/material/Button'
 
 const StyledNav = styled.div`
   top: 0;
   left: 0;
-  height: 120px;
+  height: 80px;
   position: sticky;
   background-color: black;
   color: white;
+
   width: 100%;
-  z-index: 5;
+  z-index: 20;
 `
 
-const StyledButton = styled(Button)`
+export const StyledButton = styled(Button).attrs({
+  colorScheme: 'black',
+  border: '2px',
+  borderColor: 'white',
+  borderRadius: '100px',
+} as ButtonProps)`
   border-radius: 30px;
   background-color: black;
   color: white;
@@ -24,7 +31,8 @@ const StyledButton = styled(Button)`
   :hover {
     background-color: grey;
   }
-`
+  // some other css
+` as typeof Button
 
 const TopFlexContainer = styled.div`
   display: flex;
@@ -71,8 +79,8 @@ const Nav = () => {
           <Image
             alt="Brick Maxi Logo"
             src={brickMaxiLogo}
-            height={120}
-            width={120}
+            height={80}
+            width={80}
           />
         </div>
         <MidFlexContainer>
@@ -83,12 +91,18 @@ const Nav = () => {
             <StypedP>test 4</StypedP>
           </div>
           <div>
-            <BasicButton
+            {/* <BasicButton
               variant="contained"
               onClick={() => window.alert('Clicked Connect')}
             >
               Connect
-            </BasicButton>
+            </BasicButton> */}
+            <StyledButton
+              onClick={() => window.alert('Clicked Connect')}
+              colorScheme="black"
+            >
+              Connect
+            </StyledButton>
           </div>
         </MidFlexContainer>
       </TopFlexContainer>
