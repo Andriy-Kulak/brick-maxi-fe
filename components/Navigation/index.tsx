@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Image from 'next/image'
-import { Container } from '../sharedstyles'
+import { StyledP } from '../sharedstyles'
 import brickMaxiLogo from '../../public/assets/logo.png'
 import { Button, ButtonProps } from '@chakra-ui/react'
 
@@ -55,20 +55,19 @@ const MidFlexContainer = styled.div`
   }
 `
 
-const StypedP = styled.p`
-  font-size: 20px;
-`
-
 const Nav = () => {
   return (
     <StyledNav>
       <TopFlexContainer>
         <MidFlexContainer left>
           <div>
-            <StypedP>test 1</StypedP>
+            <StyledP color="white">Mission</StyledP>
           </div>
           <div>
-            <StypedP>test 2</StypedP>
+            <StyledP color="white">Artists</StyledP>
+          </div>
+          <div>
+            <StyledP color="white">Learn</StyledP>
           </div>
         </MidFlexContainer>
 
@@ -82,10 +81,7 @@ const Nav = () => {
         </div>
         <MidFlexContainer>
           <div>
-            <StypedP>test 3</StypedP>
-          </div>
-          <div>
-            <StypedP>test 4</StypedP>
+            <StyledP color="white">Rewards</StyledP>
           </div>
           <div>
             <StyledButton

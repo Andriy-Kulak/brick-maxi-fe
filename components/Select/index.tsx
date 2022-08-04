@@ -1,36 +1,42 @@
 import * as React from 'react'
-import Box from '@mui/material/Box'
-import { InputLabel, MenuItem, FormControl, Select } from '@mui/material'
-import { SelectChangeEvent } from '@mui/material/Select'
+import styled from 'styled-components'
+import { Select } from '@chakra-ui/react'
+import { StyledP } from '../sharedstyles'
+import { gillSans } from '../utils/fontConfigs'
 
 const QuantitySelect = () => {
   const [quantity, setQuantity] = React.useState(1)
 
-  const handleChange = (event: SelectChangeEvent) => {
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     console.log('yyyy event.target.value', event.target.value)
     setQuantity(event.target.value as any as number)
   }
   const valArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+  const StyledOption = styled.option`
+    font-family: ${gillSans};
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+  `
+
   return (
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Quantity</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={quantity.toString()}
-          label="Quantity"
-          onChange={handleChange}
-        >
-          {valArray.map((x: number) => (
-            <MenuItem key={x} value={x}>
-              {x}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-    </Box>
+    <div style={{ width: '70px' }}>
+      <StyledP style={{ textAlign: 'center' }}>QTY</StyledP>
+      <Select
+        placeholder="Select Quantity"
+        onChange={handleChange}
+        value={quantity.toString()}
+      >
+        {valArray.map((x: number) => (
+          <option key={x} value={x}>
+            {x}
+          </option>
+        ))}
+      </Select>
+    </div>
   )
 }
 

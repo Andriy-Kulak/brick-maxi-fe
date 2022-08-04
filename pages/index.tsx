@@ -14,12 +14,11 @@ import {
   FlexRow,
   TitleH4,
   StyledP,
-  // FlexColumn,
   TitleH2Small,
   Main100h,
 } from '../components/sharedstyles'
 
-import { Cards, Divider, FaqAcccordion, Nav } from '../components'
+import { Cards, Divider, FaqAcccordion, Nav, Select } from '../components'
 
 // import { Divider } from '@mui/material'
 import brickMaxiLogo from '../public/assets/logo.png'
@@ -29,6 +28,7 @@ import artImg from '../public/assets/artCut.png'
 import { weight } from '../components/utils/fontConfigs'
 import ShadedTextBox from '../components/ShadedTextBox'
 import StyledSwitch from '../components/Switch'
+import MintBtn from '../components/MintBtn'
 
 const { bold } = weight
 
@@ -58,6 +58,7 @@ export default function Home() {
         }}
       >
         <Image
+          alt="bg-art-1"
           src={bgArt1}
           objectFit="cover"
           objectPosition="center"
@@ -90,15 +91,9 @@ export default function Home() {
                 </div>
               </FlexRow>
 
-              <Image
-                alt="art image 1"
-                width={500}
-                height={500}
-                src={artImg}
-                style={{ border: '2px solid red' }}
-              />
+              <Image alt="art image 1" width={500} height={500} src={artImg} />
             </div>
-            <div style={{ border: '1px solid red ', width: '40%' }}>
+            <div style={{ width: '40%' }}>
               <TitleH3>TOKEN NAME</TitleH3>
               <div>
                 <TitleH4>ARTIST</TitleH4>
@@ -131,8 +126,10 @@ export default function Home() {
                 </div>
               </FlexRow>
               <Divider thick={1} />
-
-              {/* <Select /> */}
+              <div style={{ display: 'flex' }}>
+                <Select />
+                <MintBtn />
+              </div>
             </div>
           </FlexRow>
         </Main>
@@ -162,6 +159,7 @@ export default function Home() {
         }}
       >
         <Image
+          alt="bg-art-2"
           src={bgArt2}
           objectFit="cover"
           objectPosition="center"
@@ -176,6 +174,7 @@ export default function Home() {
         }}
       >
         <Image
+          alt="bg-art-2"
           src={bgArt1}
           objectFit="cover"
           objectPosition="center"

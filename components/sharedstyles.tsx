@@ -139,7 +139,7 @@ const StyledP = styled.p`
   margin: 0;
   font-size: 20px;
   font-weight: ${(props: { weight?: number }) => props.weight || 400};
-  color: black;
+  color: ${(props: { color?: string }) => props.color || 'black'};
   text-decoration: none;
   letter-spacing: normal;
   font-family: ${gillSans};
