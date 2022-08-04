@@ -29,6 +29,7 @@ import { weight } from '../components/utils/fontConfigs'
 import ShadedTextBox from '../components/ShadedTextBox'
 import StyledSwitch from '../components/Switch'
 import MintBtn from '../components/MintBtn'
+import ArtistSection from '../components/ArtistSection'
 
 const { bold } = weight
 
@@ -178,6 +179,9 @@ export default function Home() {
         />
         <ShadedTextBox />
       </div>
+      <ColorBackground>
+        <ArtistSection />
+      </ColorBackground>
       <div
         style={{
           position: 'relative',

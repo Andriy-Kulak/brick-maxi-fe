@@ -22,8 +22,8 @@ const BlackContainer = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  height: 70vh;
-  min-height: 70vh;
+  height: ${(props: { height?: string }) => props.height || '70vh'};
+  min-height: ${(props: { height?: string }) => props.height || '70vh'};
 `
 
 const ColorBackground = styled.div`
@@ -114,7 +114,7 @@ const TitleH3 = styled.h3`
   line-height: 1.15;
   font-size: 36px;
   font-weight: 600;
-  color: black;
+  color: ${(props: { color?: string }) => props.color || 'black'};
   text-decoration: none;
   font-family: ${avenirNextCondensed};
   margin-bottom: 15px;
