@@ -67,8 +67,8 @@ const ShadedTextBox = () => {
           <div>
             <H1>COLLECT ART YOU LOVE</H1>
             <StyledP>
-              We've formed partnerships with our favorite artists, so you can
-              add exclusive new works to your collections.
+              We&apos;ve formed partnerships with our favorite artists, so you
+              can add exclusive new works to your collections.
             </StyledP>
           </div>
           <div>
@@ -94,11 +94,11 @@ const ShadedTextBox = () => {
           <Divider />
           <div>
             <StyledPItalic>
-              *Actual rewards are based on each individual asset's performance.
-              Due to risks associated with these types of investments, Brick
-              Maxi does not guarantee any amount of rewards. Further, asset
-              performance is heavily impacted by governance decisions made by
-              token holders.
+              *Actual rewards are based on each individual asset&apos;s
+              performance. Due to risks associated with these types of
+              investments, Brick Maxi does not guarantee any amount of rewards.
+              Further, asset performance is heavily impacted by governance
+              decisions made by token holders.
             </StyledPItalic>
           </div>
         </div>

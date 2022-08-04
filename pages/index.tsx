@@ -20,7 +20,6 @@ import {
 
 import { Cards, Divider, FaqAcccordion, Nav, Select } from '../components'
 
-// import { Divider } from '@mui/material'
 import brickMaxiLogo from '../public/assets/logo.png'
 import bgArt1 from '../public/assets/bgArt1.png'
 import bgArt2 from '../public/assets/bgArt2s.png'
