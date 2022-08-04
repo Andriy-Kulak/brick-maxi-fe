@@ -179,7 +179,7 @@ export default function Home() {
         />
         <ShadedTextBox />
       </div>
-      <ColorBackground>
+      <ColorBackground height="90vh">
         <ArtistSection />
       </ColorBackground>
       <div

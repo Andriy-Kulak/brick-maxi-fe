@@ -29,8 +29,9 @@ const BlackContainer = styled.div`
 const ColorBackground = styled.div`
   background-color: ${(props) => props.color || 'black'};
   padding: 0 0.5rem;
-  height: 100vh;
-  min-height: 100vh;
+
+  height: ${(props: { height?: string }) => props.height || '100vh'};
+  min-height: ${(props: { height?: string }) => props.height || '100vh'};
 `
 
 const Main100h = styled.div`
