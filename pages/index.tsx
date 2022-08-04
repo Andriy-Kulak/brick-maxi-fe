@@ -58,6 +58,7 @@ export default function Home() {
       >
         <Image
           alt="bg-art-1"
+          priority
           src={bgArt1}
           objectFit="cover"
           objectPosition="center"
