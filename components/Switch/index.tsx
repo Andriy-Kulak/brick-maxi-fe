@@ -3,14 +3,14 @@ import { StyledP } from '../sharedstyles'
 
 const StyledSwitch = () => (
   <FormControl display="flex" alignItems="center">
-    <StyledP>ETH</StyledP>
+    <StyledP style={{ margin: '30px 0px 0px' }}>ETH</StyledP>
     <Switch
       id="email-alerts"
       size="md"
       colorScheme="black"
-      style={{ margin: '30px 10px 30px' }}
+      style={{ margin: '30px 10px 0px' }}
     />
-    <StyledP>APE</StyledP>
+    <StyledP style={{ margin: '30px 0px 0px' }}>APE</StyledP>
   </FormControl>
 )
 

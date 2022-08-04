@@ -34,7 +34,6 @@ const ColorBackground = styled.div`
 `
 
 const Main100h = styled.div`
-  border: 2px solid green;
   padding: 5rem 0;
   height: 100%;
   min-height: 100%;
@@ -181,6 +180,22 @@ const CodeTag = styled.code`
     Bitstream Vera Sans Mono, Courier New, monospace;
 `
 
+const WhiteContentBox = styled.div`
+  z-index: 2;
+  width: 80%;
+  padding: 100px 70px;
+  /* height: 80%; */
+  /* height: 100%; */
+  background-color: white;
+  flex: 1;
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  justify-content: ${(props: { justifyContent?: string }) =>
+    props.justifyContent || 'center'};
+  align-items: center;
+`
+
 export {
   Container,
   Main,
@@ -197,5 +212,6 @@ export {
   FlexRow,
   StyledP,
   // FlexColumn,
+  WhiteContentBox,
   Main100h,
 }
