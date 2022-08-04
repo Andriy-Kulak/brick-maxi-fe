@@ -125,7 +125,7 @@ const TitleH3 = styled.h3`
 const TitleH4 = styled.h4`
   margin: 0;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: ${(props: { weight?: number }) => props.weight || 400};
   color: ${(props: { color?: string }) => props.color || grey1};
   text-decoration: none;
   letter-spacing: 0.1rem;
@@ -147,8 +147,6 @@ const StyledP = styled.p`
   font-style: normal;
   font-size: 20px;
   line-height: 23px;
-
-  color: #000000;
 `
 
 const Description = styled.p`

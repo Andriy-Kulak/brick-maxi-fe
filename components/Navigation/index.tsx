@@ -1,10 +1,8 @@
 import styled from 'styled-components'
 import Image from 'next/image'
-import { BasicButton } from '../index'
 import { Container } from '../sharedstyles'
 import brickMaxiLogo from '../../public/assets/logo.png'
 import { Button, ButtonProps } from '@chakra-ui/react'
-// import Button from '@mui/material/Button'
 
 const StyledNav = styled.div`
   top: 0;
@@ -31,7 +29,6 @@ export const StyledButton = styled(Button).attrs({
   :hover {
     background-color: grey;
   }
-  // some other css
 ` as typeof Button
 
 const TopFlexContainer = styled.div`
@@ -91,12 +88,6 @@ const Nav = () => {
             <StypedP>test 4</StypedP>
           </div>
           <div>
-            {/* <BasicButton
-              variant="contained"
-              onClick={() => window.alert('Clicked Connect')}
-            >
-              Connect
-            </BasicButton> */}
             <StyledButton
               onClick={() => window.alert('Clicked Connect')}
               colorScheme="black"

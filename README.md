@@ -32,3 +32,7 @@ yarn dev
 
 - add basic css like breakpoints & nav
 - add some starter react components, ethers.js
+
+#### To Do
+
+- when you collect art you love. space it out better

@@ -28,6 +28,7 @@ import bgArt2 from '../public/assets/bgArt2s.png'
 import artImg from '../public/assets/artCut.png'
 import { weight } from '../components/utils/fontConfigs'
 import ShadedTextBox from '../components/ShadedTextBox'
+import StyledSwitch from '../components/Switch'
 
 const { bold } = weight
 
@@ -111,18 +112,22 @@ export default function Home() {
                 want to know when they are looking for all the info about what
                 they are looking at.
               </StyledP>
-              {/* <Divider /> */}
+              <Divider />
 
               <FlexRow>
-                <div style={{ width: '50%' }}>
+                <div style={{ width: '33%' }}>
+                  <TitleH4 color="black" weight={bold}>
+                    MINT PRICE 1.5Ξ
+                  </TitleH4>
+                  <StyledSwitch />
+                </div>
+                <div style={{ width: '33%' }}>
                   <TitleH4>REMAINING</TitleH4>
                   <StyledP weight={bold}>100 / 100</StyledP>
-                  <StyledP weight={bold}>Mint Price: 5Ξ</StyledP>
                 </div>
-                <div style={{ width: '50%' }}>
+                <div style={{ width: '33%' }}>
                   <TitleH4>ASSET TYPE</TitleH4>
-                  <StyledP weight={bold}>property</StyledP>
-                  <StyledP weight={bold}>Mint Price: 5</StyledP>
+                  <StyledP weight={bold}>Residential</StyledP>
                 </div>
               </FlexRow>
               <Divider thick={1} />
@@ -178,15 +183,6 @@ export default function Home() {
         />
         <Main100h>
           <FaqAcccordion />
-          {/* <Image
-            alt="Brick Maxi Logo"
-            src={brickMaxiLogo}
-            height={200}
-            width={200}
-          />
-          <TitleH2 style={{ position: 'relative', zIndex: 1 }}>
-            ART THAT PAYS DIVIDENS.
-          </TitleH2> */}
         </Main100h>
       </div>
     </div>
