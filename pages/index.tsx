@@ -1,11 +1,6 @@
 import Image from 'next/image'
-import styled from 'styled-components'
 import {
-  Container,
   Main,
-  Title,
-  // Description,
-  // CodeTag,
   TitleH3,
   TitleH2,
   BlackContainer,
@@ -17,40 +12,27 @@ import {
   TitleH2Small,
   Main100h,
   WhiteContentBox,
+  LiveSpan,
 } from '../components/sharedstyles'
 
-import { Cards, Divider, FaqAcccordion, Nav, Select } from '../components'
+import {
+  Divider,
+  FaqAcccordion,
+  Nav,
+  Select,
+  ShadedTextBox,
+  StyledSwitch,
+  MintBtn,
+  ArtistSection,
+} from '../components'
 
-import brickMaxiLogo from '../public/assets/logo.png'
-import bgArt1 from '../public/assets/bgArt1.png'
-import bgArt2 from '../public/assets/bgArt2s.png'
-import artImg from '../public/assets/artCut.png'
+import { artistSection, faqAccordion, images } from '../content'
 import { weight } from '../components/utils/fontConfigs'
-import ShadedTextBox from '../components/ShadedTextBox'
-import StyledSwitch from '../components/Switch'
-import MintBtn from '../components/MintBtn'
-import ArtistSection from '../components/ArtistSection'
-
 const { bold } = weight
-
-const CustomBlackContainer = styled.div`
-  background-color: black;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  height: 350vh;
-  min-height: 350vh;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: url('/assets/bgArt2s.png');
-  background-position: left center;
-`
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Nav />
       <div
         style={{
@@ -61,7 +43,7 @@ export default function Home() {
         <Image
           alt="bg-art-1"
           priority
-          src={bgArt1}
+          src={images.bgArt1}
           objectFit="cover"
           objectPosition="center"
           layout="fill"
@@ -69,7 +51,7 @@ export default function Home() {
         <Main100h>
           <Image
             alt="Brick Maxi Logo"
-            src={brickMaxiLogo}
+            src={images.brickMaxiLogo}
             height={200}
             width={200}
           />
@@ -86,16 +68,7 @@ export default function Home() {
                 <div>
                   <StyledP weight={700}>
                     04/28/1983 4:40PM PST
-                    <span
-                      style={{
-                        backgroundColor: '#F5F5F5',
-                        fontWeight: 400,
-                        marginLeft: '10px',
-                        padding: '0px 10px',
-                      }}
-                    >
-                      LIVE
-                    </span>
+                    <LiveSpan>LIVE</LiveSpan>
                   </StyledP>
                 </div>
                 <div>
@@ -103,13 +76,18 @@ export default function Home() {
                 </div>
               </FlexRow>
 
-              <Image alt="art image 1" width={500} height={500} src={artImg} />
+              <Image
+                alt="art image 1"
+                width={500}
+                height={500}
+                src={images.artImg}
+              />
             </div>
             <div style={{ width: '40%' }}>
               <TitleH3>TOKEN NAME</TitleH3>
               <div>
                 <TitleH4>ARTIST</TitleH4>
-                <StyledP weight={600}>bottoproject</StyledP>
+                <StyledP weight={bold}>bottoproject</StyledP>
                 <br />
               </div>
 
@@ -172,7 +150,7 @@ export default function Home() {
       >
         <Image
           alt="bg-art-2"
-          src={bgArt2}
+          src={images.bgArt2}
           objectFit="cover"
           objectPosition="center"
           layout="fill"
@@ -180,7 +158,7 @@ export default function Home() {
         <ShadedTextBox />
       </div>
       <ColorBackground height="90vh">
-        <ArtistSection />
+        <ArtistSection content={artistSection} />
       </ColorBackground>
       <div
         style={{
@@ -190,17 +168,17 @@ export default function Home() {
       >
         <Image
           alt="bg-art-2"
-          src={bgArt1}
+          src={images.bgArt1}
           objectFit="cover"
           objectPosition="center"
           layout="fill"
         />
         <Main100h>
           <WhiteContentBox>
-            <FaqAcccordion />
+            <FaqAcccordion content={faqAccordion} />
           </WhiteContentBox>
         </Main100h>
       </div>
-    </div>
+    </>
   )
 }
