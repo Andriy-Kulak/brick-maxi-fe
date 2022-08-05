@@ -14,22 +14,11 @@ const FlexBox = styled.div`
   }
 `
 
-const content = [
-  {
-    key: 1,
-    name: 'Artist 1',
-  },
-  {
-    key: 2,
-    name: 'Artist 2',
-  },
-  {
-    key: 3,
-    name: 'Artist 3',
-  },
-] as const
-
-const ArtistSection = () => (
+const ArtistSection = ({
+  content,
+}: {
+  content: { key: number; name: string }[]
+}) => (
   <Main100h>
     <TitleH3 color="white">BUILDING THE FUTURE OF NFTs</TitleH3>
     <TitleH3 color="white">WITH OUR INCREDIBLE PARTNERS</TitleH3>

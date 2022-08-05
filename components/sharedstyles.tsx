@@ -7,7 +7,6 @@ const Container = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  /* background-size: 100% auto; */
   align-items: center;
   height: 100vh;
   min-height: 100vh;
@@ -54,24 +53,6 @@ const Main = styled.div`
   justify-content: ${(props: { justifyContent?: string }) =>
     props.justifyContent || 'center'};
   align-items: center;
-`
-
-const Title = styled.h1`
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-  text-align: center;
-  text-decoration: none;
-
-  a {
-    color: ${({ theme }) => theme.colors.secondary};
-    text-decoration: none;
-    &:hover,
-    :focus,
-    :active {
-      text-decoration: underline;
-    }
-  }
 `
 
 const TitleH1 = styled.h1`
@@ -122,13 +103,14 @@ const TitleH3 = styled.h3`
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `
 
+// AK_TO_DO duplicate of StyledP. will remove if designs don't change
 const TitleH4 = styled.h4`
   margin: 0;
   font-size: 20px;
   font-weight: ${(props: { weight?: number }) => props.weight || 400};
   color: ${(props: { color?: string }) => props.color || grey1};
   text-decoration: none;
-  letter-spacing: 0.1rem;
+  letter-spacing: normal;
   font-family: ${gillSans};
 
   font-style: normal;
@@ -143,16 +125,9 @@ const StyledP = styled.p`
   text-decoration: none;
   letter-spacing: normal;
   font-family: ${gillSans};
-
   font-style: normal;
   font-size: 20px;
   line-height: 23px;
-`
-
-const Description = styled.p`
-  text-align: center;
-  line-height: 1.5;
-  font-size: 1.5rem;
 `
 
 const FlexRow = styled.div`
@@ -163,33 +138,12 @@ const FlexRow = styled.div`
   align-items: flex-start;
 `
 
-// const FlexColumn = styled.div`
-//   display: flex;
-//   flex-flow: column nowrap;
-//   /* justify-content: ${(props: { justifyContent?: string }) =>
-//     props.justifyContent || 'center'};
-//   align-items: center; */
-// `
-
-const CodeTag = styled.code`
-  background: #fafafa;
-  border-radius: 5px;
-  margin: 0 0.75rem;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-`
-
 const WhiteContentBox = styled.div`
   z-index: 2;
   width: 80%;
   padding: 100px 70px;
-  /* height: 80%; */
-  /* height: 100%; */
   background-color: white;
   flex: 1;
-  /* position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: ${(props: { justifyContent?: string }) =>
@@ -197,12 +151,16 @@ const WhiteContentBox = styled.div`
   align-items: center;
 `
 
+const LiveSpan = styled.span`
+  background-color: #f5f5f5;
+  font-weight: 400;
+  margin-left: 10px;
+  padding: 0px 10px;
+`
+
 export {
   Container,
   Main,
-  Title,
-  Description,
-  CodeTag,
   TitleH2,
   TitleH2Small,
   TitleH3,
@@ -212,7 +170,7 @@ export {
   TitleH1,
   FlexRow,
   StyledP,
-  // FlexColumn,
   WhiteContentBox,
   Main100h,
+  LiveSpan,
 }

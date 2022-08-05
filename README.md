@@ -1,4 +1,4 @@
-# Next.js Template with TypeScript, ESLint, Prettier, Styled Components
+# Brick Maxi Front End
 
 ## Get started
 
@@ -6,14 +6,11 @@
 # Install dependencies
 npm ci
 
-# Enable husky
-npm husky install
-
 # Start dev server
 npm run dev
 ```
 
-## Features
+## Repo Features
 
 - latest next.js / react
 - ESLint and Prettier are integrated with VSCode to fix and format code on save (you need eslint and prettier VSCode plugins)
@@ -21,8 +18,10 @@ npm run dev
 - Latest Husky
 - TypeScript types are checked before each commit
 - added styled components
+- using chakra ui for some of the buttons and form components
+- deployments are automatic with vercel.com
 
-## Repo Inspired By A few Sources:
+## Repo Setup Inspired By A few Sources:
 
 - https://paulintrognon.fr/blog/post/typescript-prettier-eslint-next-js
 - https://github.com/paulintrognon/next-typescript
@@ -30,9 +29,6 @@ npm run dev
 
 ## To Do
 
-- add basic css like breakpoints & nav
-- add some starter react components, ethers.js
-
-#### To Do
-
-- when you collect art you love. space it out better
+- App was just built for desktop designs. Need to make sure it scales well on mobile and tablet
+- make buttons functional with etheres.js and connect wallet
+- finish animations
