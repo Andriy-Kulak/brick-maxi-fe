@@ -28,6 +28,7 @@ import {
 
 import { artistSection, faqAccordion, images } from '../content'
 import { weight } from '../components/utils/fontConfigs'
+import { black } from '../components/utils/colors'
 const { bold } = weight
 
 export default function Home() {
@@ -72,7 +73,7 @@ export default function Home() {
                   </StyledP>
                 </div>
                 <div>
-                  <TitleH4 color="black">EDITION 1/5</TitleH4>
+                  <StyledP color={black}>EDITION 1/5</StyledP>
                 </div>
               </FlexRow>
 
@@ -101,7 +102,7 @@ export default function Home() {
 
               <FlexRow>
                 <div style={{ width: '33%' }}>
-                  <TitleH4 color="black" weight={bold}>
+                  <TitleH4 color={black} weight={bold}>
                     MINT PRICE 1.5Ξ
                   </TitleH4>
                   <StyledSwitch />
@@ -145,7 +146,7 @@ export default function Home() {
         style={{
           position: 'relative',
           height: '200vh',
-          backgroundColor: 'black',
+          backgroundColor: black,
         }}
       >
         <Image

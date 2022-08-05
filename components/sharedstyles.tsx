@@ -103,13 +103,14 @@ const TitleH3 = styled.h3`
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `
 
+// AK_TO_DO duplicate of StyledP. will remove if designs don't change
 const TitleH4 = styled.h4`
   margin: 0;
   font-size: 20px;
   font-weight: ${(props: { weight?: number }) => props.weight || 400};
   color: ${(props: { color?: string }) => props.color || grey1};
   text-decoration: none;
-  letter-spacing: 0.1rem;
+  letter-spacing: normal;
   font-family: ${gillSans};
 
   font-style: normal;
@@ -124,7 +125,6 @@ const StyledP = styled.p`
   text-decoration: none;
   letter-spacing: normal;
   font-family: ${gillSans};
-
   font-style: normal;
   font-size: 20px;
   line-height: 23px;
