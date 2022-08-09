@@ -93,9 +93,11 @@ const Nav = ({
             <StyledP color="white">Rewards</StyledP>
           </div>
           <div>
-            <StyledButton onClick={() => disconnect()} colorScheme="black">
-              Disconnect
-            </StyledButton>
+            {address && (
+              <StyledButton onClick={() => disconnect()} colorScheme="black">
+                Disconnect
+              </StyledButton>
+            )}
           </div>
           <div>
             <StyledButton onClick={() => connectWallet()} colorScheme="black">

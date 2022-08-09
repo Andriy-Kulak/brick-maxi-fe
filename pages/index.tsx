@@ -100,7 +100,8 @@ export default function Home() {
     if (web3Modal === null) {
       throw Error('Web3 Modal error')
     }
-    web3Modal.clearCachedProvider()
+
+    setAddress('')
   }
 
   return (
