@@ -29,6 +29,7 @@ npm run dev
 
 ## To Do
 
+- abstract out the connect wallet
 - App was just built for desktop designs. Need to make sure it scales well on mobile and tablet
 - make buttons functional with etheres.js and connect wallet
 - finish animations

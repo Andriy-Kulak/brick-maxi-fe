@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { StyledP } from '../sharedstyles'
 import brickMaxiLogo from '../../public/assets/logo.png'
 import { Button, ButtonProps } from '@chakra-ui/react'
+import { trimAddress } from '../../utils/helpers'
 
 const StyledNav = styled.div`
   top: 0;
@@ -55,7 +56,15 @@ const MidFlexContainer = styled.div`
   }
 `
 
-const Nav = () => {
+const Nav = ({
+  connectWallet,
+  disconnect,
+  address,
+}: {
+  connectWallet: () => Promise<void>
+  disconnect: () => void
+  address?: string
+}) => {
   return (
     <StyledNav>
       <TopFlexContainer>
@@ -84,11 +93,13 @@ const Nav = () => {
             <StyledP color="white">Rewards</StyledP>
           </div>
           <div>
-            <StyledButton
-              onClick={() => window.alert('Clicked Connect')}
-              colorScheme="black"
-            >
-              Connect
+            <StyledButton onClick={() => disconnect()} colorScheme="black">
+              Disconnect
+            </StyledButton>
+          </div>
+          <div>
+            <StyledButton onClick={() => connectWallet()} colorScheme="black">
+              {address ? trimAddress(address) : 'Connect'}
             </StyledButton>
           </div>
         </MidFlexContainer>
