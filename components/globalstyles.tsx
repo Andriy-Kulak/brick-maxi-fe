@@ -36,8 +36,8 @@ const GlobalStyle = createGlobalStyle`
     position: absolute;
     width: 36px;
     height: 30px;
-    right: 36px;
-    top: 36px;
+    right: 14px;
+    top: 29px;
   }
   
   /* Color/shape of burger icon bars */
@@ -65,9 +65,15 @@ const GlobalStyle = createGlobalStyle`
     background: rgba(19,19,19,1) !important;
   }
 
+  .bm-cross-button{
+    right: 14px !important;
+    top: 29px !important;
+  }
+
   /* Color/shape of close button cross */
     .bm-cross {
-    background: white;
+  
+    background: transparent;
   }
   .bm-menu, .bm-menu-wrap {
     margin: 0 !important;

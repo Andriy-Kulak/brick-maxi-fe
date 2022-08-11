@@ -12,6 +12,8 @@ import {
   tabletBr,
   tabletBrPixels,
 } from '../../utils/breakpoints'
+import { Main } from '../sharedstyles'
+import { images } from '../../content'
 
 const StyledSticky = styled.div`
   top: 0;
@@ -50,6 +52,10 @@ const TopFlexContainer = styled.div`
 
     @media screen and (max-width: ${laptopLargeBr}) {
       margin: 0px 30px;
+    }
+
+    @media screen and (max-width: ${tabletBr}) {
+      margin: 0px;
     }
   }
 `
@@ -95,6 +101,8 @@ const Nav = ({
       setPageWidth(window.innerWidth)
     })
   }, [])
+
+  console.log('isMobileOpen', isMobileOpen)
 
   return (
     <StyledSticky>
@@ -164,20 +172,39 @@ const Nav = ({
         )}
         {pageWidth < tabletBrPixels && (
           <>
-            <div>
+            <div
+              style={{ marginTop: '10px', marginLeft: '19px', zIndex: 1101 }}
+            >
               <Image
                 alt="Brick Maxi Logo"
                 src={brickMaxiLogo}
-                height={80}
-                width={80}
+                height={60}
+                width={60}
               />
             </div>
             <MobileMenuC>
               <Menu
+                customBurgerIcon={
+                  <Image
+                    width={29}
+                    height={29}
+                    src={images.burgerIcon}
+                    alt="mobile-menu-open"
+                  />
+                }
+                customCrossIcon={
+                  <Image
+                    width={29}
+                    height={29}
+                    src={images.xIcon}
+                    alt="mobile-menu-close"
+                  />
+                }
                 right
                 width={'100%'}
                 pageWrapId="for-menu-wrap"
                 isOpen={isMobileOpen}
+                onClose={() => setMobileMenu(false)}
                 onOpen={() => setMobileMenu(true)}
               >
                 <div>

@@ -2,12 +2,16 @@ import brickMaxiLogo from '../public/assets/logo.png'
 import bgArt1 from '../public/assets/bgArt1.png'
 import bgArt2 from '../public/assets/bgArt2s.png'
 import artImg from '../public/assets/artCut.png'
+import burgerIcon from '../public/assets/icons/hamburger.png'
+import xIcon from '../public/assets/icons/x.png'
 
 export const images = {
   brickMaxiLogo,
   bgArt1,
   bgArt2,
   artImg,
+  burgerIcon,
+  xIcon,
 }
 
 export const artistSection = [
