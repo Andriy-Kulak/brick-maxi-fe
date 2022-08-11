@@ -3,8 +3,8 @@ import {
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-  AccordionIcon,
 } from '@chakra-ui/react'
+import { ArrowForwardIcon, ArrowDownIcon } from '@chakra-ui/icons'
 import styled from 'styled-components'
 import { mobileBr } from '../../utils/breakpoints'
 import { StyledP } from '../sharedstyles'
@@ -49,16 +49,24 @@ const FaqAcccordion = ({
   >
     {content.map((x) => (
       <AccordionItem key={x.key}>
-        <AccordionButton>
-          <AccordionIcon />
-          <StyledPwMargin black={black}>{x.title}</StyledPwMargin>
-        </AccordionButton>
+        {({ isExpanded }) => (
+          <>
+            <AccordionButton>
+              {isExpanded ? (
+                <ArrowDownIcon fontSize="12px" />
+              ) : (
+                <ArrowForwardIcon fontSize="12px" />
+              )}
+              <StyledPwMargin black={black}>{x.title}</StyledPwMargin>
+            </AccordionButton>
 
-        <AccordionPanel pb={4}>
-          <StyledText black={black} weight={normal}>
-            {x.p}
-          </StyledText>
-        </AccordionPanel>
+            <AccordionPanel pb={4}>
+              <StyledText black={black} weight={normal}>
+                {x.p}
+              </StyledText>
+            </AccordionPanel>
+          </>
+        )}
       </AccordionItem>
     ))}
   </Accordion>
