@@ -18,6 +18,12 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
+
+  // overriding chakra
+
+  .chakra-accordion__button{
+    background-color: white !important;
+  }
 `
 
 export default GlobalStyle

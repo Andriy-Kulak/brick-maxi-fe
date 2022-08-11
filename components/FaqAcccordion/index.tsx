@@ -25,7 +25,7 @@ const FaqAcccordion = ({
     style={{ zIndex: 20, backgroundColor: 'white', width: '80%' }}
   >
     {content.map((x) => (
-      <AccordionItem key={x.key}>
+      <AccordionItem key={x.key} style={{ backgroundColor: 'white' }}>
         <AccordionButton>
           <AccordionIcon />
           <StyledPwMargin>{x.title}</StyledPwMargin>

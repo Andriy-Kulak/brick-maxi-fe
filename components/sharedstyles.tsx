@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { laptopSmallBr, mobileBr } from '../utils/breakpoints'
+import { laptopSmallBr, mobileBr, tabletBr } from '../utils/breakpoints'
 import { grey1 } from './utils/colors'
 import { avenirNextCondensed, gillSans } from './utils/fontConfigs'
 
@@ -143,6 +143,11 @@ const StyledP = styled.p`
   font-style: normal;
   font-size: 20px;
   line-height: 23px;
+
+  @media screen and (max-width: ${mobileBr}) {
+    font-size: 13px;
+    line-height: 15px;
+  }
 `
 
 const FlexRow = styled.div`
@@ -164,6 +169,16 @@ const WhiteContentBox = styled.div`
   justify-content: ${(props: { justifyContent?: string }) =>
     props.justifyContent || 'center'};
   align-items: center;
+
+  @media screen and (max-width: ${laptopSmallBr}) {
+    padding: 80px 30px;
+  }
+
+  @media screen and (max-width: ${tabletBr}) {
+    padding: 50px 0px;
+    width: 90%;
+    margin: 0px 20px;
+  }
 `
 
 export {

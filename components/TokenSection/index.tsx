@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styled from 'styled-components'
 import { Main, TitleH3, FlexRow, TitleH4, StyledP } from '../sharedstyles'
-
+import FaqAcccordion from '../FaqAcccordion'
 import { Divider, Select, StyledSwitch, MintBtn } from '../'
 
 import { images, tokenSection } from '../../content'
@@ -26,13 +26,10 @@ const { title, artist, description, mintPrice, type } = tokenSection
 
 const imageContainer = (
   <ImageContainer>
-    {/* <div> */}
     <StyledP weight={700}>
       <LiveSpan>LIVE</LiveSpan>
       04/28/1983 4:40PM PST
     </StyledP>
-    {/* </div> */}
-
     <Image alt="art image 1" width={500} height={500} src={images.artImg} />
   </ImageContainer>
 )
@@ -102,8 +99,17 @@ const TokenSection = () => (
           {mintText}
           <StyledSwitch />
         </div>
-        {remainingText}
+        <div>{remainingText}</div>
       </Test>
+      <FaqAcccordion
+        content={[
+          {
+            key: 1,
+            title: 'DETAILS',
+            p: 'This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at.',
+          },
+        ]}
+      ></FaqAcccordion>
       {mintSection}
     </MobileView>
   </StyledBackground>
