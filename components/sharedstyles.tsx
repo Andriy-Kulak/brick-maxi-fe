@@ -151,13 +151,6 @@ const WhiteContentBox = styled.div`
   align-items: center;
 `
 
-const LiveSpan = styled.span`
-  background-color: #f5f5f5;
-  font-weight: 400;
-  margin-left: 10px;
-  padding: 0px 10px;
-`
-
 export {
   Container,
   Main,
@@ -172,5 +165,4 @@ export {
   StyledP,
   WhiteContentBox,
   Main100h,
-  LiveSpan,
 }

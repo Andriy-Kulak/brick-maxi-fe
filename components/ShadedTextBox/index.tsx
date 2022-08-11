@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { avenirNextCondensed, gillSans } from '../utils/fontConfigs'
-import { laptopBr, mobileBr, tabletBr } from '../../utils/breakpoints'
+import { laptopLargeBr, mobileBr, tabletBr } from '../../utils/breakpoints'
 
 const H1 = styled.h1`
   font-family: ${avenirNextCondensed};
@@ -69,7 +69,7 @@ const FlexBox = styled.div`
     margin: 10px 50px;
     margin: 50px 150px;
     border: 2px solid red;
-    @media screen and (max-width: ${laptopBr}) {
+    @media screen and (max-width: ${laptopLargeBr}) {
       margin: 10px 40px;
     }
 

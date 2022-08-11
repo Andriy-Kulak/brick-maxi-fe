@@ -35,6 +35,7 @@ import { useState, useEffect } from 'react'
 import { artistSection, faqAccordion, images } from '../content'
 import { weight } from '../components/utils/fontConfigs'
 import { black } from '../components/utils/colors'
+import TokenSection from '../components/TokenSection'
 const { bold } = weight
 
 export default function Home() {
@@ -137,70 +138,7 @@ export default function Home() {
           </TitleH2>
         </Main100h>
       </div>
-      <ColorBackground color="white">
-        <Main>
-          <FlexRow>
-            <div style={{ margin: '0px 60px' }}>
-              <FlexRow justifyContent="space-between">
-                <div>
-                  <StyledP weight={700}>
-                    04/28/1983 4:40PM PST
-                    <LiveSpan>LIVE</LiveSpan>
-                  </StyledP>
-                </div>
-                <div>
-                  <StyledP color={black}>EDITION 1/5</StyledP>
-                </div>
-              </FlexRow>
-
-              <Image
-                alt="art image 1"
-                width={500}
-                height={500}
-                src={images.artImg}
-              />
-            </div>
-            <div style={{ width: '40%' }}>
-              <TitleH3>TOKEN NAME</TitleH3>
-              <div>
-                <TitleH4>ARTIST</TitleH4>
-                <StyledP weight={bold}>bottoproject</StyledP>
-                <br />
-              </div>
-
-              <TitleH4>DESCRIPTION</TitleH4>
-              <StyledP>
-                This is the info that goes here that is the info that people
-                want to know when they are looking for all the info about what
-                they are looking at.
-              </StyledP>
-              <Divider />
-
-              <FlexRow>
-                <div style={{ width: '33%' }}>
-                  <TitleH4 color={black} weight={bold}>
-                    MINT PRICE 1.5Ξ
-                  </TitleH4>
-                  <StyledSwitch />
-                </div>
-                <div style={{ width: '33%' }}>
-                  <TitleH4>REMAINING</TitleH4>
-                  <StyledP weight={bold}>100 / 100</StyledP>
-                </div>
-                <div style={{ width: '33%' }}>
-                  <TitleH4>ASSET TYPE</TitleH4>
-                  <StyledP weight={bold}>Residential</StyledP>
-                </div>
-              </FlexRow>
-              <Divider thick={1} />
-              <div style={{ display: 'flex' }}>
-                <Select />
-                <MintBtn />
-              </div>
-            </div>
-          </FlexRow>
-        </Main>
-      </ColorBackground>
+      <TokenSection />
       <BlackContainer>
         <div
           style={{

@@ -5,6 +5,7 @@ import brickMaxiLogo from '../../public/assets/logo.png'
 import { Button, ButtonProps } from '@chakra-ui/react'
 import { trimAddress } from '../../utils/helpers'
 import { Link } from 'react-scroll'
+import { laptopLargeBr, tabletBr } from '../../utils/breakpoints'
 
 const StyledSticky = styled.div`
   top: 0;
@@ -41,10 +42,18 @@ const TopFlexContainer = styled.div`
 
   div {
     margin: 0px 60px;
+
+    @media screen and (max-width: ${laptopLargeBr}) {
+      margin: 0px 30px;
+    }
   }
 `
 
 const MidFlexContainer = styled.div`
+  // hide for table and mobile since we using hamburger
+  @media screen and (max-width: ${tabletBr}) {
+    display: none;
+  }
   width: 33%;
   display: flex;
   justify-content: ${(props: { left?: boolean }) =>
