@@ -1,18 +1,11 @@
-import Image from 'next/image'
 import { ethers, providers } from 'ethers'
 import Web3Modal from 'web3modal'
 import WalletConnectProvider from '@walletconnect/web3-provider'
 import { useState, useEffect } from 'react'
 
-import {
-  ColorBackground,
-  Main100h,
-  WhiteContentBox,
-} from '../components/sharedstyles'
+import { Nav, ArtistSection } from '../components'
 
-import { FaqAcccordion, Nav, ArtistSection } from '../components'
-
-import { artistSection, faqAccordion, images } from '../content'
+import { artistSection } from '../content'
 import TokenSection from '../components/TokenSection'
 import HowItWorksSection from '../components/HowItWorksSection'
 import LandingSection from '../components/LandingSection'

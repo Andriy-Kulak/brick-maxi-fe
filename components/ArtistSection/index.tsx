@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Image from 'next/image'
-import { Main100h, StyledP, TitleH3 } from '../sharedstyles'
+import { StyledP, TitleH3 } from '../sharedstyles'
 import { weight } from '../utils/fontConfigs'
 import imgSample from '../../public/assets/brickMaxiSample.png'
 import { mobileBr, tabletBr } from '../../utils/breakpoints'
