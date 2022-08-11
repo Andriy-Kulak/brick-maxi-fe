@@ -1,11 +1,17 @@
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { stack as Menu } from 'react-burger-menu'
 import Image from 'next/image'
 import { StyledP } from '../sharedstyles'
 import brickMaxiLogo from '../../public/assets/logo.png'
 import { Button, ButtonProps } from '@chakra-ui/react'
 import { trimAddress } from '../../utils/helpers'
 import { Link } from 'react-scroll'
-import { laptopLargeBr, tabletBr } from '../../utils/breakpoints'
+import {
+  laptopLargeBr,
+  tabletBr,
+  tabletBrPixels,
+} from '../../utils/breakpoints'
 
 const StyledSticky = styled.div`
   top: 0;
@@ -66,6 +72,12 @@ const MidFlexContainer = styled.div`
   }
 `
 
+const MobileMenuC = styled.div`
+  @media screen and(min-width: ${tabletBr} ) {
+    display: none;
+  }
+`
+
 const Nav = ({
   connectWallet,
   disconnect,
@@ -75,46 +87,141 @@ const Nav = ({
   disconnect: () => void
   address?: string
 }) => {
+  const [pageWidth, setPageWidth] = useState(0)
+  const [isMobileOpen, setMobileMenu] = useState(false)
+  useEffect(() => {
+    setPageWidth(window.innerWidth)
+    window.addEventListener('resize', () => {
+      setPageWidth(window.innerWidth)
+    })
+  }, [])
+
   return (
     <StyledSticky>
       <TopFlexContainer>
-        <MidFlexContainer left>
-          <Link to="mission-section" smooth={true} duration={500} offset={-80}>
-            <StyledP color="white">Mission</StyledP>
-          </Link>
-          <Link to="artist-section" smooth={true} duration={500} offset={-80}>
-            <StyledP color="white">Artists</StyledP>
-          </Link>
-          <Link to="learn-section" smooth={true} duration={500} offset={-80}>
-            <StyledP color="white">Learn</StyledP>
-          </Link>
-        </MidFlexContainer>
+        {pageWidth === 0 && <></>}
+        {pageWidth >= tabletBrPixels && (
+          <>
+            <MidFlexContainer left>
+              <Link
+                to="mission-section"
+                smooth={true}
+                duration={500}
+                offset={-80}
+              >
+                <StyledP color="white">Mission</StyledP>
+              </Link>
+              <Link
+                to="artist-section"
+                smooth={true}
+                duration={500}
+                offset={-80}
+              >
+                <StyledP color="white">Artists</StyledP>
+              </Link>
+              <Link
+                to="learn-section"
+                smooth={true}
+                duration={500}
+                offset={-80}
+              >
+                <StyledP color="white">Learn</StyledP>
+              </Link>
+            </MidFlexContainer>
 
-        <div>
-          <Image
-            alt="Brick Maxi Logo"
-            src={brickMaxiLogo}
-            height={80}
-            width={80}
-          />
-        </div>
-        <MidFlexContainer>
-          <div>
-            <StyledP color="white">Rewards</StyledP>
-          </div>
-          <div>
-            {address && (
-              <StyledButton onClick={() => disconnect()} colorScheme="black">
-                Disconnect
-              </StyledButton>
-            )}
-          </div>
-          <div>
-            <StyledButton onClick={() => connectWallet()} colorScheme="black">
-              {address ? trimAddress(address) : 'Connect'}
-            </StyledButton>
-          </div>
-        </MidFlexContainer>
+            <div>
+              <Image
+                alt="Brick Maxi Logo"
+                src={brickMaxiLogo}
+                height={80}
+                width={80}
+              />
+            </div>
+            <MidFlexContainer>
+              <div>
+                <StyledP color="white">Rewards</StyledP>
+              </div>
+              <div>
+                {address && (
+                  <StyledButton
+                    onClick={() => disconnect()}
+                    colorScheme="black"
+                  >
+                    Disconnect
+                  </StyledButton>
+                )}
+              </div>
+              <div>
+                <StyledButton
+                  onClick={() => connectWallet()}
+                  colorScheme="black"
+                >
+                  {address ? trimAddress(address) : 'Connect'}
+                </StyledButton>
+              </div>
+            </MidFlexContainer>
+          </>
+        )}
+        {pageWidth < tabletBrPixels && (
+          <>
+            <div>
+              <Image
+                alt="Brick Maxi Logo"
+                src={brickMaxiLogo}
+                height={80}
+                width={80}
+              />
+            </div>
+            <MobileMenuC>
+              <Menu
+                right
+                width={'100%'}
+                pageWrapId="for-menu-wrap"
+                isOpen={isMobileOpen}
+                onOpen={() => setMobileMenu(true)}
+              >
+                <div>
+                  <StyledButton
+                    onClick={() => {
+                      setMobileMenu(false)
+                      connectWallet()
+                    }}
+                    colorScheme="black"
+                  >
+                    {address ? trimAddress(address) : 'Connect'}
+                  </StyledButton>
+                </div>
+                <Link
+                  to="mission-section"
+                  smooth={true}
+                  duration={500}
+                  offset={-80}
+                  onClick={() => setMobileMenu(false)}
+                >
+                  <StyledP color="white">Mission</StyledP>
+                </Link>
+                <Link
+                  to="artist-section"
+                  smooth={true}
+                  duration={500}
+                  offset={-80}
+                  onClick={() => setMobileMenu(false)}
+                >
+                  <StyledP color="white">Artists</StyledP>
+                </Link>
+                <Link
+                  to="learn-section"
+                  smooth={true}
+                  duration={500}
+                  offset={-80}
+                  onClick={() => setMobileMenu(false)}
+                >
+                  <StyledP color="white">Learn</StyledP>
+                </Link>
+              </Menu>
+            </MobileMenuC>
+          </>
+        )}
       </TopFlexContainer>
     </StyledSticky>
   )
