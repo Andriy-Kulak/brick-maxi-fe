@@ -4,8 +4,9 @@ import { StyledP } from '../sharedstyles'
 import brickMaxiLogo from '../../public/assets/logo.png'
 import { Button, ButtonProps } from '@chakra-ui/react'
 import { trimAddress } from '../../utils/helpers'
+import { Link } from 'react-scroll'
 
-const StyledNav = styled.div`
+const StyledSticky = styled.div`
   top: 0;
   left: 0;
   height: 80px;
@@ -51,7 +52,8 @@ const MidFlexContainer = styled.div`
   align-items: center;
   flex-direction: row;
 
-  div {
+  div,
+  a {
     margin: 0px 15px;
   }
 `
@@ -66,18 +68,18 @@ const Nav = ({
   address?: string
 }) => {
   return (
-    <StyledNav>
+    <StyledSticky>
       <TopFlexContainer>
         <MidFlexContainer left>
-          <div>
+          <Link to="mission-section" smooth={true} duration={500} offset={-80}>
             <StyledP color="white">Mission</StyledP>
-          </div>
-          <div>
+          </Link>
+          <Link to="artist-section" smooth={true} duration={500} offset={-80}>
             <StyledP color="white">Artists</StyledP>
-          </div>
-          <div>
+          </Link>
+          <Link to="learn-section" smooth={true} duration={500} offset={-80}>
             <StyledP color="white">Learn</StyledP>
-          </div>
+          </Link>
         </MidFlexContainer>
 
         <div>
@@ -106,7 +108,7 @@ const Nav = ({
           </div>
         </MidFlexContainer>
       </TopFlexContainer>
-    </StyledNav>
+    </StyledSticky>
   )
 }
 

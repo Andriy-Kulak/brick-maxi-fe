@@ -234,7 +234,7 @@ export default function Home() {
         />
         <ShadedTextBox />
       </div>
-      <ColorBackground height="90vh">
+      <ColorBackground height="90vh" id="artist-section">
         <ArtistSection content={artistSection} />
       </ColorBackground>
       <div
@@ -250,7 +250,7 @@ export default function Home() {
           objectPosition="center"
           layout="fill"
         />
-        <Main100h>
+        <Main100h id="learn-section">
           <WhiteContentBox>
             <FaqAcccordion content={faqAccordion} />
           </WhiteContentBox>

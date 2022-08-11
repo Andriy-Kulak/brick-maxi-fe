@@ -1,6 +1,6 @@
-import { Main } from '../sharedstyles'
 import styled from 'styled-components'
 import { avenirNextCondensed, gillSans } from '../utils/fontConfigs'
+import { laptopBr, mobileBr, tabletBr } from '../../utils/breakpoints'
 
 const H1 = styled.h1`
   font-family: ${avenirNextCondensed};
@@ -54,11 +54,28 @@ const FlexBox = styled.div`
     margin: 50px 10px;
     padding: 50px;
     width: 80%;
+    border: 2px solid pink;
+    @media screen and (max-width: ${tabletBr}) {
+      width: auto;
+      margin: 10px 20px;
+    }
+
+    @media screen and (max-width: ${mobileBr}) {
+      padding: 30px 20px;
+    }
   }
 
   > div > div {
     margin: 10px 50px;
     margin: 50px 150px;
+    border: 2px solid red;
+    @media screen and (max-width: ${laptopBr}) {
+      margin: 10px 40px;
+    }
+
+    @media screen and (max-width: ${tabletBr}) {
+      margin: 10px 20px;
+    }
   }
 `
 
@@ -69,7 +86,7 @@ const Divider = styled.hr`
 
 const ShadedTextBox = () => {
   return (
-    <StyledContainer>
+    <StyledContainer id="mission-section">
       <FlexBox>
         <div>
           <div>
