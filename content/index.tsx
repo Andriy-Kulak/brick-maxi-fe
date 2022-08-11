@@ -60,3 +60,12 @@ into one investment.`,
   { title: 'Are there platform fees?', p: '...tbd', key: 7 },
   { title: 'Contact us', p: '...tbd', key: 8 },
 ]
+
+export const tokenSection = {
+  title: 'TOKEN NAME',
+  artist: 'bottoproject',
+  description:
+    'This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at.',
+  mintPrice: 'MINT PRICE 1.5Ξ',
+  type: 'Residential',
+}

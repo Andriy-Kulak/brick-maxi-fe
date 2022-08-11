@@ -3,28 +3,20 @@ import { ethers, providers } from 'ethers'
 import Web3Modal from 'web3modal'
 import {
   Main,
-  TitleH3,
   TitleH2,
   BlackContainer,
   ColorBackground,
   TitleH1,
-  FlexRow,
-  TitleH4,
-  StyledP,
   TitleH2Small,
   Main100h,
   WhiteContentBox,
-  LiveSpan,
 } from '../components/sharedstyles'
 
 import {
   Divider,
   FaqAcccordion,
   Nav,
-  Select,
   ShadedTextBox,
-  StyledSwitch,
-  MintBtn,
   ArtistSection,
 } from '../components'
 

@@ -1,109 +1,112 @@
 import Image from 'next/image'
 import styled from 'styled-components'
-import {
-  Main,
-  TitleH3,
-  ColorBackground,
-  FlexRow,
-  TitleH4,
-  StyledP,
-} from '../sharedstyles'
+import { Main, TitleH3, FlexRow, TitleH4, StyledP } from '../sharedstyles'
 
 import { Divider, Select, StyledSwitch, MintBtn } from '../'
 
-import { images } from '../../content'
+import { images, tokenSection } from '../../content'
 import { weight } from '../utils/fontConfigs'
 import { black } from '../utils/colors'
-import { laptopSmallBr } from '../../utils/breakpoints'
+import { laptopSmallBr, tabletBr } from '../../utils/breakpoints'
+import {
+  DesktopView,
+  ImageContainer,
+  LiveSpan,
+  MobileStyledP,
+  MobileTextC,
+  MobileTitleH3,
+  MobileView,
+  StyledBackground,
+  Test,
+  TextContainer,
+} from './styles'
 const { bold } = weight
 
-const ImageContainer = styled.div`
-  margin: 0px 60px;
+const { title, artist, description, mintPrice, type } = tokenSection
 
-  @media screen and (max-width: ${laptopSmallBr}) {
-    margin: 0px 20px;
-  }
-  border: 2px solid red;
-`
+const imageContainer = (
+  <ImageContainer>
+    {/* <div> */}
+    <StyledP weight={700}>
+      <LiveSpan>LIVE</LiveSpan>
+      04/28/1983 4:40PM PST
+    </StyledP>
+    {/* </div> */}
 
-const TextContainer = styled.div`
-  margin-top: 30px;
-  margin-right: 20px;
-  width: 40%;
+    <Image alt="art image 1" width={500} height={500} src={images.artImg} />
+  </ImageContainer>
+)
 
-  @media screen and (max-width: ${laptopSmallBr}) {
-    width: 50%;
-  }
-`
+const remainingText = (
+  <>
+    <TitleH4>REMAINING</TitleH4>
+    <StyledP weight={bold}>100 / 100</StyledP>
+  </>
+)
 
-const LiveSpan = styled.span`
-  background-color: black;
-  color: white;
-  font-weight: 400;
-  margin-right: 10px;
-  padding: 0px 10px;
-`
+const mintText = (
+  <TitleH4 color={black} weight={bold}>
+    {mintPrice}
+  </TitleH4>
+)
+
+const mintSection = (
+  <div style={{ display: 'flex' }}>
+    <Select />
+    <MintBtn />
+  </div>
+)
 
 const TokenSection = () => (
-  <ColorBackground color="white">
-    <Main>
+  <StyledBackground>
+    <DesktopView>
       <FlexRow>
-        <ImageContainer>
-          <div>
-            <StyledP weight={700}>
-              <LiveSpan>LIVE</LiveSpan>
-              04/28/1983 4:40PM PST
-            </StyledP>
-          </div>
-
-          <Image
-            alt="art image 1"
-            width={500}
-            height={500}
-            src={images.artImg}
-          />
-        </ImageContainer>
+        {imageContainer}
         <TextContainer>
-          <TitleH3>TOKEN NAME</TitleH3>
+          <TitleH3>{title}</TitleH3>
           <div>
             <TitleH4>ARTIST</TitleH4>
-            <StyledP weight={bold}>bottoproject</StyledP>
+            <StyledP weight={bold}>{artist}</StyledP>
             <br />
           </div>
 
           <TitleH4>DESCRIPTION</TitleH4>
-          <StyledP>
-            This is the info that goes here that is the info that people want to
-            know when they are looking for all the info about what they are
-            looking at.
-          </StyledP>
+          <StyledP>{description}</StyledP>
           <Divider />
 
           <FlexRow>
             <div style={{ width: '33%' }}>
-              <TitleH4 color={black} weight={bold}>
-                MINT PRICE 1.5Ξ
-              </TitleH4>
+              {mintText}
+              <br />
               <StyledSwitch />
             </div>
-            <div style={{ width: '33%' }}>
-              <TitleH4>REMAINING</TitleH4>
-              <StyledP weight={bold}>100 / 100</StyledP>
-            </div>
+            <div style={{ width: '33%' }}>{remainingText}</div>
             <div style={{ width: '33%' }}>
               <TitleH4>ASSET TYPE</TitleH4>
-              <StyledP weight={bold}>Residential</StyledP>
+              <StyledP weight={bold}>{type}</StyledP>
             </div>
           </FlexRow>
           <Divider thick={1} />
-          <div style={{ display: 'flex' }}>
-            <Select />
-            <MintBtn />
-          </div>
+          {mintSection}
         </TextContainer>
       </FlexRow>
-    </Main>
-  </ColorBackground>
+    </DesktopView>
+    <MobileView>
+      <MobileTextC>
+        <MobileTitleH3>{title}</MobileTitleH3>
+        <MobileStyledP weight={bold}>{artist}</MobileStyledP>
+      </MobileTextC>
+      {imageContainer}
+      <Test>
+        <div>
+          {mintText}
+          <StyledSwitch />
+        </div>
+        {remainingText}
+      </Test>
+      {mintSection}
+    </MobileView>
+  </StyledBackground>
 )
 
 export default TokenSection

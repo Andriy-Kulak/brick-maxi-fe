@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { laptopSmallBr, mobileBr } from '../utils/breakpoints'
 import { grey1 } from './utils/colors'
 import { avenirNextCondensed, gillSans } from './utils/fontConfigs'
 
@@ -65,6 +66,16 @@ const TitleH1 = styled.h1`
   font-weight: 600;
   font-size: 80px;
   line-height: 95px;
+
+  @media screen and (max-width: ${laptopSmallBr}) {
+    font-size: 55px;
+    line-height: 65px;
+  }
+
+  @media screen and (max-width: ${mobileBr}) {
+    font-size: 20px;
+    line-height: 24px;
+  }
 `
 
 const TitleH2 = styled.h2`
@@ -89,6 +100,10 @@ const TitleH2Small = styled.h2`
   font-weight: 600;
   font-size: 36px;
   line-height: 49px;
+  @media screen and (max-width: ${mobileBr}) {
+    font-size: 17px;
+    line-height: 23px;
+  }
 `
 
 const TitleH3 = styled.h3`
