@@ -12,7 +12,6 @@ import {
   tabletBr,
   tabletBrPixels,
 } from '../../utils/breakpoints'
-import { Main } from '../sharedstyles'
 import { images } from '../../content'
 
 const StyledSticky = styled.div`
@@ -187,7 +186,7 @@ const Nav = ({
                 customBurgerIcon={
                   <Image
                     width={29}
-                    height={29}
+                    height={25}
                     src={images.burgerIcon}
                     alt="mobile-menu-open"
                   />

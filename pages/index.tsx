@@ -16,6 +16,7 @@ import { artistSection, faqAccordion, images } from '../content'
 import TokenSection from '../components/TokenSection'
 import HowItWorksSection from '../components/HowItWorksSection'
 import LandingSection from '../components/LandingSection'
+import FaqSection from '../components/FaqSection'
 
 export default function Home() {
   const [web3Modal, setWeb3Modal] = useState<Web3Modal | null>(null)
@@ -94,28 +95,8 @@ export default function Home() {
       <LandingSection />
       <TokenSection />
       <HowItWorksSection />
-      <ColorBackground height="90vh" id="artist-section">
-        <ArtistSection content={artistSection} />
-      </ColorBackground>
-      <div
-        style={{
-          position: 'relative',
-          height: '90vh',
-        }}
-      >
-        <Image
-          alt="bg-art-2"
-          src={images.bgArt1}
-          objectFit="cover"
-          objectPosition="center"
-          layout="fill"
-        />
-        <Main100h id="learn-section">
-          <WhiteContentBox>
-            <FaqAcccordion content={faqAccordion} />
-          </WhiteContentBox>
-        </Main100h>
-      </div>
+      <ArtistSection content={artistSection} />
+      <FaqSection />
     </>
   )
 }

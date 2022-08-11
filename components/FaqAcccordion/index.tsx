@@ -14,34 +14,50 @@ const { normal } = weight
 
 const StyledPwMargin = styled(StyledP)`
   margin-left: 20px;
+  background-color: transparent !important;
+
+  color: ${(props: { black?: boolean }) =>
+    props.black ? 'white' : 'black'} !important;
 
   @media screen and (max-width: ${mobileBr}) {
     margin-left: 10px;
   }
 `
 
+const StyledText = styled(StyledP)`
+  color: ${(props: { black?: boolean }) =>
+    props.black ? 'white' : 'black'} !important;
+`
+
+const isBlack = (bool: boolean | undefined) => {
+  return bool
+    ? { width: '95%', backgroundColor: 'black', color: 'white' }
+    : { zIndex: 20, width: '80%', backgroundColor: 'white' }
+}
+
 const FaqAcccordion = ({
   content,
+  black,
 }: {
   content: { key: number; title: string; p: string }[]
+  black?: boolean
 }) => (
   <Accordion
     allowToggle
-    width={{ base: '100%', sm: '90%', md: '50%' }}
-    style={{ zIndex: 20, backgroundColor: 'white' }}
+    // width={{ base: '100%', sm: '90%', md: '50%' }}
+    style={isBlack(black)}
   >
     {content.map((x) => (
-      <AccordionItem key={x.key} style={{ backgroundColor: 'white' }}>
-        <AccordionButton
-          borderBottom="1px solid #808080"
-          borderTop="1px solid #808080"
-        >
+      <AccordionItem key={x.key}>
+        <AccordionButton>
           <AccordionIcon />
-          <StyledPwMargin>{x.title}</StyledPwMargin>
+          <StyledPwMargin black={black}>{x.title}</StyledPwMargin>
         </AccordionButton>
 
         <AccordionPanel pb={4}>
-          <StyledP weight={normal}>{x.p}</StyledP>
+          <StyledText black={black} weight={normal}>
+            {x.p}
+          </StyledText>
         </AccordionPanel>
       </AccordionItem>
     ))}

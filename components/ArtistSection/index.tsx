@@ -16,7 +16,6 @@ const FlexBox = styled.div`
   @media screen and (max-width: ${mobileBr}) {
     flex-direction: column;
     justify-content: center;
-    /* flex-flow: nowrap; */
   }
 `
 
@@ -24,9 +23,9 @@ const Container = styled.div`
   padding: 5rem 0;
   height: 100%;
   min-height: 100%;
+  background-color: black;
   flex: 1;
   display: flex;
-  /*  */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -55,7 +54,7 @@ const ArtistSection = ({
 }: {
   content: { key: number; name: string }[]
 }) => (
-  <Container>
+  <Container id="artist-section">
     <TitleH3 color="white">BUILDING THE FUTURE OF NFTs</TitleH3>
     <TitleH3 color="white">WITH OUR INCREDIBLE PARTNERS</TitleH3>
     <StyledText>
