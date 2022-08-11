@@ -14,9 +14,8 @@ const StyledSticky = styled.div`
   position: sticky;
   background-color: black;
   color: white;
-
   width: 100%;
-  z-index: 20;
+  z-index: 200;
 `
 
 export const StyledButton = styled(Button).attrs({

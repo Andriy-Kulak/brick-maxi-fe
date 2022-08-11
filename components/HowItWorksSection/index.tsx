@@ -1,15 +1,33 @@
 import Image from 'next/image'
-import { Main, BlackContainer, TitleH1, TitleH2Small } from '../sharedstyles'
+import styled from 'styled-components'
+import { Main, TitleH1, TitleH2Small } from '../sharedstyles'
 import { Divider, ShadedTextBox } from '../'
 import { images } from '../../content'
 import { weight } from '../utils/fontConfigs'
 import { black } from '../utils/colors'
+import { mobileBr } from '../../utils/breakpoints'
 
 const { bold } = weight
 
+const Container = styled.div`
+  background-color: black;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  min-height: 80vh;
+
+  @media screen and (max-width: ${mobileBr}) {
+    height: auto;
+    min-height: auto;
+  }
+`
+
 const HowItWorksSection = () => (
   <>
-    <BlackContainer>
+    <Container>
       <div
         style={{
           width: '100%',
@@ -25,7 +43,7 @@ const HowItWorksSection = () => (
         <TitleH1>We purchase real estate.</TitleH1>
         <TitleH1>You earn USDC rewards.</TitleH1>
       </Main>
-    </BlackContainer>
+    </Container>
     <div
       style={{
         position: 'relative',

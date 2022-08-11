@@ -1,17 +1,17 @@
 import Image from 'next/image'
-import styled from 'styled-components'
-import { Main, TitleH3, FlexRow, TitleH4, StyledP } from '../sharedstyles'
+
+import { TitleH3, FlexRow, TitleH4, StyledP } from '../sharedstyles'
 import FaqAcccordion from '../FaqAcccordion'
 import { Divider, Select, StyledSwitch, MintBtn } from '../'
 
 import { images, tokenSection } from '../../content'
 import { weight } from '../utils/fontConfigs'
 import { black } from '../utils/colors'
-import { laptopSmallBr, tabletBr } from '../../utils/breakpoints'
 import {
   DesktopView,
   ImageContainer,
   LiveSpan,
+  MintSectionC,
   MobileStyledP,
   MobileTextC,
   MobileTitleH3,
@@ -48,10 +48,10 @@ const mintText = (
 )
 
 const mintSection = (
-  <div style={{ display: 'flex' }}>
+  <MintSectionC>
     <Select />
     <MintBtn />
-  </div>
+  </MintSectionC>
 )
 
 const TokenSection = () => (

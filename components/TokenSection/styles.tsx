@@ -79,3 +79,11 @@ export const Test = styled.div`
   max-width: 500px;
   padding: 20px;
 `
+
+export const MintSectionC = styled.div`
+  display: flex;
+
+  @media screen and (max-width: ${tabletBr}) {
+    margin-top: 20px;
+  }
+`

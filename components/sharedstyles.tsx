@@ -54,6 +54,10 @@ const Main = styled.div`
   justify-content: ${(props: { justifyContent?: string }) =>
     props.justifyContent || 'center'};
   align-items: center;
+
+  @media screen and (max-width: ${mobileBr}) {
+    padding: 2rem 0;
+  }
 `
 
 const TitleH1 = styled.h1`
@@ -88,6 +92,16 @@ const TitleH2 = styled.h2`
   font-weight: 600;
   font-size: 60px;
   line-height: 82px;
+
+  @media screen and (max-width: ${tabletBr}) {
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  @media screen and (max-width: ${mobileBr}) {
+    font-size: 20px;
+    line-height: 27px;
+  }
 `
 
 const TitleH2Small = styled.h2`

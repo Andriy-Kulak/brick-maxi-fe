@@ -19,10 +19,14 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  // overriding chakra
+  // overriding chakra defaults
 
   .chakra-accordion__button{
     background-color: white !important;
+  }
+
+  .chakra-switch__track[data-checked] {
+    background: black !important;
   }
 `
 
