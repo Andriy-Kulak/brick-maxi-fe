@@ -3,13 +3,9 @@ import styled from 'styled-components'
 import { Main, TitleH1, TitleH2Small } from '../sharedstyles'
 import { Divider, ShadedTextBox } from '../'
 import { images } from '../../content'
-import { weight } from '../utils/fontConfigs'
-import { black } from '../utils/colors'
 import { mobileBr } from '../../utils/breakpoints'
 
-const { bold } = weight
-
-const Container = styled.div`
+const TextC = styled.div`
   background-color: black;
   padding: 0 0.5rem;
   display: flex;
@@ -25,9 +21,19 @@ const Container = styled.div`
   }
 `
 
+const BackgroundC = styled.div`
+  position: relative;
+  height: 200vh;
+  background-color: black;
+
+  @media screen and (max-width: ${mobileBr}) {
+    height: 120vh;
+  }
+`
+
 const HowItWorksSection = () => (
   <>
-    <Container>
+    <TextC>
       <div
         style={{
           width: '100%',
@@ -43,14 +49,8 @@ const HowItWorksSection = () => (
         <TitleH1>We purchase real estate.</TitleH1>
         <TitleH1>You earn USDC rewards.</TitleH1>
       </Main>
-    </Container>
-    <div
-      style={{
-        position: 'relative',
-        height: '200vh',
-        backgroundColor: black,
-      }}
-    >
+    </TextC>
+    <BackgroundC>
       <Image
         alt="bg-art-2"
         src={images.bgArt2}
@@ -59,7 +59,7 @@ const HowItWorksSection = () => (
         layout="fill"
       />
       <ShadedTextBox />
-    </div>
+    </BackgroundC>
   </>
 )
 
