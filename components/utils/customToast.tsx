@@ -60,7 +60,7 @@ const customToast = ({
                     width={25}
                     height={25}
                     src={images.ethescanLogo}
-                    alt="mobile-menu-open"
+                    alt="etherscan-logo"
                   />
                 </div>
                 <div>View On Etherscan</div>

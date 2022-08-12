@@ -171,6 +171,7 @@ export default function Home() {
 
       <LandingSection />
       <TokenSection
+        isEth={isEth}
         currencySwitch={() => setEth(!isEth)}
         mint={() => onMint()}
         isMintLoading={isMintLoading}

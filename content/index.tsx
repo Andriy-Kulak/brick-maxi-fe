@@ -5,6 +5,7 @@ import artImg from '../public/assets/artCut.png'
 import burgerIcon from '../public/assets/icons/hamburger.png'
 import xIcon from '../public/assets/icons/x.png'
 import ethescanLogo from '../public/assets/icons/etherscan-logo.webp'
+import apecoinLogo from '../public/assets/icons/apecoin.png'
 
 export const images = {
   brickMaxiLogo,
@@ -14,6 +15,7 @@ export const images = {
   burgerIcon,
   xIcon,
   ethescanLogo,
+  apecoinLogo,
 }
 
 export const artistSection = [
@@ -72,6 +74,5 @@ export const tokenSection = {
   artist: 'bottoproject',
   description:
     'This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at.',
-  mintPrice: 'MINT PRICE 1.5Ξ',
   type: 'Residential',
 }

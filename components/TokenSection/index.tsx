@@ -1,5 +1,5 @@
 import Image from 'next/image'
-
+import styled from 'styled-components'
 import { TitleH3, FlexRow, TitleH4, StyledP } from '../sharedstyles'
 import FaqAcccordion from '../FaqAcccordion'
 import { Divider, Select, StyledSwitch, MintBtn } from '../'
@@ -23,7 +23,14 @@ import {
 import { BeatLoader } from 'react-spinners'
 const { bold } = weight
 
-const { title, artist, description, mintPrice, type } = tokenSection
+const { title, artist, description, type } = tokenSection
+
+const ApeContainer = styled.div`
+  display: flex;
+  > h4:first-child {
+    margin-right: 4px;
+  }
+`
 
 const imageContainer = (
   <ImageContainer>
@@ -42,20 +49,16 @@ const remainingText = (
   </>
 )
 
-const mintText = (
-  <TitleH4 color={black} weight={bold}>
-    {mintPrice}
-  </TitleH4>
-)
-
 const TokenSection = ({
   mint,
   isMintLoading,
   currencySwitch,
+  isEth,
 }: {
   mint: () => void
   isMintLoading: boolean
   currencySwitch: () => void
+  isEth: boolean
 }) => {
   const mintSection = () => (
     <MintSectionC>
@@ -69,6 +72,45 @@ const TokenSection = ({
         <MintBtn mint={mint} />
       )}
     </MintSectionC>
+  )
+
+  const mintText = (
+    <TitleH4 color={black} weight={bold}>
+      MINT PRICE:{' '}
+      {isEth ? (
+        '1.5Ξ'
+      ) : (
+        <>
+          200{' '}
+          <Image
+            style={{ margin: '0px 0px' }}
+            width={25}
+            height={25}
+            src={images.apecoinLogo}
+            alt="apecoin-logo"
+          />
+        </>
+      )}
+    </TitleH4>
+  )
+
+  const mintText2 = isEth ? (
+    <TitleH4 color={black} weight={bold} style={{ margin: '5px 0px' }}>
+      MINT PRICE:1.5Ξ
+    </TitleH4>
+  ) : (
+    <ApeContainer>
+      <TitleH4 color={black} weight={bold}>
+        MINT PRICE: 200
+      </TitleH4>
+      <Image
+        style={{ margin: '0px 0px' }}
+        width={25}
+        height={25}
+        src={images.apecoinLogo}
+        alt="apecoin-logo"
+      />
+    </ApeContainer>
   )
 
   return (
@@ -89,13 +131,13 @@ const TokenSection = ({
             <Divider />
 
             <FlexRow>
-              <div style={{ width: '33%' }}>
-                {mintText}
+              <div style={{ width: '40%' }}>
+                {mintText2}
                 <br />
                 <StyledSwitch currencySwitch={currencySwitch} />
               </div>
-              <div style={{ width: '33%' }}>{remainingText}</div>
-              <div style={{ width: '33%' }}>
+              <div style={{ width: '30%' }}>{remainingText}</div>
+              <div style={{ width: '30%' }}>
                 <TitleH4>ASSET TYPE</TitleH4>
                 <StyledP weight={bold}>{type}</StyledP>
               </div>
