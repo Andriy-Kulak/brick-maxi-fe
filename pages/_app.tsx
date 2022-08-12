@@ -10,7 +10,7 @@ const theme: DefaultTheme = {
   },
 }
 
-export default function App({ Component, pageProps }: any) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <ThemeProvider theme={theme}>

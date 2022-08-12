@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import Image from 'next/image'
-import { Main100h, StyledP, TitleH3 } from '../sharedstyles'
+import { StyledP, TitleH3 } from '../sharedstyles'
 import { weight } from '../utils/fontConfigs'
 import imgSample from '../../public/assets/brickMaxiSample.png'
+import { mobileBr, tabletBr } from '../../utils/breakpoints'
 
 const { bold } = weight
 
@@ -12,6 +13,40 @@ const FlexBox = styled.div`
   > div {
     margin: 20px 25px 0px;
   }
+  @media screen and (max-width: ${mobileBr}) {
+    flex-direction: column;
+    justify-content: center;
+  }
+`
+
+const Container = styled.div`
+  padding: 5rem 0;
+  height: 100%;
+  min-height: 100%;
+  background-color: black;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: ${mobileBr}) {
+    height: auto;
+    height: auto;
+  }
+`
+
+const StyledText = styled(StyledP)`
+  width: 40%;
+  text-align: center;
+  color: white;
+
+  @media screen and (max-width: ${tabletBr}) {
+    width: 65%;
+  }
+
+  @media screen and (max-width: ${mobileBr}) {
+    width: 80%;
+  }
 `
 
 const ArtistSection = ({
@@ -19,14 +54,14 @@ const ArtistSection = ({
 }: {
   content: { key: number; name: string }[]
 }) => (
-  <Main100h>
+  <Container id="artist-section">
     <TitleH3 color="white">BUILDING THE FUTURE OF NFTs</TitleH3>
     <TitleH3 color="white">WITH OUR INCREDIBLE PARTNERS</TitleH3>
-    <StyledP color="white" style={{ width: '40%', textAlign: 'center' }}>
+    <StyledText>
       We&apos;re a boutique marketplace, carefully curating drops with the most
       hyped artists of our time. To be eligible for upcoming mints you must hold
       at least one token from each of our past mints.
-    </StyledP>
+    </StyledText>
     <FlexBox>
       {content.map((x) => (
         <div key={x.key}>
@@ -37,7 +72,7 @@ const ArtistSection = ({
         </div>
       ))}
     </FlexBox>
-  </Main100h>
+  </Container>
 )
 
 export default ArtistSection

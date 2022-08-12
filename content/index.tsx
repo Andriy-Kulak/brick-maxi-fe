@@ -2,12 +2,20 @@ import brickMaxiLogo from '../public/assets/logo.png'
 import bgArt1 from '../public/assets/bgArt1.png'
 import bgArt2 from '../public/assets/bgArt2s.png'
 import artImg from '../public/assets/artCut.png'
+import burgerIcon from '../public/assets/icons/hamburger.png'
+import xIcon from '../public/assets/icons/x.png'
+import ethescanLogo from '../public/assets/icons/etherscan-logo.webp'
+import apecoinLogo from '../public/assets/icons/apecoin.png'
 
 export const images = {
   brickMaxiLogo,
   bgArt1,
   bgArt2,
   artImg,
+  burgerIcon,
+  xIcon,
+  ethescanLogo,
+  apecoinLogo,
 }
 
 export const artistSection = [
@@ -60,3 +68,11 @@ into one investment.`,
   { title: 'Are there platform fees?', p: '...tbd', key: 7 },
   { title: 'Contact us', p: '...tbd', key: 8 },
 ]
+
+export const tokenSection = {
+  title: 'TOKEN NAME',
+  artist: 'bottoproject',
+  description:
+    'This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at.',
+  type: 'Residential',
+}

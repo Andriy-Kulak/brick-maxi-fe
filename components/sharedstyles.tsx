@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { laptopSmallBr, mobileBr, tabletBr } from '../utils/breakpoints'
 import { grey1 } from './utils/colors'
 import { avenirNextCondensed, gillSans } from './utils/fontConfigs'
 
@@ -53,6 +54,10 @@ const Main = styled.div`
   justify-content: ${(props: { justifyContent?: string }) =>
     props.justifyContent || 'center'};
   align-items: center;
+
+  @media screen and (max-width: ${mobileBr}) {
+    padding: 2rem 0;
+  }
 `
 
 const TitleH1 = styled.h1`
@@ -65,6 +70,16 @@ const TitleH1 = styled.h1`
   font-weight: 600;
   font-size: 80px;
   line-height: 95px;
+
+  @media screen and (max-width: ${laptopSmallBr}) {
+    font-size: 55px;
+    line-height: 65px;
+  }
+
+  @media screen and (max-width: ${mobileBr}) {
+    font-size: 20px;
+    line-height: 24px;
+  }
 `
 
 const TitleH2 = styled.h2`
@@ -77,6 +92,16 @@ const TitleH2 = styled.h2`
   font-weight: 600;
   font-size: 60px;
   line-height: 82px;
+
+  @media screen and (max-width: ${tabletBr}) {
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  @media screen and (max-width: ${mobileBr}) {
+    font-size: 20px;
+    line-height: 27px;
+  }
 `
 
 const TitleH2Small = styled.h2`
@@ -89,6 +114,10 @@ const TitleH2Small = styled.h2`
   font-weight: 600;
   font-size: 36px;
   line-height: 49px;
+  @media screen and (max-width: ${mobileBr}) {
+    font-size: 17px;
+    line-height: 23px;
+  }
 `
 
 const TitleH3 = styled.h3`
@@ -101,6 +130,11 @@ const TitleH3 = styled.h3`
   font-family: ${avenirNextCondensed};
   margin-bottom: 15px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  @media screen and (max-width: ${mobileBr}) {
+    font-size: 20px;
+    line-height: 23px;
+  }
 `
 
 // AK_TO_DO duplicate of StyledP. will remove if designs don't change
@@ -128,6 +162,11 @@ const StyledP = styled.p`
   font-style: normal;
   font-size: 20px;
   line-height: 23px;
+
+  @media screen and (max-width: ${mobileBr}) {
+    font-size: 13px;
+    line-height: 15px;
+  }
 `
 
 const FlexRow = styled.div`
@@ -149,13 +188,16 @@ const WhiteContentBox = styled.div`
   justify-content: ${(props: { justifyContent?: string }) =>
     props.justifyContent || 'center'};
   align-items: center;
-`
 
-const LiveSpan = styled.span`
-  background-color: #f5f5f5;
-  font-weight: 400;
-  margin-left: 10px;
-  padding: 0px 10px;
+  @media screen and (max-width: ${laptopSmallBr}) {
+    padding: 80px 30px;
+  }
+
+  @media screen and (max-width: ${tabletBr}) {
+    padding: 50px 0px;
+    width: 90%;
+    margin: 0px 20px;
+  }
 `
 
 export {
@@ -172,5 +214,4 @@ export {
   StyledP,
   WhiteContentBox,
   Main100h,
-  LiveSpan,
 }

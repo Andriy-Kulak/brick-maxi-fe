@@ -1,6 +1,11 @@
-import { Main } from '../sharedstyles'
 import styled from 'styled-components'
 import { avenirNextCondensed, gillSans } from '../utils/fontConfigs'
+import {
+  laptopLargeBr,
+  laptopSmallBr,
+  mobileBr,
+  tabletBr,
+} from '../../utils/breakpoints'
 
 const H1 = styled.h1`
   font-family: ${avenirNextCondensed};
@@ -10,6 +15,10 @@ const H1 = styled.h1`
   line-height: 44px;
   text-align: center;
   color: black;
+  @media screen and (max-width: ${mobileBr}) {
+    font-size: 20px;
+    line-height: 27px;
+  }
 `
 
 const StyledContainer = styled.div`
@@ -29,6 +38,11 @@ const StyledP = styled.p`
   text-align: center;
 
   color: #000000;
+
+  @media screen and (max-width: ${mobileBr}) {
+    font-size: 13px;
+    line-height: 15px;
+  }
 `
 
 const StyledPItalic = styled.p`
@@ -40,6 +54,11 @@ const StyledPItalic = styled.p`
   text-align: center;
 
   color: #808080;
+
+  @media screen and (max-width: ${mobileBr}) {
+    font-size: 8px;
+    line-height: 9px;
+  }
 `
 
 const FlexBox = styled.div`
@@ -54,22 +73,49 @@ const FlexBox = styled.div`
     margin: 50px 10px;
     padding: 50px;
     width: 80%;
+    @media screen and (max-width: ${tabletBr}) {
+      width: auto;
+      margin: 10px 20px;
+    }
+
+    @media screen and (max-width: ${mobileBr}) {
+      padding: 30px 20px;
+    }
   }
 
   > div > div {
     margin: 10px 50px;
     margin: 50px 150px;
+    @media screen and (max-width: ${laptopLargeBr}) {
+      margin: 10px 40px;
+    }
+
+    @media screen and (max-width: ${tabletBr}) {
+      margin: 20px 20px;
+    }
   }
 `
 
 const Divider = styled.hr`
   border: 1px solid black;
   margin: 50px 150px;
+
+  @media screen and (max-width: ${laptopSmallBr}) {
+    margin: 30px 100px;
+  }
+
+  @media screen and (max-width: ${tabletBr}) {
+    margin: 30px 50px;
+  }
+
+  @media screen and (max-width: ${mobileBr}) {
+    margin: 10px 20px;
+  }
 `
 
 const ShadedTextBox = () => {
   return (
-    <StyledContainer>
+    <StyledContainer id="mission-section">
       <FlexBox>
         <div>
           <div>
