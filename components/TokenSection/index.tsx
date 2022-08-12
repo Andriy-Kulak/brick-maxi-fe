@@ -20,6 +20,7 @@ import {
   Test,
   TextContainer,
 } from './styles'
+import { BeatLoader } from 'react-spinners'
 const { bold } = weight
 
 const { title, artist, description, mintPrice, type } = tokenSection
@@ -47,11 +48,24 @@ const mintText = (
   </TitleH4>
 )
 
-const TokenSection = ({ mint }: { mint: () => void }) => {
+const TokenSection = ({
+  mint,
+  isMintLoading,
+}: {
+  mint: () => void
+  isMintLoading: boolean
+}) => {
   const mintSection = () => (
     <MintSectionC>
       <Select />
-      <MintBtn mint={mint} />
+      {isMintLoading === true ? (
+        <BeatLoader
+          speedMultiplier={0.5}
+          cssOverride={{ margin: '30px 0px 0px 20px' }}
+        />
+      ) : (
+        <MintBtn mint={mint} />
+      )}
     </MintSectionC>
   )
 
