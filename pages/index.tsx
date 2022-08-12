@@ -10,10 +10,19 @@ import TokenSection from '../components/TokenSection'
 import HowItWorksSection from '../components/HowItWorksSection'
 import LandingSection from '../components/LandingSection'
 import FaqSection from '../components/FaqSection'
+import { contractAbi, contractAddress } from '../utils/web3'
+import { parseEther } from 'ethers/lib/utils'
 
 export default function Home() {
   const [web3Modal, setWeb3Modal] = useState<Web3Modal | null>(null)
   const [address, setAddress] = useState('')
+  const [ci, setContract] = useState<{
+    contract: ethers.Contract | null
+    signer: ethers.Signer | null
+  }>({
+    contract: null,
+    signer: null,
+  })
 
   useEffect(() => {
     // initiate web3modal
@@ -64,10 +73,25 @@ export default function Home() {
     console.log('yyy 222', provider)
     const ethersProvider = new providers.Web3Provider(provider)
     console.log('yyy 333', ethersProvider)
-    const userAddress = await ethersProvider.getSigner().getAddress()
+    const signer = await ethersProvider.getSigner()
+    const userAddress = await signer.getAddress()
     console.log('yyy 444', userAddress)
     setAddress(userAddress)
     console.log('yyy 555')
+
+    const contract = new ethers.Contract(
+      contractAddress,
+      contractAbi,
+      ethersProvider
+    )
+    setContract({
+      contract,
+      signer,
+    })
+    console.log('yyy testing', { ethersProvider, signer })
+    const resp = await contract.connect(signer).PRICE_APE()
+
+    console.log('yyy 777 resp', resp)
   }
 
   const disconnect = () => {
@@ -78,6 +102,18 @@ export default function Home() {
     setAddress('')
   }
 
+  const onMint = async () => {
+    if (ci.contract === null || ci.signer === null) {
+    } else {
+      console.log('999 are we getting to onMint')
+      const mintResp = await ci.contract
+        .connect(ci.signer)
+        .mintInEth({ value: parseEther('.02') })
+
+      console.log('999 mintResp', mintResp)
+    }
+  }
+
   return (
     <>
       <Nav
@@ -86,7 +122,7 @@ export default function Home() {
         disconnect={disconnect}
       />
       <LandingSection />
-      <TokenSection />
+      <TokenSection mint={() => onMint()} />
       <HowItWorksSection />
       <ArtistSection content={artistSection} />
       <FaqSection />
