@@ -51,9 +51,11 @@ const mintText = (
 const TokenSection = ({
   mint,
   isMintLoading,
+  currencySwitch,
 }: {
   mint: () => void
   isMintLoading: boolean
+  currencySwitch: () => void
 }) => {
   const mintSection = () => (
     <MintSectionC>
@@ -90,7 +92,7 @@ const TokenSection = ({
               <div style={{ width: '33%' }}>
                 {mintText}
                 <br />
-                <StyledSwitch />
+                <StyledSwitch currencySwitch={currencySwitch} />
               </div>
               <div style={{ width: '33%' }}>{remainingText}</div>
               <div style={{ width: '33%' }}>
@@ -113,7 +115,7 @@ const TokenSection = ({
           <Test>
             <div>
               {mintText}
-              <StyledSwitch />
+              <StyledSwitch currencySwitch={currencySwitch} />
             </div>
             <div>{remainingText}</div>
           </Test>

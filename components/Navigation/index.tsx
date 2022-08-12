@@ -154,7 +154,7 @@ const Nav = ({
                     onClick={() => disconnect()}
                     colorScheme="black"
                   >
-                    Disconnect
+                    Disc.
                   </StyledButton>
                 )}
               </div>

@@ -4,6 +4,7 @@ import bgArt2 from '../public/assets/bgArt2s.png'
 import artImg from '../public/assets/artCut.png'
 import burgerIcon from '../public/assets/icons/hamburger.png'
 import xIcon from '../public/assets/icons/x.png'
+import ethescanLogo from '../public/assets/icons/etherscan-logo.webp'
 
 export const images = {
   brickMaxiLogo,
@@ -12,6 +13,7 @@ export const images = {
   artImg,
   burgerIcon,
   xIcon,
+  ethescanLogo,
 }
 
 export const artistSection = [

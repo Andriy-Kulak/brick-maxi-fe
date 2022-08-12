@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { ethers, providers } from 'ethers'
+import { useToast } from '@chakra-ui/react'
 import Web3Modal from 'web3modal'
 
 import WalletConnectProvider from '@walletconnect/web3-provider'
@@ -15,11 +16,14 @@ import { contractAbi, contractAddress } from '../utils/web3'
 import { parseEther } from 'ethers/lib/utils'
 
 import 'react-toastify/dist/ReactToastify.css'
+import { customToast } from '../components/utils/customToast'
+import errorCapture from '../utils/web3/errorCapture'
 
 export default function Home() {
   const [web3Modal, setWeb3Modal] = useState<Web3Modal | null>(null)
   const [address, setAddress] = useState('')
   const [isMintLoading, setMintLoading] = useState(false)
+  const [isEth, setEth] = useState(true)
   const [ci, setContract] = useState<{
     contract: ethers.Contract | null
     signer: ethers.Signer | null
@@ -29,6 +33,7 @@ export default function Home() {
     signer: null,
     provider: null,
   })
+  const chakraToast = useToast()
 
   useEffect(() => {
     // initiate web3modal
@@ -109,17 +114,29 @@ export default function Home() {
     setAddress('')
   }
 
+  console.log('isEth ===>', isEth)
   const onMint = async () => {
     if (ci.contract === null || ci.signer === null || ci.provider === null) {
     } else {
       try {
         setMintLoading(true)
-        const mintResp = await ci.contract
-          .connect(ci.signer)
-          .mintInEth({ value: parseEther('.02') })
+        let mintResp
+        if (isEth) {
+          mintResp = await ci.contract
+            .connect(ci.signer)
+            .mintInEth({ value: parseEther('.02') })
+        } else {
+          mintResp = await ci.contract.connect(ci.signer).mintInApe()
+        }
+        if (!mintResp) {
+          throw Error('There is a minting error...')
+        }
 
-        console.log('999 mintResp', mintResp)
-
+        customToast({
+          text: 'Transaction is pending...',
+          txn: mintResp.hash,
+          toast: chakraToast,
+        })
         toast.info(
           `Trasnaction is minting on: https://goerli.etherscan.io/tx/${mintResp.hash}`
         )
@@ -127,12 +144,18 @@ export default function Home() {
         const receipt = await mintResp.wait()
 
         toast.success(`SUCCESS!!!!: ${mintResp.hash}`)
+        customToast({
+          text: 'Success',
+          txn: mintResp.hash,
+          toast: chakraToast,
+        })
         console.log('success receipt', receipt)
         setMintLoading(false)
       } catch (e: any) {
         setMintLoading(false)
-        console.log('ERROR minting ==>', e)
-        toast.error(`ERROR!!!!: ${e.message}`)
+        console.error('ERROR minting ==>', e)
+
+        errorCapture({ message: e.message, toast })
       }
     }
   }
@@ -147,7 +170,11 @@ export default function Home() {
       />
 
       <LandingSection />
-      <TokenSection mint={() => onMint()} isMintLoading={isMintLoading} />
+      <TokenSection
+        currencySwitch={() => setEth(!isEth)}
+        mint={() => onMint()}
+        isMintLoading={isMintLoading}
+      />
       <HowItWorksSection />
       <ArtistSection content={artistSection} />
       <FaqSection />
