@@ -32,7 +32,7 @@ const StyledText = styled(StyledP)`
 const isBlack = (bool: boolean | undefined) => {
   return bool
     ? { width: '95%', backgroundColor: 'black', color: 'white' }
-    : { zIndex: 20, width: '80%', backgroundColor: 'white' }
+    : { zIndex: 20, width: '90%', backgroundColor: 'white' }
 }
 
 const FaqAcccordion = ({

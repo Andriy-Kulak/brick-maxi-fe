@@ -32,6 +32,7 @@ const Container = styled.div`
   @media screen and (max-width: ${mobileBr}) {
     height: auto;
     height: auto;
+    padding: 2rem 0;
   }
 `
 

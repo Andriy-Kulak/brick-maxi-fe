@@ -14,13 +14,17 @@ const ImageC = styled.div`
   }
 `
 
+const LandingC = styled.div`
+  position: relative;
+  height: 90vh;
+
+  @media screen and (max-width: ${tabletBr}) {
+    height: 88vh;
+  }
+`
+
 const LandingSection = () => (
-  <div
-    style={{
-      position: 'relative',
-      height: '90vh',
-    }}
-  >
+  <LandingC>
     <Image
       alt="bg-art-1"
       priority
@@ -42,7 +46,7 @@ const LandingSection = () => (
         ART THAT PAYS DIVIDENS.
       </TitleH2>
     </Main100h>
-  </div>
+  </LandingC>
 )
 
 export default LandingSection

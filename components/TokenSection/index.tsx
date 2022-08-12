@@ -27,6 +27,7 @@ const { title, artist, description, type } = tokenSection
 
 const ApeContainer = styled.div`
   display: flex;
+  align-items: center;
   > h4:first-child {
     margin-right: 4px;
   }
@@ -84,7 +85,6 @@ const TokenSection = ({
         MINT PRICE: 200
       </TitleH4>
       <Image
-        style={{ margin: '0px 0px' }}
         width={25}
         height={25}
         src={images.apecoinLogo}

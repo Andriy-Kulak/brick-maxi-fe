@@ -31,19 +31,22 @@ const BackgroundC = styled.div`
   }
 `
 
+const MiniTextC = styled.div`
+  width: 100%;
+  padding: 20px 50px 0px;
+
+  @media screen and (max-width: ${mobileBr}) {
+    padding: 10px 0px 0px;
+  }
+`
+
 const HowItWorksSection = () => (
   <>
     <TextC>
-      <div
-        style={{
-          width: '100%',
-          padding: '0px 50px',
-        }}
-      >
-        <br />
+      <MiniTextC>
         <TitleH2Small>ART THAT PAYS DIVIDENDS.</TitleH2Small>
         <Divider thick={1} color="white" />
-      </div>
+      </MiniTextC>
       <Main>
         <TitleH1>You collect art.</TitleH1>
         <TitleH1>We purchase real estate.</TitleH1>
