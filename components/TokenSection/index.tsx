@@ -104,28 +104,30 @@ const TokenSection = ({
         </FlexRow>
       </DesktopView>
       <MobileView>
-        <MobileTextC>
-          <MobileTitleH3>{title}</MobileTitleH3>
-          <MobileStyledP weight={bold}>{artist}</MobileStyledP>
-        </MobileTextC>
-        {imageContainer}
-        <Test>
-          <div>
-            {mintText}
-            <StyledSwitch />
-          </div>
-          <div>{remainingText}</div>
-        </Test>
-        <FaqAcccordion
-          content={[
-            {
-              key: 1,
-              title: 'DETAILS',
-              p: 'This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at.',
-            },
-          ]}
-        ></FaqAcccordion>
-        {mintSection}
+        <>
+          <MobileTextC>
+            <MobileTitleH3>{title}</MobileTitleH3>
+            <MobileStyledP weight={bold}>{artist}</MobileStyledP>
+          </MobileTextC>
+          {imageContainer}
+          <Test>
+            <div>
+              {mintText}
+              <StyledSwitch />
+            </div>
+            <div>{remainingText}</div>
+          </Test>
+          <FaqAcccordion
+            content={[
+              {
+                key: 1,
+                title: 'DETAILS',
+                p: 'This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at.',
+              },
+            ]}
+          ></FaqAcccordion>
+          {mintSection}
+        </>
       </MobileView>
     </StyledBackground>
   )
