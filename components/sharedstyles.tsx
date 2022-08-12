@@ -149,6 +149,11 @@ const TitleH4 = styled.h4`
 
   font-style: normal;
   line-height: 23px;
+
+  @media screen and (max-width: ${laptopSmallBr}) {
+    font-size: 17px;
+    line-height: 18px;
+  }
 `
 
 const StyledP = styled.p`

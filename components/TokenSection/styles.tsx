@@ -7,9 +7,11 @@ export const ImageContainer = styled.div`
 
   @media screen and (max-width: ${laptopSmallBr}) {
     margin: 0px 20px;
+    width: 35%;
   }
   @media screen and (max-width: ${tabletBr}) {
     margin: 0px;
+    width: auto;
   }
 `
 
@@ -71,13 +73,13 @@ export const MobileTextC = styled.div`
   margin: 20px 0px;
 `
 
-export const Test = styled.div`
+export const SwitchC = styled.div`
   display: flex;
   flex-flow: row;
   justify-content: space-between;
   width: 100%;
   max-width: 500px;
-  padding: 20px;
+  padding: 10px 15px 20px;
 `
 
 export const MintSectionC = styled.div`

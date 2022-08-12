@@ -17,7 +17,7 @@ import {
   MobileTitleH3,
   MobileView,
   StyledBackground,
-  Test,
+  SwitchC,
   TextContainer,
 } from './styles'
 import { BeatLoader } from 'react-spinners'
@@ -74,27 +74,7 @@ const TokenSection = ({
     </MintSectionC>
   )
 
-  const mintText = (
-    <TitleH4 color={black} weight={bold}>
-      MINT PRICE:{' '}
-      {isEth ? (
-        '1.5Ξ'
-      ) : (
-        <>
-          200{' '}
-          <Image
-            style={{ margin: '0px 0px' }}
-            width={25}
-            height={25}
-            src={images.apecoinLogo}
-            alt="apecoin-logo"
-          />
-        </>
-      )}
-    </TitleH4>
-  )
-
-  const mintText2 = isEth ? (
+  const mintText = isEth ? (
     <TitleH4 color={black} weight={bold} style={{ margin: '5px 0px' }}>
       MINT PRICE:1.5Ξ
     </TitleH4>
@@ -132,7 +112,7 @@ const TokenSection = ({
 
             <FlexRow>
               <div style={{ width: '40%' }}>
-                {mintText2}
+                {mintText}
                 <br />
                 <StyledSwitch currencySwitch={currencySwitch} />
               </div>
@@ -154,13 +134,13 @@ const TokenSection = ({
             <MobileStyledP weight={bold}>{artist}</MobileStyledP>
           </MobileTextC>
           {imageContainer}
-          <Test>
+          <SwitchC>
             <div>
               {mintText}
               <StyledSwitch currencySwitch={currencySwitch} />
             </div>
             <div>{remainingText}</div>
-          </Test>
+          </SwitchC>
           <FaqAcccordion
             content={[
               {
@@ -170,7 +150,7 @@ const TokenSection = ({
               },
             ]}
           ></FaqAcccordion>
-          {mintSection}
+          {mintSection()}
         </>
       </MobileView>
     </StyledBackground>
