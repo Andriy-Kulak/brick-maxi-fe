@@ -5,40 +5,19 @@ import Web3Modal from 'web3modal'
 
 import WalletConnectProvider from '@walletconnect/web3-provider'
 import { ToastContainer, toast } from 'react-toastify'
-import { Nav } from '../components'
+import { Nav, ArtistSection } from '../components'
 
 import { artistSection } from '../content'
-// import TokenSection from '../components/TokenSection'
-// import HowItWorksSection from '../components/HowItWorksSection'
+import TokenSection from '../components/TokenSection'
+import HowItWorksSection from '../components/HowItWorksSection'
 import LandingSection from '../components/LandingSection'
-// import FaqSection from '../components/FaqSection'
+import FaqSection from '../components/FaqSection'
 import { contractAbi, contractAddress } from '../utils/web3'
 import { parseEther } from 'ethers/lib/utils'
 
 import 'react-toastify/dist/ReactToastify.css'
 import { customToast } from '../components/utils/customToast'
 import errorCapture from '../utils/web3/errorCapture'
-
-import dynamic from 'next/dynamic'
-import { Suspense } from 'react'
-
-const ArtistSection = dynamic(() => import('../components/ArtistSection'), {
-  suspense: true,
-})
-const TokenSection = dynamic(() => import('../components/TokenSection'), {
-  suspense: true,
-})
-
-const HowItWorksSection = dynamic(
-  () => import('../components/HowItWorksSection'),
-  {
-    suspense: true,
-  }
-)
-
-const FaqSection = dynamic(() => import('../components/FaqSection'), {
-  suspense: true,
-})
 
 export default function Home() {
   const [web3Modal, setWeb3Modal] = useState<Web3Modal | null>(null)
@@ -191,25 +170,15 @@ export default function Home() {
       />
 
       <LandingSection />
-
-      <Suspense fallback={`Loading...`}>
-        <TokenSection
-          isEth={isEth}
-          currencySwitch={() => setEth(!isEth)}
-          mint={() => onMint()}
-          isMintLoading={isMintLoading}
-        />
-      </Suspense>
-      <Suspense fallback={`Loading...`}>
-        <HowItWorksSection />
-      </Suspense>
-
-      <Suspense fallback={`Loading...`}>
-        <ArtistSection content={artistSection} />
-      </Suspense>
-      <Suspense fallback={`Loading...`}>
-        <FaqSection />
-      </Suspense>
+      <TokenSection
+        isEth={isEth}
+        currencySwitch={() => setEth(!isEth)}
+        mint={() => onMint()}
+        isMintLoading={isMintLoading}
+      />
+      <HowItWorksSection />
+      <ArtistSection content={artistSection} />
+      <FaqSection />
     </>
   )
 }
