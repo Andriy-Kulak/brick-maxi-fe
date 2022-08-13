@@ -43,7 +43,7 @@ const LandingSection = () => (
         />
       </ImageC>
       <TitleH2 style={{ position: 'relative', zIndex: 1 }}>
-        ART THAT PAYS DIVIDENS.
+        ART THAT PAYS DIVIDENDS.
       </TitleH2>
     </Main100h>
   </LandingC>

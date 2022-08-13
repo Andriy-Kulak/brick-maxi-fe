@@ -1,23 +1,27 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ethers, providers } from 'ethers'
 import { useToast } from '@chakra-ui/react'
 import Web3Modal from 'web3modal'
 
 import WalletConnectProvider from '@walletconnect/web3-provider'
 import { ToastContainer, toast } from 'react-toastify'
-import { Nav, ArtistSection } from '../components'
+import { Nav } from '../components'
 
 import { artistSection } from '../content'
-import TokenSection from '../components/TokenSection'
-import HowItWorksSection from '../components/HowItWorksSection'
 import LandingSection from '../components/LandingSection'
-import FaqSection from '../components/FaqSection'
 import { contractAbi, contractAddress } from '../utils/web3'
 import { parseEther } from 'ethers/lib/utils'
 
 import 'react-toastify/dist/ReactToastify.css'
 import { customToast } from '../components/utils/customToast'
 import errorCapture from '../utils/web3/errorCapture'
+
+const TokenSection = React.lazy(() => import('../components/TokenSection'))
+const HowItWorksSection = React.lazy(
+  () => import('../components/HowItWorksSection')
+)
+const FaqSection = React.lazy(() => import('../components/FaqSection'))
+const ArtistSection = React.lazy(() => import('../components/ArtistSection'))
 
 export default function Home() {
   const [web3Modal, setWeb3Modal] = useState<Web3Modal | null>(null)
