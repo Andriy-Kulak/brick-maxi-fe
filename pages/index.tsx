@@ -12,7 +12,7 @@ import TokenSection from '../components/TokenSection'
 import HowItWorksSection from '../components/HowItWorksSection'
 import LandingSection from '../components/LandingSection'
 import FaqSection from '../components/FaqSection'
-import { contractAbi, contractAddress } from '../utils/web3'
+import { contractAbi, contractAddress, selectedNet } from '../utils/web3'
 import { parseEther } from 'ethers/lib/utils'
 
 import 'react-toastify/dist/ReactToastify.css'
@@ -24,6 +24,7 @@ export default function Home() {
   const [address, setAddress] = useState('')
   const [isMintLoading, setMintLoading] = useState(false)
   const [isEth, setEth] = useState(true)
+  const [quantity, setQuantity] = useState(1)
   const [ci, setContract] = useState<{
     contract: ethers.Contract | null
     signer: ethers.Signer | null
@@ -83,6 +84,14 @@ export default function Home() {
     addListeners(provider)
     console.log('yyy 222', provider)
     const ethersProvider = new providers.Web3Provider(provider)
+
+    const { chainId } = await ethersProvider.getNetwork()
+    if (chainId !== selectedNet.chainId) {
+      toast.error(
+        `App contract is on ${selectedNet.name}. Please sign in on this network! :-)`
+      )
+      return
+    }
     console.log('yyy 333', ethersProvider)
     const signer = await ethersProvider.getSigner()
     const userAddress = await signer.getAddress()
@@ -114,17 +123,25 @@ export default function Home() {
     setAddress('')
   }
 
-  console.log('isEth ===>', isEth)
+  console.log('quantity xxx ===>', quantity)
   const onMint = async () => {
     if (ci.contract === null || ci.signer === null || ci.provider === null) {
+      toast.error('Please sign in before minting!')
     } else {
+      const { chainId } = await ci.provider.getNetwork()
+      if (chainId !== selectedNet.chainId) {
+        toast.error(
+          `App contract is on ${selectedNet.name}. Please switch to it before minting`
+        )
+      }
       try {
         setMintLoading(true)
         let mintResp
         if (isEth) {
+          const price = String(quantity * 0.02)
           mintResp = await ci.contract
             .connect(ci.signer)
-            .mintInEth({ value: parseEther('.02') })
+            .mintInEth(quantity, { value: parseEther(price) })
         } else {
           mintResp = await ci.contract.connect(ci.signer).mintInApe()
         }
@@ -138,7 +155,7 @@ export default function Home() {
           toast: chakraToast,
         })
         toast.info(
-          `Trasnaction is minting on: https://goerli.etherscan.io/tx/${mintResp.hash}`
+          `Trasnaction is minting on: https://${selectedNet.name}.etherscan.io/tx/${mintResp.hash}`
         )
 
         const receipt = await mintResp.wait()
@@ -175,6 +192,8 @@ export default function Home() {
         currencySwitch={() => setEth(!isEth)}
         mint={() => onMint()}
         isMintLoading={isMintLoading}
+        quantity={quantity}
+        setQuantity={setQuantity}
       />
       <HowItWorksSection />
       <ArtistSection content={artistSection} />

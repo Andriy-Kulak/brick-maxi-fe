@@ -55,15 +55,19 @@ const TokenSection = ({
   isMintLoading,
   currencySwitch,
   isEth,
+  quantity,
+  setQuantity,
 }: {
   mint: () => void
   isMintLoading: boolean
   currencySwitch: () => void
   isEth: boolean
+  setQuantity: (qty: number) => void
+  quantity: number
 }) => {
   const mintSection = () => (
     <MintSectionC>
-      <Select />
+      <Select quantity={quantity} setQuantity={setQuantity} />
       {isMintLoading === true ? (
         <BeatLoader
           speedMultiplier={0.5}
