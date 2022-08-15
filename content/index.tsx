@@ -6,6 +6,9 @@ import burgerIcon from '../public/assets/icons/hamburger.png'
 import xIcon from '../public/assets/icons/x.png'
 import ethescanLogo from '../public/assets/icons/etherscan-logo.webp'
 import apecoinLogo from '../public/assets/icons/apecoin.png'
+import missionTitle from '../public/assets/titles/MISSION_WHITE.png'
+import howItWorksTitle from '../public/assets/titles/HOW_IT_WORKS_WHITE.png'
+import ArtistsTitle from '../public/assets/titles/ARTISTS_WHITE.png'
 
 export const images = {
   brickMaxiLogo,
@@ -16,6 +19,9 @@ export const images = {
   xIcon,
   ethescanLogo,
   apecoinLogo,
+  missionTitle,
+  howItWorksTitle,
+  ArtistsTitle,
 }
 
 export const artistSection = [

@@ -131,12 +131,25 @@ const GlobalStyle = createGlobalStyle`
     
     /* Styling of overlay */
   .bm-overlay {
-      background: rgba(0, 0, 0, 0.3);
+      background: black;
     }
 
   .bm-center {
     margin: auto !important;
     margin-top: 20px !important;
+  }
+
+  .mission-button {
+    text-align: center;
+    position: relative !important;
+
+    >button {
+      position: relative !important;
+    }
+  }
+
+  button, a {
+    cursor: pointer;
   }
 
 `
