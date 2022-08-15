@@ -28,13 +28,12 @@ const Container = styled.div`
 
   z-index: 1000;
   display: ${(props: { isMissionPageOpen: boolean }) =>
-    props.isMissionPageOpen ? 'inherited' : 'none'};
+    props.isMissionPageOpen ? 'inherit' : 'none'};
   overflow-y: visible;
   overflow: visible;
   top: 0;
   left: 0;
   width: 100vw;
-  display: inherit;
   min-height: 100vh;
   background-color: black;
   position: sticky;
