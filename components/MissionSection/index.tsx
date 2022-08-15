@@ -1,14 +1,8 @@
 import styled from 'styled-components'
 import Image from 'next/image'
-import { StyledP, TitleH1 } from '../sharedstyles'
-import brickMaxiLogo from '../../public/assets/logo.png'
+import { StyledP } from '../sharedstyles'
 import { Button, ButtonProps } from '@chakra-ui/react'
-import {
-  laptopLargeBr,
-  mobileBr,
-  tabletBr,
-  tabletBrPixels,
-} from '../../utils/breakpoints'
+import { mobileBr, tabletBr } from '../../utils/breakpoints'
 import { images, teamProfiles } from '../../content'
 import { avenirNextCondensed, gillSans, weight } from '../utils/fontConfigs'
 
@@ -40,6 +34,8 @@ const Container = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
+  display: inherit;
+  min-height: 100vh;
   background-color: black;
   position: sticky;
   top: 0;
@@ -94,8 +90,8 @@ const SubTitle = styled.p`
 
 const Xbutton = styled.button`
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 30px;
+  right: 14px;
 `
 
 const TextContainer = styled.div`
@@ -113,6 +109,16 @@ const Main = styled.div`
   align-items: center;
 `
 
+const ImageContainer = styled.div`
+  position: absolute;
+  top: 40%;
+  left: 15px;
+
+  @media screen and (max-width: ${tabletBr}) {
+    position: relative;
+  }
+`
+
 const MissionSection = ({
   setMissionPage,
   isMissionPageOpen,
@@ -126,21 +132,21 @@ const MissionSection = ({
     <Container isMissionPageOpen={isMissionPageOpen}>
       <Xbutton onClick={() => setMissionPage(false)}>
         <Image
-          width={29}
-          height={29}
+          width={24}
+          height={24}
           src={images.xIcon}
           alt="mission-page-close"
         />
       </Xbutton>
       <Main>
-        <div style={{ position: 'relative' }}>
+        <ImageContainer>
           <Image
-            height={105}
+            height={125}
             width={34}
             src={images.missionTitle}
             alt="Mission"
           />
-        </div>
+        </ImageContainer>
         <TextContainer>
           <StyledP color="white">
             <b>Brick Maxi</b> was born with a single purpose: the long-term

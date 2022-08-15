@@ -18,7 +18,6 @@ import MissionSection from '../MissionSection'
 const StyledSticky = styled.div`
   top: 0;
   left: 0;
-  height: 80px;
   position: sticky;
   background-color: black;
   color: white;
@@ -45,7 +44,9 @@ const TopFlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  align-content: center;
   flex-direction: row;
+  height: 85px;
 
   div {
     margin: 0px 60px;
@@ -183,7 +184,11 @@ const Nav = ({
           {pageWidth < tabletBrPixels && (
             <>
               <div
-                style={{ marginTop: '10px', marginLeft: '19px', zIndex: 1101 }}
+                style={{
+                  marginTop: '10px',
+                  marginLeft: '19px',
+                  zIndex: 100001,
+                }}
               >
                 <Image
                   alt="Brick Maxi Logo"
@@ -197,7 +202,7 @@ const Nav = ({
                   customBurgerIcon={
                     <Image
                       width={29}
-                      height={25}
+                      height={18}
                       src={images.burgerIcon}
                       alt="mobile-menu-open"
                     />
