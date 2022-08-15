@@ -185,7 +185,6 @@ export default function Home() {
         address={address}
         disconnect={disconnect}
       />
-
       <LandingSection />
       <TokenSection
         isEth={isEth}

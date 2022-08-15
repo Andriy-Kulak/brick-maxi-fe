@@ -9,6 +9,7 @@ import apecoinLogo from '../public/assets/icons/apecoin.png'
 import missionTitle from '../public/assets/titles/MISSION_WHITE.png'
 import howItWorksTitle from '../public/assets/titles/HOW_IT_WORKS_WHITE.png'
 import ArtistsTitle from '../public/assets/titles/ARTISTS_WHITE.png'
+import imgSample from '../public/assets/brickMaxiSample.png'
 
 export const images = {
   brickMaxiLogo,
@@ -22,6 +23,7 @@ export const images = {
   missionTitle,
   howItWorksTitle,
   ArtistsTitle,
+  imgSample,
 }
 
 export const artistSection = [
@@ -82,3 +84,10 @@ export const tokenSection = {
     'This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at.',
   type: 'Residential',
 }
+
+export const teamProfiles = [
+  { name: 'Name', role: 'role', key: 1 },
+  { name: 'Name', role: 'role', key: 2 },
+  { name: 'Name', role: 'role', key: 3 },
+  { name: 'Name', role: 'role', key: 4 },
+]

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Image from 'next/image'
-import { StyledP } from '../sharedstyles'
+import { StyledP, TitleH1 } from '../sharedstyles'
 import brickMaxiLogo from '../../public/assets/logo.png'
 import { Button, ButtonProps } from '@chakra-ui/react'
 import {
@@ -9,7 +9,10 @@ import {
   tabletBr,
   tabletBrPixels,
 } from '../../utils/breakpoints'
-import { images } from '../../content'
+import { images, teamProfiles } from '../../content'
+import { avenirNextCondensed, gillSans, weight } from '../utils/fontConfigs'
+
+const { bold } = weight
 
 export const StyledButton = styled(Button).attrs({
   colorScheme: 'black',
@@ -27,12 +30,66 @@ export const StyledButton = styled(Button).attrs({
 ` as typeof Button
 
 const Container = styled.div`
-  margin: 20px;
+  padding: 20px;
+
+  z-index: 1000;
   display: ${(props: { isMissionPageOpen: boolean }) =>
-    props.isMissionPageOpen ? 'fixed' : 'none'};
+    props.isMissionPageOpen ? 'inherited' : 'none'};
+  overflow-y: visible;
+  overflow: visible;
+  top: 0;
+  left: 0;
   width: 100vw;
-  height: 100vh;
   background-color: black;
+  position: sticky;
+  top: 0;
+  left: 0;
+`
+
+const FlexBox = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 50px;
+  > div {
+    padding: 20px 15px 0px;
+    width: 25%;
+  }
+  @media screen and (max-width: ${mobileBr}) {
+    margin: 20px 0px;
+
+    > div {
+      padding: 0px 0px 10px;
+      width: 50%;
+    }
+
+    > div:nth-child(odd) {
+      padding-right: 15px;
+    }
+
+    > div:nth-child(even) {
+      padding-right: 15px;
+    }
+  }
+`
+
+const Title = styled.h3`
+  font-size: 24px;
+  font-family: ${avenirNextCondensed};
+  text-align: center;
+  color: white;
+  font-weight: ${bold};
+`
+
+const SubTitle = styled.p`
+  font-family: ${gillSans};
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+
+  text-align: center;
+
+  color: #808080;
 `
 
 const Xbutton = styled.button`
@@ -78,8 +135,8 @@ const MissionSection = ({
       <Main>
         <div style={{ position: 'relative' }}>
           <Image
-            height={95}
-            width={33}
+            height={105}
+            width={34}
             src={images.missionTitle}
             alt="Mission"
           />
@@ -100,6 +157,20 @@ const MissionSection = ({
             usher in the future.
           </StyledP>
         </TextContainer>
+        <FlexBox>
+          {teamProfiles.map((x) => (
+            <div key={x.key}>
+              <Image
+                alt="img-sample"
+                width={365}
+                height={365}
+                src={images.imgSample}
+              />
+              <Title> {x.name}</Title>
+              <SubTitle>{x.role}</SubTitle>
+            </div>
+          ))}
+        </FlexBox>
       </Main>
     </Container>
   )
