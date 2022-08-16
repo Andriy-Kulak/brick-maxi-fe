@@ -1,3 +1,5 @@
+import { ethers, providers } from 'ethers'
+
 //rinkeby.etherscan.io/address/0x03374be43815b9FA89daD4962691F5bF47A2dDed#code
 export const contractAddress = '0x03374be43815b9FA89daD4962691F5bF47A2dDed'
 
@@ -827,3 +829,13 @@ export const contractAbi = [
     type: 'function',
   },
 ]
+
+export const ethersDefaultProvider = new providers.InfuraProvider(
+  selectedNet.chainId,
+  process.env.NEXT_PUBLIC_INFURA_ID
+)
+export const contract = new ethers.Contract(
+  contractAddress,
+  contractAbi,
+  ethersDefaultProvider
+)

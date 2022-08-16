@@ -43,13 +43,6 @@ const imageContainer = (
   </ImageContainer>
 )
 
-const remainingText = (
-  <>
-    <TitleH4>REMAINING</TitleH4>
-    <StyledP weight={bold}>100 / 100</StyledP>
-  </>
-)
-
 const TokenSection = ({
   mint,
   isMintLoading,
@@ -57,6 +50,7 @@ const TokenSection = ({
   isEth,
   quantity,
   setQuantity,
+  mintValues,
 }: {
   mint: () => void
   isMintLoading: boolean
@@ -64,6 +58,12 @@ const TokenSection = ({
   isEth: boolean
   setQuantity: (qty: number) => void
   quantity: number
+  mintValues: {
+    apePrice: null | string
+    ethPrice: null | string
+    maxSupply: null | number
+    tokensLeft: null | number
+  }
 }) => {
   const mintSection = () => (
     <MintSectionC>
@@ -79,14 +79,23 @@ const TokenSection = ({
     </MintSectionC>
   )
 
+  const remainingText = (
+    <>
+      <TitleH4>REMAINING</TitleH4>
+      <StyledP weight={bold}>
+        {mintValues.tokensLeft} / {mintValues.maxSupply}
+      </StyledP>
+    </>
+  )
+
   const mintText = isEth ? (
     <TitleH4 color={black} weight={bold} style={{ margin: '5px 0px' }}>
-      MINT PRICE:1.5Ξ
+      MINT PRICE: {mintValues.ethPrice}Ξ
     </TitleH4>
   ) : (
     <ApeContainer>
       <TitleH4 color={black} weight={bold}>
-        MINT PRICE: 200
+        MINT PRICE: {mintValues.apePrice}
       </TitleH4>
       <Image
         width={25}

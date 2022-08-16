@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { ethers, providers } from 'ethers'
+import { ethers } from 'ethers'
 import { useToast } from '@chakra-ui/react'
 import { ToastContainer, toast } from 'react-toastify'
 import { Nav, ArtistSection } from '../components'
@@ -9,7 +9,7 @@ import TokenSection from '../components/TokenSection'
 import HowItWorksSection from '../components/HowItWorksSection'
 import LandingSection from '../components/LandingSection'
 import FaqSection from '../components/FaqSection'
-import { selectedNet } from '../utils/web3'
+import { contract, selectedNet } from '../utils/web3'
 import { parseEther } from 'ethers/lib/utils'
 
 import 'react-toastify/dist/ReactToastify.css'
@@ -33,8 +33,42 @@ export default function Home() {
     provider: null,
     address: '',
   })
+
+  const [mintValues, setMintValues] = useState<{
+    apePrice: null | string
+    ethPrice: null | string
+    tokensLeft: null | number
+    maxSupply: null | number
+  }>({
+    apePrice: null,
+    ethPrice: null,
+    maxSupply: null,
+    tokensLeft: null,
+  })
   const [connectWallet, disconnect] = useConnect({ setContract })
   const chakraToast = useToast()
+
+  useEffect(() => {
+    ;(async () => {
+      const [apePriceRaw, ethPriceRaw, tokensLeft, maxSupply] =
+        await Promise.all([
+          contract.PRICE_APE(),
+          contract.PRICE_ETH(),
+          contract.getTokensLeft(),
+          contract.CURRENT_MAX_SUPPLY(),
+        ])
+
+      const apePrice = ethers.utils.formatEther(apePriceRaw)
+      const ethPrice = ethers.utils.formatEther(ethPriceRaw)
+
+      setMintValues({
+        apePrice,
+        ethPrice,
+        tokensLeft,
+        maxSupply,
+      })
+    })()
+  }, [])
 
   const onMint = async () => {
     if (ci.contract === null || ci.signer === null || ci.provider === null) {
@@ -99,6 +133,7 @@ export default function Home() {
       />
       <LandingSection />
       <TokenSection
+        mintValues={mintValues}
         isEth={isEth}
         currencySwitch={() => setEth(!isEth)}
         mint={() => onMint()}

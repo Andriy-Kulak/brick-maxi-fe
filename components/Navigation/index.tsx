@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { StyledP, StyledButton } from '../sharedstyles'
 import brickMaxiLogo from '../../public/assets/logo.png'
 import { trimAddress } from '../../utils/helpers'
-import { Link } from 'react-scroll'
 import NextLink from 'next/link'
 import {
   laptopLargeBr,
@@ -93,6 +92,19 @@ const Nav = ({
 
   console.log('isMobileOpen', isMobileOpen)
 
+  const setMissionPage2 = (state: boolean) => {
+    if (state === true) {
+      // When the modal is shown, we want a fixed body
+      document.body.style.position = 'fixed'
+      // document.body.style.top = `-${window.scrollY}px`
+    } else {
+      // When the modal is hidden, we want to remain at the top of the scroll position
+      document.body.style.position = ''
+      document.body.style.top = ''
+    }
+    setMissionPage(state)
+  }
+
   return (
     <>
       <MissionSection
@@ -126,12 +138,15 @@ const Nav = ({
               </MidFlexContainer>
 
               <div>
-                <Image
-                  alt="Brick Maxi Logo"
-                  src={brickMaxiLogo}
-                  height={80}
-                  width={80}
-                />
+                <NextLink href="/">
+                  <Image
+                    className="nav-link"
+                    alt="Brick Maxi Logo"
+                    src={brickMaxiLogo}
+                    height={80}
+                    width={80}
+                  />
+                </NextLink>
               </div>
               <MidFlexContainer>
                 <div>
@@ -172,12 +187,15 @@ const Nav = ({
                   zIndex: 100001,
                 }}
               >
-                <Image
-                  alt="Brick Maxi Logo"
-                  src={brickMaxiLogo}
-                  height={60}
-                  width={60}
-                />
+                <NextLink href="/">
+                  <Image
+                    className="nav-link"
+                    alt="Brick Maxi Logo"
+                    src={brickMaxiLogo}
+                    height={60}
+                    width={60}
+                  />
+                </NextLink>
               </div>
               <MobileMenuC>
                 <Menu
