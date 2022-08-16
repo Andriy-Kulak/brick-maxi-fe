@@ -66,6 +66,7 @@ const MidFlexContainer = styled.div`
 `
 
 const MobileMenuC = styled.div`
+  display: flex;
   @media screen and(min-width: ${tabletBr} ) {
     display: none;
   }
@@ -165,6 +166,7 @@ const Nav = ({
             <>
               <div
                 style={{
+                  position: 'absolute',
                   marginTop: '10px',
                   marginLeft: '19px',
                   zIndex: 100001,
@@ -213,33 +215,37 @@ const Nav = ({
                       {address ? trimAddress(address) : 'Connect'}
                     </StyledButton>
                   </div>
-                  {/* <Link
-                    to="mission-section"
-                    smooth={true}
-                    duration={500}
-                    offset={-80}
-                    onClick={() => setMobileMenu(false)}
-                  >
-                    <StyledP color="white">Mission</StyledP>
-                  </Link> */}
-                  <Link
-                    to="artist-section"
-                    smooth={true}
-                    duration={500}
-                    offset={-80}
-                    onClick={() => setMobileMenu(false)}
-                  >
-                    <StyledP color="white">Artists</StyledP>
-                  </Link>
-                  <Link
-                    to="learn-section"
-                    smooth={true}
-                    duration={500}
-                    offset={-80}
-                    onClick={() => setMobileMenu(false)}
-                  >
-                    <StyledP color="white">Learn</StyledP>
-                  </Link>
+                  <div>
+                    <NextLink
+                      href="/#artist-section"
+                      onClick={() => setMobileMenu(false)}
+                    >
+                      <StyledP className="nav-link" color="white">
+                        Artists
+                      </StyledP>
+                    </NextLink>
+                  </div>
+                  <div>
+                    <NextLink
+                      href="/#learn-section"
+                      onClick={() => setMobileMenu(false)}
+                    >
+                      <StyledP className="nav-link" color="white">
+                        Learn
+                      </StyledP>
+                    </NextLink>
+                  </div>
+
+                  <div>
+                    <NextLink
+                      href="/rewards"
+                      onClick={() => setMobileMenu(false)}
+                    >
+                      <StyledP className="nav-link" color="white">
+                        Rewards
+                      </StyledP>
+                    </NextLink>
+                  </div>
                   <a
                     onClick={() => {
                       setMissionPage(true)
