@@ -124,8 +124,6 @@ const MissionSection = ({
   setMissionPage: (state: boolean) => void
   isMissionPageOpen: boolean
 }) => {
-  console.log('isMissionPageOpen', isMissionPageOpen)
-
   return (
     <Container isMissionPageOpen={isMissionPageOpen}>
       <Xbutton onClick={() => setMissionPage(false)}>
