@@ -108,8 +108,8 @@ const TitleH2Small = styled.h2`
   font-style: italic;
   font-family: ${avenirNextCondensed};
   font-weight: 600;
-  font-size: 36px;
-  line-height: 49px;
+  font-size: 24px;
+  line-height: 32px;
   @media screen and (max-width: ${mobileBr}) {
     font-size: 17px;
     line-height: 23px;

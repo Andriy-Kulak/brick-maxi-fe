@@ -45,7 +45,7 @@ const HowItWorksSection = () => (
     <TextC>
       <MiniTextC>
         <TitleH2Small>ART THAT PAYS DIVIDENDS.</TitleH2Small>
-        <Divider thick={1} color="white" />
+        <Divider thick={0.5} color="white" />
       </MiniTextC>
       <Main>
         <TitleH1>You collect art.</TitleH1>
