@@ -24,7 +24,7 @@ export default function Rewards() {
         address={ci.address}
         disconnect={disconnect}
       />
-      <RewardsSection />
+      <RewardsSection connect={() => connectWallet()} address={ci.address} />
     </>
   )
 }
