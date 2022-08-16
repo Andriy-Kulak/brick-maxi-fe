@@ -13,7 +13,10 @@ import { weight } from '../utils/fontConfigs'
 const { normal } = weight
 
 const StyledPwMargin = styled(StyledP)`
+  font-size: 15px;
   margin-left: 20px;
+  font-weight: ${(props: { weight?: number }) =>
+    props.weight || 400} !important;
   background-color: transparent !important;
 
   color: ${(props: { black?: boolean }) =>
@@ -25,6 +28,10 @@ const StyledPwMargin = styled(StyledP)`
 `
 
 const StyledText = styled(StyledP)`
+  margin-left: 30px;
+  @media screen and (max-width: ${mobileBr}) {
+    margin-left: 22px;
+  }
   color: ${(props: { black?: boolean }) =>
     props.black ? 'white' : 'black'} !important;
 `
@@ -48,7 +55,7 @@ const FaqAcccordion = ({
     style={isBlack(black)}
   >
     {content.map((x) => (
-      <AccordionItem key={x.key}>
+      <AccordionItem key={x.key} border="0px">
         {({ isExpanded }) => (
           <>
             <AccordionButton>
@@ -57,7 +64,9 @@ const FaqAcccordion = ({
               ) : (
                 <ArrowForwardIcon fontSize="12px" />
               )}
-              <StyledPwMargin black={black}>{x.title}</StyledPwMargin>
+              <StyledPwMargin black={black} weight={isExpanded ? 600 : 400}>
+                {x.title}
+              </StyledPwMargin>
             </AccordionButton>
 
             <AccordionPanel pb={4}>

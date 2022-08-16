@@ -9,9 +9,10 @@ const { bold } = weight
 
 const FlexBox = styled.div`
   display: flex;
+  margin: 0px 35px;
 
   > div {
-    margin: 20px 25px 0px;
+    margin: 20px 20px 0px;
   }
   @media screen and (max-width: ${mobileBr}) {
     flex-direction: column;

@@ -11,8 +11,8 @@ const H1 = styled.h1`
   font-family: ${avenirNextCondensed};
   font-style: normal;
   font-weight: 600;
-  font-size: 32px;
-  line-height: 44px;
+  font-size: 24px;
+  line-height: 33px;
   text-align: center;
   color: black;
   @media screen and (max-width: ${mobileBr}) {
@@ -32,8 +32,8 @@ const StyledP = styled.p`
   font-family: ${gillSans};
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 29px;
+  font-size: 13px;
+  line-height: 14px;
 
   text-align: center;
 
@@ -49,8 +49,8 @@ const StyledPItalic = styled.p`
   font-family: ${gillSans};
   font-style: italic;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 18px;
+  font-size: 10px;
+  line-height: 12px;
   text-align: center;
 
   color: #808080;
@@ -72,7 +72,7 @@ const FlexBox = styled.div`
     background: rgba(255, 255, 255, 0.95);
     margin: 50px 10px;
     padding: 50px;
-    width: 80%;
+    width: 60%;
     @media screen and (max-width: ${tabletBr}) {
       width: auto;
       margin: 10px 20px;
@@ -85,7 +85,7 @@ const FlexBox = styled.div`
 
   > div > div {
     margin: 10px 50px;
-    margin: 50px 150px;
+    margin: 50px 70px;
     @media screen and (max-width: ${laptopLargeBr}) {
       margin: 10px 40px;
     }
@@ -97,7 +97,7 @@ const FlexBox = styled.div`
 `
 
 const Divider = styled.hr`
-  border: 1px solid black;
+  border: 0.5px solid black;
   margin: 50px 150px;
 
   @media screen and (max-width: ${laptopSmallBr}) {
