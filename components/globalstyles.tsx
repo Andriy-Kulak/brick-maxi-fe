@@ -116,14 +116,15 @@ const GlobalStyle = createGlobalStyle`
       flex-direction: column;
       height: 50% !important;
       margin: auto;
+      margin: 100px auto 0px;
     }
     
   /* Individual item */
   .bm-item {
-    margin: 30px 10px;
+      margin: 15px 10px !important;
       display: flex;
       color: white;
-      margin-bottom: 10px;
+      margin-bottom: 40px;
       text-align: center;
       text-decoration: none;
       transition: color 0.2s;
