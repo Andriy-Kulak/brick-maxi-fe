@@ -92,39 +92,23 @@ const Nav = ({
 
   console.log('isMobileOpen', isMobileOpen)
 
-  const setMissionPage2 = (state: boolean) => {
-    if (state === true) {
-      // When the modal is shown, we want a fixed body
-      document.body.style.position = 'fixed'
-      // document.body.style.top = `-${window.scrollY}px`
-    } else {
-      // When the modal is hidden, we want to remain at the top of the scroll position
-      document.body.style.position = ''
-      document.body.style.top = ''
-    }
-    setMissionPage(state)
-  }
-
   return (
     <>
-      <MissionSection
+      {/* <MissionSection
         setMissionPage={setMissionPage}
         isMissionPageOpen={isMissionPageOpen}
-      />
+      /> */}
       <StyledSticky>
         <TopFlexContainer>
           {pageWidth === 0 && <></>}
           {pageWidth >= tabletBrPixels && (
             <>
               <MidFlexContainer left>
-                <a
-                  onClick={() => {
-                    setMissionPage(true)
-                    setMobileMenu(false)
-                  }}
-                >
-                  <StyledP color="white">Mission</StyledP>
-                </a>
+                <NextLink href="/mission">
+                  <StyledP className="nav-link" color="white">
+                    Mission
+                  </StyledP>
+                </NextLink>
                 <NextLink href="/#artist-section">
                   <StyledP className="nav-link" color="white">
                     Artists
@@ -267,14 +251,13 @@ const Nav = ({
                       </StyledP>
                     </NextLink>
                   </div>
-                  <a
-                    onClick={() => {
-                      setMissionPage(true)
-                      setMobileMenu(false)
-                    }}
-                  >
-                    <StyledP color="white">Mission</StyledP>
-                  </a>
+                  <div>
+                    <NextLink href="/mission">
+                      <StyledP className="nav-link" color="white">
+                        Mission
+                      </StyledP>
+                    </NextLink>
+                  </div>
                 </Menu>
               </MobileMenuC>
             </>
