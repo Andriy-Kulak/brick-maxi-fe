@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { ethers } from 'ethers'
+import { BigNumberish, ethers } from 'ethers'
 import { useToast } from '@chakra-ui/react'
 import { ToastContainer, toast } from 'react-toastify'
 import { Nav, ArtistSection } from '../components'
@@ -67,6 +67,16 @@ export default function Home() {
         tokensLeft,
         maxSupply,
       })
+
+      contract.on(
+        'MintSuccess',
+        (to: string, quantity: BigNumberish, remainingTokens: BigNumberish) => {
+          setMintValues({
+            ...mintValues,
+            tokensLeft: Number(remainingTokens.toString()),
+          })
+        }
+      )
     })()
   }, [])
 

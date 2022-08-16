@@ -1,7 +1,7 @@
 import { ethers, providers } from 'ethers'
 
-//rinkeby.etherscan.io/address/0x03374be43815b9FA89daD4962691F5bF47A2dDed#code
-export const contractAddress = '0x03374be43815b9FA89daD4962691F5bF47A2dDed'
+//rinkeby.etherscan.io/address/0x2Cb8910CA2Edcb19D9A8C2a5B3849886FCb43928#code
+export const contractAddress = '0x2Cb8910CA2Edcb19D9A8C2a5B3849886FCb43928'
 
 const nets = [
   { name: 'rinkeby', chainId: 4 },
@@ -182,6 +182,31 @@ export const contractAbi = [
       },
     ],
     name: 'ConsecutiveTransfer',
+    type: 'event',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: 'address',
+        name: 'to',
+        type: 'address',
+      },
+      {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'quantity',
+        type: 'uint256',
+      },
+      {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'remainingTokens',
+        type: 'uint256',
+      },
+    ],
+    name: 'MintSuccess',
     type: 'event',
   },
   {
