@@ -3,10 +3,11 @@ import { laptopSmallBr, tabletBr } from '../../utils/breakpoints'
 import { Main, TitleH3, StyledP } from '../sharedstyles'
 
 export const ImageContainer = styled.div`
-  margin: 0px 60px;
+  margin: 0px 60px 0px 0px;
 
   @media screen and (max-width: ${laptopSmallBr}) {
-    margin: 0px 20px;
+    /* margin: 0px 20px; */
+    margin: 0px 20px 0px 0px;
     width: 35%;
   }
   @media screen and (max-width: ${tabletBr}) {
@@ -34,6 +35,7 @@ export const LiveSpan = styled.span`
 `
 
 export const DesktopView = styled(Main)`
+  padding: 3rem 0;
   @media screen and (max-width: ${tabletBr}) {
     display: none;
   }

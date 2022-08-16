@@ -15,7 +15,7 @@ const QuantitySelect = ({
 
   return (
     <div style={{ width: '70px' }}>
-      <StyledP style={{ textAlign: 'center' }}>QTY</StyledP>
+      <StyledP style={{ textAlign: 'left' }}>QTY</StyledP>
       <Select onChange={handleChange} value={quantity.toString()}>
         {valArray.map((x: number) => (
           <option key={x} value={x}>

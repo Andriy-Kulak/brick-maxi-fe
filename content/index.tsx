@@ -12,7 +12,7 @@ import artistsTitle from '../public/assets/titles/ARTISTS_WHITE.png'
 import rewardsTitle from '../public/assets/titles/REWARDS_HEADING.png'
 import imgSample from '../public/assets/brickMaxiSample.png'
 import rewardsBg from '../public/assets/rewards_page_bg.png'
-import mintBtn from '../public/assets/mint_button.png'
+import mintBtn from '../public/assets/mint_button2.png'
 import collectBtn from '../public/assets/collect_button.png'
 
 export const images = {
@@ -89,7 +89,7 @@ export const tokenSection = {
   title: 'TOKEN NAME',
   artist: 'bottoproject',
   description:
-    'This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at.',
+    'This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at. This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at. This is the info that goes here that is the info that',
   type: 'Residential',
 }
 

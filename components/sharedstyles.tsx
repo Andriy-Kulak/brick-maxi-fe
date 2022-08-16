@@ -69,13 +69,8 @@ const TitleH1 = styled.h1`
   color: white;
   font-style: normal;
   font-weight: 600;
-  font-size: 80px;
-  line-height: 95px;
-
-  @media screen and (max-width: ${laptopSmallBr}) {
-    font-size: 55px;
-    line-height: 65px;
-  }
+  font-size: 40px;
+  line-height: 48px;
 
   @media screen and (max-width: ${mobileBr}) {
     font-size: 20px;
@@ -91,7 +86,7 @@ const TitleH2 = styled.h2`
   font-style: italic;
   font-family: ${avenirNextCondensed};
   font-weight: 600;
-  font-size: 60px;
+  font-size: 40px;
   line-height: 82px;
 
   @media screen and (max-width: ${tabletBr}) {
@@ -124,13 +119,12 @@ const TitleH2Small = styled.h2`
 const TitleH3 = styled.h3`
   margin: 0;
   line-height: 1.15;
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 600;
   color: ${(props: { color?: string }) => props.color || 'black'};
   text-decoration: none;
   font-family: ${avenirNextCondensed};
   margin-bottom: 15px;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   @media screen and (max-width: ${mobileBr}) {
     font-size: 20px;
@@ -141,7 +135,7 @@ const TitleH3 = styled.h3`
 // AK_TO_DO duplicate of StyledP. will remove if designs don't change
 const TitleH4 = styled.h4`
   margin: 0;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: ${(props: { weight?: number }) => props.weight || 400};
   color: ${(props: { color?: string }) => props.color || grey1};
   text-decoration: none;
@@ -149,25 +143,19 @@ const TitleH4 = styled.h4`
   font-family: ${gillSans};
 
   font-style: normal;
-  line-height: 23px;
-
-  @media screen and (max-width: ${laptopSmallBr}) {
-    font-size: 17px;
-    line-height: 18px;
-  }
 `
 
 const StyledP = styled.p`
   margin: 0;
-  font-size: 20px;
+
   font-weight: ${(props: { weight?: number }) => props.weight || 400};
   color: ${(props: { color?: string }) => props.color || 'black'};
   text-decoration: none;
   letter-spacing: normal;
   font-family: ${gillSans};
   font-style: normal;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 14px;
+  line-height: 15px;
 
   @media screen and (max-width: ${mobileBr}) {
     font-size: 13px;
@@ -184,6 +172,7 @@ const FlexRow = styled.div`
 `
 
 export const StyledButton = styled(Button).attrs({
+  fontSize: '14px',
   colorScheme: 'black',
   border: '2px',
   borderColor: 'white',

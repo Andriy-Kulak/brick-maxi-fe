@@ -24,6 +24,10 @@ const StyledSticky = styled.div`
   z-index: 200;
 `
 
+const NavText = styled(StyledP)`
+  font-size: 16px;
+`
+
 const TopFlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -33,14 +37,14 @@ const TopFlexContainer = styled.div`
   height: 85px;
 
   div {
-    margin: 0px 60px;
+    margin: 5px 60px 0px;
 
     @media screen and (max-width: ${laptopLargeBr}) {
-      margin: 0px 30px;
+      margin: 5px 30px 0px;
     }
 
     @media screen and (max-width: ${tabletBr}) {
-      margin: 0px;
+      margin: 5px 0px 0px;
     }
   }
 `
@@ -105,19 +109,19 @@ const Nav = ({
             <>
               <MidFlexContainer left>
                 <NextLink href="/mission">
-                  <StyledP className="nav-link" color="white">
+                  <NavText className="nav-link" color="white">
                     Mission
-                  </StyledP>
+                  </NavText>
                 </NextLink>
                 <NextLink href="/#artist-section">
-                  <StyledP className="nav-link" color="white">
+                  <NavText className="nav-link" color="white">
                     Artists
-                  </StyledP>
+                  </NavText>
                 </NextLink>
                 <NextLink href="/#learn-section">
-                  <StyledP className="nav-link" color="white">
+                  <NavText className="nav-link" color="white">
                     Learn
-                  </StyledP>
+                  </NavText>
                 </NextLink>
               </MidFlexContainer>
 
@@ -127,17 +131,17 @@ const Nav = ({
                     className="nav-link"
                     alt="Brick Maxi Logo"
                     src={brickMaxiLogo}
-                    height={80}
-                    width={80}
+                    height={77}
+                    width={77}
                   />
                 </NextLink>
               </div>
               <MidFlexContainer>
                 <div>
                   <NextLink href="/rewards">
-                    <StyledP color="white" className="nav-link">
+                    <NavText color="white" className="nav-link">
                       Rewards
-                    </StyledP>
+                    </NavText>
                   </NextLink>
                 </div>
                 <div>
@@ -166,7 +170,7 @@ const Nav = ({
               <div
                 style={{
                   position: 'absolute',
-                  marginTop: '10px',
+                  marginTop: '7px',
                   marginLeft: '19px',
                   zIndex: 100001,
                 }}
@@ -176,8 +180,8 @@ const Nav = ({
                     className="nav-link"
                     alt="Brick Maxi Logo"
                     src={brickMaxiLogo}
-                    height={60}
-                    width={60}
+                    height={65}
+                    width={65}
                   />
                 </NextLink>
               </div>
@@ -219,13 +223,13 @@ const Nav = ({
                   </div>
                   <div>
                     <NextLink href="/#artist-section">
-                      <StyledP
+                      <NavText
                         className="nav-link"
                         color="white"
                         onClick={() => setMobileMenu(false)}
                       >
                         Artists
-                      </StyledP>
+                      </NavText>
                     </NextLink>
                   </div>
                   <div>

@@ -17,6 +17,7 @@ const ImageC = styled.div`
 const LandingC = styled.div`
   position: relative;
   height: 90vh;
+  background-color: black;
 
   @media screen and (max-width: ${tabletBr}) {
     height: 88vh;

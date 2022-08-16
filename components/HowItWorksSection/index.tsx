@@ -12,8 +12,8 @@ const TextC = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  height: 80vh;
-  min-height: 80vh;
+  height: 60vh;
+  min-height: 60vh;
 
   @media screen and (max-width: ${mobileBr}) {
     height: auto;

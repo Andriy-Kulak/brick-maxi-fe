@@ -6,7 +6,7 @@ import { Divider, Select, StyledSwitch, MintBtn } from '../'
 
 import { images, tokenSection } from '../../content'
 import { weight } from '../utils/fontConfigs'
-import { black } from '../utils/colors'
+import { black, grey1 } from '../utils/colors'
 import {
   DesktopView,
   ImageContainer,
@@ -16,14 +16,25 @@ import {
   MobileTextC,
   MobileTitleH3,
   MobileView,
-  StyledBackground,
   SwitchC,
   TextContainer,
 } from './styles'
 import { BeatLoader } from 'react-spinners'
+import { tabletBr } from '../../utils/breakpoints'
 const { bold } = weight
 
 const { title, artist, description, type } = tokenSection
+
+export const StyledBackground = styled.div`
+  background-color: white;
+  padding: 0 20px;
+
+  /* height: 80vh; */
+  @media screen and (max-width: ${tabletBr}) {
+    height: auto;
+  }
+  min-height: 80vh;
+`
 
 const ApeContainer = styled.div`
   display: flex;
@@ -39,7 +50,7 @@ const imageContainer = (
       <LiveSpan>LIVE</LiveSpan>
       04/28/1983 4:40PM PST
     </StyledP>
-    <Image alt="art image 1" width={500} height={500} src={images.artImg} />
+    <Image alt="art image 1" width={430} height={430} src={images.artImg} />
   </ImageContainer>
 )
 
@@ -121,7 +132,7 @@ const TokenSection = ({
 
             <TitleH4>DESCRIPTION</TitleH4>
             <StyledP>{description}</StyledP>
-            <Divider />
+            <Divider thick={0.5} color={grey1} />
 
             <FlexRow>
               <div style={{ width: '40%' }}>
@@ -135,7 +146,7 @@ const TokenSection = ({
                 <StyledP weight={bold}>{type}</StyledP>
               </div>
             </FlexRow>
-            <Divider thick={1} />
+            <Divider thick={0.5} color={grey1} />
             {mintSection()}
           </TextContainer>
         </FlexRow>
