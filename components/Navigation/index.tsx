@@ -4,7 +4,6 @@ import { stack as Menu } from 'react-burger-menu'
 import Image from 'next/image'
 import { StyledP, StyledButton } from '../sharedstyles'
 import brickMaxiLogo from '../../public/assets/logo.png'
-import { Button, ButtonProps } from '@chakra-ui/react'
 import { trimAddress } from '../../utils/helpers'
 import { Link } from 'react-scroll'
 import NextLink from 'next/link'
@@ -60,7 +59,8 @@ const MidFlexContainer = styled.div`
   flex-direction: row;
 
   div,
-  a {
+  a,
+  .nav-link {
     margin: 0px 15px;
   }
 `
@@ -109,29 +109,22 @@ const Nav = ({
                     setMissionPage(true)
                     setMobileMenu(false)
                   }}
-                  // to="mission-section"
-                  // smooth={true}
-                  // duration={500}
-                  // offset={-80}
                 >
                   <StyledP color="white">Mission</StyledP>
                 </a>
-                <Link
-                  to="artist-section"
-                  smooth={true}
-                  duration={500}
-                  offset={-80}
+                <NextLink
+                  // to="artist-section"
+                  href="/#artist-section"
                 >
-                  <StyledP color="white">Artists</StyledP>
-                </Link>
-                <Link
-                  to="learn-section"
-                  smooth={true}
-                  duration={500}
-                  offset={-80}
-                >
-                  <StyledP color="white">Learn</StyledP>
-                </Link>
+                  <StyledP className="nav-link" color="white">
+                    Artists
+                  </StyledP>
+                </NextLink>
+                <NextLink href="/#learn-section">
+                  <StyledP className="nav-link" color="white">
+                    Learn
+                  </StyledP>
+                </NextLink>
               </MidFlexContainer>
 
               <div>
