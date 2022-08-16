@@ -4,6 +4,7 @@ import { Button, Box } from '@chakra-ui/react'
 import Image from 'next/image'
 import { images } from '../../content'
 import { StyledP, Main } from '../sharedstyles'
+import { selectedNet } from '../../utils/web3'
 
 const EtherscanLink = styled.a`
   margin-top: 15px;
@@ -51,7 +52,7 @@ const customToast = ({
           {txn && (
             <EtherscanLink
               target="_blank"
-              href={`https://goerli.etherscan.io/tx/${txn}`}
+              href={`https://${selectedNet.name}.etherscan.io/tx/${txn}`}
               rel="noopener noreferrer"
             >
               <ToastFlex>

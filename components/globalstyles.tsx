@@ -10,6 +10,10 @@ const GlobalStyle = createGlobalStyle`
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   a {
     color: inherit;
     text-decoration: none;
@@ -112,14 +116,15 @@ const GlobalStyle = createGlobalStyle`
       flex-direction: column;
       height: 50% !important;
       margin: auto;
+      margin: 100px auto 0px;
     }
     
   /* Individual item */
   .bm-item {
-    margin: 30px 10px;
+      margin: 15px 10px !important;
       display: flex;
       color: white;
-      margin-bottom: 10px;
+      margin-bottom: 40px;
       text-align: center;
       text-decoration: none;
       transition: color 0.2s;
@@ -131,12 +136,25 @@ const GlobalStyle = createGlobalStyle`
     
     /* Styling of overlay */
   .bm-overlay {
-      background: rgba(0, 0, 0, 0.3);
+      background: black;
     }
 
   .bm-center {
     margin: auto !important;
     margin-top: 20px !important;
+  }
+
+  .mission-button {
+    text-align: center;
+    position: relative !important;
+
+    >button {
+      position: relative !important;
+    }
+  }
+
+  button, a, .nav-link {
+    cursor: pointer;
   }
 
 `

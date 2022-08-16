@@ -1,5 +1,13 @@
-// https://goerli.etherscan.io/address/0x902d71f6be1b78e5d9e5cd76dd35102c995bd178#writeContract
-export const contractAddress = '0x902d71f6be1b78e5d9e5cd76dd35102c995bd178'
+//rinkeby.etherscan.io/address/0x03374be43815b9FA89daD4962691F5bF47A2dDed#code
+export const contractAddress = '0x03374be43815b9FA89daD4962691F5bF47A2dDed'
+
+const nets = [
+  { name: 'rinkeby', chainId: 4 },
+  { name: 'goerli', chainId: 420 },
+  { name: 'mainnet', chainId: 1 },
+]
+
+export const selectedNet = nets[0]
 
 export const contractAbi = [
   {
@@ -22,6 +30,76 @@ export const contractAbi = [
     ],
     stateMutability: 'nonpayable',
     type: 'constructor',
+  },
+  {
+    inputs: [],
+    name: 'ApprovalCallerNotOwnerNorApproved',
+    type: 'error',
+  },
+  {
+    inputs: [],
+    name: 'ApprovalQueryForNonexistentToken',
+    type: 'error',
+  },
+  {
+    inputs: [],
+    name: 'ApproveToCaller',
+    type: 'error',
+  },
+  {
+    inputs: [],
+    name: 'BalanceQueryForZeroAddress',
+    type: 'error',
+  },
+  {
+    inputs: [],
+    name: 'MintERC2309QuantityExceedsLimit',
+    type: 'error',
+  },
+  {
+    inputs: [],
+    name: 'MintToZeroAddress',
+    type: 'error',
+  },
+  {
+    inputs: [],
+    name: 'MintZeroQuantity',
+    type: 'error',
+  },
+  {
+    inputs: [],
+    name: 'OwnerQueryForNonexistentToken',
+    type: 'error',
+  },
+  {
+    inputs: [],
+    name: 'OwnershipNotInitializedForExtraData',
+    type: 'error',
+  },
+  {
+    inputs: [],
+    name: 'TransferCallerNotOwnerNorApproved',
+    type: 'error',
+  },
+  {
+    inputs: [],
+    name: 'TransferFromIncorrectOwner',
+    type: 'error',
+  },
+  {
+    inputs: [],
+    name: 'TransferToNonERC721ReceiverImplementer',
+    type: 'error',
+  },
+  {
+    inputs: [],
+    name: 'TransferToZeroAddress',
+    type: 'error',
+  },
+  {
+    inputs: [],
+    name: 'URIQueryForNonexistentToken',
+    type: 'error',
   },
   {
     anonymous: false,
@@ -71,6 +149,37 @@ export const contractAbi = [
       },
     ],
     name: 'ApprovalForAll',
+    type: 'event',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: 'uint256',
+        name: 'fromTokenId',
+        type: 'uint256',
+      },
+      {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'toTokenId',
+        type: 'uint256',
+      },
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'from',
+        type: 'address',
+      },
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'to',
+        type: 'address',
+      },
+    ],
+    name: 'ConsecutiveTransfer',
     type: 'event',
   },
   {
@@ -321,14 +430,26 @@ export const contractAbi = [
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [
+      {
+        internalType: 'uint16',
+        name: 'quantity',
+        type: 'uint16',
+      },
+    ],
     name: 'mintInApe',
     outputs: [],
     stateMutability: 'payable',
     type: 'function',
   },
   {
-    inputs: [],
+    inputs: [
+      {
+        internalType: 'uint16',
+        name: 'quantity',
+        type: 'uint16',
+      },
+    ],
     name: 'mintInEth',
     outputs: [],
     stateMutability: 'payable',
@@ -480,7 +601,7 @@ export const contractAbi = [
       },
       {
         internalType: 'bytes',
-        name: 'data',
+        name: '_data',
         type: 'bytes',
       },
     ],
@@ -592,6 +713,19 @@ export const contractAbi = [
         internalType: 'string',
         name: '',
         type: 'string',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [],
+    name: 'totalSupply',
+    outputs: [
+      {
+        internalType: 'uint256',
+        name: '',
+        type: 'uint256',
       },
     ],
     stateMutability: 'view',

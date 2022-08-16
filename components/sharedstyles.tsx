@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { laptopSmallBr, mobileBr, tabletBr } from '../utils/breakpoints'
 import { grey1 } from './utils/colors'
+import { Button, ButtonProps } from '@chakra-ui/react'
 import { avenirNextCondensed, gillSans } from './utils/fontConfigs'
 
 const Container = styled.div`
@@ -181,6 +182,21 @@ const FlexRow = styled.div`
     props.justifyContent || 'center'};
   align-items: flex-start;
 `
+
+export const StyledButton = styled(Button).attrs({
+  colorScheme: 'black',
+  border: '2px',
+  borderColor: 'white',
+  borderRadius: '100px',
+} as ButtonProps)`
+  border-radius: 30px;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  :hover {
+    background-color: grey;
+  }
+` as typeof Button
 
 const WhiteContentBox = styled.div`
   z-index: 2;

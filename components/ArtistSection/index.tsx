@@ -2,8 +2,8 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import { StyledP, TitleH3 } from '../sharedstyles'
 import { weight } from '../utils/fontConfigs'
-import imgSample from '../../public/assets/brickMaxiSample.png'
 import { mobileBr, tabletBr } from '../../utils/breakpoints'
+import { images } from '../../content'
 
 const { bold } = weight
 
@@ -66,7 +66,12 @@ const ArtistSection = ({
     <FlexBox>
       {content.map((x) => (
         <div key={x.key}>
-          <Image alt="img-sample" width={365} height={365} src={imgSample} />
+          <Image
+            alt="img-sample"
+            width={365}
+            height={365}
+            src={images.imgSample}
+          />
           <StyledP color="white" weight={bold} style={{ textAlign: 'left' }}>
             {x.name}
           </StyledP>
