@@ -216,32 +216,35 @@ const Nav = ({
                     </StyledButton>
                   </div>
                   <div>
-                    <NextLink
-                      href="/#artist-section"
-                      onClick={() => setMobileMenu(false)}
-                    >
-                      <StyledP className="nav-link" color="white">
+                    <NextLink href="/#artist-section">
+                      <StyledP
+                        className="nav-link"
+                        color="white"
+                        onClick={() => setMobileMenu(false)}
+                      >
                         Artists
                       </StyledP>
                     </NextLink>
                   </div>
                   <div>
-                    <NextLink
-                      href="/#learn-section"
-                      onClick={() => setMobileMenu(false)}
-                    >
-                      <StyledP className="nav-link" color="white">
+                    <NextLink href="/#learn-section">
+                      <StyledP
+                        className="nav-link"
+                        color="white"
+                        onClick={() => setMobileMenu(false)}
+                      >
                         Learn
                       </StyledP>
                     </NextLink>
                   </div>
 
                   <div>
-                    <NextLink
-                      href="/rewards"
-                      onClick={() => setMobileMenu(false)}
-                    >
-                      <StyledP className="nav-link" color="white">
+                    <NextLink href="/rewards">
+                      <StyledP
+                        className="nav-link"
+                        color="white"
+                        onClick={() => setMobileMenu(false)}
+                      >
                         Rewards
                       </StyledP>
                     </NextLink>
