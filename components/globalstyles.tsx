@@ -148,7 +148,7 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  button, a {
+  button, a, .nav-link {
     cursor: pointer;
   }
 

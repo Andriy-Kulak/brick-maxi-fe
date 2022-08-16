@@ -18,10 +18,10 @@ import { parseEther } from 'ethers/lib/utils'
 import 'react-toastify/dist/ReactToastify.css'
 import { customToast } from '../components/utils/customToast'
 import errorCapture from '../utils/web3/errorCapture'
+import useConnect from '../utils/hooks/useConnect'
 
 export default function Home() {
-  const [web3Modal, setWeb3Modal] = useState<Web3Modal | null>(null)
-  const [address, setAddress] = useState('')
+  // const [web3Modal, setWeb3Modal] = useState<Web3Modal | null>(null)
   const [isMintLoading, setMintLoading] = useState(false)
   const [isEth, setEth] = useState(true)
   const [quantity, setQuantity] = useState(1)
@@ -29,99 +29,106 @@ export default function Home() {
     contract: ethers.Contract | null
     signer: ethers.Signer | null
     provider: ethers.providers.Web3Provider | null
+    address: string
   }>({
     contract: null,
     signer: null,
     provider: null,
+    address: '',
   })
+  const [connectWallet, disconnect] = useConnect({ setContract })
   const chakraToast = useToast()
 
-  useEffect(() => {
-    // initiate web3modal
-    const providerOptions = {
-      walletconnect: {
-        package: WalletConnectProvider,
-        options: {
-          infuraId: process.env.NEXT_PUBLIC_INFURA_ID,
-        },
-      },
-    }
+  // useEffect(() => {
+  //   // initiate web3modal
+  //   const providerOptions = {
+  //     walletconnect: {
+  //       package: WalletConnectProvider,
+  //       options: {
+  //         infuraId: process.env.NEXT_PUBLIC_INFURA_ID,
+  //       },
+  //     },
+  //   }
 
-    const newWeb3Modal = new Web3Modal({
-      cacheProvider: false, // very important
-      network: 'mainnet',
-      providerOptions,
-    })
-    setWeb3Modal(newWeb3Modal)
-  }, [])
+  //   const newWeb3Modal = new Web3Modal({
+  //     cacheProvider: false, // very important
+  //     network: 'mainnet',
+  //     providerOptions,
+  //   })
+  //   setWeb3Modal(newWeb3Modal)
+  // }, [])
 
-  useEffect(() => {
-    // connect automatically and without a popup if user is already connected
-    if (web3Modal && web3Modal.cachedProvider) {
-      connectWallet()
-    }
-  }, [web3Modal])
+  // useEffect(() => {
+  //   // connect automatically and without a popup if user is already connected
+  //   if (web3Modal && web3Modal.cachedProvider) {
+  //     connectWallet()
+  //   }
+  // }, [web3Modal])
 
-  async function addListeners(web3ModalProvider: any) {
-    web3ModalProvider.on('accountsChanged', () => {
-      window.location.reload()
-    })
+  // async function addListeners(web3ModalProvider: any) {
+  //   web3ModalProvider.on('accountsChanged', () => {
+  //     window.location.reload()
+  //   })
 
-    // Subscribe to chainId change
-    web3ModalProvider.on('chainChanged', () => {
-      window.location.reload()
-    })
-  }
+  //   // Subscribe to chainId change
+  //   web3ModalProvider.on('chainChanged', () => {
+  //     window.location.reload()
+  //   })
+  // }
 
-  async function connectWallet() {
-    console.log('yyy 111')
-    if (web3Modal === null) {
-      throw Error('Web3 Modal error')
-    }
+  // async function connectWallet() {
+  //   console.log('yyy 111')
+  //   if (web3Modal === null) {
+  //     throw Error('Web3 Modal error')
+  //   }
 
-    const provider = await web3Modal.connect()
+  //   const provider = await web3Modal.connect()
 
-    addListeners(provider)
-    console.log('yyy 222', provider)
-    const ethersProvider = new providers.Web3Provider(provider)
+  //   addListeners(provider)
+  //   console.log('yyy 222', provider)
+  //   const ethersProvider = new providers.Web3Provider(provider)
 
-    const { chainId } = await ethersProvider.getNetwork()
-    if (chainId !== selectedNet.chainId) {
-      toast.error(
-        `App contract is on ${selectedNet.name}. Please sign in on this network! :-)`
-      )
-      return
-    }
-    console.log('yyy 333', ethersProvider)
-    const signer = await ethersProvider.getSigner()
-    const userAddress = await signer.getAddress()
-    console.log('yyy 444', userAddress)
-    setAddress(userAddress)
-    console.log('yyy 555')
+  //   const { chainId } = await ethersProvider.getNetwork()
+  //   if (chainId !== selectedNet.chainId) {
+  //     toast.error(
+  //       `App contract is on ${selectedNet.name}. Please sign in on this network! :-)`
+  //     )
+  //     return
+  //   }
+  //   console.log('yyy 333', ethersProvider)
+  //   const signer = await ethersProvider.getSigner()
+  //   const userAddress = await signer.getAddress()
+  //   console.log('yyy 444', userAddress)
 
-    const contract = new ethers.Contract(
-      contractAddress,
-      contractAbi,
-      ethersProvider
-    )
-    setContract({
-      contract,
-      signer,
-      provider: ethersProvider,
-    })
-    console.log('yyy testing', { ethersProvider, signer })
-    const resp = await contract.connect(signer).PRICE_APE()
+  //   const contract = new ethers.Contract(
+  //     contractAddress,
+  //     contractAbi,
+  //     ethersProvider
+  //   )
+  //   setContract({
+  //     contract,
+  //     signer,
+  //     provider: ethersProvider,
+  //     address: userAddress,
+  //   })
+  //   console.log('yyy testing', { ethersProvider, signer })
+  //   const resp = await contract.connect(signer).PRICE_APE()
 
-    console.log('yyy 777 resp', resp)
-  }
+  //   console.log('yyy 777 resp', resp)
+  // }
 
-  const disconnect = () => {
-    if (web3Modal === null) {
-      throw Error('Web3 Modal error')
-    }
+  // const disconnect = () => {
+  //   if (web3Modal === null) {
+  //     throw Error('Web3 Modal error')
+  //   }
 
-    setAddress('')
-  }
+  //   setContract({
+  //     contract: null,
+  //     signer: null,
+  //     provider: null,
+  //     address: '',
+  //   })
+  // }
 
   console.log('quantity xxx ===>', quantity)
   const onMint = async () => {
@@ -182,7 +189,7 @@ export default function Home() {
       <ToastContainer />
       <Nav
         connectWallet={connectWallet}
-        address={address}
+        address={ci.address}
         disconnect={disconnect}
       />
       <LandingSection />

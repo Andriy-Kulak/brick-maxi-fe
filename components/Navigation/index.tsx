@@ -7,6 +7,7 @@ import brickMaxiLogo from '../../public/assets/logo.png'
 import { Button, ButtonProps } from '@chakra-ui/react'
 import { trimAddress } from '../../utils/helpers'
 import { Link } from 'react-scroll'
+import NextLink from 'next/link'
 import {
   laptopLargeBr,
   tabletBr,
@@ -143,7 +144,11 @@ const Nav = ({
               </div>
               <MidFlexContainer>
                 <div>
-                  <StyledP color="white">Rewards</StyledP>
+                  <NextLink href="/rewards">
+                    <StyledP color="white" className="nav-link">
+                      Rewards
+                    </StyledP>
+                  </NextLink>
                 </div>
                 <div>
                   {address && (
