@@ -96,7 +96,6 @@ const Xbutton = styled.button`
 const TextContainer = styled.div`
   margin-top: 20px;
   width: 100%;
-  max-width: 700px;
 `
 
 const Main = styled.div`

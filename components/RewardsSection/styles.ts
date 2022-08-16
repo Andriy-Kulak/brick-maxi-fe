@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { tabletBr } from '../../utils/breakpoints'
+import { mobileBr, tabletBr } from '../../utils/breakpoints'
 import { gillSans } from '../utils/fontConfigs'
 
 export const ImageC = styled.div`
@@ -30,6 +30,10 @@ export const Main = styled.div`
   > div {
     margin: 10px 0px;
   }
+
+  @media screen and (max-width: ${tabletBr}) {
+    padding: 50px 30px;
+  }
 `
 
 export const Footer = styled.p`
@@ -40,6 +44,7 @@ export const Footer = styled.p`
   line-height: 11px;
   margin-top: 30px;
   color: #808080;
+  text-align: center;
 `
 
 export const HeaderText = styled.p`
@@ -58,6 +63,13 @@ export const BottomContainer = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-top: 30px;
+  flex-direction: row;
+
+  @media screen and (max-width: ${tabletBr}) {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
 `
 
 export const BottomLeftC = styled.div`
@@ -70,4 +82,15 @@ export const BottomRightC = styled.div`
   border-radius: 20px;
   width: 250px;
   padding: 10px 18px;
+`
+export const DesktopTableC = styled.div`
+  width: 700px;
+  @media screen and (max-width: ${tabletBr}) {
+    width: 100%;
+    padding: 60px 20px 0px;
+  }
+
+  @media screen and (max-width: ${mobileBr}) {
+    padding: 50px 0px 0px;
+  }
 `

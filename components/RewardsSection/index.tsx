@@ -12,6 +12,7 @@ import {
   BottomContainer,
   BottomLeftC,
   BottomRightC,
+  DesktopTableC,
 } from './styles'
 
 const RewardsSection = ({
@@ -45,7 +46,7 @@ const RewardsSection = ({
         </StyledButton>
       </div>
 
-      <div style={{ width: '700px' }}>
+      <DesktopTableC>
         <HeaderText>TOKENS IN WALLET: {address}</HeaderText>
         <Table />
         <BottomContainer>
@@ -64,7 +65,7 @@ const RewardsSection = ({
             <HeaderText>LAST COLLECTED</HeaderText>
           </BottomRightC>
         </BottomContainer>
-      </div>
+      </DesktopTableC>
       <Footer>
         *Rewards balance does not transfer with the sale of your tokens on
         secondary markets.

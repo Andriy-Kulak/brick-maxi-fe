@@ -112,10 +112,7 @@ const Nav = ({
                 >
                   <StyledP color="white">Mission</StyledP>
                 </a>
-                <NextLink
-                  // to="artist-section"
-                  href="/#artist-section"
-                >
+                <NextLink href="/#artist-section">
                   <StyledP className="nav-link" color="white">
                     Artists
                   </StyledP>
