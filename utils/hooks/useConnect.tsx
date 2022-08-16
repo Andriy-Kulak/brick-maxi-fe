@@ -47,7 +47,7 @@ function useConnect({
     }
 
     const newWeb3Modal = new Web3Modal({
-      cacheProvider: false, // very important
+      cacheProvider: true, // very important
       network: 'mainnet',
       providerOptions,
     })

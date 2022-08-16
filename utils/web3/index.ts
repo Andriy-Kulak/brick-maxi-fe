@@ -1,7 +1,7 @@
 import { ethers, providers } from 'ethers'
 
-//rinkeby.etherscan.io/address/0x2Cb8910CA2Edcb19D9A8C2a5B3849886FCb43928#code
-export const contractAddress = '0x2Cb8910CA2Edcb19D9A8C2a5B3849886FCb43928'
+// https://rinkeby.etherscan.io/address/0x069968Fb86c8b81fD990CF781CE732F110F8b6d6#code
+export const contractAddress = '0x069968Fb86c8b81fD990CF781CE732F110F8b6d6'
 
 const nets = [
   { name: 'rinkeby', chainId: 4 },
@@ -197,12 +197,6 @@ export const contractAbi = [
         indexed: false,
         internalType: 'uint256',
         name: 'quantity',
-        type: 'uint256',
-      },
-      {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'remainingTokens',
         type: 'uint256',
       },
     ],

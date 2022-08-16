@@ -45,6 +45,7 @@ export default function Home() {
     maxSupply: null,
     tokensLeft: null,
   })
+
   const [connectWallet, disconnect] = useConnect({ setContract })
   const chakraToast = useToast()
 
@@ -68,15 +69,15 @@ export default function Home() {
         maxSupply,
       })
 
-      contract.on(
-        'MintSuccess',
-        (to: string, quantity: BigNumberish, remainingTokens: BigNumberish) => {
-          setMintValues({
-            ...mintValues,
-            tokensLeft: Number(remainingTokens.toString()),
-          })
-        }
-      )
+      contract.on('MintSuccess', async () => {
+        const tokensLeft = await contract.getTokensLeft()
+        setMintValues({
+          apePrice,
+          ethPrice,
+          tokensLeft,
+          maxSupply,
+        })
+      })
     })()
   }, [])
 
