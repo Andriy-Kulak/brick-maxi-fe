@@ -8,8 +8,12 @@ import ethescanLogo from '../public/assets/icons/etherscan-logo.webp'
 import apecoinLogo from '../public/assets/icons/apecoin.png'
 import missionTitle from '../public/assets/titles/MISSION_WHITE.png'
 import howItWorksTitle from '../public/assets/titles/HOW_IT_WORKS_WHITE.png'
-import ArtistsTitle from '../public/assets/titles/ARTISTS_WHITE.png'
+import artistsTitle from '../public/assets/titles/ARTISTS_WHITE.png'
+import rewardsTitle from '../public/assets/titles/REWARDS_HEADING.png'
 import imgSample from '../public/assets/brickMaxiSample.png'
+import rewardsBg from '../public/assets/rewards_page_bg.png'
+import mintBtn from '../public/assets/mint_button.png'
+import collectBtn from '../public/assets/collect_button.png'
 
 export const images = {
   brickMaxiLogo,
@@ -22,8 +26,12 @@ export const images = {
   apecoinLogo,
   missionTitle,
   howItWorksTitle,
-  ArtistsTitle,
+  artistsTitle,
   imgSample,
+  rewardsBg,
+  rewardsTitle,
+  mintBtn,
+  collectBtn,
 }
 
 export const artistSection = [
@@ -90,4 +98,31 @@ export const teamProfiles = [
   { name: 'Name', role: 'role', key: 2 },
   { name: 'Name', role: 'role', key: 3 },
   { name: 'Name', role: 'role', key: 4 },
+]
+
+export const rewardsTableContent = [
+  {
+    date: 'mm/dd/yy',
+    tokenId: '-',
+    tokenNumbers: '-',
+    rewardsPer: '-',
+    rewardsTotal: '-',
+    key: 1,
+  },
+  {
+    date: 'mm/dd/yy',
+    tokenId: '-',
+    tokenNumbers: '-',
+    rewardsPer: '-',
+    rewardsTotal: '-',
+    key: 2,
+  },
+  {
+    date: 'mm/dd/yy',
+    tokenId: '-',
+    tokenNumbers: '-',
+    rewardsPer: '-',
+    rewardsTotal: '-',
+    key: 3,
+  },
 ]

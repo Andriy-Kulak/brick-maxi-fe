@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { stack as Menu } from 'react-burger-menu'
 import Image from 'next/image'
-import { StyledP } from '../sharedstyles'
+import { StyledP, StyledButton } from '../sharedstyles'
 import brickMaxiLogo from '../../public/assets/logo.png'
 import { Button, ButtonProps } from '@chakra-ui/react'
 import { trimAddress } from '../../utils/helpers'
@@ -24,21 +24,6 @@ const StyledSticky = styled.div`
   width: 100%;
   z-index: 200;
 `
-
-export const StyledButton = styled(Button).attrs({
-  colorScheme: 'black',
-  border: '2px',
-  borderColor: 'white',
-  borderRadius: '100px',
-} as ButtonProps)`
-  border-radius: 30px;
-  background-color: black;
-  color: white;
-  border: 2px solid white;
-  :hover {
-    background-color: grey;
-  }
-` as typeof Button
 
 const TopFlexContainer = styled.div`
   display: flex;
