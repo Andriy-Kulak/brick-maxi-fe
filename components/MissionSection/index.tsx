@@ -97,6 +97,12 @@ const Xbutton = styled.div`
 const TextContainer = styled.div`
   margin-top: 20px;
   width: 100%;
+  text-align: center;
+  padding: 0px 150px;
+
+  @media screen and (max-width: ${tabletBr}) {
+    padding: 0px;
+  }
 `
 
 const Main = styled.div`
@@ -115,6 +121,7 @@ const ImageContainer = styled.div`
 
   @media screen and (max-width: ${tabletBr}) {
     position: relative;
+    left: 0px;
   }
 `
 

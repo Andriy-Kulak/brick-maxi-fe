@@ -17,7 +17,7 @@ export const ImageContainer = styled.div`
 `
 
 export const TextContainer = styled.div`
-  margin-top: 30px;
+  margin-top: 10px;
   margin-right: 20px;
   width: 40%;
 

@@ -33,6 +33,10 @@ const GlobalStyle = createGlobalStyle`
     background: black !important;
   }
 
+  .chakra-accordion__button {
+    padding-right: 0px !important;
+  }
+
   // mobile menu styles
 
   /* Position and sizing of burger button */
