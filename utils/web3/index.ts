@@ -1,15 +1,24 @@
 import { ethers, providers } from 'ethers'
 
-// https://rinkeby.etherscan.io/address/0x069968Fb86c8b81fD990CF781CE732F110F8b6d6#code
-export const contractAddress = '0x069968Fb86c8b81fD990CF781CE732F110F8b6d6'
+// // https://rinkeby.etherscan.io/address/0x069968Fb86c8b81fD990CF781CE732F110F8b6d6#code
+// https://goerli.etherscan.io/address/0x50e9084dcc50F6FBd26232D94FF6fB7cC60DED9E#code
+export const contractAddress = '0x50e9084dcc50F6FBd26232D94FF6fB7cC60DED9E'
 
 const nets = [
-  { name: 'rinkeby', chainId: 4 },
-  { name: 'goerli', chainId: 420 },
-  { name: 'mainnet', chainId: 1 },
+  {
+    name: 'rinkeby',
+    chainId: 4,
+    testErc20Address: '0x01BE23585060835E02B77ef475b0Cc51aA1e0709',
+  }, // these are test link tokens
+  {
+    name: 'goerli',
+    chainId: 5,
+    testErc20Address: '0x326c977e6efc84e512bb9c30f76e30c160ed06fb',
+  }, // these are test link tokens
+  { name: 'mainnet', chainId: 1, testErc20Address: '' },
 ]
 
-export const selectedNet = nets[0]
+export const selectedNet = nets[1]
 
 export const contractAbi = [
   {
@@ -858,3 +867,52 @@ export const contract = new ethers.Contract(
   contractAbi,
   ethersDefaultProvider
 )
+
+export const erc20ApproveAbi = [
+  {
+    constant: false,
+    inputs: [
+      {
+        name: '_spender',
+        type: 'address',
+      },
+      {
+        name: '_value',
+        type: 'uint256',
+      },
+    ],
+    name: 'approve',
+    outputs: [
+      {
+        name: '',
+        type: 'bool',
+      },
+    ],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    constant: true,
+    inputs: [
+      {
+        name: '_owner',
+        type: 'address',
+      },
+      {
+        name: '_spender',
+        type: 'address',
+      },
+    ],
+    name: 'allowance',
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
+  },
+]

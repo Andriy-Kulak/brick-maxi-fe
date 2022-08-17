@@ -109,8 +109,6 @@ const Nav = ({
     })
   }, [])
 
-  console.log('isMobileOpen', isMobileOpen)
-
   return (
     <>
       <StyledSticky>
