@@ -48,6 +48,7 @@ const Main100h = styled.div`
 `
 
 const Main = styled.div`
+  position: relative;
   padding: 5rem 0;
   flex: 1;
   display: flex;
@@ -189,7 +190,8 @@ export const StyledButton = styled(Button).attrs({
 
 const WhiteContentBox = styled.div`
   z-index: 2;
-  width: 80%;
+  width: 70%;
+  border: 4px solid red;
   padding: 100px 70px;
   background-color: white;
   flex: 1;
@@ -205,7 +207,6 @@ const WhiteContentBox = styled.div`
 
   @media screen and (max-width: ${tabletBr}) {
     padding: 50px 0px;
-    width: 90%;
     margin: 0px 20px;
   }
 `
