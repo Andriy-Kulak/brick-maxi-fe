@@ -27,7 +27,7 @@ const BackgroundC = styled.div`
   background-color: black;
 
   @media screen and (max-width: ${mobileBr}) {
-    height: 120vh;
+    height: 115vh;
   }
 `
 

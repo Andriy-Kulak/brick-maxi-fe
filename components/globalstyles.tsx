@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: white !important;
   }
 
-  .chakra-switch__track[data-checked] {
+  .chakra-switch__track[data-checked], .chakra-switch__track  {
     background: black !important;
   }
 
@@ -66,7 +66,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .bm-menu {
-    background: rgba(19,19,19,1) !important;
+    background: black !important;
   }
 
   .bm-cross-button{

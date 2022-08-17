@@ -69,6 +69,8 @@ export const MobileTitleH3 = styled(TitleH3)`
 
 export const MobileStyledP = styled(StyledP)`
   text-align: center;
+  font-size: 15px;
+  font-weight: 600;
 `
 
 export const MobileTextC = styled.div`

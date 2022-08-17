@@ -24,6 +24,10 @@ const LandingC = styled.div`
   }
 `
 
+const StyledMain = styled(Main100h)`
+  padding: 2rem 0 5rem;
+`
+
 const LandingSection = () => (
   <LandingC>
     <Image
@@ -34,7 +38,7 @@ const LandingSection = () => (
       objectPosition="center"
       layout="fill"
     />
-    <Main100h>
+    <StyledMain>
       <ImageC>
         <Image
           alt="Brick Maxi Logo"
@@ -46,7 +50,7 @@ const LandingSection = () => (
       <TitleH2 style={{ position: 'relative', zIndex: 1 }}>
         ART THAT PAYS DIVIDENDS.
       </TitleH2>
-    </Main100h>
+    </StyledMain>
   </LandingC>
 )
 

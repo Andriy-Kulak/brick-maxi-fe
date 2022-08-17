@@ -56,8 +56,9 @@ const StyledPItalic = styled.p`
   color: #808080;
 
   @media screen and (max-width: ${mobileBr}) {
-    font-size: 8px;
+    font-size: 9px;
     line-height: 9px;
+    color: black;
   }
 `
 
@@ -70,7 +71,7 @@ const FlexBox = styled.div`
 
   > div {
     background: rgba(255, 255, 255, 0.95);
-    margin: 50px 10px;
+    margin: 30px 10px;
     padding: 50px;
     width: 60%;
     @media screen and (max-width: ${tabletBr}) {
@@ -79,12 +80,11 @@ const FlexBox = styled.div`
     }
 
     @media screen and (max-width: ${mobileBr}) {
-      padding: 30px 20px;
+      padding: 10px 10px;
     }
   }
 
   > div > div {
-    margin: 10px 50px;
     margin: 50px 70px;
     @media screen and (max-width: ${laptopLargeBr}) {
       margin: 10px 40px;

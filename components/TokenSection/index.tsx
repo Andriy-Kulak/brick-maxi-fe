@@ -46,7 +46,7 @@ const ApeContainer = styled.div`
 
 const imageContainer = (
   <ImageContainer>
-    <StyledP weight={700}>
+    <StyledP weight={700} style={{ lineHeight: '13px' }}>
       <LiveSpan>LIVE</LiveSpan>
       04/28/1983 4:40PM PST
     </StyledP>
@@ -100,7 +100,7 @@ const TokenSection = ({
   )
 
   const mintText = isEth ? (
-    <TitleH4 color={black} weight={bold} style={{ margin: '5px 0px' }}>
+    <TitleH4 color={black} weight={bold}>
       MINT PRICE: {mintValues.ethPrice}Ξ
     </TitleH4>
   ) : (
@@ -165,6 +165,7 @@ const TokenSection = ({
             </div>
             <div>{remainingText}</div>
           </SwitchC>
+          <Divider thick={1} color="#D9D9D9" />
           <FaqAcccordion
             content={[
               {
@@ -174,6 +175,7 @@ const TokenSection = ({
               },
             ]}
           ></FaqAcccordion>
+          <Divider thick={1} color="#D9D9D9" />
           {mintSection()}
         </>
       </MobileView>

@@ -47,6 +47,10 @@ const TopFlexContainer = styled.div`
       margin: 5px 0px 0px;
     }
   }
+
+  @media screen and (max-width: ${tabletBr}) {
+    height: 75px;
+  }
 `
 
 const MidFlexContainer = styled.div`
