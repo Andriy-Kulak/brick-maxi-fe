@@ -29,8 +29,12 @@ const GlobalStyle = createGlobalStyle`
     background-color: white !important;
   }
 
-  .chakra-switch__track[data-checked] {
+  .chakra-switch__track[data-checked], .chakra-switch__track  {
     background: black !important;
+  }
+
+  .chakra-accordion__button {
+    padding-right: 0px !important;
   }
 
   // mobile menu styles
@@ -66,7 +70,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .bm-menu {
-    background: rgba(19,19,19,1) !important;
+    background: black !important;
   }
 
   .bm-cross-button{

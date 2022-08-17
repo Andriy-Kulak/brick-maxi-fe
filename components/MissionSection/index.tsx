@@ -4,6 +4,7 @@ import { StyledP } from '../sharedstyles'
 import { Button, ButtonProps } from '@chakra-ui/react'
 import { mobileBr, tabletBr } from '../../utils/breakpoints'
 import { images, teamProfiles } from '../../content'
+import NextLink from 'next/link'
 import { avenirNextCondensed, gillSans, weight } from '../utils/fontConfigs'
 
 const { bold } = weight
@@ -27,8 +28,7 @@ const Container = styled.div`
   padding: 20px;
 
   z-index: 1000;
-  display: ${(props: { isMissionPageOpen: boolean }) =>
-    props.isMissionPageOpen ? 'inherit' : 'none'};
+  display: inherit;
   overflow-y: visible;
   overflow: visible;
   top: 0;
@@ -87,15 +87,22 @@ const SubTitle = styled.p`
   color: #808080;
 `
 
-const Xbutton = styled.button`
+const Xbutton = styled.div`
   position: absolute;
   top: 30px;
   right: 14px;
+  cursor: pointer;
 `
 
 const TextContainer = styled.div`
   margin-top: 20px;
   width: 100%;
+  text-align: center;
+  padding: 0px 150px;
+
+  @media screen and (max-width: ${tabletBr}) {
+    padding: 0px;
+  }
 `
 
 const Main = styled.div`
@@ -114,27 +121,22 @@ const ImageContainer = styled.div`
 
   @media screen and (max-width: ${tabletBr}) {
     position: relative;
+    left: 0px;
   }
 `
 
-const MissionSection = ({
-  setMissionPage,
-  isMissionPageOpen,
-}: {
-  setMissionPage: (state: boolean) => void
-  isMissionPageOpen: boolean
-}) => {
-  console.log('isMissionPageOpen', isMissionPageOpen)
-
+const MissionSection = () => {
   return (
-    <Container isMissionPageOpen={isMissionPageOpen}>
-      <Xbutton onClick={() => setMissionPage(false)}>
-        <Image
-          width={24}
-          height={24}
-          src={images.xIcon}
-          alt="mission-page-close"
-        />
+    <Container>
+      <Xbutton>
+        <NextLink href="/">
+          <Image
+            width={24}
+            height={24}
+            src={images.xIcon}
+            alt="mission-page-close"
+          />
+        </NextLink>
       </Xbutton>
       <Main>
         <ImageContainer>

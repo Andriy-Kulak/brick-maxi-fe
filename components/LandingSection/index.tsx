@@ -17,10 +17,15 @@ const ImageC = styled.div`
 const LandingC = styled.div`
   position: relative;
   height: 90vh;
+  background-color: black;
 
   @media screen and (max-width: ${tabletBr}) {
     height: 88vh;
   }
+`
+
+const StyledMain = styled(Main100h)`
+  padding: 2rem 0 5rem;
 `
 
 const LandingSection = () => (
@@ -33,7 +38,7 @@ const LandingSection = () => (
       objectPosition="center"
       layout="fill"
     />
-    <Main100h>
+    <StyledMain>
       <ImageC>
         <Image
           alt="Brick Maxi Logo"
@@ -45,7 +50,7 @@ const LandingSection = () => (
       <TitleH2 style={{ position: 'relative', zIndex: 1 }}>
         ART THAT PAYS DIVIDENDS.
       </TitleH2>
-    </Main100h>
+    </StyledMain>
   </LandingC>
 )
 

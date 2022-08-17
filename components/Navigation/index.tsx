@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { StyledP, StyledButton } from '../sharedstyles'
 import brickMaxiLogo from '../../public/assets/logo.png'
 import { trimAddress } from '../../utils/helpers'
-import { Link } from 'react-scroll'
 import NextLink from 'next/link'
 import {
   laptopLargeBr,
@@ -13,7 +12,6 @@ import {
   tabletBrPixels,
 } from '../../utils/breakpoints'
 import { images } from '../../content'
-import MissionSection from '../MissionSection'
 
 const StyledSticky = styled.div`
   top: 0;
@@ -25,6 +23,15 @@ const StyledSticky = styled.div`
   z-index: 200;
 `
 
+const NavText = styled(StyledP)`
+  font-size: 16px;
+`
+
+const MobileNavText = styled(StyledP)`
+  font-size: 20px;
+  line-height: 23px;
+`
+
 const TopFlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -34,15 +41,19 @@ const TopFlexContainer = styled.div`
   height: 85px;
 
   div {
-    margin: 0px 60px;
+    margin: 5px 60px 0px;
 
     @media screen and (max-width: ${laptopLargeBr}) {
-      margin: 0px 30px;
+      margin: 5px 30px 0px;
     }
 
     @media screen and (max-width: ${tabletBr}) {
-      margin: 0px;
+      margin: 5px 0px 0px;
     }
+  }
+
+  @media screen and (max-width: ${tabletBr}) {
+    height: 75px;
   }
 `
 
@@ -72,6 +83,14 @@ const MobileMenuC = styled.div`
   }
 `
 
+const mobileContent = [
+  { key: 1, name: 'Home', href: '/' },
+  { key: 2, name: 'Artists', href: '/#artist-section' },
+  { key: 3, name: 'Learn', href: '/#learn-section' },
+  { key: 4, name: 'Rewards', href: '/rewards' },
+  { key: 5, name: 'Mission', href: '/mission' },
+]
+
 const Nav = ({
   connectWallet,
   disconnect,
@@ -81,7 +100,6 @@ const Nav = ({
   disconnect: () => void
   address?: string
 }) => {
-  const [isMissionPageOpen, setMissionPage] = useState(false)
   const [pageWidth, setPageWidth] = useState(0)
   const [isMobileOpen, setMobileMenu] = useState(false)
   useEffect(() => {
@@ -91,54 +109,48 @@ const Nav = ({
     })
   }, [])
 
-  console.log('isMobileOpen', isMobileOpen)
-
   return (
     <>
-      <MissionSection
-        setMissionPage={setMissionPage}
-        isMissionPageOpen={isMissionPageOpen}
-      />
       <StyledSticky>
         <TopFlexContainer>
           {pageWidth === 0 && <></>}
           {pageWidth >= tabletBrPixels && (
             <>
               <MidFlexContainer left>
-                <a
-                  onClick={() => {
-                    setMissionPage(true)
-                    setMobileMenu(false)
-                  }}
-                >
-                  <StyledP color="white">Mission</StyledP>
-                </a>
+                <NextLink href="/mission">
+                  <NavText className="nav-link" color="white">
+                    Mission
+                  </NavText>
+                </NextLink>
                 <NextLink href="/#artist-section">
-                  <StyledP className="nav-link" color="white">
+                  <NavText className="nav-link" color="white">
                     Artists
-                  </StyledP>
+                  </NavText>
                 </NextLink>
                 <NextLink href="/#learn-section">
-                  <StyledP className="nav-link" color="white">
+                  <NavText className="nav-link" color="white">
                     Learn
-                  </StyledP>
+                  </NavText>
                 </NextLink>
               </MidFlexContainer>
 
               <div>
-                <Image
-                  alt="Brick Maxi Logo"
-                  src={brickMaxiLogo}
-                  height={80}
-                  width={80}
-                />
+                <NextLink href="/">
+                  <Image
+                    className="nav-link"
+                    alt="Brick Maxi Logo"
+                    src={brickMaxiLogo}
+                    height={77}
+                    width={77}
+                  />
+                </NextLink>
               </div>
               <MidFlexContainer>
                 <div>
                   <NextLink href="/rewards">
-                    <StyledP color="white" className="nav-link">
+                    <NavText color="white" className="nav-link">
                       Rewards
-                    </StyledP>
+                    </NavText>
                   </NextLink>
                 </div>
                 <div>
@@ -167,17 +179,20 @@ const Nav = ({
               <div
                 style={{
                   position: 'absolute',
-                  marginTop: '10px',
+                  marginTop: '7px',
                   marginLeft: '19px',
                   zIndex: 100001,
                 }}
               >
-                <Image
-                  alt="Brick Maxi Logo"
-                  src={brickMaxiLogo}
-                  height={60}
-                  width={60}
-                />
+                <NextLink href="/">
+                  <Image
+                    className="nav-link"
+                    alt="Brick Maxi Logo"
+                    src={brickMaxiLogo}
+                    height={65}
+                    width={65}
+                  />
+                </NextLink>
               </div>
               <MobileMenuC>
                 <Menu
@@ -215,48 +230,33 @@ const Nav = ({
                       {address ? trimAddress(address) : 'Connect'}
                     </StyledButton>
                   </div>
-                  <div>
-                    <NextLink href="/#artist-section">
-                      <StyledP
-                        className="nav-link"
-                        color="white"
-                        onClick={() => setMobileMenu(false)}
-                      >
-                        Artists
-                      </StyledP>
-                    </NextLink>
-                  </div>
-                  <div>
-                    <NextLink href="/#learn-section">
-                      <StyledP
-                        className="nav-link"
-                        color="white"
-                        onClick={() => setMobileMenu(false)}
-                      >
-                        Learn
-                      </StyledP>
-                    </NextLink>
-                  </div>
 
-                  <div>
-                    <NextLink href="/rewards">
-                      <StyledP
-                        className="nav-link"
-                        color="white"
-                        onClick={() => setMobileMenu(false)}
+                  {mobileContent.map((x) => (
+                    <div key={x.key}>
+                      <NextLink href={x.href}>
+                        <MobileNavText
+                          className="nav-link"
+                          color="white"
+                          onClick={() => setMobileMenu(false)}
+                        >
+                          {x.name}
+                        </MobileNavText>
+                      </NextLink>
+                    </div>
+                  ))}
+                  {address && (
+                    <div style={{ paddingTop: '50px' }}>
+                      <StyledButton
+                        onClick={() => {
+                          setMobileMenu(false)
+                          disconnect()
+                        }}
+                        colorScheme="black"
                       >
-                        Rewards
-                      </StyledP>
-                    </NextLink>
-                  </div>
-                  <a
-                    onClick={() => {
-                      setMissionPage(true)
-                      setMobileMenu(false)
-                    }}
-                  >
-                    <StyledP color="white">Mission</StyledP>
-                  </a>
+                        Sign Out
+                      </StyledButton>
+                    </div>
+                  )}
                 </Menu>
               </MobileMenuC>
             </>

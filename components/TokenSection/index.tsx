@@ -6,7 +6,7 @@ import { Divider, Select, StyledSwitch, MintBtn } from '../'
 
 import { images, tokenSection } from '../../content'
 import { weight } from '../utils/fontConfigs'
-import { black } from '../utils/colors'
+import { black, grey1 } from '../utils/colors'
 import {
   DesktopView,
   ImageContainer,
@@ -16,14 +16,25 @@ import {
   MobileTextC,
   MobileTitleH3,
   MobileView,
-  StyledBackground,
   SwitchC,
   TextContainer,
 } from './styles'
 import { BeatLoader } from 'react-spinners'
+import { tabletBr } from '../../utils/breakpoints'
 const { bold } = weight
 
 const { title, artist, description, type } = tokenSection
+
+export const StyledBackground = styled.div`
+  background-color: white;
+  padding: 0 20px;
+
+  /* height: 80vh; */
+  @media screen and (max-width: ${tabletBr}) {
+    height: auto;
+  }
+  min-height: 80vh;
+`
 
 const ApeContainer = styled.div`
   display: flex;
@@ -35,19 +46,12 @@ const ApeContainer = styled.div`
 
 const imageContainer = (
   <ImageContainer>
-    <StyledP weight={700}>
+    <StyledP weight={700} style={{ lineHeight: '13px' }}>
       <LiveSpan>LIVE</LiveSpan>
       04/28/1983 4:40PM PST
     </StyledP>
-    <Image alt="art image 1" width={500} height={500} src={images.artImg} />
+    <Image alt="art image 1" width={430} height={430} src={images.artImg} />
   </ImageContainer>
-)
-
-const remainingText = (
-  <>
-    <TitleH4>REMAINING</TitleH4>
-    <StyledP weight={bold}>100 / 100</StyledP>
-  </>
 )
 
 const TokenSection = ({
@@ -57,6 +61,7 @@ const TokenSection = ({
   isEth,
   quantity,
   setQuantity,
+  mintValues,
 }: {
   mint: () => void
   isMintLoading: boolean
@@ -64,6 +69,12 @@ const TokenSection = ({
   isEth: boolean
   setQuantity: (qty: number) => void
   quantity: number
+  mintValues: {
+    apePrice: null | string
+    ethPrice: null | string
+    maxSupply: null | number
+    tokensLeft: null | number
+  }
 }) => {
   const mintSection = () => (
     <MintSectionC>
@@ -79,14 +90,23 @@ const TokenSection = ({
     </MintSectionC>
   )
 
+  const remainingText = (
+    <>
+      <TitleH4>REMAINING</TitleH4>
+      <StyledP weight={bold}>
+        {mintValues.tokensLeft} / {mintValues.maxSupply}
+      </StyledP>
+    </>
+  )
+
   const mintText = isEth ? (
-    <TitleH4 color={black} weight={bold} style={{ margin: '5px 0px' }}>
-      MINT PRICE:1.5Ξ
+    <TitleH4 color={black} weight={bold}>
+      MINT PRICE: {mintValues.ethPrice}Ξ
     </TitleH4>
   ) : (
     <ApeContainer>
       <TitleH4 color={black} weight={bold}>
-        MINT PRICE: 200
+        MINT PRICE: {mintValues.apePrice}
       </TitleH4>
       <Image
         width={25}
@@ -112,7 +132,7 @@ const TokenSection = ({
 
             <TitleH4>DESCRIPTION</TitleH4>
             <StyledP>{description}</StyledP>
-            <Divider />
+            <Divider thick={0.5} color={grey1} />
 
             <FlexRow>
               <div style={{ width: '40%' }}>
@@ -126,7 +146,7 @@ const TokenSection = ({
                 <StyledP weight={bold}>{type}</StyledP>
               </div>
             </FlexRow>
-            <Divider thick={1} />
+            <Divider thick={0.5} color={grey1} />
             {mintSection()}
           </TextContainer>
         </FlexRow>
@@ -145,6 +165,7 @@ const TokenSection = ({
             </div>
             <div>{remainingText}</div>
           </SwitchC>
+          <Divider thick={1} color="#D9D9D9" />
           <FaqAcccordion
             content={[
               {
@@ -154,6 +175,7 @@ const TokenSection = ({
               },
             ]}
           ></FaqAcccordion>
+          <Divider thick={1} color="#D9D9D9" />
           {mintSection()}
         </>
       </MobileView>

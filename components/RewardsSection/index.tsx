@@ -14,6 +14,7 @@ import {
   BottomRightC,
   DesktopTableC,
 } from './styles'
+import { trimAddress } from '../../utils/helpers'
 
 const RewardsSection = ({
   connect,
@@ -47,7 +48,7 @@ const RewardsSection = ({
       </div>
 
       <DesktopTableC>
-        <HeaderText>TOKENS IN WALLET: {address}</HeaderText>
+        <HeaderText>TOKENS IN WALLET: {trimAddress(address)}</HeaderText>
         <Table />
         <BottomContainer>
           <BottomLeftC>

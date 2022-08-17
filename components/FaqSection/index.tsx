@@ -9,6 +9,7 @@ import { mobileBr } from '../../utils/breakpoints'
 const DesktopC = styled.div`
   position: relative;
   height: 90vh;
+  background-color: black;
 
   @media screen and (max-width: ${mobileBr}) {
     display: none;

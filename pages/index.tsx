@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { ethers, providers } from 'ethers'
+import { BigNumberish, ethers } from 'ethers'
 import { useToast } from '@chakra-ui/react'
 import { ToastContainer, toast } from 'react-toastify'
 import { Nav, ArtistSection } from '../components'
@@ -9,7 +9,12 @@ import TokenSection from '../components/TokenSection'
 import HowItWorksSection from '../components/HowItWorksSection'
 import LandingSection from '../components/LandingSection'
 import FaqSection from '../components/FaqSection'
-import { selectedNet } from '../utils/web3'
+import {
+  contract,
+  contractAddress,
+  erc20ApproveAbi,
+  selectedNet,
+} from '../utils/web3'
 import { parseEther } from 'ethers/lib/utils'
 
 import 'react-toastify/dist/ReactToastify.css'
@@ -33,11 +38,62 @@ export default function Home() {
     provider: null,
     address: '',
   })
+
+  const [mintValues, setMintValues] = useState<{
+    apePrice: null | string
+    ethPrice: null | string
+    tokensLeft: null | number
+    maxSupply: null | number
+  }>({
+    apePrice: null,
+    ethPrice: null,
+    maxSupply: null,
+    tokensLeft: null,
+  })
+
   const [connectWallet, disconnect] = useConnect({ setContract })
   const chakraToast = useToast()
 
+  useEffect(() => {
+    ;(async () => {
+      const [apePriceRaw, ethPriceRaw, tokensLeft, maxSupply] =
+        await Promise.all([
+          contract.PRICE_APE(),
+          contract.PRICE_ETH(),
+          contract.getTokensLeft(),
+          contract.CURRENT_MAX_SUPPLY(),
+        ])
+
+      const apePrice = ethers.utils.formatEther(apePriceRaw)
+      const ethPrice = ethers.utils.formatEther(ethPriceRaw)
+
+      setMintValues({
+        apePrice,
+        ethPrice,
+        tokensLeft,
+        maxSupply,
+      })
+
+      contract.on('MintSuccess', async () => {
+        const tokensLeft = await contract.getTokensLeft()
+        setMintValues({
+          apePrice,
+          ethPrice,
+          tokensLeft,
+          maxSupply,
+        })
+      })
+    })()
+  }, [])
+
   const onMint = async () => {
-    if (ci.contract === null || ci.signer === null || ci.provider === null) {
+    if (
+      ci.contract === null ||
+      ci.signer === null ||
+      ci.provider === null ||
+      mintValues?.ethPrice === null ||
+      mintValues?.apePrice === null
+    ) {
       toast.error('Please sign in before minting!')
     } else {
       const { chainId } = await ci.provider.getNetwork()
@@ -50,12 +106,46 @@ export default function Home() {
         setMintLoading(true)
         let mintResp
         if (isEth) {
-          const price = String(quantity * 0.02)
+          const ethTotalprice = String(quantity * Number(mintValues.ethPrice))
           mintResp = await ci.contract
             .connect(ci.signer)
-            .mintInEth(quantity, { value: parseEther(price) })
+            .mintInEth(quantity, { value: parseEther(ethTotalprice) })
         } else {
-          mintResp = await ci.contract.connect(ci.signer).mintInApe()
+          const apeCost = quantity * Number(mintValues.apePrice)
+          const apeTotalPrice = parseEther(String(apeCost))
+
+          const erc20Contract = new ethers.Contract(
+            selectedNet.testErc20Address,
+            erc20ApproveAbi,
+            ci.provider
+          )
+
+          const balance = await erc20Contract
+            .connect(ci.signer)
+            .allowance(ci.address, contractAddress)
+          console.log('xxxx balance', ethers.utils.formatEther(balance))
+
+          console.log('xxxx inputs', {
+            contractAddress,
+            apeTotalPrice,
+            stringV: String(quantity * Number(mintValues.apePrice)),
+          })
+
+          console.log('yyyyyy diff', {
+            balance: Number(ethers.utils.formatEther(balance)),
+            apeCost,
+          })
+          if (Number(ethers.utils.formatEther(balance)) < apeCost) {
+            const approveResp = await erc20Contract
+              .connect(ci.signer)
+              .approve(contractAddress, apeTotalPrice)
+            console.log('xxxx approveResp', approveResp)
+
+            const approveReceipt = await approveResp.wait()
+            console.log('xxxx approveReceipt', approveReceipt)
+          }
+
+          mintResp = await ci.contract.connect(ci.signer).mintInApe(quantity)
         }
         if (!mintResp) {
           throw Error('There is a minting error...')
@@ -67,7 +157,7 @@ export default function Home() {
           toast: chakraToast,
         })
         toast.info(
-          `Trasnaction is minting on: https://${selectedNet.name}.etherscan.io/tx/${mintResp.hash}`
+          `Transaction is minting on: https://${selectedNet.name}.etherscan.io/tx/${mintResp.hash}`
         )
 
         const receipt = await mintResp.wait()
@@ -99,6 +189,7 @@ export default function Home() {
       />
       <LandingSection />
       <TokenSection
+        mintValues={mintValues}
         isEth={isEth}
         currencySwitch={() => setEth(!isEth)}
         mint={() => onMint()}

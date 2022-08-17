@@ -12,8 +12,8 @@ const TextC = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  height: 80vh;
-  min-height: 80vh;
+  height: 60vh;
+  min-height: 60vh;
 
   @media screen and (max-width: ${mobileBr}) {
     height: auto;
@@ -23,11 +23,11 @@ const TextC = styled.div`
 
 const BackgroundC = styled.div`
   position: relative;
-  height: 200vh;
+  height: 150vh;
   background-color: black;
 
   @media screen and (max-width: ${mobileBr}) {
-    height: 120vh;
+    height: 115vh;
   }
 `
 
@@ -45,7 +45,7 @@ const HowItWorksSection = () => (
     <TextC>
       <MiniTextC>
         <TitleH2Small>ART THAT PAYS DIVIDENDS.</TitleH2Small>
-        <Divider thick={1} color="white" />
+        <Divider thick={0.5} color="white" />
       </MiniTextC>
       <Main>
         <TitleH1>You collect art.</TitleH1>
