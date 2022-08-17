@@ -12,7 +12,6 @@ import {
   tabletBrPixels,
 } from '../../utils/breakpoints'
 import { images } from '../../content'
-import MissionSection from '../MissionSection'
 
 const StyledSticky = styled.div`
   top: 0;
@@ -26,6 +25,11 @@ const StyledSticky = styled.div`
 
 const NavText = styled(StyledP)`
   font-size: 16px;
+`
+
+const MobileNavText = styled(StyledP)`
+  font-size: 20px;
+  line-height: 23px;
 `
 
 const TopFlexContainer = styled.div`
@@ -79,6 +83,14 @@ const MobileMenuC = styled.div`
   }
 `
 
+const mobileContent = [
+  { key: 1, name: 'Home', href: '/' },
+  { key: 2, name: 'Artists', href: '/#artist-section' },
+  { key: 3, name: 'Learn', href: '/#learn-section' },
+  { key: 4, name: 'Rewards', href: '/rewards' },
+  { key: 5, name: 'Mission', href: '/mission' },
+]
+
 const Nav = ({
   connectWallet,
   disconnect,
@@ -88,7 +100,6 @@ const Nav = ({
   disconnect: () => void
   address?: string
 }) => {
-  const [isMissionPageOpen, setMissionPage] = useState(false)
   const [pageWidth, setPageWidth] = useState(0)
   const [isMobileOpen, setMobileMenu] = useState(false)
   useEffect(() => {
@@ -102,10 +113,6 @@ const Nav = ({
 
   return (
     <>
-      {/* <MissionSection
-        setMissionPage={setMissionPage}
-        isMissionPageOpen={isMissionPageOpen}
-      /> */}
       <StyledSticky>
         <TopFlexContainer>
           {pageWidth === 0 && <></>}
@@ -225,47 +232,33 @@ const Nav = ({
                       {address ? trimAddress(address) : 'Connect'}
                     </StyledButton>
                   </div>
-                  <div>
-                    <NextLink href="/#artist-section">
-                      <NavText
-                        className="nav-link"
-                        color="white"
-                        onClick={() => setMobileMenu(false)}
-                      >
-                        Artists
-                      </NavText>
-                    </NextLink>
-                  </div>
-                  <div>
-                    <NextLink href="/#learn-section">
-                      <StyledP
-                        className="nav-link"
-                        color="white"
-                        onClick={() => setMobileMenu(false)}
-                      >
-                        Learn
-                      </StyledP>
-                    </NextLink>
-                  </div>
 
-                  <div>
-                    <NextLink href="/rewards">
-                      <StyledP
-                        className="nav-link"
-                        color="white"
-                        onClick={() => setMobileMenu(false)}
+                  {mobileContent.map((x) => (
+                    <div key={x.key}>
+                      <NextLink href={x.href}>
+                        <MobileNavText
+                          className="nav-link"
+                          color="white"
+                          onClick={() => setMobileMenu(false)}
+                        >
+                          {x.name}
+                        </MobileNavText>
+                      </NextLink>
+                    </div>
+                  ))}
+                  {address && (
+                    <div style={{ paddingTop: '50px' }}>
+                      <StyledButton
+                        onClick={() => {
+                          setMobileMenu(false)
+                          disconnect()
+                        }}
+                        colorScheme="black"
                       >
-                        Rewards
-                      </StyledP>
-                    </NextLink>
-                  </div>
-                  <div>
-                    <NextLink href="/mission">
-                      <StyledP className="nav-link" color="white">
-                        Mission
-                      </StyledP>
-                    </NextLink>
-                  </div>
+                        Sign Out
+                      </StyledButton>
+                    </div>
+                  )}
                 </Menu>
               </MobileMenuC>
             </>
