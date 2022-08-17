@@ -3,9 +3,10 @@ import styled from 'styled-components'
 import { Main, TitleH1, TitleH2Small } from '../sharedstyles'
 import { Divider, ShadedTextBox } from '../'
 import { images } from '../../content'
-import { mobileBr } from '../../utils/breakpoints'
+import { mobileBr, tabletBr } from '../../utils/breakpoints'
 
 const TextC = styled.div`
+  position: relative;
   background-color: black;
   padding: 0 0.5rem;
   display: flex;
@@ -40,9 +41,57 @@ const MiniTextC = styled.div`
   }
 `
 
+const ImgC1 = styled.div`
+  position: absolute;
+  top: 145px;
+  left: 25px;
+
+  @media screen and (max-width: ${mobileBr}) {
+    display: none;
+  }
+`
+
+const ImgC2 = styled.div`
+  position: absolute;
+  bottom: 225px;
+  left: 25px;
+
+  @media screen and (max-width: ${tabletBr}) {
+    display: none;
+  }
+`
+
+const ImgC3 = styled.div`
+  display: none;
+  position: absolute;
+  top: 65px;
+  left: 25px;
+  @media screen and (max-width: ${mobileBr}) {
+    display: inherit;
+  }
+`
+
 const HowItWorksSection = () => (
   <>
     <TextC>
+      <ImgC1>
+        <Image
+          alt="how it works"
+          src={images.howItWorksTitle}
+          width={35}
+          height={205}
+        />
+      </ImgC1>
+
+      <ImgC3>
+        <Image
+          alt="how it works"
+          src={images.howItWorksTitle}
+          width={20}
+          height={110}
+        />
+      </ImgC3>
+
       <MiniTextC>
         <TitleH2Small>ART THAT PAYS DIVIDENDS.</TitleH2Small>
         <Divider thick={0.5} color="white" />
@@ -61,7 +110,17 @@ const HowItWorksSection = () => (
         objectPosition="center"
         layout="fill"
       />
+
       <ShadedTextBox />
+
+      <ImgC2>
+        <Image
+          alt="how it works"
+          src={images.howItWorksTitle}
+          width={35}
+          height={205}
+        />
+      </ImgC2>
     </BackgroundC>
   </>
 )
