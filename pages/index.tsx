@@ -23,16 +23,40 @@ import errorCapture from '../utils/web3/errorCapture'
 import useConnect from '../utils/hooks/useConnect'
 import useMintValues from '../utils/hooks/useMintValues'
 
+export enum MintState {
+  NONE,
+  MINT_IN_POGRESS,
+  MINT_SUCCESS,
+  ERC20_ALLOWANCE_IN_PROGRESS,
+}
+
+export type MintStatus = {
+  type: MintState
+  text: null | string
+  txn: null | string
+}
+
+type ContractInstance = {
+  contract: ethers.Contract | null
+  signer: ethers.Signer | null
+  provider: ethers.providers.Web3Provider | null
+  address: string
+}
+
 export default function Home() {
-  const [isMintLoading, setMintLoading] = useState(false)
+  // const [mintState, setMintLoading] = useState<MintStatus>({
+  //   type: MintState.MINT_IN_POGRESS, // mintSuccess // erc20Allowance
+  //   text: 'Mint In Progress',
+  //   txn: '0xd58888f66b7e838c3546680de7dd0f7c2d3e851bb0a22bf2a81c6dc40675e908',
+  // })
+  const [mintState, setMintLoading] = useState<MintStatus>({
+    type: MintState.NONE, // mintSuccess // erc20Allowance
+    text: null,
+    txn: null,
+  })
   const [isEth, setEth] = useState(true)
   const [quantity, setQuantity] = useState(1)
-  const [ci, setContract] = useState<{
-    contract: ethers.Contract | null
-    signer: ethers.Signer | null
-    provider: ethers.providers.Web3Provider | null
-    address: string
-  }>({
+  const [ci, setContract] = useState<ContractInstance>({
     contract: null,
     signer: null,
     provider: null,
@@ -73,7 +97,11 @@ export default function Home() {
         )
       }
       try {
-        setMintLoading(true)
+        // setMintLoading({
+        //   type: MintState.MINT_IN_POGRESS,
+        //   text: 'Mint In Progress',
+        //   txn: null,
+        // })
         let mintResp
         if (isEth) {
           const ethTotalprice = String(quantity * mintValues.ethPrice)
@@ -99,6 +127,12 @@ export default function Home() {
               .connect(ci.signer)
               .approve(contractAddress, apeTotalPrice)
 
+            setMintLoading({
+              type: MintState.ERC20_ALLOWANCE_IN_PROGRESS,
+              text: 'Approving ERC20',
+              txn: approveResp.hash,
+            })
+
             await approveResp.wait()
           }
 
@@ -108,11 +142,16 @@ export default function Home() {
           throw Error('There is a minting error...')
         }
 
-        customToast({
-          text: 'Transaction is pending...',
+        setMintLoading({
+          type: MintState.MINT_IN_POGRESS,
+          text: 'Mint In Progress',
           txn: mintResp.hash,
-          toast: chakraToast,
         })
+        // customToast({
+        //   text: 'Transaction is pending...',
+        //   txn: mintResp.hash,
+        //   toast: chakraToast,
+        // })
         toast.info(
           `Transaction is minting on: https://${selectedNet.name}.etherscan.io/tx/${mintResp.hash}`
         )
@@ -120,14 +159,22 @@ export default function Home() {
         await mintResp.wait()
 
         toast.success(`SUCCESS!!!!: ${mintResp.hash}`)
-        customToast({
-          text: 'Success',
+        // customToast({
+        //   text: 'Success',
+        //   txn: mintResp.hash,
+        //   toast: chakraToast,
+        // })
+        setMintLoading({
+          type: MintState.MINT_SUCCESS,
+          text: 'Success!',
           txn: mintResp.hash,
-          toast: chakraToast,
         })
-        setMintLoading(false)
       } catch (e: any) {
-        setMintLoading(false)
+        setMintLoading({
+          type: MintState.NONE,
+          text: null,
+          txn: null,
+        })
         console.error('ERROR minting ==>', e)
 
         errorCapture({ message: e.message, toast })
@@ -149,7 +196,8 @@ export default function Home() {
         isEth={isEth}
         currencySwitch={() => setEth(!isEth)}
         mint={() => onMint()}
-        isMintLoading={isMintLoading}
+        mintState={mintState}
+        setMintLoading={setMintLoading}
         quantity={quantity}
         setQuantity={setQuantity}
       />
