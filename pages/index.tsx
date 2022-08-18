@@ -24,7 +24,7 @@ import useConnect from '../utils/hooks/useConnect'
 import useMintValues from '../utils/hooks/useMintValues'
 
 export default function Home() {
-  const [isMintLoading, setMintLoading] = useState(true)
+  const [isMintLoading, setMintLoading] = useState(false)
   const [isEth, setEth] = useState(true)
   const [quantity, setQuantity] = useState(1)
   const [ci, setContract] = useState<{
