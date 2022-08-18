@@ -2,19 +2,12 @@ import { useState, useEffect } from 'react'
 import { ethers, providers } from 'ethers'
 import WalletConnectProvider from '@walletconnect/web3-provider'
 import Web3Modal from 'web3modal'
-import { ToastContainer, toast } from 'react-toastify'
+import { toast } from 'react-toastify'
 import { contractAbi, contractAddress, selectedNet } from '../web3'
 
 function useConnect({
-  // ci,
   setContract,
 }: {
-  // ci: {
-  //   contract: ethers.Contract | null
-  //   signer: ethers.Signer | null
-  //   provider: ethers.providers.Web3Provider | null
-  //   address: string
-  // }
   setContract: (x: {
     contract: ethers.Contract | null
     signer: ethers.Signer | null
@@ -70,7 +63,6 @@ function useConnect({
     const provider = await web3Modal.connect()
 
     addListeners(provider)
-    console.log('yyy 222', provider)
     const ethersProvider = new providers.Web3Provider(provider)
 
     const { chainId } = await ethersProvider.getNetwork()
@@ -80,10 +72,8 @@ function useConnect({
       )
       return
     }
-    console.log('yyy 333', ethersProvider)
     const signer = await ethersProvider.getSigner()
     const userAddress = await signer.getAddress()
-    console.log('yyy 444', userAddress)
 
     const contract = new ethers.Contract(
       contractAddress,
@@ -96,10 +86,6 @@ function useConnect({
       provider: ethersProvider,
       address: userAddress,
     })
-    console.log('yyy testing', { ethersProvider, signer })
-    const resp = await contract.connect(signer).PRICE_APE()
-
-    console.log('yyy 777 resp', resp)
   }
 
   const disconnect = () => {

@@ -70,8 +70,8 @@ const TokenSection = ({
   setQuantity: (qty: number) => void
   quantity: number
   mintValues: {
-    apePrice: null | string
-    ethPrice: null | string
+    apePrice: null | number
+    ethPrice: null | number
     maxSupply: null | number
     tokensLeft: null | number
   }

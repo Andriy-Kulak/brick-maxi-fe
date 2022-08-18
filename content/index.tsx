@@ -10,6 +10,9 @@ import missionTitle from '../public/assets/titles/MISSION_WHITE.png'
 import howItWorksTitle from '../public/assets/titles/HOW_IT_WORKS_WHITE.png'
 import artistsTitle from '../public/assets/titles/ARTISTS_WHITE.png'
 import rewardsTitle from '../public/assets/titles/REWARDS_HEADING.png'
+import faqWhiteTitle from '../public/assets/titles/FAQ_WHITE.png'
+import faqBlackTitle from '../public/assets/titles/FAQ_BLACK.png'
+import whiteSquiggleLine from '../public/assets/titles/WHITE_SQUIGGLE_LINE.png'
 import imgSample from '../public/assets/brickMaxiSample.png'
 import rewardsBg from '../public/assets/rewards_page_bg.png'
 import mintBtn from '../public/assets/mint_button2.png'
@@ -32,6 +35,9 @@ export const images = {
   rewardsTitle,
   mintBtn,
   collectBtn,
+  faqWhiteTitle,
+  faqBlackTitle,
+  whiteSquiggleLine,
 }
 
 export const artistSection = [

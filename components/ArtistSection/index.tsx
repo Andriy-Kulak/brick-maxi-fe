@@ -27,7 +27,7 @@ const Container = styled.div`
   height: 100%;
   min-height: 100%;
   background-color: black;
-  flex: 1;
+  /* flex: 1; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,7 +60,7 @@ const TitleImgMobile = styled.div`
     display: inherit;
     position: absolute;
     top: 30px;
-    left: 5px;
+    left: 10px;
   }
 `
 
@@ -83,7 +83,7 @@ const ArtistSection = ({
 }) => (
   <Container id="artist-section">
     <TitleImgMobile>
-      <Image src={images.artistsTitle} width={35} height={125} alt="artists" />
+      <Image src={images.artistsTitle} width={25} height={100} alt="artists" />
     </TitleImgMobile>
     <TitleH3 color="white">BUILDING THE FUTURE OF NFTs</TitleH3>
     <TitleH3 color="white">WITH OUR INCREDIBLE PARTNERS</TitleH3>
