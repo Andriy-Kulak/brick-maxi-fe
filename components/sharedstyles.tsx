@@ -191,7 +191,6 @@ export const StyledButton = styled(Button).attrs({
 const WhiteContentBox = styled.div`
   z-index: 2;
   width: 70%;
-  border: 4px solid red;
   padding: 100px 70px;
   background-color: white;
   flex: 1;

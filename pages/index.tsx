@@ -21,10 +21,10 @@ import 'react-toastify/dist/ReactToastify.css'
 import { customToast } from '../components/utils/customToast'
 import errorCapture from '../utils/web3/errorCapture'
 import useConnect from '../utils/hooks/useConnect'
+import useMintValues from '../utils/hooks/useMintValues'
 
 export default function Home() {
-  // const [web3Modal, setWeb3Modal] = useState<Web3Modal | null>(null)
-  const [isMintLoading, setMintLoading] = useState(false)
+  const [isMintLoading, setMintLoading] = useState(true)
   const [isEth, setEth] = useState(true)
   const [quantity, setQuantity] = useState(1)
   const [ci, setContract] = useState<{
@@ -40,8 +40,8 @@ export default function Home() {
   })
 
   const [mintValues, setMintValues] = useState<{
-    apePrice: null | string
-    ethPrice: null | string
+    apePrice: null | number
+    ethPrice: null | number
     tokensLeft: null | number
     maxSupply: null | number
   }>({
@@ -54,37 +54,7 @@ export default function Home() {
   const [connectWallet, disconnect] = useConnect({ setContract })
   const chakraToast = useToast()
 
-  useEffect(() => {
-    ;(async () => {
-      const [apePriceRaw, ethPriceRaw, tokensLeft, maxSupply] =
-        await Promise.all([
-          contract.PRICE_APE(),
-          contract.PRICE_ETH(),
-          contract.getTokensLeft(),
-          contract.CURRENT_MAX_SUPPLY(),
-        ])
-
-      const apePrice = ethers.utils.formatEther(apePriceRaw)
-      const ethPrice = ethers.utils.formatEther(ethPriceRaw)
-
-      setMintValues({
-        apePrice,
-        ethPrice,
-        tokensLeft,
-        maxSupply,
-      })
-
-      contract.on('MintSuccess', async () => {
-        const tokensLeft = await contract.getTokensLeft()
-        setMintValues({
-          apePrice,
-          ethPrice,
-          tokensLeft,
-          maxSupply,
-        })
-      })
-    })()
-  }, [])
+  useMintValues({ contract, setMintValues })
 
   const onMint = async () => {
     if (
@@ -106,12 +76,12 @@ export default function Home() {
         setMintLoading(true)
         let mintResp
         if (isEth) {
-          const ethTotalprice = String(quantity * Number(mintValues.ethPrice))
+          const ethTotalprice = String(quantity * mintValues.ethPrice)
           mintResp = await ci.contract
             .connect(ci.signer)
             .mintInEth(quantity, { value: parseEther(ethTotalprice) })
         } else {
-          const apeCost = quantity * Number(mintValues.apePrice)
+          const apeCost = quantity * mintValues.apePrice
           const apeTotalPrice = parseEther(String(apeCost))
 
           const erc20Contract = new ethers.Contract(
@@ -123,26 +93,13 @@ export default function Home() {
           const balance = await erc20Contract
             .connect(ci.signer)
             .allowance(ci.address, contractAddress)
-          console.log('xxxx balance', ethers.utils.formatEther(balance))
 
-          console.log('xxxx inputs', {
-            contractAddress,
-            apeTotalPrice,
-            stringV: String(quantity * Number(mintValues.apePrice)),
-          })
-
-          console.log('yyyyyy diff', {
-            balance: Number(ethers.utils.formatEther(balance)),
-            apeCost,
-          })
           if (Number(ethers.utils.formatEther(balance)) < apeCost) {
             const approveResp = await erc20Contract
               .connect(ci.signer)
               .approve(contractAddress, apeTotalPrice)
-            console.log('xxxx approveResp', approveResp)
 
-            const approveReceipt = await approveResp.wait()
-            console.log('xxxx approveReceipt', approveReceipt)
+            await approveResp.wait()
           }
 
           mintResp = await ci.contract.connect(ci.signer).mintInApe(quantity)
@@ -160,7 +117,7 @@ export default function Home() {
           `Transaction is minting on: https://${selectedNet.name}.etherscan.io/tx/${mintResp.hash}`
         )
 
-        const receipt = await mintResp.wait()
+        await mintResp.wait()
 
         toast.success(`SUCCESS!!!!: ${mintResp.hash}`)
         customToast({
@@ -168,7 +125,6 @@ export default function Home() {
           txn: mintResp.hash,
           toast: chakraToast,
         })
-        console.log('success receipt', receipt)
         setMintLoading(false)
       } catch (e: any) {
         setMintLoading(false)
