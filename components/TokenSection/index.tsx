@@ -11,7 +11,6 @@ import {
   DesktopView,
   ImageContainer,
   LiveSpan,
-  MintSectionC,
   MobileStyledP,
   MobileTextC,
   MobileTitleH3,
@@ -19,8 +18,10 @@ import {
   SwitchC,
   TextContainer,
 } from './styles'
-import { BeatLoader } from 'react-spinners'
+
 import { tabletBr } from '../../utils/breakpoints'
+import { MintStatus } from '../../pages'
+import MintSection from '../MintSection'
 const { bold } = weight
 
 const { title, artist, description, type } = tokenSection
@@ -29,7 +30,6 @@ export const StyledBackground = styled.div`
   background-color: white;
   padding: 0 20px;
 
-  /* height: 80vh; */
   @media screen and (max-width: ${tabletBr}) {
     height: auto;
   }
@@ -56,19 +56,21 @@ const imageContainer = (
 
 const TokenSection = ({
   mint,
-  isMintLoading,
+  mintState,
   currencySwitch,
   isEth,
   quantity,
   setQuantity,
   mintValues,
+  setMintLoading,
 }: {
   mint: () => void
-  isMintLoading: boolean
+  mintState: MintStatus
   currencySwitch: () => void
   isEth: boolean
   setQuantity: (qty: number) => void
   quantity: number
+  setMintLoading: (x: MintStatus) => void
   mintValues: {
     apePrice: null | number
     ethPrice: null | number
@@ -76,20 +78,6 @@ const TokenSection = ({
     tokensLeft: null | number
   }
 }) => {
-  const mintSection = () => (
-    <MintSectionC>
-      <Select quantity={quantity} setQuantity={setQuantity} />
-      {isMintLoading === true ? (
-        <BeatLoader
-          speedMultiplier={0.5}
-          cssOverride={{ margin: '30px 0px 0px 20px' }}
-        />
-      ) : (
-        <MintBtn mint={mint} />
-      )}
-    </MintSectionC>
-  )
-
   const remainingText = (
     <>
       <TitleH4>REMAINING</TitleH4>
@@ -147,7 +135,13 @@ const TokenSection = ({
               </div>
             </FlexRow>
             <Divider thick={0.5} color={grey1} />
-            {mintSection()}
+            <MintSection
+              setMintLoading={setMintLoading}
+              mintState={mintState}
+              mint={mint}
+              quantity={quantity}
+              setQuantity={setQuantity}
+            />
           </TextContainer>
         </FlexRow>
       </DesktopView>
@@ -176,7 +170,13 @@ const TokenSection = ({
             ]}
           ></FaqAcccordion>
           <Divider thick={1} color="#D9D9D9" />
-          {mintSection()}
+          <MintSection
+            setMintLoading={setMintLoading}
+            mintState={mintState}
+            mint={mint}
+            quantity={quantity}
+            setQuantity={setQuantity}
+          />
         </>
       </MobileView>
     </StyledBackground>
