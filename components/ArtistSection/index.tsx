@@ -10,7 +10,7 @@ const { bold } = weight
 const FlexBox = styled.div`
   position: relative;
   display: flex;
-  margin: 0px 35px;
+  margin: 0px 45px;
 
   > div {
     margin: 20px 20px 0px;
@@ -18,6 +18,7 @@ const FlexBox = styled.div`
   @media screen and (max-width: ${mobileBr}) {
     flex-direction: column;
     justify-content: center;
+    margin: 0px 35px;
   }
 `
 
@@ -53,6 +54,19 @@ const StyledText = styled(StyledP)`
   }
 `
 
+const StyledTitle = styled(TitleH3)`
+  max-width: 700px;
+  text-align: center;
+
+  @media screen and (max-width: ${tabletBr}) {
+    max-width: 350px;
+  }
+
+  @media screen and (max-width: ${mobileBr}) {
+    max-width: 270px;
+  }
+`
+
 const TitleImgMobile = styled.div`
   display: none;
 
@@ -66,8 +80,8 @@ const TitleImgMobile = styled.div`
 
 const TitleImgDesktop = styled.div`
   position: absolute;
-  left: -50px;
-  top: 25%;
+  left: 25px;
+  top: 45%;
   @media screen and (max-width: ${tabletBr}) {
     top: 15%;
   }
@@ -82,25 +96,21 @@ const ArtistSection = ({
   content: { key: number; name: string }[]
 }) => (
   <Container id="artist-section">
+    <TitleImgDesktop>
+      <Image src={images.artistsTitle} width={35} height={125} alt="artists" />
+    </TitleImgDesktop>
     <TitleImgMobile>
       <Image src={images.artistsTitle} width={25} height={100} alt="artists" />
     </TitleImgMobile>
-    <TitleH3 color="white">BUILDING THE FUTURE OF NFTs</TitleH3>
-    <TitleH3 color="white">WITH OUR INCREDIBLE PARTNERS</TitleH3>
+    <StyledTitle color="white">
+      BUILDING THE FUTURE OF NFTs WITH OUR INCREDIBLE PARTNERS
+    </StyledTitle>
     <StyledText>
       We&apos;re a boutique marketplace, carefully curating drops with the most
       hyped artists of our time. To be eligible for upcoming mints you must hold
       at least one token from each of our past mints.
     </StyledText>
     <FlexBox>
-      <TitleImgDesktop>
-        <Image
-          src={images.artistsTitle}
-          width={35}
-          height={125}
-          alt="artists"
-        />
-      </TitleImgDesktop>
       {content.map((x) => (
         <div key={x.key}>
           <Image

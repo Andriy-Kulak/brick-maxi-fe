@@ -33,7 +33,7 @@ const StyledP = styled.p`
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
-  line-height: 14px;
+  line-height: 15px;
 
   text-align: center;
 
@@ -72,7 +72,7 @@ const FlexBox = styled.div`
   > div {
     background: rgba(255, 255, 255, 0.95);
     margin: 30px 10px;
-    padding: 50px;
+    padding: 30px;
     width: 60%;
     @media screen and (max-width: ${tabletBr}) {
       width: auto;
@@ -87,7 +87,7 @@ const FlexBox = styled.div`
   > div > div {
     margin: 50px 70px;
     @media screen and (max-width: ${laptopLargeBr}) {
-      margin: 10px 40px;
+      margin: 40px 40px;
     }
 
     @media screen and (max-width: ${tabletBr}) {
@@ -160,12 +160,19 @@ const ShadedTextBox = () => {
           <div>
             <H1>DECENTRALIZED GOVERNANCE</H1>
             <StyledP>
-              Token holders control their own fate. A truly decentralized
-              approach means that meaningful decisions are voted on by the
-              community. How should reserve funds be allocated? Should property
-              improvements be made? Should a buy-out offer be accepted? <br />
-              <br />A dedicated governance website will help facilitate these
-              decisions and many more.
+              Token holders control their own fate.
+              <br />
+              <br />
+              A dedicated governance website will allow token holders to vote on
+              proposals and make investment decisions. How should funds be
+              allocated? Should property improvements be made? Should a buyout
+              offer be accepted to liquidate the investment?
+              <br />
+              <br />
+              Brick Maxi’s in-house professionals act as facilitators, doing
+              research, filing paperwork, hiring management, and much more. We
+              streamline and simplify the process so token holders can maximize
+              their rewards.
             </StyledP>
           </div>
         </div>

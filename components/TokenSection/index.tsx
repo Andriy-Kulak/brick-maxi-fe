@@ -146,38 +146,36 @@ const TokenSection = ({
         </FlexRow>
       </DesktopView>
       <MobileView>
-        <>
-          <MobileTextC>
-            <MobileTitleH3>{title}</MobileTitleH3>
-            <MobileStyledP weight={bold}>{artist}</MobileStyledP>
-          </MobileTextC>
-          {imageContainer}
-          <SwitchC>
-            <div>
-              {mintText}
-              <StyledSwitch currencySwitch={currencySwitch} />
-            </div>
-            <div>{remainingText}</div>
-          </SwitchC>
-          <Divider thick={1} color="#D9D9D9" />
-          <FaqAcccordion
-            content={[
-              {
-                key: 1,
-                title: 'DETAILS',
-                p: 'This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at.',
-              },
-            ]}
-          ></FaqAcccordion>
-          <Divider thick={1} color="#D9D9D9" />
-          <MintSection
-            setMintLoading={setMintLoading}
-            mintState={mintState}
-            mint={mint}
-            quantity={quantity}
-            setQuantity={setQuantity}
-          />
-        </>
+        <MobileTextC>
+          <MobileTitleH3>{title}</MobileTitleH3>
+          <MobileStyledP weight={bold}>{artist}</MobileStyledP>
+        </MobileTextC>
+        {imageContainer}
+        <SwitchC>
+          <div>
+            {mintText}
+            <StyledSwitch currencySwitch={currencySwitch} />
+          </div>
+          <div>{remainingText}</div>
+        </SwitchC>
+        <Divider thick={1} color="#D9D9D9" />
+        <FaqAcccordion
+          content={[
+            {
+              key: 1,
+              title: 'DETAILS',
+              p: 'This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at.',
+            },
+          ]}
+        ></FaqAcccordion>
+        <Divider thick={1} color="#D9D9D9" />
+        <MintSection
+          setMintLoading={setMintLoading}
+          mintState={mintState}
+          mint={mint}
+          quantity={quantity}
+          setQuantity={setQuantity}
+        />
       </MobileView>
     </StyledBackground>
   )

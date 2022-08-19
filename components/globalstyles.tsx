@@ -29,9 +29,16 @@ const GlobalStyle = createGlobalStyle`
     background-color: white !important;
   }
 
-  .chakra-switch__track[data-checked], .chakra-switch__track  {
+  .chakra-switch__track[data-checked]{
     background: black !important;
   }
+
+  .chakra-switch__track  {
+    background: #808080 !important;
+  }
+
+
+  
 
   .chakra-accordion__button {
     padding-right: 0px !important;

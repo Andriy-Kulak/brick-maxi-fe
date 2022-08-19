@@ -8,6 +8,7 @@ import { tabletBr } from '../../utils/breakpoints'
 import { Box, Button } from '@chakra-ui/react'
 import { selectedNet } from '../../utils/web3'
 import { MintState, MintStatus } from '../../pages'
+import { avenirNextCondensed, gillSans } from '../utils/fontConfigs'
 
 export const StyledBackground = styled.div`
   background-color: white;
@@ -24,6 +25,7 @@ const ToastFlex = styled.div`
   display: flex;
   text-align: center;
   justify-content: space-around;
+  font-family: ${gillSans};
   padding: 8px 7px 5px;
   > div:first-child {
     margin-right: 5px;
@@ -46,6 +48,11 @@ const MintSectionC = styled.div`
   }
 `
 
+const StyledMessage = styled(StyledP)`
+  font-family: ${avenirNextCondensed};
+  font-weight: 600;
+  letter-spacing: 0.5px;
+`
 const Main = styled.div`
   position: relative;
   padding: 0px 0;
@@ -78,12 +85,11 @@ const MintSection = ({
       id="123"
       bg="black"
       position="relative"
-      maxWidth={439}
       width="100%"
       minHeight={90}
     >
       <Main>
-        <StyledP color="white">{mintState.text}</StyledP>
+        <StyledMessage color="white">{mintState.text}</StyledMessage>
         {mintState.txn && (
           <EtherscanLink
             target="_blank"
@@ -99,7 +105,7 @@ const MintSection = ({
                   alt="etherscan-logo"
                 />
               </div>
-              <div>View On Etherscan</div>
+              <div>View on Etherscan</div>
             </ToastFlex>
           </EtherscanLink>
         )}

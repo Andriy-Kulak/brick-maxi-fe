@@ -156,7 +156,7 @@ const StyledP = styled.p`
   font-family: ${gillSans};
   font-style: normal;
   font-size: 14px;
-  line-height: 15px;
+  line-height: normal;
 
   @media screen and (max-width: ${mobileBr}) {
     font-size: 13px;

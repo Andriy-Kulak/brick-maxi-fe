@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react'
-import { BigNumberish, ethers } from 'ethers'
-import { useToast } from '@chakra-ui/react'
+import { useState } from 'react'
+import { ethers } from 'ethers'
 import { ToastContainer, toast } from 'react-toastify'
 import { Nav, ArtistSection } from '../components'
 
@@ -44,11 +43,6 @@ type ContractInstance = {
 }
 
 export default function Home() {
-  // const [mintState, setMintLoading] = useState<MintStatus>({
-  //   type: MintState.MINT_IN_POGRESS, // mintSuccess // erc20Allowance
-  //   text: 'Mint In Progress',
-  //   txn: '0xd58888f66b7e838c3546680de7dd0f7c2d3e851bb0a22bf2a81c6dc40675e908',
-  // })
   const [mintState, setMintLoading] = useState<MintStatus>({
     type: MintState.NONE, // mintSuccess // erc20Allowance
     text: null,
@@ -76,7 +70,6 @@ export default function Home() {
   })
 
   const [connectWallet, disconnect] = useConnect({ setContract })
-  const chakraToast = useToast()
 
   useMintValues({ contract, setMintValues })
 
@@ -97,11 +90,6 @@ export default function Home() {
         )
       }
       try {
-        // setMintLoading({
-        //   type: MintState.MINT_IN_POGRESS,
-        //   text: 'Mint In Progress',
-        //   txn: null,
-        // })
         let mintResp
         if (isEth) {
           const ethTotalprice = String(quantity * mintValues.ethPrice)
@@ -122,6 +110,7 @@ export default function Home() {
             .connect(ci.signer)
             .allowance(ci.address, contractAddress)
 
+          toast.info(`Transaction is pending!`)
           if (Number(ethers.utils.formatEther(balance)) < apeCost) {
             const approveResp = await erc20Contract
               .connect(ci.signer)
@@ -147,23 +136,12 @@ export default function Home() {
           text: 'Mint In Progress',
           txn: mintResp.hash,
         })
-        // customToast({
-        //   text: 'Transaction is pending...',
-        //   txn: mintResp.hash,
-        //   toast: chakraToast,
-        // })
-        toast.info(
-          `Transaction is minting on: https://${selectedNet.name}.etherscan.io/tx/${mintResp.hash}`
-        )
+        toast.info(`Transaction is pending!`)
 
         await mintResp.wait()
 
-        toast.success(`SUCCESS!!!!: ${mintResp.hash}`)
-        // customToast({
-        //   text: 'Success',
-        //   txn: mintResp.hash,
-        //   toast: chakraToast,
-        // })
+        toast.success(`Transaction success!`)
+
         setMintLoading({
           type: MintState.MINT_SUCCESS,
           text: 'Success!',

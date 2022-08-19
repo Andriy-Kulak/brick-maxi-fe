@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { rewardsTableContent } from '../../content'
+import { mobileBr } from '../../utils/breakpoints'
 
 import { gillSans } from '../utils/fontConfigs'
 
@@ -34,15 +35,27 @@ const StyledTable = styled.table`
     width: 100%;
   }
 
+  thead th {
+    margin: 20px 0px;
+  }
+
   thead th:nth-child(1),
   thead th:nth-child(2),
   thead th:nth-child(3) {
-    width: 16%;
+    width: 14%;
+
+    @media screen and (max-width: ${mobileBr}) {
+      width: 18%;
+    }
   }
 
   thead th:nth-child(4),
   thead th:nth-child(5) {
-    width: 31%;
+    width: 26%;
+
+    @media screen and (max-width: ${mobileBr}) {
+      width: 22%;
+    }
   }
 
   tr {

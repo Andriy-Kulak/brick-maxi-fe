@@ -64,7 +64,7 @@ const customToast = ({
                     alt="etherscan-logo"
                   />
                 </div>
-                <div>View On Etherscan</div>
+                <div>View on Etherscan</div>
               </ToastFlex>
             </EtherscanLink>
           )}
