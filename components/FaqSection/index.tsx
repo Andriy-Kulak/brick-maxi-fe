@@ -95,7 +95,7 @@ const FaqSection = () => {
           <MobileContainer>
             <Image
               src={images.whiteSquiggleLine}
-              width={300}
+              width={240}
               height={10}
               alt="squiggle line"
             />
