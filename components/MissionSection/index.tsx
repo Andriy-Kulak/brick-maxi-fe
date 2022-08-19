@@ -46,7 +46,7 @@ const FlexBox = styled.div`
   flex-wrap: wrap;
   margin: 20px 50px;
   > div {
-    padding: 20px 15px 0px;
+    padding: 20px 25px 0px;
     width: 25%;
   }
   @media screen and (max-width: ${mobileBr}) {
@@ -80,7 +80,7 @@ const SubTitle = styled.p`
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
-  line-height: 19px;
+  line-height: 16px;
 
   text-align: center;
 
@@ -168,8 +168,8 @@ const MissionSection = () => {
             <div key={x.key}>
               <Image
                 alt="img-sample"
-                width={365}
-                height={365}
+                width={350}
+                height={350}
                 src={images.imgSample}
               />
               <Title> {x.name}</Title>

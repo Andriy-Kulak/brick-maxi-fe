@@ -10,7 +10,7 @@ const { bold } = weight
 const FlexBox = styled.div`
   position: relative;
   display: flex;
-  margin: 0px 35px;
+  margin: 0px 45px;
 
   > div {
     margin: 20px 20px 0px;
@@ -18,6 +18,7 @@ const FlexBox = styled.div`
   @media screen and (max-width: ${mobileBr}) {
     flex-direction: column;
     justify-content: center;
+    margin: 0px 35px;
   }
 `
 
@@ -60,6 +61,10 @@ const StyledTitle = styled(TitleH3)`
   @media screen and (max-width: ${tabletBr}) {
     max-width: 350px;
   }
+
+  @media screen and (max-width: ${mobileBr}) {
+    max-width: 270px;
+  }
 `
 
 const TitleImgMobile = styled.div`
@@ -75,8 +80,8 @@ const TitleImgMobile = styled.div`
 
 const TitleImgDesktop = styled.div`
   position: absolute;
-  left: -50px;
-  top: 25%;
+  left: 25px;
+  top: 45%;
   @media screen and (max-width: ${tabletBr}) {
     top: 15%;
   }
@@ -91,6 +96,9 @@ const ArtistSection = ({
   content: { key: number; name: string }[]
 }) => (
   <Container id="artist-section">
+    <TitleImgDesktop>
+      <Image src={images.artistsTitle} width={35} height={125} alt="artists" />
+    </TitleImgDesktop>
     <TitleImgMobile>
       <Image src={images.artistsTitle} width={25} height={100} alt="artists" />
     </TitleImgMobile>
@@ -103,14 +111,6 @@ const ArtistSection = ({
       at least one token from each of our past mints.
     </StyledText>
     <FlexBox>
-      <TitleImgDesktop>
-        <Image
-          src={images.artistsTitle}
-          width={35}
-          height={125}
-          alt="artists"
-        />
-      </TitleImgDesktop>
       {content.map((x) => (
         <div key={x.key}>
           <Image

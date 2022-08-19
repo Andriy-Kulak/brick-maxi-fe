@@ -100,10 +100,10 @@ export const tokenSection = {
 }
 
 export const teamProfiles = [
-  { name: 'Name', role: 'role', key: 1 },
-  { name: 'Name', role: 'role', key: 2 },
-  { name: 'Name', role: 'role', key: 3 },
-  { name: 'Name', role: 'role', key: 4 },
+  { name: 'NAME', role: 'role', key: 1 },
+  { name: 'NAME', role: 'role', key: 2 },
+  { name: 'NAME', role: 'role', key: 3 },
+  { name: 'NAME', role: 'role', key: 4 },
 ]
 
 export const rewardsTableContent = [
