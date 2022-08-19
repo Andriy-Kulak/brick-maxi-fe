@@ -15,6 +15,7 @@ import {
   DesktopTableC,
 } from './styles'
 import { trimAddress } from '../../utils/helpers'
+import { grey1 } from '../utils/colors'
 
 const RewardsSection = ({
   connect,
@@ -43,12 +44,12 @@ const RewardsSection = ({
       </ImageC>
       <div>
         <StyledButton onClick={connect} colorScheme="black">
-          Connect
+          {address ? trimAddress(address) : 'Connect'}
         </StyledButton>
       </div>
 
       <DesktopTableC>
-        <HeaderText>TOKENS IN WALLET: {trimAddress(address)}</HeaderText>
+        <HeaderText>TOKENS IN WALLET: ####</HeaderText>
         <Table />
         <BottomContainer>
           <BottomLeftC>
@@ -62,8 +63,8 @@ const RewardsSection = ({
           </BottomLeftC>
           <BottomRightC>
             <HeaderText weight={600}>REWARDS</HeaderText>
-            <HeaderText>COLLECTED TO DATE</HeaderText>
-            <HeaderText>LAST COLLECTED</HeaderText>
+            <HeaderText color={grey1}>COLLECTED TO DATE</HeaderText>
+            <HeaderText color={grey1}>LAST COLLECTED</HeaderText>
           </BottomRightC>
         </BottomContainer>
       </DesktopTableC>

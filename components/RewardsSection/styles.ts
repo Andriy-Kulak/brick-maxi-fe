@@ -4,6 +4,7 @@ import { gillSans } from '../utils/fontConfigs'
 
 export const ImageC = styled.div`
   padding-top: 20px;
+  margin-bottom: 0px !important;
 `
 
 export const LandingC = styled.div`
@@ -23,7 +24,7 @@ export const Main = styled.div`
   justify-content: ${(props: { justifyContent?: string }) =>
     props.justifyContent || 'center'};
   align-items: center;
-
+  min-height: 100vh;
   background-color: white;
   background-clip: content-box;
   z-index: 1;
@@ -52,6 +53,7 @@ export const HeaderText = styled.p`
   font-style: normal;
   font-weight: ${(props: { weight?: number }) => props.weight || 400};
   font-size: 14px;
+  color: ${(props: { color?: string }) => props.color || 'black'};
 
   line-height: 16px;
   text-align: left;
