@@ -42,6 +42,8 @@ export const DesktopView = styled(Main)`
 `
 
 export const MobileView = styled(Main)`
+  max-width: 430px;
+  margin: 0 auto;
   display: none;
   @media screen and (max-width: ${tabletBr}) {
     display: flex;

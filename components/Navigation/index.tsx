@@ -154,16 +154,6 @@ const Nav = ({
                   </NextLink>
                 </div>
                 <div>
-                  {address && (
-                    <StyledButton
-                      onClick={() => disconnect()}
-                      colorScheme="black"
-                    >
-                      Disc.
-                    </StyledButton>
-                  )}
-                </div>
-                <div>
                   <StyledButton
                     onClick={() => connectWallet()}
                     colorScheme="black"
