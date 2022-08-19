@@ -53,6 +53,15 @@ const StyledText = styled(StyledP)`
   }
 `
 
+const StyledTitle = styled(TitleH3)`
+  max-width: 700px;
+  text-align: center;
+
+  @media screen and (max-width: ${tabletBr}) {
+    max-width: 350px;
+  }
+`
+
 const TitleImgMobile = styled.div`
   display: none;
 
@@ -85,8 +94,9 @@ const ArtistSection = ({
     <TitleImgMobile>
       <Image src={images.artistsTitle} width={25} height={100} alt="artists" />
     </TitleImgMobile>
-    <TitleH3 color="white">BUILDING THE FUTURE OF NFTs</TitleH3>
-    <TitleH3 color="white">WITH OUR INCREDIBLE PARTNERS</TitleH3>
+    <StyledTitle color="white">
+      BUILDING THE FUTURE OF NFTs WITH OUR INCREDIBLE PARTNERS
+    </StyledTitle>
     <StyledText>
       We&apos;re a boutique marketplace, carefully curating drops with the most
       hyped artists of our time. To be eligible for upcoming mints you must hold

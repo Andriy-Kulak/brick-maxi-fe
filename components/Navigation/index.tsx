@@ -86,7 +86,7 @@ const MobileMenuC = styled.div`
 const mobileContent = [
   { key: 1, name: 'Home', href: '/' },
   { key: 2, name: 'Artists', href: '/#artist-section' },
-  { key: 3, name: 'Learn', href: '/#learn-section' },
+  { key: 3, name: 'Learn', href: '/#how-it-works-section' },
   { key: 4, name: 'Rewards', href: '/rewards' },
   { key: 5, name: 'Mission', href: '/mission' },
 ]
@@ -127,7 +127,7 @@ const Nav = ({
                     Artists
                   </NavText>
                 </NextLink>
-                <NextLink href="/#learn-section">
+                <NextLink href="/#how-it-works-section">
                   <NavText className="nav-link" color="white">
                     Learn
                   </NavText>

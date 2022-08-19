@@ -13,8 +13,7 @@ const TextC = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  height: 60vh;
-  min-height: 60vh;
+  min-height: 40vh;
 
   @media screen and (max-width: ${mobileBr}) {
     height: auto;
@@ -43,7 +42,7 @@ const MiniTextC = styled.div`
 
 const ImgC1 = styled.div`
   position: absolute;
-  top: 145px;
+  top: 115px;
   left: 25px;
 
   @media screen and (max-width: ${mobileBr}) {
@@ -71,9 +70,17 @@ const ImgC3 = styled.div`
   }
 `
 
+const StyledMain = styled(Main)`
+  padding: 3rem 0;
+
+  @media screen and (max-width: ${mobileBr}) {
+    padding: 2rem 0;
+  }
+`
+
 const HowItWorksSection = () => (
   <>
-    <TextC>
+    <TextC id="how-it-works-section">
       <ImgC1>
         <Image
           alt="how it works"
@@ -96,11 +103,11 @@ const HowItWorksSection = () => (
         <TitleH2Small>ART THAT PAYS DIVIDENDS.</TitleH2Small>
         <Divider thick={0.5} color="white" />
       </MiniTextC>
-      <Main>
+      <StyledMain>
         <TitleH1>You collect art.</TitleH1>
         <TitleH1>We purchase real estate.</TitleH1>
         <TitleH1>You earn USDC rewards.</TitleH1>
-      </Main>
+      </StyledMain>
     </TextC>
     <BackgroundC>
       <Image
