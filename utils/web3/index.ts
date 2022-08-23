@@ -2,7 +2,7 @@ import { ethers, providers } from 'ethers'
 
 // // https://rinkeby.etherscan.io/address/0x069968Fb86c8b81fD990CF781CE732F110F8b6d6#code
 // https://goerli.etherscan.io/address/0x50e9084dcc50F6FBd26232D94FF6fB7cC60DED9E#code
-export const contractAddress = '0x50e9084dcc50F6FBd26232D94FF6fB7cC60DED9E'
+export const contractAddress = '0xA675C91Ed549bD9Da4b0696ECD4e4282EBe56a8E'
 
 const nets = [
   {
