@@ -109,7 +109,7 @@ const Main = styled.div`
 const DesktopImgC = styled.div`
   position: absolute;
   top: 40%;
-  left: 15px;
+  left: 25px;
   z-index: 2;
 
   @media screen and (max-width: ${mobileBr}) {
@@ -132,7 +132,7 @@ const BackgroundC = styled.div`
   position: relative;
   min-height: 70vh;
   background-color: black;
-  padding: 70px;
+  padding: 70px 80px;
 
   @media screen and (max-width: ${mobileBr}) {
     padding: 38px;
