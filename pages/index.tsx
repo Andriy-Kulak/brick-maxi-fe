@@ -23,6 +23,7 @@ import useConnect from '../utils/hooks/useConnect'
 import useMintValues from '../utils/hooks/useMintValues'
 import UpcomingDropsSection from '../components/UpcomingDropsSection'
 import TeamSection from '../components/TeamSection'
+import Footer from '../components/Footer'
 
 export enum MintState {
   NONE,
@@ -187,6 +188,7 @@ export default function Home() {
       <TeamSection />
       {/* <ArtistSection content={artistSection} /> */}
       <FaqSection />
+      <Footer />
     </>
   )
 }
