@@ -24,6 +24,7 @@ export default function Rewards() {
         connectWallet={connectWallet}
         address={ci.address}
         disconnect={disconnect}
+        showLogo={true}
       />
       <RewardsSection connect={() => connectWallet()} address={ci.address} />
       <Footer />

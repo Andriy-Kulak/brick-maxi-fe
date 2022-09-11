@@ -95,9 +95,11 @@ const Nav = ({
   connectWallet,
   disconnect,
   address,
+  showLogo,
 }: {
   connectWallet: () => Promise<void>
   disconnect: () => void
+  showLogo: boolean
   address?: string
 }) => {
   const [pageWidth, setPageWidth] = useState(0)
@@ -134,7 +136,7 @@ const Nav = ({
                 </NextLink>
               </MidFlexContainer>
 
-              <div>
+              <div style={{ display: showLogo ? '' : 'none' }}>
                 <NextLink href="/">
                   <Image
                     className="nav-link"

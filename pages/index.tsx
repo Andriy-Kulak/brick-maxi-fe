@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useLayoutEffect } from 'react'
 import { ethers } from 'ethers'
 import { ToastContainer, toast } from 'react-toastify'
 import { Nav, ArtistSection } from '../components'
@@ -45,6 +45,13 @@ type ContractInstance = {
   address: string
 }
 
+export type LogoParamProps = {
+  w: number
+  h: number
+  imgPadding: number
+  scrollY: number
+}
+
 export default function Home() {
   const [mintState, setMintLoading] = useState<MintStatus>({
     type: MintState.NONE, // mintSuccess // erc20Allowance
@@ -76,6 +83,38 @@ export default function Home() {
 
   useMintValues({ contract, setMintValues })
 
+  const [logoParams, setLogoParams] = useState<LogoParamProps>({
+    w: 200,
+    h: 200,
+    imgPadding: 0,
+    scrollY: 0,
+  })
+  const handleScroll = () => {
+    // Get the current scrollY point
+    const sY = window.scrollY
+
+    // console.log('event.target.body ', event.target.body.scroll)
+    // const scrollTop = event.target.body.scrollTop
+    // at 0 should be 200  by 200
+    // 276 should be 77 by 77
+    // 200-77 = 123
+
+    const calc1 = 200 - 123 * (sY / 225)
+    const calc2 = 123 * (sY / 225)
+    const test = Math.max(77, calc1)
+    console.log('sY and others', { sY, calc1, calc2 })
+    setLogoParams({
+      w: test,
+      h: test,
+      imgPadding: calc2,
+      scrollY: window.scrollY,
+    })
+  }
+  useLayoutEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+  }, [])
+
+  // this will be used once mint is live
   const onMint = async () => {
     if (
       ci.contract === null ||
@@ -170,8 +209,9 @@ export default function Home() {
         connectWallet={connectWallet}
         address={ci.address}
         disconnect={disconnect}
+        showLogo={logoParams.scrollY >= 230}
       />
-      <LandingSection />
+      <LandingSection logoParams={logoParams} />
       {/* <TokenSection
         mintValues={mintValues}
         isEth={isEth}

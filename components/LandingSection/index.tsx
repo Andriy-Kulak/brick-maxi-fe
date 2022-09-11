@@ -5,16 +5,17 @@ import { TitleH2, Main100h } from '../sharedstyles'
 import { images } from '../../content'
 import { tabletBr } from '../../utils/breakpoints'
 import { avenirNextCondensed, weight } from '../utils/fontConfigs'
+import { LogoParamProps } from '../../pages'
 
-type Props = {
+type ImageCProps = {
   hide?: boolean
   marginLeft?: number
 }
-const ImageC = styled.div`
+const ImageC = styled.div<ImageCProps>`
   width: 200px;
   height: 200px;
-  z-index: ${(props: any) => (props.hide ? 2 : 200)};
-  margin-left: ${(props: { marginLeft?: number }) => props.marginLeft || 0}px;
+  z-index: ${(props) => (props.hide ? 2 : 200)};
+  margin-left: ${(props) => props.marginLeft || 0}px;
   display: inherited;
   @media screen and (max-width: ${tabletBr}) {
     width: 150px;
@@ -59,37 +60,7 @@ const LaunchText = styled.p`
   font-weight: ${weight.bold};
 `
 
-const LandingSection = () => {
-  const [logoParams, setLogoParams] = useState({
-    w: 200,
-    h: 200,
-    imgPadding: 0,
-    scrollY: 0,
-  })
-  const handleScroll = () => {
-    // Get the current scrollY point
-    const sY = window.scrollY
-
-    // console.log('event.target.body ', event.target.body.scroll)
-    // const scrollTop = event.target.body.scrollTop
-    // at 0 should be 200  by 200
-    // 276 should be 77 by 77
-    // 200-77 = 123
-
-    const calc1 = 200 - 123 * (sY / 225)
-    const calc2 = 123 * (sY / 225)
-    const test = Math.max(77, calc1)
-    console.log('sY and others', { sY, calc1, calc2 })
-    setLogoParams({
-      w: test,
-      h: test,
-      imgPadding: calc2,
-      scrollY: window.scrollY,
-    })
-  }
-  useLayoutEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-  }, [])
+const LandingSection = ({ logoParams }: { logoParams: LogoParamProps }) => {
   return (
     <LandingC>
       <Image
@@ -103,7 +74,7 @@ const LandingSection = () => {
       <StyledMain>
         <ImageC
           marginLeft={logoParams.imgPadding}
-          hide={logoParams.scrollY >= 220}
+          hide={logoParams.scrollY >= 230}
         >
           <Image
             alt="Brick Maxi Logo"
