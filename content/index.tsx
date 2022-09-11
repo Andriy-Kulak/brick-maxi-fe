@@ -19,6 +19,7 @@ import imgSample from '../public/assets/brickMaxiSample.png'
 import rewardsBg from '../public/assets/rewards_page_bg2.png'
 import mintBtn from '../public/assets/mint_button2.png'
 import collectBtn from '../public/assets/collect_button.png'
+import animatedLogo from '../public/assets/BRICKMAXI_LOGO_ANIMATED.gif'
 
 export const images = {
   brickMaxiLogo,
@@ -42,6 +43,7 @@ export const images = {
   whiteSquiggleLine,
   upcomingDropsTitle,
   teamTitle,
+  animatedLogo,
 }
 
 export const artistSection = [
