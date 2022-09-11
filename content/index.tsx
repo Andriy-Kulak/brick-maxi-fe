@@ -8,13 +8,14 @@ import ethescanLogo from '../public/assets/icons/etherscan-logo.webp'
 import apecoinLogo from '../public/assets/icons/apecoin.png'
 import missionTitle from '../public/assets/titles/MISSION_WHITE.png'
 import howItWorksTitle from '../public/assets/titles/HOW_IT_WORKS_WHITE.png'
+import upcomingDropsTitle from '../public/assets/titles/UPCOMING_DROPS_WHITE.png'
 import artistsTitle from '../public/assets/titles/ARTISTS_WHITE.png'
 import rewardsTitle from '../public/assets/titles/REWARDS_HEADING.png'
 import faqWhiteTitle from '../public/assets/titles/FAQ_WHITE.png'
 import faqBlackTitle from '../public/assets/titles/FAQ_BLACK.png'
 import whiteSquiggleLine from '../public/assets/titles/WHITE_SQUIGGLE_LINE.png'
 import imgSample from '../public/assets/brickMaxiSample.png'
-import rewardsBg from '../public/assets/rewards_page_bg2.png' //
+import rewardsBg from '../public/assets/rewards_page_bg2.png'
 import mintBtn from '../public/assets/mint_button2.png'
 import collectBtn from '../public/assets/collect_button.png'
 
@@ -38,6 +39,7 @@ export const images = {
   faqWhiteTitle,
   faqBlackTitle,
   whiteSquiggleLine,
+  upcomingDropsTitle,
 }
 
 export const artistSection = [

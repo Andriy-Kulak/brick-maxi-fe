@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Main, TitleH1, TitleH2Small } from '../sharedstyles'
 import { Divider, ShadedTextBox } from '../'
 import { images } from '../../content'
-import { mobileBr, tabletBr } from '../../utils/breakpoints'
+import { mobileBr, tabletBr, laptopSmallBr } from '../../utils/breakpoints'
 
 const TextC = styled.div`
   position: relative;
@@ -18,6 +18,10 @@ const TextC = styled.div`
   @media screen and (max-width: ${mobileBr}) {
     height: auto;
     min-height: auto;
+  }
+
+  @media screen and (min-width: ${laptopSmallBr}) {
+    padding-bottom: 70px;
   }
 `
 
@@ -44,6 +48,7 @@ const ImgC1 = styled.div`
   position: absolute;
   top: 115px;
   left: 25px;
+  z-index: 20;
 
   @media screen and (max-width: ${mobileBr}) {
     display: none;
@@ -85,8 +90,8 @@ const HowItWorksSection = () => (
         <Image
           alt="how it works"
           src={images.howItWorksTitle}
-          width={35}
-          height={205}
+          width={30}
+          height={259}
         />
       </ImgC1>
 
@@ -124,8 +129,8 @@ const HowItWorksSection = () => (
         <Image
           alt="how it works"
           src={images.howItWorksTitle}
-          width={35}
-          height={205}
+          width={30}
+          height={259}
         />
       </ImgC2>
     </BackgroundC>

@@ -71,8 +71,8 @@ const FaqSection = () => {
           <TitleImgDesktop>
             <Image
               src={images.faqBlackTitle}
-              width={35}
-              height={85}
+              width={30}
+              height={65}
               alt="faq"
             />
           </TitleImgDesktop>

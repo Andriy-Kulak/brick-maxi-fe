@@ -21,6 +21,7 @@ import { customToast } from '../components/utils/customToast'
 import errorCapture from '../utils/web3/errorCapture'
 import useConnect from '../utils/hooks/useConnect'
 import useMintValues from '../utils/hooks/useMintValues'
+import UpcomingDropsSection from '../components/UpcomingDropsSection'
 
 export enum MintState {
   NONE,
@@ -169,7 +170,7 @@ export default function Home() {
         disconnect={disconnect}
       />
       <LandingSection />
-      <TokenSection
+      {/* <TokenSection
         mintValues={mintValues}
         isEth={isEth}
         currencySwitch={() => setEth(!isEth)}
@@ -178,8 +179,10 @@ export default function Home() {
         setMintLoading={setMintLoading}
         quantity={quantity}
         setQuantity={setQuantity}
-      />
+      /> */}
+
       <HowItWorksSection />
+      <UpcomingDropsSection />
       <ArtistSection content={artistSection} />
       <FaqSection />
     </>
