@@ -122,9 +122,9 @@ const Nav = ({
                     Team
                   </NavText>
                 </NextLink>
-                <NextLink href="/#artist-section">
+                <NextLink href="/#upcoming-section">
                   <NavText className="nav-link" color="white">
-                    Artists
+                    Upcoming Drops
                   </NavText>
                 </NextLink>
                 <NextLink href="/#how-it-works-section">

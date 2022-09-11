@@ -75,7 +75,7 @@ const MobileImgC1 = styled.div`
 
 const UpcomingDropsSection = () => {
   return (
-    <TextC>
+    <TextC id="upcoming-section">
       <DesktopImgC1>
         <Image
           alt="upcoming drops"
