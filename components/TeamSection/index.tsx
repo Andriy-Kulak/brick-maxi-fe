@@ -23,23 +23,10 @@ export const StyledButton = styled(Button).attrs({
   }
 ` as typeof Button
 
-const Container = styled.div`
-  padding: 20px;
-  position: relative;
-  /* z-index: 1000;
-  display: inherit; */
-  overflow-y: visible;
-  overflow: visible;
-  width: 100vw;
-  min-height: 100vh;
-  background-color: black;
-  position: sticky;
-`
-
 const BlackC = styled.div`
   background-color: black;
   width: 100%;
-  z-index: 200;
+  z-index: 2;
   height: 100%;
   position: relative;
 `
@@ -123,7 +110,7 @@ const DesktopImgC = styled.div`
   position: absolute;
   top: 40%;
   left: 15px;
-  z-index: 20;
+  z-index: 2;
 
   @media screen and (max-width: ${mobileBr}) {
     display: none;
@@ -134,7 +121,7 @@ const MobileImgC = styled.div`
   position: absolute;
   top: 40%;
   left: 12px;
-  z-index: 20;
+  z-index: 2;
 
   @media screen and (min-width: ${mobileBr}) {
     display: none;
@@ -154,8 +141,7 @@ const BackgroundC = styled.div`
 
 const TeamSection = () => {
   return (
-    // <Container>
-    <BackgroundC>
+    <BackgroundC id="team-section">
       <DesktopImgC>
         <Image height={92} width={30} src={images.teamTitle} alt="Team" />
       </DesktopImgC>
@@ -206,7 +192,6 @@ const TeamSection = () => {
         </Main>
       </BlackC>
     </BackgroundC>
-    // </Container>
   )
 }
 

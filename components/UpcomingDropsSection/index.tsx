@@ -13,7 +13,7 @@ const TextC = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  min-height: 40vh;
+  min-height: 50vh;
 
   @media screen and (max-width: ${mobileBr}) {
     height: auto;
@@ -50,7 +50,7 @@ const InnerTextC = styled.div`
 const DesktopImgC1 = styled.div`
   position: absolute;
   top: 35px;
-  left: 40px;
+  left: 25px;
   z-index: 20;
 
   @media screen and (max-width: ${tabletBr}) {

@@ -88,7 +88,7 @@ const mobileContent = [
   // { key: 2, name: 'Artists', href: '/#artist-section' },
   // { key: 3, name: 'Learn', href: '/#how-it-works-section' },
   { key: 4, name: 'Rewards', href: '/rewards' },
-  { key: 5, name: 'Mission', href: '/mission' },
+  { key: 5, name: 'Team', href: '/#team-section' },
 ]
 
 const Nav = ({
@@ -117,9 +117,9 @@ const Nav = ({
           {pageWidth >= tabletBrPixels && (
             <>
               <MidFlexContainer left>
-                <NextLink href="/mission">
+                <NextLink href="/#team-section">
                   <NavText className="nav-link" color="white">
-                    Mission
+                    Team
                   </NavText>
                 </NextLink>
                 <NextLink href="/#artist-section">
