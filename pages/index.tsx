@@ -22,6 +22,7 @@ import errorCapture from '../utils/web3/errorCapture'
 import useConnect from '../utils/hooks/useConnect'
 import useMintValues from '../utils/hooks/useMintValues'
 import UpcomingDropsSection from '../components/UpcomingDropsSection'
+import TeamSection from '../components/TeamSection'
 
 export enum MintState {
   NONE,
@@ -183,7 +184,8 @@ export default function Home() {
 
       <HowItWorksSection />
       <UpcomingDropsSection />
-      <ArtistSection content={artistSection} />
+      <TeamSection />
+      {/* <ArtistSection content={artistSection} /> */}
       <FaqSection />
     </>
   )

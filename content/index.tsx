@@ -10,6 +10,7 @@ import missionTitle from '../public/assets/titles/MISSION_WHITE.png'
 import howItWorksTitle from '../public/assets/titles/HOW_IT_WORKS_WHITE.png'
 import upcomingDropsTitle from '../public/assets/titles/UPCOMING_DROPS_WHITE.png'
 import artistsTitle from '../public/assets/titles/ARTISTS_WHITE.png'
+import teamTitle from '../public/assets/titles/TEAM_WHITE.png'
 import rewardsTitle from '../public/assets/titles/REWARDS_HEADING.png'
 import faqWhiteTitle from '../public/assets/titles/FAQ_WHITE.png'
 import faqBlackTitle from '../public/assets/titles/FAQ_BLACK.png'
@@ -40,6 +41,7 @@ export const images = {
   faqBlackTitle,
   whiteSquiggleLine,
   upcomingDropsTitle,
+  teamTitle,
 }
 
 export const artistSection = [
