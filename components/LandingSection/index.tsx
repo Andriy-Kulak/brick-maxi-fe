@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { TitleH2, Main100h } from '../sharedstyles'
 import { images } from '../../content'
 import { tabletBr } from '../../utils/breakpoints'
+import { avenirNextCondensed, weight } from '../utils/fontConfigs'
 
 const ImageC = styled.div`
   width: 200px;
@@ -28,6 +29,29 @@ const StyledMain = styled(Main100h)`
   padding: 2rem 0 5rem;
 `
 
+const VerticalText = styled.h4`
+  text-orientation: upright;
+  color: white;
+  writing-mode: vertical-rl;
+  position: absolute;
+  top: calc(50% - 80px);
+  font-weight: ${weight.bold};
+  left: 34px;
+  font-size: 20px;
+  font-family: ${avenirNextCondensed};
+`
+
+const LaunchText = styled.p`
+  position: absolute;
+  bottom: 50px;
+  left: calc(50% - 100px);
+  color: white;
+  font-style: italic;
+  font-size: 20px;
+  font-family: ${avenirNextCondensed};
+  font-weight: ${weight.bold};
+`
+
 const LandingSection = () => (
   <LandingC>
     <Image
@@ -47,10 +71,12 @@ const LandingSection = () => (
           width={200}
         />
       </ImageC>
+      <VerticalText>SCROLL</VerticalText>
       <TitleH2 style={{ position: 'relative', zIndex: 1 }}>
         ART THAT PAYS DIVIDENDS
       </TitleH2>
     </StyledMain>
+    <LaunchText>+ launching fall 2022 +</LaunchText>
   </LandingC>
 )
 
