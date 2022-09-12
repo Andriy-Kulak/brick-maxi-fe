@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react'
+import { useState, useLayoutEffect, useRef } from 'react'
 import { ethers } from 'ethers'
 import { ToastContainer, toast } from 'react-toastify'
 import { Nav, ArtistSection } from '../components'
@@ -50,6 +50,7 @@ export type LogoParamProps = {
   h: number
   imgPadding: number
   scrollY: number
+  isSwitchLogo: boolean
 }
 
 export default function Home() {
@@ -79,6 +80,7 @@ export default function Home() {
     tokensLeft: null,
   })
 
+  const logoRef = useRef<HTMLDivElement>(null)
   const [connectWallet, disconnect] = useConnect({ setContract })
 
   useMintValues({ contract, setMintValues })
@@ -88,6 +90,7 @@ export default function Home() {
     h: 200,
     imgPadding: 0,
     scrollY: 0,
+    isSwitchLogo: false,
   })
   const handleScroll = () => {
     // Get the current scrollY point
@@ -108,6 +111,9 @@ export default function Home() {
       imgPadding: calc2,
       scrollY: window.scrollY,
     })
+
+    const top = logoRef?.current?.getBoundingClientRect()?.top
+
     setLogoParams({
       w: test,
       h: test,
@@ -115,10 +121,14 @@ export default function Home() {
       // padding should never be more than 200. if it is, it will affect mobile on scroll since most screens are <= 400 pixels
       imgPadding: Math.min(200, calc2),
       scrollY: window.scrollY,
+      isSwitchLogo: typeof top === 'number' && top < -10 ? true : false,
     })
   }
   useLayoutEffect(() => {
     window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true)
+    }
   }, [])
 
   // this will be used once mint is live
@@ -216,9 +226,9 @@ export default function Home() {
         connectWallet={connectWallet}
         address={ci.address}
         disconnect={disconnect}
-        showLogo={logoParams.scrollY >= 230}
+        showLogo={logoParams.isSwitchLogo}
       />
-      <LandingSection logoParams={logoParams} />
+      <LandingSection logoParams={logoParams} logoRef={logoRef} />
       {/* <TokenSection
         mintValues={mintValues}
         isEth={isEth}

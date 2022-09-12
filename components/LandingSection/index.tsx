@@ -1,4 +1,4 @@
-import { useLayoutEffect, UIEvent, useState } from 'react'
+import { RefObject } from 'react'
 import Image from 'next/image'
 import styled from 'styled-components'
 import { TitleH2, Main100h } from '../sharedstyles'
@@ -60,7 +60,13 @@ const LaunchText = styled.p`
   font-weight: ${weight.bold};
 `
 
-const LandingSection = ({ logoParams }: { logoParams: LogoParamProps }) => {
+const LandingSection = ({
+  logoParams,
+  logoRef,
+}: {
+  logoParams: LogoParamProps
+  logoRef?: RefObject<HTMLDivElement> | undefined
+}) => {
   return (
     <LandingC>
       <Image
@@ -73,8 +79,9 @@ const LandingSection = ({ logoParams }: { logoParams: LogoParamProps }) => {
       />
       <StyledMain>
         <ImageC
+          ref={logoRef}
           marginLeft={logoParams.imgPadding}
-          hide={logoParams.scrollY >= 230}
+          hide={logoParams.isSwitchLogo}
         >
           <Image
             alt="Brick Maxi Logo"
