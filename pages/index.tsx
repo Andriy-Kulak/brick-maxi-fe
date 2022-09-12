@@ -104,16 +104,16 @@ export default function Home() {
 
     // at 0 should be 200  by 200
     // 276 should be 77 by 77
-    // 200-77 = 123
+    // 200-55 = 145
 
     // calculating where the logo is in relationsh to top of viewport
     const top = logoRef?.current?.getBoundingClientRect()?.top as number
 
     // calc1 determines how proprtionaly we should increase or decrease size of logo as user scroll
-    const calc1 = 200 - 123 * (sY / 260)
+    const calc1 = 200 - 145 * (sY / 260)
 
     // calc2 determines how much to move the image to left with margin on desktop to make it smooth
-    const calc2 = 123 * (sY / 260)
+    const calc2 = 145 * (sY / 260)
 
     // cal3 determines how much to move the image to right with margin on mobile to make it smooth
     // i am using innewidth to proportionally adjust margin depending on different screen sizes

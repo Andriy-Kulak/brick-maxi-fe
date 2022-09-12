@@ -38,7 +38,7 @@ const TopFlexContainer = styled.div`
   align-items: center;
   align-content: center;
   flex-direction: row;
-  height: 85px;
+  height: 70px;
 
   div {
     margin: 5px 60px 0px;
@@ -53,7 +53,7 @@ const TopFlexContainer = styled.div`
   }
 
   @media screen and (max-width: ${tabletBr}) {
-    height: 75px;
+    height: 70px;
   }
 `
 
@@ -118,6 +118,8 @@ const Nav = ({
     })
   }, [])
 
+  const logSideLength = 55
+
   return (
     <>
       <StyledSticky isMobileOpen={isMobileOpen}>
@@ -150,8 +152,8 @@ const Nav = ({
                     className="nav-link"
                     alt="Brick Maxi Logo"
                     src={images.brickMaxiLogo}
-                    height={77}
-                    width={77}
+                    height={logSideLength}
+                    width={logSideLength}
                   />
                 </NextLink>
               </div>
@@ -190,8 +192,8 @@ const Nav = ({
                     className="nav-link"
                     alt="Brick Maxi Logo"
                     src={images.brickMaxiLogo}
-                    height={65}
-                    width={65}
+                    height={logSideLength}
+                    width={logSideLength}
                   />
                 </NextLink>
               </div>

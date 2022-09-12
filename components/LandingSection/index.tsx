@@ -15,7 +15,7 @@ type ImageCProps = {
 const ImageC = styled.div<ImageCProps>`
   width: 200px;
   height: 200px;
-  z-index: ${(props) => (props.hide ? 2 : 200)};
+  z-index: ${(props) => (props.hide ? -1 : 200)};
   margin-left: ${(props) => props.marginLeft || 0}px;
   margin-right: 0px;
   display: relative;
