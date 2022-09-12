@@ -40,7 +40,7 @@ const LandingC = styled.div`
   }
 
   @media screen and (max-width: ${mobileBr}) {
-    height: 75vh;
+    height: 82vh;
   }
 `
 
