@@ -74,6 +74,13 @@ const MidFlexContainer = styled.div`
   .nav-link {
     margin: 0px 15px;
   }
+
+  .nav-link {
+    :hover {
+      font-style: italic;
+      font-weight: bold;
+    }
+  }
 `
 
 const MobileMenuC = styled.div`
@@ -85,10 +92,10 @@ const MobileMenuC = styled.div`
 
 const mobileContent = [
   { key: 1, name: 'Home', href: '/' },
-  // { key: 2, name: 'Artists', href: '/#artist-section' },
-  // { key: 3, name: 'Learn', href: '/#how-it-works-section' },
-  { key: 4, name: 'Rewards', href: '/rewards' },
+  { key: 2, name: 'Upcoming Drops', href: '/#upcoming-section' },
   { key: 5, name: 'Team', href: '/#team-section' },
+  { key: 3, name: 'Learn', href: '/#how-it-works-section' },
+  { key: 4, name: 'Rewards', href: '/rewards' },
 ]
 
 const Nav = ({
@@ -119,16 +126,17 @@ const Nav = ({
           {pageWidth >= tabletBrPixels && (
             <>
               <MidFlexContainer left>
-                <NextLink href="/#team-section">
-                  <NavText className="nav-link" color="white">
-                    Team
-                  </NavText>
-                </NextLink>
                 <NextLink href="/#upcoming-section">
                   <NavText className="nav-link" color="white">
                     Upcoming Drops
                   </NavText>
                 </NextLink>
+                <NextLink href="/#team-section">
+                  <NavText className="nav-link" color="white">
+                    Team
+                  </NavText>
+                </NextLink>
+
                 <NextLink href="/#how-it-works-section">
                   <NavText className="nav-link" color="white">
                     Learn

@@ -34,6 +34,7 @@ const BlackC = styled.div`
 const FlexBox = styled.div`
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
   margin: 20px 50px;
 
   > div {
@@ -49,16 +50,6 @@ const FlexBox = styled.div`
     > div {
       padding: 0px 0px 10px;
       width: 100%;
-    }
-
-    > div:nth-child(odd) {
-      border: 2px solid green;
-      padding-right: 15px;
-    }
-
-    > div:nth-child(even) {
-      border: 2px solid red;
-      padding-right: 15px;
     }
   }
 `

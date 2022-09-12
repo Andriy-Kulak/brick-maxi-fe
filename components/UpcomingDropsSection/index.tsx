@@ -28,6 +28,9 @@ const TextC = styled.div`
 const InnerTextC = styled.div`
   text-align: center;
   width: 60%;
+  > div {
+    padding: 0px 20px;
+  }
   @media screen and (max-width: ${tabletBr}) {
     width: auto;
     margin: 10px 20px;
@@ -93,21 +96,24 @@ const UpcomingDropsSection = () => {
         />
       </MobileImgC1>
       <InnerTextC>
-        <TitleH3 color="white">CURATED DROPS</TitleH3>
-        <StyledP color="white">
-          Our artist drops are announced in pairs but only one token at a time
-          is minted through the site. The entire platform gets taken over by the
-          upcoming artist’s works, giving them our full attention and showcasing
-          a selection of their past works.
-        </StyledP>
+        <div>
+          <TitleH3 color="white">CURATED DROPS</TitleH3>
+          <StyledP color="white">
+            Our artist drops are announced in pairs but only one token at a time
+            is minted through the site. The entire platform gets taken over by
+            the upcoming artist’s works, giving them our full attention and
+            showcasing a selection of their past works.
+          </StyledP>
 
-        <TitleH3 color="white">ALLOW LIST</TitleH3>
-        <StyledP color="white">
-          Mints are done in two phases: Allow List & Public. AL spots for our
-          first ever drop will be a combination of Premint winners from partner
-          communities and other factors, like the artist’s past collectors. More
-          details to be announced along with our first artists announcement.
-        </StyledP>
+          <TitleH3 color="white">ALLOW LIST</TitleH3>
+          <StyledP color="white">
+            Mints are done in two phases: Allow List & Public. AL spots for our
+            first ever drop will be a combination of Premint winners from
+            partner communities and other factors, like the artist’s past
+            collectors. More details to be announced along with our first
+            artists announcement.
+          </StyledP>
+        </div>
       </InnerTextC>
     </TextC>
   )
