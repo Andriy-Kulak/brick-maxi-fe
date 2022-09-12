@@ -1,22 +1,25 @@
 import brickMaxiLogo from '../public/assets/logo.png'
-import bgArt1 from '../public/assets/bgArt1.png'
-import bgArt2 from '../public/assets/bgArt2s.png'
-import artImg from '../public/assets/artCut.png'
+import bgArt1 from '../public/assets/first_section_bg.jpg'
+import bgArt2 from '../public/assets/howitworks_bg.png'
+import artImg from '../public/assets/token_art.png'
 import burgerIcon from '../public/assets/icons/hamburger.png'
 import xIcon from '../public/assets/icons/x.png'
 import ethescanLogo from '../public/assets/icons/etherscan-logo.webp'
 import apecoinLogo from '../public/assets/icons/apecoin.png'
 import missionTitle from '../public/assets/titles/MISSION_WHITE.png'
 import howItWorksTitle from '../public/assets/titles/HOW_IT_WORKS_WHITE.png'
+import upcomingDropsTitle from '../public/assets/titles/UPCOMING_DROPS_WHITE.png'
 import artistsTitle from '../public/assets/titles/ARTISTS_WHITE.png'
+import teamTitle from '../public/assets/titles/TEAM_WHITE.png'
 import rewardsTitle from '../public/assets/titles/REWARDS_HEADING.png'
 import faqWhiteTitle from '../public/assets/titles/FAQ_WHITE.png'
 import faqBlackTitle from '../public/assets/titles/FAQ_BLACK.png'
 import whiteSquiggleLine from '../public/assets/titles/WHITE_SQUIGGLE_LINE.png'
 import imgSample from '../public/assets/brickMaxiSample.png'
-import rewardsBg from '../public/assets/rewards_page_bg.png'
+import rewardsBg from '../public/assets/rewards_page_bg2.png'
 import mintBtn from '../public/assets/mint_button2.png'
 import collectBtn from '../public/assets/collect_button.png'
+import animatedLogo from '../public/assets/BRICKMAXI_LOGO_ANIMATED.gif'
 
 export const images = {
   brickMaxiLogo,
@@ -38,6 +41,9 @@ export const images = {
   faqWhiteTitle,
   faqBlackTitle,
   whiteSquiggleLine,
+  upcomingDropsTitle,
+  teamTitle,
+  animatedLogo,
 }
 
 export const artistSection = [

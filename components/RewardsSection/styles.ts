@@ -9,10 +9,10 @@ export const ImageC = styled.div`
 
 export const LandingC = styled.div`
   position: relative;
-  height: 90vh;
+  min-height: 91vh;
 
   @media screen and (max-width: ${tabletBr}) {
-    height: 88vh;
+    min-height: 88vh;
   }
 `
 

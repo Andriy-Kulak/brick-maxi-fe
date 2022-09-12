@@ -20,7 +20,8 @@ const StyledSticky = styled.div`
   background-color: black;
   color: white;
   width: 100%;
-  z-index: 200;
+  z-index: ${(props: { isMobileOpen: boolean }) =>
+    props.isMobileOpen ? 300 : 200};
 `
 
 const NavText = styled(StyledP)`
@@ -88,16 +89,18 @@ const mobileContent = [
   // { key: 2, name: 'Artists', href: '/#artist-section' },
   // { key: 3, name: 'Learn', href: '/#how-it-works-section' },
   { key: 4, name: 'Rewards', href: '/rewards' },
-  { key: 5, name: 'Mission', href: '/mission' },
+  { key: 5, name: 'Team', href: '/#team-section' },
 ]
 
 const Nav = ({
   connectWallet,
   disconnect,
   address,
+  showLogo,
 }: {
   connectWallet: () => Promise<void>
   disconnect: () => void
+  showLogo: boolean
   address?: string
 }) => {
   const [pageWidth, setPageWidth] = useState(0)
@@ -111,20 +114,20 @@ const Nav = ({
 
   return (
     <>
-      <StyledSticky>
+      <StyledSticky isMobileOpen={isMobileOpen}>
         <TopFlexContainer>
           {pageWidth === 0 && <></>}
           {pageWidth >= tabletBrPixels && (
             <>
               <MidFlexContainer left>
-                <NextLink href="/mission">
+                <NextLink href="/#team-section">
                   <NavText className="nav-link" color="white">
-                    Mission
+                    Team
                   </NavText>
                 </NextLink>
-                <NextLink href="/#artist-section">
+                <NextLink href="/#upcoming-section">
                   <NavText className="nav-link" color="white">
-                    Artists
+                    Upcoming Drops
                   </NavText>
                 </NextLink>
                 <NextLink href="/#how-it-works-section">
@@ -134,7 +137,7 @@ const Nav = ({
                 </NextLink>
               </MidFlexContainer>
 
-              <div>
+              <div style={{ display: showLogo ? '' : 'none' }}>
                 <NextLink href="/">
                   <Image
                     className="nav-link"
@@ -171,7 +174,8 @@ const Nav = ({
                   position: 'absolute',
                   marginTop: '7px',
                   marginLeft: '19px',
-                  zIndex: 100001,
+                  zIndex: 200,
+                  display: showLogo && !isMobileOpen ? '' : 'none',
                 }}
               >
                 <NextLink href="/">

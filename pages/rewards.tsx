@@ -3,6 +3,7 @@ import { ethers } from 'ethers'
 import RewardsSection from '../components/RewardsSection'
 import useConnect from '../utils/hooks/useConnect'
 import { Nav } from '../components'
+import Footer from '../components/Footer'
 
 export default function Rewards() {
   const [ci, setContract] = useState<{
@@ -23,8 +24,10 @@ export default function Rewards() {
         connectWallet={connectWallet}
         address={ci.address}
         disconnect={disconnect}
+        showLogo={true}
       />
       <RewardsSection connect={() => connectWallet()} address={ci.address} />
+      <Footer />
     </>
   )
 }

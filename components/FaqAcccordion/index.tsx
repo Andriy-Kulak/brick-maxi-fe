@@ -39,7 +39,7 @@ const StyledText = styled(StyledP)`
 const isBlack = (bool: boolean | undefined) => {
   return bool
     ? { width: '95%', backgroundColor: 'black', color: 'white' }
-    : { zIndex: 20, width: '90%', backgroundColor: 'white' }
+    : { zIndex: 20, width: '100%', backgroundColor: 'white' }
 }
 
 const FaqAcccordion = ({
@@ -49,11 +49,7 @@ const FaqAcccordion = ({
   content: { key: number; title: string; p: string }[]
   black?: boolean
 }) => (
-  <Accordion
-    allowToggle
-    // width={{ base: '100%', sm: '90%', md: '50%' }}
-    style={isBlack(black)}
-  >
+  <Accordion allowToggle style={isBlack(black)}>
     {content.map((x) => (
       <AccordionItem key={x.key} border="0px">
         {({ isExpanded }) => (
