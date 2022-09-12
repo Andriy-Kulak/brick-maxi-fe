@@ -9,6 +9,8 @@ import {
   laptopSmallBr,
   smallMobileBr,
 } from '../../utils/breakpoints'
+import { motion } from 'framer-motion'
+import { textVariant } from '../../utils/motion'
 
 const TextC = styled.div`
   position: relative;
@@ -36,20 +38,11 @@ const BackgroundC = styled.div`
   background-color: black;
 
   @media screen and (max-width: ${tabletBr}) {
-    height: 100vh;
+    height: 120vh;
   }
 
   @media screen and (max-width: ${smallMobileBr}) {
-    height: 98vh;
-  }
-`
-
-const MiniTextC = styled.div`
-  width: 100%;
-  padding: 20px 50px 0px;
-
-  @media screen and (max-width: ${mobileBr}) {
-    padding: 10px 0px 0px;
+    height: 140vh;
   }
 `
 
@@ -86,10 +79,10 @@ const ImgC3 = styled.div`
 `
 
 const StyledMain = styled(Main)`
-  padding: 3rem 0;
+  margin: 3rem 0;
 
   @media screen and (max-width: ${mobileBr}) {
-    padding: 2rem 0;
+    margin: 2rem 0;
   }
 `
 
@@ -113,7 +106,14 @@ const HowItWorksSection = () => (
           height={146}
         />
       </ImgC3>
-      <StyledMain>
+      <StyledMain
+        as={motion.div}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={textVariant}
+        transition={{ delay: 0.5 }}
+      >
         <TitleH1>You collect art.</TitleH1>
         <TitleH1>We purchase real estate.</TitleH1>
         <TitleH1>You earn USDC rewards.</TitleH1>

@@ -4,8 +4,10 @@ import styled from 'styled-components'
 import { TitleH2, Main100h } from '../sharedstyles'
 import { images } from '../../content'
 import { mobileBr, tabletBr } from '../../utils/breakpoints'
-import { avenirNextCondensed, weight } from '../utils/fontConfigs'
+import { avenirNextCondensed, gillSans, weight } from '../utils/fontConfigs'
 import { LogoParamProps } from '../../pages'
+import { motion } from 'framer-motion'
+import { textVariant } from '../../utils/motion'
 
 type ImageCProps = {
   hide?: boolean
@@ -69,9 +71,8 @@ const HorizontalScrollText = styled.h4`
   bottom: 90px;
   left: calc(50% - 35px);
   font-weight: ${weight.bold};
-  font-size: 20px;
-  font-family: ${avenirNextCondensed};
-  font-style: italic;
+  font-size: 13px;
+  font-family: ${gillSans};
 
   @media screen and (min-width: ${tabletBr}) {
     display: none;
@@ -88,6 +89,8 @@ const LaunchText = styled.p`
   font-family: ${avenirNextCondensed};
   font-weight: ${weight.bold};
 `
+
+// const MotionTitle = motion.div
 
 const LandingSection = ({
   logoParams,
@@ -122,7 +125,14 @@ const LandingSection = ({
           />
         </ImageC>
         <VerticalScrollText>SCROLL</VerticalScrollText>
-        <TitleH2 style={{ position: 'relative', zIndex: 1 }}>
+        <TitleH2
+          as={motion.h2}
+          initial="hidden"
+          animate="show"
+          variants={textVariant}
+          transition={{ delay: 0.5 }}
+          style={{ position: 'relative', zIndex: 1 }}
+        >
           ART THAT PAYS DIVIDENDS
         </TitleH2>
       </StyledMain>
