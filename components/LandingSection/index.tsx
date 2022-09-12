@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import { TitleH2, Main100h } from '../sharedstyles'
 import { images } from '../../content'
-import { tabletBr } from '../../utils/breakpoints'
+import { mobileBr, tabletBr } from '../../utils/breakpoints'
 import { avenirNextCondensed, weight } from '../utils/fontConfigs'
 import { LogoParamProps } from '../../pages'
 
@@ -36,13 +36,17 @@ const LandingC = styled.div`
   @media screen and (max-width: ${tabletBr}) {
     height: 88vh;
   }
+
+  @media screen and (max-width: ${mobileBr}) {
+    height: 75vh;
+  }
 `
 
 const StyledMain = styled(Main100h)`
   padding: 2rem 0 5rem;
 `
 
-const VerticalText = styled.h4`
+const VerticalScrollText = styled.h4`
   text-orientation: upright;
   color: white;
   writing-mode: vertical-rl;
@@ -52,6 +56,26 @@ const VerticalText = styled.h4`
   left: 34px;
   font-size: 20px;
   font-family: ${avenirNextCondensed};
+  font-style: italic;
+
+  @media screen and (max-width: ${tabletBr}) {
+    display: none;
+  }
+`
+
+const HorizontalScrollText = styled.h4`
+  color: white;
+  position: absolute;
+  bottom: 90px;
+  left: calc(50% - 35px);
+  font-weight: ${weight.bold};
+  font-size: 20px;
+  font-family: ${avenirNextCondensed};
+  font-style: italic;
+
+  @media screen and (min-width: ${tabletBr}) {
+    display: none;
+  }
 `
 
 const LaunchText = styled.p`
@@ -97,11 +121,12 @@ const LandingSection = ({
             width={logoParams.h}
           />
         </ImageC>
-        <VerticalText>SCROLL</VerticalText>
+        <VerticalScrollText>SCROLL</VerticalScrollText>
         <TitleH2 style={{ position: 'relative', zIndex: 1 }}>
           ART THAT PAYS DIVIDENDS
         </TitleH2>
       </StyledMain>
+      <HorizontalScrollText>SCROLL</HorizontalScrollText>
       <LaunchText>+ launching fall 2022 +</LaunchText>
     </LandingC>
   )

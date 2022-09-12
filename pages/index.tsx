@@ -138,7 +138,7 @@ export default function Home() {
       imgMarginLeft: Math.min(200, calc2),
       imgMarginRight: calc3,
       scrollY: window.scrollY,
-      isSwitchLogo: typeof top === 'number' && top < -10 ? true : false,
+      isSwitchLogo: typeof top === 'number' && top < 0 ? true : false,
     })
   }
   useLayoutEffect(() => {
