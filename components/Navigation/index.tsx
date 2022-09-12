@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { stack as Menu } from 'react-burger-menu'
 import Image from 'next/image'
 import { StyledP, StyledButton } from '../sharedstyles'
-import brickMaxiLogo from '../../public/assets/logo.png'
 import { trimAddress } from '../../utils/helpers'
 import NextLink from 'next/link'
 import {
@@ -142,7 +141,7 @@ const Nav = ({
                   <Image
                     className="nav-link"
                     alt="Brick Maxi Logo"
-                    src={brickMaxiLogo}
+                    src={images.brickMaxiLogo}
                     height={77}
                     width={77}
                   />
@@ -182,7 +181,7 @@ const Nav = ({
                   <Image
                     className="nav-link"
                     alt="Brick Maxi Logo"
-                    src={brickMaxiLogo}
+                    src={images.brickMaxiLogo}
                     height={65}
                     width={65}
                   />

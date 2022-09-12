@@ -22,7 +22,7 @@ const TextC = styled.div`
 
   @media screen and (max-width: ${mobileBr}) {
     height: auto;
-    min-height: 32vh;
+    min-height: 20vh;
   }
 
   @media screen and (min-width: ${laptopSmallBr}) {
@@ -35,12 +35,12 @@ const BackgroundC = styled.div`
   height: 150vh;
   background-color: black;
 
-  @media screen and (max-width: ${mobileBr}) {
-    height: 115vh;
+  @media screen and (max-width: ${tabletBr}) {
+    height: 100vh;
   }
 
   @media screen and (max-width: ${smallMobileBr}) {
-    height: 135vh;
+    height: 98vh;
   }
 `
 
@@ -55,7 +55,7 @@ const MiniTextC = styled.div`
 
 const ImgC1 = styled.div`
   position: absolute;
-  top: 115px;
+  top: 35px;
   left: 25px;
   z-index: 20;
 
@@ -77,7 +77,7 @@ const ImgC2 = styled.div`
 const ImgC3 = styled.div`
   display: none;
   position: absolute;
-  top: 55px;
+  top: 25px;
   left: 15px;
   z-index: 3;
   @media screen and (max-width: ${mobileBr}) {
@@ -113,11 +113,6 @@ const HowItWorksSection = () => (
           height={146}
         />
       </ImgC3>
-
-      <MiniTextC>
-        <TitleH2Small>ART THAT PAYS DIVIDENDS.</TitleH2Small>
-        <Divider thick={0.5} color="white" />
-      </MiniTextC>
       <StyledMain>
         <TitleH1>You collect art.</TitleH1>
         <TitleH1>We purchase real estate.</TitleH1>
