@@ -99,14 +99,21 @@ export default function Home() {
     // 276 should be 77 by 77
     // 200-77 = 123
 
-    const calc1 = 200 - 123 * (sY / 225)
-    const calc2 = 123 * (sY / 225)
+    const calc1 = 200 - 123 * (sY / 260)
+    const calc2 = 123 * (sY / 260)
     const test = Math.max(77, calc1)
-    console.log('sY and others', { sY, calc1, calc2 })
-    setLogoParams({
+    console.log('sY and others', {
       w: test,
       h: test,
       imgPadding: calc2,
+      scrollY: window.scrollY,
+    })
+    setLogoParams({
+      w: test,
+      h: test,
+
+      // padding should never be more than 200. if it is, it will affect mobile on scroll since most screens are <= 400 pixels
+      imgPadding: Math.min(200, calc2),
       scrollY: window.scrollY,
     })
   }
