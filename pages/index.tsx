@@ -89,26 +89,24 @@ export default function Home() {
   const [logoParams, setLogoParams] = useState<LogoParamProps>({
     w: 200,
     h: 200,
-    imgPadding: 0,
+    imgMarginLeft: 0,
+    imgMarginRight: 0,
     scrollY: 0,
     isSwitchLogo: false,
   })
   const handleScroll = () => {
     // Get the current scrollY point
-
-    console.log('scroll', window.innerWidth)
     const sY = window.scrollY
-
-    // console.log('event.target.body ', event.target.body.scroll)
-    // const scrollTop = event.target.body.scrollTop
-    // at 0 should be 200  by 200
-    // 276 should be 77 by 77
-    // 200-77 = 123
 
     // explination of math
     // logo starts at 200 (w) by 200 (h) in desktop mode
     // in mobile the logo is 77 (w) by 77 (h)
 
+    // at 0 should be 200  by 200
+    // 276 should be 77 by 77
+    // 200-77 = 123
+
+    // calculating where the logo is in relationsh to top of viewport
     const top = logoRef?.current?.getBoundingClientRect()?.top as number
 
     // calc1 determines how proprtionaly we should increase or decrease size of logo as user scroll
