@@ -20,7 +20,8 @@ const StyledSticky = styled.div`
   background-color: black;
   color: white;
   width: 100%;
-  z-index: 200;
+  z-index: ${(props: { isMobileOpen: boolean }) =>
+    props.isMobileOpen ? 300 : 200};
 `
 
 const NavText = styled(StyledP)`
@@ -113,7 +114,7 @@ const Nav = ({
 
   return (
     <>
-      <StyledSticky>
+      <StyledSticky isMobileOpen={isMobileOpen}>
         <TopFlexContainer>
           {pageWidth === 0 && <></>}
           {pageWidth >= tabletBrPixels && (
@@ -173,8 +174,8 @@ const Nav = ({
                   position: 'absolute',
                   marginTop: '7px',
                   marginLeft: '19px',
-                  zIndex: 100001,
-                  display: showLogo ? '' : 'none',
+                  zIndex: 200,
+                  display: showLogo && !isMobileOpen ? '' : 'none',
                 }}
               >
                 <NextLink href="/">

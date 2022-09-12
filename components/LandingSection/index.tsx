@@ -18,7 +18,7 @@ const ImageC = styled.div<ImageCProps>`
   z-index: ${(props) => (props.hide ? 2 : 200)};
   margin-left: ${(props) => props.marginLeft || 0}px;
   margin-right: 0px;
-  display: inherited;
+  display: relative;
   @media screen and (max-width: ${tabletBr}) {
     width: 150px;
     height: 160px;
