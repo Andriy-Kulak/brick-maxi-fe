@@ -95,7 +95,7 @@ const mobileContent = [
   { key: 2, name: 'Upcoming Drops', href: '/#upcoming-section' },
   { key: 5, name: 'Team', href: '/#team-section' },
   { key: 3, name: 'Learn', href: '/#how-it-works-section' },
-  { key: 4, name: 'Rewards', href: '/rewards' },
+  { key: 4, name: 'My Rewards', href: '/rewards' },
 ]
 
 const Nav = ({
@@ -158,13 +158,11 @@ const Nav = ({
                 </NextLink>
               </div>
               <MidFlexContainer>
-                <div>
-                  <NextLink href="/rewards">
-                    <NavText color="white" className="nav-link">
-                      Rewards
-                    </NavText>
-                  </NextLink>
-                </div>
+                <NextLink href="/rewards">
+                  <NavText color="white" className="nav-link">
+                    My Rewards
+                  </NavText>
+                </NextLink>
                 <div>
                   <StyledButton
                     onClick={() => connectWallet()}

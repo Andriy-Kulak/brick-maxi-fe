@@ -13,6 +13,8 @@ import {
   BottomLeftC,
   BottomRightC,
   DesktopTableC,
+  HeaderC,
+  AddressDiv,
 } from './styles'
 import { trimAddress } from '../../utils/helpers'
 import { grey1 } from '../utils/colors'
@@ -43,13 +45,25 @@ const RewardsSection = ({
         />
       </ImageC>
       <div>
-        <StyledButton onClick={connect} colorScheme="black">
-          {address ? trimAddress(address) : 'Connect'}
-        </StyledButton>
+        {address ? (
+          <AddressDiv>{trimAddress(address)}</AddressDiv>
+        ) : (
+          <StyledButton onClick={connect} colorScheme="black" isDisabled={true}>
+            Connect
+          </StyledButton>
+        )}
       </div>
 
       <DesktopTableC>
-        <HeaderText>TOKENS IN WALLET: ####</HeaderText>
+        <HeaderC>
+          <div>
+            <Image alt="cube" src={images.greyCube} width={20} height={23} />
+          </div>
+          <div>
+            <HeaderText>TOKENS IN WALLET: ####</HeaderText>
+          </div>
+        </HeaderC>
+
         <Table />
         <BottomContainer>
           <BottomLeftC>
@@ -67,11 +81,11 @@ const RewardsSection = ({
             <HeaderText color={grey1}>LAST COLLECTED</HeaderText>
           </BottomRightC>
         </BottomContainer>
+        <Footer>
+          *Rewards balance does not transfer with the sale of your tokens on
+          secondary markets.
+        </Footer>
       </DesktopTableC>
-      <Footer>
-        *Rewards balance does not transfer with the sale of your tokens on
-        secondary markets.
-      </Footer>
     </Main>
   </LandingC>
 )
