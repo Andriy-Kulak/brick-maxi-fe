@@ -174,6 +174,7 @@ const Nav = ({
                   marginTop: '7px',
                   marginLeft: '19px',
                   zIndex: 100001,
+                  display: showLogo ? '' : 'none',
                 }}
               >
                 <NextLink href="/">

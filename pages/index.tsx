@@ -48,7 +48,8 @@ type ContractInstance = {
 export type LogoParamProps = {
   w: number
   h: number
-  imgPadding: number
+  imgMarginLeft: number
+  imgMarginRight: number
   scrollY: number
   isSwitchLogo: boolean
 }
@@ -94,6 +95,8 @@ export default function Home() {
   })
   const handleScroll = () => {
     // Get the current scrollY point
+
+    console.log('scroll', window.innerWidth)
     const sY = window.scrollY
 
     // console.log('event.target.body ', event.target.body.scroll)
@@ -102,24 +105,40 @@ export default function Home() {
     // 276 should be 77 by 77
     // 200-77 = 123
 
+    // explination of math
+    // logo starts at 200 (w) by 200 (h) in desktop mode
+    // in mobile the logo is 77 (w) by 77 (h)
+
+    const top = logoRef?.current?.getBoundingClientRect()?.top as number
+
+    // calc1 determines how proprtionaly we should increase or decrease size of logo as user scroll
     const calc1 = 200 - 123 * (sY / 260)
+
+    // calc2 determines how much to move the image to left with margin on desktop to make it smooth
     const calc2 = 123 * (sY / 260)
-    const test = Math.max(77, calc1)
+
+    // cal3 determines how much to move the image to right with margin on mobile to make it smooth
+    // i am using innewidth to proportionally adjust margin depending on different screen sizes
+    const calc3 =
+      (320 * (Math.max(0, 250 - top) / 250) * window.innerWidth) / 540
+    const calc1Min = Math.max(77, calc1)
+
     console.log('sY and others', {
-      w: test,
-      h: test,
-      imgPadding: calc2,
+      w: calc1Min,
+      h: calc1Min,
+      calc2,
+      calc3,
       scrollY: window.scrollY,
+      top,
     })
 
-    const top = logoRef?.current?.getBoundingClientRect()?.top
-
     setLogoParams({
-      w: test,
-      h: test,
+      w: calc1Min,
+      h: calc1Min,
 
       // padding should never be more than 200. if it is, it will affect mobile on scroll since most screens are <= 400 pixels
-      imgPadding: Math.min(200, calc2),
+      imgMarginLeft: Math.min(200, calc2),
+      imgMarginRight: calc3,
       scrollY: window.scrollY,
       isSwitchLogo: typeof top === 'number' && top < -10 ? true : false,
     })

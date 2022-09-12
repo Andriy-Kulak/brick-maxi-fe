@@ -10,16 +10,21 @@ import { LogoParamProps } from '../../pages'
 type ImageCProps = {
   hide?: boolean
   marginLeft?: number
+  marginRight?: number
 }
 const ImageC = styled.div<ImageCProps>`
   width: 200px;
   height: 200px;
   z-index: ${(props) => (props.hide ? 2 : 200)};
   margin-left: ${(props) => props.marginLeft || 0}px;
+  margin-right: 0px;
   display: inherited;
   @media screen and (max-width: ${tabletBr}) {
     width: 150px;
     height: 160px;
+
+    margin-left: 0px;
+    margin-right: ${(props) => props.marginRight || 0}px;
   }
 `
 
@@ -67,6 +72,7 @@ const LandingSection = ({
   logoParams: LogoParamProps
   logoRef?: RefObject<HTMLDivElement> | undefined
 }) => {
+  console.log('logoParams ', logoParams)
   return (
     <LandingC>
       <Image
@@ -80,7 +86,8 @@ const LandingSection = ({
       <StyledMain>
         <ImageC
           ref={logoRef}
-          marginLeft={logoParams.imgPadding}
+          marginLeft={logoParams.imgMarginLeft}
+          marginRight={logoParams.imgMarginRight}
           hide={logoParams.isSwitchLogo}
         >
           <Image
