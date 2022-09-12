@@ -117,18 +117,8 @@ export default function Home() {
 
     // cal3 determines how much to move the image to right with margin on mobile to make it smooth
     // i am using innewidth to proportionally adjust margin depending on different screen sizes
-    const calc3 =
-      (320 * (Math.max(0, 250 - top) / 250) * window.innerWidth) / 540
+    const calc3 = (sY * window.innerWidth) / 520
     const calc1Min = Math.max(77, calc1)
-
-    console.log('sY and others', {
-      w: calc1Min,
-      h: calc1Min,
-      calc2,
-      calc3,
-      scrollY: window.scrollY,
-      top,
-    })
 
     setLogoParams({
       w: calc1Min,
