@@ -7,8 +7,8 @@ import { images } from '../../content'
 import { tabletBr } from '../../utils/breakpoints'
 import { Box, Button } from '@chakra-ui/react'
 import { selectedNet } from '../../utils/web3'
-import { MintState, MintStatus } from '../../pages'
 import { avenirNextCondensed, gillSans } from '../utils/fontConfigs'
+import { MintState, MintStatus } from '../../utils/types/reactState'
 
 export const StyledBackground = styled.div`
   background-color: white;

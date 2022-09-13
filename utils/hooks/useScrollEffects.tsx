@@ -1,5 +1,13 @@
 import { RefObject, useLayoutEffect, useState } from 'react'
-import { LogoParamProps } from '../../pages'
+
+export type LogoParamProps = {
+  w: number
+  h: number
+  imgMarginLeft: number
+  imgMarginRight: number
+  scrollY: number
+  isSwitchLogo: boolean
+}
 
 const useScrollEffects = ({
   logoRef,

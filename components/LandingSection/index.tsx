@@ -5,9 +5,9 @@ import { TitleH2, Main100h } from '../sharedstyles'
 import { images } from '../../content'
 import { mobileBr, tabletBr } from '../../utils/breakpoints'
 import { avenirNextCondensed, gillSans, weight } from '../utils/fontConfigs'
-import { LogoParamProps } from '../../pages'
 import { motion } from 'framer-motion'
 import { textVariant } from '../../utils/motion'
+import { LogoParamProps } from '../../utils/hooks/useScrollEffects'
 
 type ImageCProps = {
   hide?: boolean

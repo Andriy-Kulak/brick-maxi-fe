@@ -2,7 +2,7 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import { TitleH3, FlexRow, TitleH4, StyledP } from '../sharedstyles'
 import FaqAcccordion from '../FaqAcccordion'
-import { Divider, Select, StyledSwitch, MintBtn } from '../'
+import { Divider, StyledSwitch } from '../'
 
 import { images, tokenSection } from '../../content'
 import { weight } from '../utils/fontConfigs'
@@ -20,7 +20,7 @@ import {
 } from './styles'
 
 import { tabletBr } from '../../utils/breakpoints'
-import { MintStatus } from '../../pages'
+import { MintStatus } from '../../utils/types/reactState'
 import MintSection from '../MintSection'
 const { bold } = weight
 

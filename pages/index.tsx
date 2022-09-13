@@ -24,42 +24,12 @@ import UpcomingDropsSection from '../components/UpcomingDropsSection'
 import TeamSection from '../components/TeamSection'
 import Footer from '../components/Footer'
 import useScrollEffects from '../utils/hooks/useScrollEffects'
-
-export enum MintState {
-  NONE,
-  MINT_IN_POGRESS,
-  MINT_SUCCESS,
-  ERC20_ALLOWANCE_IN_PROGRESS,
-}
-
-export type MintStatus = {
-  type: MintState
-  text: null | string
-  txn: null | string
-}
-
-type ContractInstance = {
-  contract: ethers.Contract | null
-  signer: ethers.Signer | null
-  provider: ethers.providers.Web3Provider | null
-  address: string
-}
-
-export type LogoParamProps = {
-  w: number
-  h: number
-  imgMarginLeft: number
-  imgMarginRight: number
-  scrollY: number
-  isSwitchLogo: boolean
-}
-
-enum MintPhases {
-  COMING_SOON,
-  ALLOW_LIST,
-  LIVE,
-  CLOSED,
-}
+import {
+  MintState,
+  MintStatus,
+  ContractInstance,
+  MintPhases,
+} from '../utils/types/reactState'
 
 export default function Home() {
   const [mintPhase, setMintPhase] = useState<MintPhases>(MintPhases.COMING_SOON)
@@ -205,7 +175,6 @@ export default function Home() {
           setQuantity={setQuantity}
         />
       )}
-
       <HowItWorksSection />
       <UpcomingDropsSection />
       <TeamSection />
