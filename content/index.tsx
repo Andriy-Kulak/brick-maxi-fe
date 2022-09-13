@@ -1,7 +1,7 @@
 import brickMaxiLogo from '../public/assets/brick_maxi_logo2.png'
 import bgArt1 from '../public/assets/first_section_bg.jpg'
 import bgArt2 from '../public/assets/howitworks_desktop_1200x1200.png'
-
+import bgArt2Mobile from '../public/assets/howitworks_mobile_650x1200.png'
 import artImg from '../public/assets/token_art.png'
 import burgerIcon from '../public/assets/icons/hamburger.png'
 import xIcon from '../public/assets/icons/x.png'
@@ -48,6 +48,7 @@ export const images = {
   teamTitle,
   animatedLogo,
   greyCube,
+  bgArt2Mobile,
 }
 
 export const artistSection = [

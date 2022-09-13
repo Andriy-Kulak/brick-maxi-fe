@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styled from 'styled-components'
-import { Main, TitleH1, TitleH2Small } from '../sharedstyles'
-import { Divider, ShadedTextBox } from '../'
+import { Main, TitleH1 } from '../sharedstyles'
+import { ShadedTextBox } from '../'
 import { images } from '../../content'
 import {
   mobileBr,
@@ -78,6 +78,18 @@ const ImgC3 = styled.div`
   }
 `
 
+const NextDesktopBgImg = styled(Image)`
+  @media screen and (max-width: ${mobileBr}) {
+    display: none;
+  }
+`
+
+const NextMobileBgImg = styled(Image)`
+  @media screen and (min-width: ${mobileBr}) {
+    display: none;
+  }
+`
+
 const StyledMain = styled(Main)`
   margin: 3rem 0;
 
@@ -120,9 +132,16 @@ const HowItWorksSection = () => (
       </StyledMain>
     </TextC>
     <BackgroundC>
-      <Image
+      <NextDesktopBgImg
         alt="bg-art-2"
         src={images.bgArt2}
+        objectFit="cover"
+        objectPosition="center"
+        layout="fill"
+      />
+      <NextMobileBgImg
+        alt="bg-art-2"
+        src={images.bgArt2Mobile}
         objectFit="cover"
         objectPosition="center"
         layout="fill"
