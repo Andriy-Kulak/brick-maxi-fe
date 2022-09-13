@@ -1,4 +1,4 @@
-import { RefObject, useLayoutEffect, useState } from 'react'
+import { RefObject, useEffect, useState } from 'react'
 
 export type LogoParamProps = {
   w: number
@@ -60,7 +60,7 @@ const useScrollEffects = ({
     })
   }
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     return () => {
       window.removeEventListener('scroll', handleScroll, true)
