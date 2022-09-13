@@ -80,13 +80,13 @@ const ImgC3 = styled.div`
 
 const NextDesktopBgImg = styled(Image)`
   @media screen and (max-width: ${mobileBr}) {
-    display: none;
+    display: none !important;
   }
 `
 
 const NextMobileBgImg = styled(Image)`
   @media screen and (min-width: ${mobileBr}) {
-    display: none;
+    display: none !important;
   }
 `
 
