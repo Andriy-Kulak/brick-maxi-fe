@@ -39,7 +39,7 @@ const FlexBox = styled.div`
 
   > div {
     padding: 20px 25px 0px;
-    width: 25%;
+    width: 33%;
   }
 
   @media screen and (max-width: ${tabletBr}) {
@@ -112,7 +112,7 @@ const DesktopImgC = styled.div`
 
 const MobileImgC = styled.div`
   position: absolute;
-  top: 40%;
+  top: 120px;
   left: 12px;
   z-index: 2;
 
@@ -172,10 +172,10 @@ const TeamSection = () => {
             {teamProfiles.map((x) => (
               <div key={x.key}>
                 <Image
-                  alt="img-sample"
+                  alt="team images"
                   width={350}
                   height={350}
-                  src={images.imgSample}
+                  src={x.imgSrc}
                 />
                 <Title> {x.name}</Title>
                 <SubTitle>{x.role}</SubTitle>
