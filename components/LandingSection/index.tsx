@@ -97,9 +97,8 @@ const LandingSection = ({
   logoRef,
 }: {
   logoParams: LogoParamProps
-  logoRef?: RefObject<HTMLDivElement> | undefined
+  logoRef: RefObject<HTMLDivElement> | undefined
 }) => {
-  console.log('logoParams ', logoParams)
   return (
     <LandingC>
       <Image
