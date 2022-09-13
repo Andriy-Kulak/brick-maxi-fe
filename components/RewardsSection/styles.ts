@@ -18,7 +18,7 @@ export const LandingC = styled.div`
 
 export const Main = styled.div`
   position: relative;
-  padding: 60px 90px;
+  padding: 60px 80px;
   display: flex;
   flex-direction: column;
   justify-content: ${(props: { justifyContent?: string }) =>
@@ -33,8 +33,16 @@ export const Main = styled.div`
   }
 
   @media screen and (max-width: ${tabletBr}) {
-    padding: 50px 30px;
+    padding: 30px 30px 0px;
+    min-height: 0px;
   }
+`
+
+export const Main2 = styled.div`
+  position: relative;
+  margin: 60px 90px;
+  background-color: white;
+  width: 100%;
 `
 
 export const Footer = styled.p`
@@ -93,7 +101,21 @@ export const DesktopTableC = styled.div`
   }
 
   @media screen and (max-width: ${mobileBr}) {
-    padding: 50px 0px 0px;
+    display: none;
+  }
+`
+
+export const MobileTableC = styled.div`
+  background-color: white;
+  position: relative;
+
+  @media screen and (max-width: ${tabletBr}) {
+    width: 100%;
+    padding: 20px 10px 0px;
+  }
+
+  @media screen and (min-width: ${mobileBr}) {
+    display: none;
   }
 `
 export const HeaderC = styled.div`

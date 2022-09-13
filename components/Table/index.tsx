@@ -77,7 +77,7 @@ const Table = () => (
         <th>Date</th>
         <th>Token Id</th>
         <th># Tokens</th>
-        <th>Rewards Per Token (USDC)</th>
+        <th>Rewards / Token (USDC)</th>
         <th>Total Rewards (USDC)</th>
       </tr>
     </thead>
