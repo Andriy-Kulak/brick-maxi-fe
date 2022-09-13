@@ -9,6 +9,8 @@ import {
   laptopSmallBr,
   smallMobileBr,
 } from '../../utils/breakpoints'
+import { motion } from 'framer-motion'
+import { textVariant } from '../../utils/motion'
 
 const TextC = styled.div`
   position: relative;
@@ -22,7 +24,7 @@ const TextC = styled.div`
 
   @media screen and (max-width: ${mobileBr}) {
     height: auto;
-    min-height: 32vh;
+    min-height: 20vh;
   }
 
   @media screen and (min-width: ${laptopSmallBr}) {
@@ -35,27 +37,18 @@ const BackgroundC = styled.div`
   height: 150vh;
   background-color: black;
 
-  @media screen and (max-width: ${mobileBr}) {
-    height: 115vh;
+  @media screen and (max-width: ${tabletBr}) {
+    height: 120vh;
   }
 
   @media screen and (max-width: ${smallMobileBr}) {
-    height: 135vh;
-  }
-`
-
-const MiniTextC = styled.div`
-  width: 100%;
-  padding: 20px 50px 0px;
-
-  @media screen and (max-width: ${mobileBr}) {
-    padding: 10px 0px 0px;
+    height: 140vh;
   }
 `
 
 const ImgC1 = styled.div`
   position: absolute;
-  top: 115px;
+  top: 35px;
   left: 25px;
   z-index: 20;
 
@@ -77,7 +70,7 @@ const ImgC2 = styled.div`
 const ImgC3 = styled.div`
   display: none;
   position: absolute;
-  top: 55px;
+  top: 25px;
   left: 15px;
   z-index: 3;
   @media screen and (max-width: ${mobileBr}) {
@@ -86,10 +79,10 @@ const ImgC3 = styled.div`
 `
 
 const StyledMain = styled(Main)`
-  padding: 3rem 0;
+  margin: 3rem 0;
 
   @media screen and (max-width: ${mobileBr}) {
-    padding: 2rem 0;
+    margin: 2rem 0;
   }
 `
 
@@ -113,12 +106,14 @@ const HowItWorksSection = () => (
           height={146}
         />
       </ImgC3>
-
-      <MiniTextC>
-        <TitleH2Small>ART THAT PAYS DIVIDENDS.</TitleH2Small>
-        <Divider thick={0.5} color="white" />
-      </MiniTextC>
-      <StyledMain>
+      <StyledMain
+        as={motion.div}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={textVariant}
+        transition={{ delay: 0.5 }}
+      >
         <TitleH1>You collect art.</TitleH1>
         <TitleH1>We purchase real estate.</TitleH1>
         <TitleH1>You earn USDC rewards.</TitleH1>

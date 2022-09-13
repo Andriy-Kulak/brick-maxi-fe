@@ -13,6 +13,9 @@ import {
   BottomLeftC,
   BottomRightC,
   DesktopTableC,
+  HeaderC,
+  AddressDiv,
+  MobileTableC,
 } from './styles'
 import { trimAddress } from '../../utils/helpers'
 import { grey1 } from '../utils/colors'
@@ -23,57 +26,79 @@ const RewardsSection = ({
 }: {
   connect: () => void
   address: string
-}) => (
-  <LandingC>
-    <Image
-      alt="rewards page"
-      priority
-      src={images.rewardsBg}
-      objectFit="cover"
-      objectPosition="center"
-      layout="fill"
-    />
-    <Main>
-      <ImageC>
-        <Image
-          alt="Brick Maxi Logo"
-          src={images.rewardsTitle}
-          height={100}
-          width={180}
-        />
-      </ImageC>
-      <div>
-        <StyledButton onClick={connect} colorScheme="black">
-          {address ? trimAddress(address) : 'Connect'}
-        </StyledButton>
-      </div>
-
-      <DesktopTableC>
-        <HeaderText>TOKENS IN WALLET: ####</HeaderText>
-        <Table />
-        <BottomContainer>
-          <BottomLeftC>
-            <div>
-              <HeaderText>CURRENT BALANCE</HeaderText>
-              <HeaderText weight={700}>0.00 USDC</HeaderText>
-            </div>
-            <div>
-              <CollectBtn onClick={() => console.log('on click')} />
-            </div>
-          </BottomLeftC>
-          <BottomRightC>
-            <HeaderText weight={600}>REWARDS</HeaderText>
-            <HeaderText color={grey1}>COLLECTED TO DATE</HeaderText>
-            <HeaderText color={grey1}>LAST COLLECTED</HeaderText>
-          </BottomRightC>
-        </BottomContainer>
-      </DesktopTableC>
+}) => {
+  const tableC = () => (
+    <>
+      <HeaderC>
+        <div>
+          <Image alt="cube" src={images.greyCube} width={20} height={23} />
+        </div>
+        <div>
+          <HeaderText>TOKENS IN WALLET: ####</HeaderText>
+        </div>
+      </HeaderC>
+      <Table />
+      <BottomContainer>
+        <BottomLeftC>
+          <div>
+            <HeaderText>CURRENT BALANCE</HeaderText>
+            <HeaderText weight={700}>0.00 USDC</HeaderText>
+          </div>
+          <div>
+            <CollectBtn onClick={() => console.log('on click')} />
+          </div>
+        </BottomLeftC>
+        <BottomRightC>
+          <HeaderText weight={600}>REWARDS</HeaderText>
+          <HeaderText color={grey1}>COLLECTED TO DATE</HeaderText>
+          <HeaderText color={grey1}>LAST COLLECTED</HeaderText>
+        </BottomRightC>
+      </BottomContainer>
       <Footer>
         *Rewards balance does not transfer with the sale of your tokens on
         secondary markets.
       </Footer>
-    </Main>
-  </LandingC>
-)
+    </>
+  )
+  return (
+    <LandingC>
+      <Image
+        alt="rewards page"
+        priority
+        src={images.rewardsBg}
+        objectFit="cover"
+        objectPosition="center"
+        layout="fill"
+      />
+      <Main>
+        <ImageC>
+          <Image
+            alt="Brick Maxi Logo"
+            src={images.rewardsTitle}
+            height={100}
+            width={180}
+          />
+        </ImageC>
+        <div>
+          {address ? (
+            <AddressDiv>{trimAddress(address)}</AddressDiv>
+          ) : (
+            <StyledButton
+              onClick={connect}
+              colorScheme="black"
+              isDisabled={true}
+            >
+              Connect
+            </StyledButton>
+          )}
+        </div>
+
+        <DesktopTableC>{tableC()}</DesktopTableC>
+      </Main>
+
+      <MobileTableC>{tableC()}</MobileTableC>
+    </LandingC>
+  )
+}
 
 export default RewardsSection

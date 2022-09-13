@@ -55,7 +55,6 @@ function useConnect({
   }, [web3Modal])
 
   async function connectWallet() {
-    console.log('yyy 111')
     if (web3Modal === null) {
       throw Error('Web3 Modal error')
     }

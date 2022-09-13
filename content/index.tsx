@@ -1,11 +1,12 @@
-import brickMaxiLogo from '../public/assets/logo.png'
+import brickMaxiLogo from '../public/assets/brick_maxi_logo2.png'
 import bgArt1 from '../public/assets/first_section_bg.jpg'
-import bgArt2 from '../public/assets/howitworks_bg.png'
+import bgArt2 from '../public/assets/howitworks_bg2.png'
 import artImg from '../public/assets/token_art.png'
 import burgerIcon from '../public/assets/icons/hamburger.png'
 import xIcon from '../public/assets/icons/x.png'
 import ethescanLogo from '../public/assets/icons/etherscan-logo.webp'
 import apecoinLogo from '../public/assets/icons/apecoin.png'
+import greyCube from '../public/assets/icons/grey_cube.png'
 import missionTitle from '../public/assets/titles/MISSION_WHITE.png'
 import howItWorksTitle from '../public/assets/titles/HOW_IT_WORKS_WHITE.png'
 import upcomingDropsTitle from '../public/assets/titles/UPCOMING_DROPS_WHITE.png'
@@ -44,6 +45,7 @@ export const images = {
   upcomingDropsTitle,
   teamTitle,
   animatedLogo,
+  greyCube,
 }
 
 export const artistSection = [

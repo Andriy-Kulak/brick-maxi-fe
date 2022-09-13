@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { stack as Menu } from 'react-burger-menu'
 import Image from 'next/image'
 import { StyledP, StyledButton } from '../sharedstyles'
-import brickMaxiLogo from '../../public/assets/logo.png'
 import { trimAddress } from '../../utils/helpers'
 import NextLink from 'next/link'
 import {
@@ -39,7 +38,7 @@ const TopFlexContainer = styled.div`
   align-items: center;
   align-content: center;
   flex-direction: row;
-  height: 85px;
+  height: 70px;
 
   div {
     margin: 5px 60px 0px;
@@ -54,7 +53,7 @@ const TopFlexContainer = styled.div`
   }
 
   @media screen and (max-width: ${tabletBr}) {
-    height: 75px;
+    height: 70px;
   }
 `
 
@@ -75,6 +74,12 @@ const MidFlexContainer = styled.div`
   .nav-link {
     margin: 0px 15px;
   }
+
+  .nav-link {
+    :hover {
+      font-style: italic;
+    }
+  }
 `
 
 const MobileMenuC = styled.div`
@@ -86,10 +91,10 @@ const MobileMenuC = styled.div`
 
 const mobileContent = [
   { key: 1, name: 'Home', href: '/' },
-  // { key: 2, name: 'Artists', href: '/#artist-section' },
-  // { key: 3, name: 'Learn', href: '/#how-it-works-section' },
-  { key: 4, name: 'Rewards', href: '/rewards' },
+  { key: 2, name: 'Upcoming Drops', href: '/#upcoming-section' },
   { key: 5, name: 'Team', href: '/#team-section' },
+  { key: 3, name: 'Learn', href: '/#how-it-works-section' },
+  { key: 4, name: 'My Rewards', href: '/rewards' },
 ]
 
 const Nav = ({
@@ -112,6 +117,8 @@ const Nav = ({
     })
   }, [])
 
+  const logSideLength = 55
+
   return (
     <>
       <StyledSticky isMobileOpen={isMobileOpen}>
@@ -120,16 +127,17 @@ const Nav = ({
           {pageWidth >= tabletBrPixels && (
             <>
               <MidFlexContainer left>
-                <NextLink href="/#team-section">
-                  <NavText className="nav-link" color="white">
-                    Team
-                  </NavText>
-                </NextLink>
                 <NextLink href="/#upcoming-section">
                   <NavText className="nav-link" color="white">
                     Upcoming Drops
                   </NavText>
                 </NextLink>
+                <NextLink href="/#team-section">
+                  <NavText className="nav-link" color="white">
+                    Team
+                  </NavText>
+                </NextLink>
+
                 <NextLink href="/#how-it-works-section">
                   <NavText className="nav-link" color="white">
                     Learn
@@ -142,20 +150,18 @@ const Nav = ({
                   <Image
                     className="nav-link"
                     alt="Brick Maxi Logo"
-                    src={brickMaxiLogo}
-                    height={77}
-                    width={77}
+                    src={images.brickMaxiLogo}
+                    height={logSideLength}
+                    width={logSideLength}
                   />
                 </NextLink>
               </div>
               <MidFlexContainer>
-                <div>
-                  <NextLink href="/rewards">
-                    <NavText color="white" className="nav-link">
-                      Rewards
-                    </NavText>
-                  </NextLink>
-                </div>
+                <NextLink href="/rewards">
+                  <NavText color="white" className="nav-link">
+                    My Rewards
+                  </NavText>
+                </NextLink>
                 <div>
                   <StyledButton
                     onClick={() => connectWallet()}
@@ -182,9 +188,9 @@ const Nav = ({
                   <Image
                     className="nav-link"
                     alt="Brick Maxi Logo"
-                    src={brickMaxiLogo}
-                    height={65}
-                    width={65}
+                    src={images.brickMaxiLogo}
+                    height={logSideLength}
+                    width={logSideLength}
                   />
                 </NextLink>
               </div>

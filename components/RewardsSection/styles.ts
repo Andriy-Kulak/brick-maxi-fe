@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { mobileBr, tabletBr } from '../../utils/breakpoints'
-import { gillSans } from '../utils/fontConfigs'
+import { gillSans, weight } from '../utils/fontConfigs'
 
 export const ImageC = styled.div`
   padding-top: 20px;
@@ -18,7 +18,7 @@ export const LandingC = styled.div`
 
 export const Main = styled.div`
   position: relative;
-  padding: 60px 90px;
+  padding: 60px 80px;
   display: flex;
   flex-direction: column;
   justify-content: ${(props: { justifyContent?: string }) =>
@@ -33,26 +33,34 @@ export const Main = styled.div`
   }
 
   @media screen and (max-width: ${tabletBr}) {
-    padding: 50px 30px;
+    padding: 30px 30px 0px;
+    min-height: 0px;
   }
+`
+
+export const Main2 = styled.div`
+  position: relative;
+  margin: 60px 90px;
+  background-color: white;
+  width: 100%;
 `
 
 export const Footer = styled.p`
   font-family: ${gillSans};
   font-style: italic;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 11px;
   margin-top: 30px;
   color: #808080;
-  text-align: center;
+  text-align: left;
 `
 
 export const HeaderText = styled.p`
   font-family: ${gillSans};
   font-style: normal;
   font-weight: ${(props: { weight?: number }) => props.weight || 400};
-  font-size: 14px;
+  font-size: 13px;
   color: ${(props: { color?: string }) => props.color || 'black'};
 
   line-height: 16px;
@@ -93,6 +101,34 @@ export const DesktopTableC = styled.div`
   }
 
   @media screen and (max-width: ${mobileBr}) {
-    padding: 50px 0px 0px;
+    display: none;
   }
+`
+
+export const MobileTableC = styled.div`
+  background-color: white;
+  position: relative;
+
+  @media screen and (max-width: ${tabletBr}) {
+    width: 100%;
+    padding: 20px 10px 0px;
+  }
+
+  @media screen and (min-width: ${mobileBr}) {
+    display: none;
+  }
+`
+export const HeaderC = styled.div`
+  display: flex;
+`
+
+export const AddressDiv = styled.div`
+  font-size: 14px;
+  font-weight: ${weight.bold};
+  font-family: ${gillSans};
+  color: black;
+  text-align: center;
+  width: 115px;
+  height: 35px;
+  line-height: 35px;
 `

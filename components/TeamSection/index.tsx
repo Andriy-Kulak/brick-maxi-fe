@@ -6,7 +6,7 @@ import { mobileBr, tabletBr } from '../../utils/breakpoints'
 import { images, teamProfiles } from '../../content'
 import { avenirNextCondensed, gillSans, weight } from '../utils/fontConfigs'
 
-const { bold } = weight
+const { bold, semiBold } = weight
 
 export const StyledButton = styled(Button).attrs({
   colorScheme: 'black',
@@ -34,6 +34,7 @@ const BlackC = styled.div`
 const FlexBox = styled.div`
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
   margin: 20px 50px;
 
   > div {
@@ -48,15 +49,7 @@ const FlexBox = styled.div`
   @media screen and (max-width: ${mobileBr}) {
     > div {
       padding: 0px 0px 10px;
-      width: 50%;
-    }
-
-    > div:nth-child(odd) {
-      padding-right: 15px;
-    }
-
-    > div:nth-child(even) {
-      padding-right: 15px;
+      width: 100%;
     }
   }
 `
@@ -72,7 +65,7 @@ const Title = styled.h3`
 const SubTitle = styled.p`
   font-family: ${gillSans};
   font-style: normal;
-  font-weight: bold;
+  font-weight: ${semiBold};
   font-size: 16px;
   line-height: 16px;
 

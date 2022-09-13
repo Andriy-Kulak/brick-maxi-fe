@@ -3,9 +3,11 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import { TitleH2, Main100h } from '../sharedstyles'
 import { images } from '../../content'
-import { tabletBr } from '../../utils/breakpoints'
-import { avenirNextCondensed, weight } from '../utils/fontConfigs'
-import { LogoParamProps } from '../../pages'
+import { mobileBr, tabletBr } from '../../utils/breakpoints'
+import { avenirNextCondensed, gillSans, weight } from '../utils/fontConfigs'
+import { motion } from 'framer-motion'
+import { textVariant } from '../../utils/motion'
+import { LogoParamProps } from '../../utils/hooks/useScrollEffects'
 
 type ImageCProps = {
   hide?: boolean
@@ -15,7 +17,7 @@ type ImageCProps = {
 const ImageC = styled.div<ImageCProps>`
   width: 200px;
   height: 200px;
-  z-index: ${(props) => (props.hide ? 2 : 200)};
+  z-index: ${(props) => (props.hide ? -1 : 200)};
   margin-left: ${(props) => props.marginLeft || 0}px;
   margin-right: 0px;
   display: relative;
@@ -36,13 +38,17 @@ const LandingC = styled.div`
   @media screen and (max-width: ${tabletBr}) {
     height: 88vh;
   }
+
+  @media screen and (max-width: ${mobileBr}) {
+    height: 85vh;
+  }
 `
 
 const StyledMain = styled(Main100h)`
   padding: 2rem 0 5rem;
 `
 
-const VerticalText = styled.h4`
+const VerticalScrollText = styled.h4`
   text-orientation: upright;
   color: white;
   writing-mode: vertical-rl;
@@ -52,11 +58,30 @@ const VerticalText = styled.h4`
   left: 34px;
   font-size: 20px;
   font-family: ${avenirNextCondensed};
+  font-style: italic;
+
+  @media screen and (max-width: ${tabletBr}) {
+    display: none;
+  }
+`
+
+const HorizontalScrollText = styled.h4`
+  color: white;
+  position: absolute;
+  bottom: 110px;
+  left: calc(50% - 35px);
+  font-weight: ${weight.bold};
+  font-size: 13px;
+  font-family: ${gillSans};
+
+  @media screen and (min-width: ${tabletBr}) {
+    display: none;
+  }
 `
 
 const LaunchText = styled.p`
   position: absolute;
-  bottom: 50px;
+  bottom: 70px;
   left: calc(50% - 100px);
   color: white;
   font-style: italic;
@@ -65,14 +90,15 @@ const LaunchText = styled.p`
   font-weight: ${weight.bold};
 `
 
+// const MotionTitle = motion.div
+
 const LandingSection = ({
   logoParams,
   logoRef,
 }: {
   logoParams: LogoParamProps
-  logoRef?: RefObject<HTMLDivElement> | undefined
+  logoRef: RefObject<HTMLDivElement> | undefined
 }) => {
-  console.log('logoParams ', logoParams)
   return (
     <LandingC>
       <Image
@@ -97,11 +123,19 @@ const LandingSection = ({
             width={logoParams.h}
           />
         </ImageC>
-        <VerticalText>SCROLL</VerticalText>
-        <TitleH2 style={{ position: 'relative', zIndex: 1 }}>
+        <VerticalScrollText>SCROLL</VerticalScrollText>
+        <TitleH2
+          as={motion.h2}
+          initial="hidden"
+          animate="show"
+          variants={textVariant}
+          transition={{ delay: 0.5 }}
+          style={{ position: 'relative', zIndex: 1 }}
+        >
           ART THAT PAYS DIVIDENDS
         </TitleH2>
       </StyledMain>
+      <HorizontalScrollText>SCROLL</HorizontalScrollText>
       <LaunchText>+ launching fall 2022 +</LaunchText>
     </LandingC>
   )
