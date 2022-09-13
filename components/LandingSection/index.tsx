@@ -68,7 +68,7 @@ const VerticalScrollText = styled.h4`
 const HorizontalScrollText = styled.h4`
   color: white;
   position: absolute;
-  bottom: 90px;
+  bottom: 110px;
   left: calc(50% - 35px);
   font-weight: ${weight.bold};
   font-size: 13px;
@@ -81,7 +81,7 @@ const HorizontalScrollText = styled.h4`
 
 const LaunchText = styled.p`
   position: absolute;
-  bottom: 50px;
+  bottom: 70px;
   left: calc(50% - 100px);
   color: white;
   font-style: italic;

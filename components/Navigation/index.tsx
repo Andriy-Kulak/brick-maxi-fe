@@ -78,7 +78,6 @@ const MidFlexContainer = styled.div`
   .nav-link {
     :hover {
       font-style: italic;
-      font-weight: bold;
     }
   }
 `
