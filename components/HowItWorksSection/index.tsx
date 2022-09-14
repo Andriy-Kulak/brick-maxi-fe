@@ -124,6 +124,7 @@ const HowItWorksSection = () => (
       <NextDesktopBgImg
         alt="bg-art-2"
         src={images.bgArt2}
+        quality={100}
         objectFit="cover"
         objectPosition="center"
         layout="fill"
