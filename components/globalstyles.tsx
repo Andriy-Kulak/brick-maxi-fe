@@ -169,15 +169,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
 
-  /* @font-face {
+  @font-face {
     font-family: Avenir Next Condensed;
-    src: url('/fonts/AvenirNextCondensed.ttf');
+    font-weight: 100 900;
+    src: url('/fonts/AvenirNextCondensed.ttf') format('ttf');
   }
 
   @font-face {
     font-family: Gill Sans;
-    src: url('/fonts/gillsans.ttf');
-  } */
+    font-weight: 100 900;
+    src: url('/fonts/gillsans.ttf') format('ttf');
+  }
 
 
 

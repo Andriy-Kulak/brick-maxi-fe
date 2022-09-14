@@ -33,8 +33,18 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link href="/fonts/gillsans.ttf" rel="stylesheet" />
-          <link href="/fonts/AvenirNextCondensed.ttf" rel="stylesheet" />
+          <link
+            rel="preload"
+            href="/fonts/gillsans.ttf"
+            as="font"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/AvenirNextCondensed.ttf"
+            as="font"
+            crossOrigin="anonymous"
+          />
         </Head>
         <body>
           <Main />
