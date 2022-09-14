@@ -38,11 +38,16 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Lato&display=optional"
           />
           <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Barlow Condensed&display=optional"
+          />
+
+          {/* <link
             rel="preload"
             href="/fonts/AvenirNextCondensed.ttf"
             as="font"
             crossOrigin="anonymous"
-          />
+          /> */}
         </Head>
         <body>
           <Main />

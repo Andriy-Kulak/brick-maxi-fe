@@ -1,5 +1,5 @@
 // export const avenirNext = 'Avenir Next'
-export const avenirNextCondensed = 'Avenir Next Condensed'
+export const avenirNextCondensed = 'Barlow Condensed'
 export const gillSans = 'Lato'
 
 export const weight = {
