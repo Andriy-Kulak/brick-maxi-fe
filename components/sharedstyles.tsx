@@ -38,7 +38,7 @@ const ColorBackground = styled.div`
 const Main100h = styled.div`
   padding: 5rem 0;
   height: 100%;
-  min-height: 100%;
+  min-height: 100% !important;
   flex: 1;
   display: flex;
   flex-direction: column;
