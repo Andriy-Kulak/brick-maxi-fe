@@ -170,15 +170,19 @@ const GlobalStyle = createGlobalStyle`
 
 
   @font-face {
-    font-family: Avenir Next Condensed;
+    font-family: "Avenir Next Condensed";
+    font-style: normal;
     font-weight: 100 900;
-    src: url('../fonts/AvenirNextCondensed.ttf') format('truetype');
+    font-display: optional;
+    src: url('/fonts/AvenirNextCondensed.ttf') format('truetype');
   }
 
   @font-face {
-    font-family: Gill Sans;
+    font-family: "Gill Sans";
+    font-style: normal;
     font-weight: 100 900;
-    src: url('../fonts/gillsans.ttf') format('truetype');
+    font-display: optional;
+    src: url('/fonts/gillsans.ttf') format('truetype');
   }
 
 
