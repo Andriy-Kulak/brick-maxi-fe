@@ -5,6 +5,7 @@ import { Button, ButtonProps } from '@chakra-ui/react'
 import { mobileBr, tabletBr } from '../../utils/breakpoints'
 import { images, teamProfiles } from '../../content'
 import { avenirNextCondensed, gillSans, weight } from '../utils/fontConfigs'
+import { NextDesktopBgImg, NextMobileBgImg } from '../BgImages'
 
 const { bold, semiBold } = weight
 
@@ -142,9 +143,16 @@ const TeamSection = () => {
       <MobileImgC>
         <Image height={52} width={17} src={images.teamTitle} alt="Team" />
       </MobileImgC>
-      <Image
+      <NextDesktopBgImg
         alt="bg-art-2"
         src={images.bgArt1}
+        objectFit="cover"
+        objectPosition="center"
+        layout="fill"
+      />
+      <NextMobileBgImg
+        alt="bg-art-2"
+        src={images.teamBgMobile}
         objectFit="cover"
         objectPosition="center"
         layout="fill"

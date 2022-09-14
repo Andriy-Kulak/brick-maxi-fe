@@ -11,6 +11,7 @@ import {
 } from '../../utils/breakpoints'
 import { motion } from 'framer-motion'
 import { textVariant } from '../../utils/motion'
+import { NextDesktopBgImg, NextMobileBgImg } from '../BgImages'
 
 const TextC = styled.div`
   position: relative;
@@ -75,18 +76,6 @@ const ImgC3 = styled.div`
   z-index: 3;
   @media screen and (max-width: ${mobileBr}) {
     display: inherit;
-  }
-`
-
-const NextDesktopBgImg = styled(Image)`
-  @media screen and (max-width: ${mobileBr}) {
-    display: none !important;
-  }
-`
-
-const NextMobileBgImg = styled(Image)`
-  @media screen and (min-width: ${mobileBr}) {
-    display: none !important;
   }
 `
 

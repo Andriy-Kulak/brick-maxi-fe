@@ -11,6 +11,7 @@ import {
   contract,
   contractAddress,
   erc20ApproveAbi,
+  isLandingPage,
   selectedNet,
 } from '../utils/web3'
 import { parseEther } from 'ethers/lib/utils'
@@ -77,9 +78,9 @@ export default function Home() {
       toast.error('Please sign in before minting!')
     } else {
       const { chainId } = await ci.provider.getNetwork()
-      if (chainId !== selectedNet.chainId) {
+      if (!isLandingPage && chainId !== selectedNet?.chainId) {
         toast.error(
-          `App contract is on ${selectedNet.name}. Please switch to it before minting`
+          `App contract is on ${selectedNet?.name}. Please switch to it before minting`
         )
       }
       try {

@@ -19,6 +19,7 @@ const nets = [
 ]
 
 export const selectedNet = nets[1]
+export const isLandingPage = true
 
 export const contractAbi = [
   {
