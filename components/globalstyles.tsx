@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { gillSans } from './utils/fontConfigs'
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -66,7 +67,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .menu-item {
-    font-family: Gill Sans;
+    font-family: ${gillSans};
     font-size: 20px;
   }
   

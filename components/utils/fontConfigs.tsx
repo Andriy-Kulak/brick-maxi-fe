@@ -1,6 +1,6 @@
 // export const avenirNext = 'Avenir Next'
-export const avenirNextCondensed = 'Barlow Condensed'
-export const gillSans = 'Lato'
+export const avenirNextCondensed = 'Oswald'
+export const gillSans = 'Montserrat'
 
 export const weight = {
   normal: 400,
