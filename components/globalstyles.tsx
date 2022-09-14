@@ -168,6 +168,19 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 
+
+  /* @font-face {
+    font-family: 'Avenir Next Condensed';
+    src: url('/fonts/AvenirNextCondensedDemibold.woff2');
+  } */
+
+  @font-face {
+    font-family: 'Gill Sans';
+    src: url('/fonts/gillSans.ttf');
+  }
+
+
+
 `
 
 export default GlobalStyle
