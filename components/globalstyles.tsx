@@ -176,17 +176,6 @@ const GlobalStyle = createGlobalStyle`
     font-display: optional;
     src: url('/fonts/AvenirNextCondensed.ttf') format('truetype');
   }
-
-  @font-face {
-    font-family: "Gill Sans";
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: optional;
-    src: url('/fonts/gillsans.ttf') format('truetype');
-  }
-
-
-
 `
 
 export default GlobalStyle

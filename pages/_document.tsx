@@ -34,13 +34,6 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <link
-            rel="preload"
-            href="/fonts/gillsans.ttf"
-            as="font"
-            crossOrigin="anonymous"
-          />
-
-          <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Lato&display=optional"
           />
