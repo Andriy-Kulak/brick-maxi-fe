@@ -1,6 +1,6 @@
 // export const avenirNext = 'Avenir Next'
 export const avenirNextCondensed = 'Avenir Next Condensed'
-export const gillSans = 'Gill Sans'
+export const gillSans = 'Lato'
 
 export const weight = {
   normal: 400,

@@ -39,6 +39,11 @@ export default class MyDocument extends Document {
             as="font"
             crossOrigin="anonymous"
           />
+
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Lato&display=optional"
+          />
           <link
             rel="preload"
             href="/fonts/AvenirNextCondensed.ttf"
