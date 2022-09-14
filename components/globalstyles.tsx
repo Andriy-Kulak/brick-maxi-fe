@@ -172,13 +172,13 @@ const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: Avenir Next Condensed;
     font-weight: 100 900;
-    src: url('/fonts/AvenirNextCondensed.ttf') format('truetype');
+    src: url('../fonts/AvenirNextCondensed.ttf') format('truetype');
   }
 
   @font-face {
     font-family: Gill Sans;
     font-weight: 100 900;
-    src: url('/fonts/gillsans.ttf') format('truetype');
+    src: url('../fonts/gillsans.ttf') format('truetype');
   }
 
 
