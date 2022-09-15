@@ -60,12 +60,17 @@ export const HeaderText = styled.p`
   font-family: ${gillSans};
   font-style: normal;
   font-weight: ${(props: { weight?: number }) => props.weight || 400};
-  font-size: 13px;
+  font-size: 14px;
   color: ${(props: { color?: string }) => props.color || 'black'};
 
-  line-height: 16px;
+  line-height: 17px;
   text-align: left;
   margin: 5px;
+
+  @media screen and (max-width: ${tabletBr}) {
+    font-size: 12px;
+    line-height: 14px;
+  }
 `
 
 export const BottomContainer = styled.div`

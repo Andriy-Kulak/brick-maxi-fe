@@ -14,6 +14,11 @@ const StyledTable = styled.table`
     line-height: 15px;
     text-transform: uppercase;
     color: #808080;
+
+    @media screen and (max-width: ${mobileBr}) {
+      font-size: 8px;
+      line-height: 10px;
+    }
   }
 
   td {
@@ -23,6 +28,11 @@ const StyledTable = styled.table`
     font-size: 13px;
     line-height: 15px;
     color: black;
+
+    @media screen and (max-width: ${mobileBr}) {
+      font-size: 12px;
+      line-height: 13px;
+    }
   }
 
   thead {

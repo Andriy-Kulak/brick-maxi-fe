@@ -13,7 +13,7 @@ import { weight } from '../utils/fontConfigs'
 const { normal } = weight
 
 const StyledPwMargin = styled(StyledP)`
-  font-size: 15px;
+  font-size: 13px;
   margin-left: 20px;
   font-weight: ${(props: { weight?: number }) =>
     props.weight || 400} !important;
@@ -29,6 +29,8 @@ const StyledPwMargin = styled(StyledP)`
 
 const StyledText = styled(StyledP)`
   margin-left: 30px;
+  font-size: 12px;
+  line-height: 20px;
   @media screen and (max-width: ${mobileBr}) {
     margin-left: 22px;
   }

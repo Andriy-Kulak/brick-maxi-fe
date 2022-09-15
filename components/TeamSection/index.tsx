@@ -5,6 +5,7 @@ import { Button, ButtonProps } from '@chakra-ui/react'
 import { mobileBr, tabletBr } from '../../utils/breakpoints'
 import { images, teamProfiles } from '../../content'
 import { avenirNextCondensed, gillSans, weight } from '../utils/fontConfigs'
+import { NextDesktopBgImg, NextMobileBgImg } from '../BgImages'
 
 const { bold, semiBold } = weight
 
@@ -60,18 +61,28 @@ const Title = styled.h3`
   text-align: center;
   color: white;
   font-weight: ${bold};
+
+  @media screen and (max-width: ${mobileBr}) {
+    font-size: 20px;
+    line-height: 30px;
+  }
 `
 
 const SubTitle = styled.p`
   font-family: ${gillSans};
   font-style: normal;
-  font-weight: ${semiBold};
-  font-size: 16px;
-  line-height: 16px;
+  font-weight: ${bold};
+  font-size: 15px;
+  line-height: 18px;
 
   text-align: center;
 
   color: #808080;
+
+  @media screen and (max-width: ${mobileBr}) {
+    font-size: 14px;
+    line-height: 17px;
+  }
 `
 
 const TextContainer = styled.div`
@@ -142,9 +153,16 @@ const TeamSection = () => {
       <MobileImgC>
         <Image height={52} width={17} src={images.teamTitle} alt="Team" />
       </MobileImgC>
-      <Image
+      <NextDesktopBgImg
         alt="bg-art-2"
         src={images.bgArt1}
+        objectFit="cover"
+        objectPosition="center"
+        layout="fill"
+      />
+      <NextMobileBgImg
+        alt="bg-art-2"
+        src={images.teamBgMobile}
         objectFit="cover"
         objectPosition="center"
         layout="fill"
@@ -177,7 +195,7 @@ const TeamSection = () => {
                   height={350}
                   src={x.imgSrc}
                 />
-                <Title> {x.name}</Title>
+                <Title>{x.name}</Title>
                 <SubTitle>{x.role}</SubTitle>
               </div>
             ))}

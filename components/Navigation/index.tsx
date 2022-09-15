@@ -11,6 +11,7 @@ import {
   tabletBrPixels,
 } from '../../utils/breakpoints'
 import { images } from '../../content'
+import { weight } from '../utils/fontConfigs'
 
 const StyledSticky = styled.div`
   top: 0;
@@ -24,11 +25,12 @@ const StyledSticky = styled.div`
 `
 
 const NavText = styled(StyledP)`
-  font-size: 16px;
+  font-size: 12px;
+  font-weight: ${weight.semiBold};
 `
 
 const MobileNavText = styled(StyledP)`
-  font-size: 20px;
+  font-size: 14px;
   line-height: 23px;
 `
 

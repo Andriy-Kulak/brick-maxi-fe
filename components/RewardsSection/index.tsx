@@ -34,14 +34,14 @@ const RewardsSection = ({
           <Image alt="cube" src={images.greyCube} width={20} height={23} />
         </div>
         <div>
-          <HeaderText>TOKENS IN WALLET: ####</HeaderText>
+          <HeaderText color={grey1}>TOKENS IN WALLET: ####</HeaderText>
         </div>
       </HeaderC>
       <Table />
       <BottomContainer>
         <BottomLeftC>
           <div>
-            <HeaderText>CURRENT BALANCE</HeaderText>
+            <HeaderText weight={700}>CURRENT BALANCE</HeaderText>
             <HeaderText weight={700}>0.00 USDC</HeaderText>
           </div>
           <div>

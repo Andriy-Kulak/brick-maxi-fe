@@ -3,7 +3,12 @@ import { ethers, providers } from 'ethers'
 import WalletConnectProvider from '@walletconnect/web3-provider'
 import Web3Modal from 'web3modal'
 import { toast } from 'react-toastify'
-import { contractAbi, contractAddress, selectedNet } from '../web3'
+import {
+  contractAbi,
+  contractAddress,
+  isLandingPage,
+  selectedNet,
+} from '../web3'
 
 function useConnect({
   setContract,
@@ -65,7 +70,7 @@ function useConnect({
     const ethersProvider = new providers.Web3Provider(provider)
 
     const { chainId } = await ethersProvider.getNetwork()
-    if (chainId !== selectedNet.chainId) {
+    if (!isLandingPage && chainId !== selectedNet.chainId) {
       toast.error(
         `App contract is on ${selectedNet.name}. Please sign in on this network! :-)`
       )

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styled from 'styled-components'
-import { Main, TitleH1, TitleH2Small } from '../sharedstyles'
-import { Divider, ShadedTextBox } from '../'
+import { Main, TitleH1 } from '../sharedstyles'
+import { ShadedTextBox } from '../'
 import { images } from '../../content'
 import {
   mobileBr,
@@ -11,6 +11,7 @@ import {
 } from '../../utils/breakpoints'
 import { motion } from 'framer-motion'
 import { textVariant } from '../../utils/motion'
+import { NextDesktopBgImg, NextMobileBgImg } from '../BgImages'
 
 const TextC = styled.div`
   position: relative;
@@ -48,7 +49,7 @@ const BackgroundC = styled.div`
 
 const ImgC1 = styled.div`
   position: absolute;
-  top: 35px;
+  top: 75px;
   left: 25px;
   z-index: 20;
 
@@ -120,9 +121,16 @@ const HowItWorksSection = () => (
       </StyledMain>
     </TextC>
     <BackgroundC>
-      <Image
+      <NextDesktopBgImg
         alt="bg-art-2"
         src={images.bgArt2}
+        objectFit="cover"
+        objectPosition="center"
+        layout="fill"
+      />
+      <NextMobileBgImg
+        alt="bg-art-2"
+        src={images.bgArt2Mobile}
         objectFit="cover"
         objectPosition="center"
         layout="fill"

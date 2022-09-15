@@ -1,6 +1,11 @@
 import brickMaxiLogo from '../public/assets/brick_maxi_logo2.png'
 import bgArt1 from '../public/assets/first_section_bg.jpg'
-import bgArt2 from '../public/assets/howitworks_bg2.png'
+// import bgArt2 from '../public/assets/howitworks_desktop_1200x1200.png'
+import bgArt2 from '../public/assets/howitworks_1920x1920.png'
+
+import teamBgMobile from '../public/assets/team_mobile_650x1920.png'
+
+import bgArt2Mobile from '../public/assets/howitworks_650x1200.png'
 import artImg from '../public/assets/token_art.png'
 import burgerIcon from '../public/assets/icons/hamburger.png'
 import xIcon from '../public/assets/icons/x.png'
@@ -18,7 +23,7 @@ import faqBlackTitle from '../public/assets/titles/FAQ_BLACK.png'
 import whiteSquiggleLine from '../public/assets/titles/WHITE_SQUIGGLE_LINE.png'
 import imgSample from '../public/assets/brickMaxiSample.png'
 import adamFogelImg from '../public/assets/adamFogel.gif'
-import rewardsBg from '../public/assets/rewards_page_bg2.png'
+import rewardsBg from '../public/assets/rewards_bg_3.png'
 import mintBtn from '../public/assets/mint_button2.png'
 import collectBtn from '../public/assets/collect_button.png'
 import animatedLogo from '../public/assets/BRICKMAXI_LOGO_ANIMATED.gif'
@@ -47,6 +52,8 @@ export const images = {
   teamTitle,
   animatedLogo,
   greyCube,
+  bgArt2Mobile,
+  teamBgMobile,
 }
 
 export const artistSection = [
@@ -109,7 +116,7 @@ export const tokenSection = {
 }
 
 export const teamProfiles = [
-  { name: 'Adam Fogel', role: 'founder', key: 1, imgSrc: adamFogelImg },
+  { name: 'ADAM FOGEL', role: 'founder', key: 1, imgSrc: adamFogelImg },
   { name: 'NAME', role: 'role', key: 2, imgSrc: imgSample },
   { name: 'NAME', role: 'role', key: 3, imgSrc: imgSample },
 ]

@@ -10,9 +10,9 @@ import {
 const H1 = styled.h1`
   font-family: ${avenirNextCondensed};
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 24px;
-  line-height: 33px;
+  line-height: 36px;
   text-align: center;
   color: black;
   @media screen and (max-width: ${mobileBr}) {
@@ -32,15 +32,15 @@ const StyledP = styled.p`
   font-family: ${gillSans};
   font-style: normal;
   font-weight: 400;
-  font-size: 13px;
-  line-height: 15px;
+  font-size: 12px;
+  line-height: 17px;
 
   text-align: center;
 
   color: #000000;
 
   @media screen and (max-width: ${mobileBr}) {
-    font-size: 13px;
+    font-size: 11px;
     line-height: 15px;
   }
 `
@@ -56,8 +56,8 @@ const StyledPItalic = styled.p`
   color: #808080;
 
   @media screen and (max-width: ${mobileBr}) {
-    font-size: 9px;
-    line-height: 9px;
+    font-size: 8px;
+    line-height: 10px;
     color: black;
   }
 `
