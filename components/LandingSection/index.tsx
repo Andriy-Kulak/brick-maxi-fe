@@ -89,8 +89,6 @@ const LaunchText = styled.p`
   font-weight: ${weight.semiBold};
 `
 
-// const MotionTitle = motion.div
-
 const LandingSection = ({
   logoParams,
   logoRef,
