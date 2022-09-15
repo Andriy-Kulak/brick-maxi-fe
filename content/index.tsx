@@ -22,7 +22,9 @@ import faqWhiteTitle from '../public/assets/titles/FAQ_WHITE.png'
 import faqBlackTitle from '../public/assets/titles/FAQ_BLACK.png'
 import whiteSquiggleLine from '../public/assets/titles/WHITE_SQUIGGLE_LINE.png'
 import imgSample from '../public/assets/brickMaxiSample.png'
-import adamFogelImg from '../public/assets/adamFogel.gif'
+import adamImg from '../public/assets/adam.gif'
+import mollyImg from '../public/assets/molly.gif'
+import andriyImg from '../public/assets/andriy.gif'
 import rewardsBg from '../public/assets/rewards_bg_3.png'
 import mintBtn from '../public/assets/mint_button2.png'
 import collectBtn from '../public/assets/collect_button.png'
@@ -116,9 +118,9 @@ export const tokenSection = {
 }
 
 export const teamProfiles = [
-  { name: 'ADAM FOGEL', role: 'founder', key: 1, imgSrc: adamFogelImg },
-  { name: 'NAME', role: 'role', key: 2, imgSrc: imgSample },
-  { name: 'NAME', role: 'role', key: 3, imgSrc: imgSample },
+  { name: 'ADAM FOGEL', role: 'founder', key: 1, imgSrc: adamImg },
+  { name: 'MOLLY DICKSON', role: 'lead designer', key: 2, imgSrc: mollyImg },
+  { name: 'ANDRIY KULAK', role: 'lead engineer', key: 3, imgSrc: andriyImg },
 ]
 
 export const rewardsTableContent = [
