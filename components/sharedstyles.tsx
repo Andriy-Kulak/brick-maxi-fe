@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { laptopSmallBr, mobileBr, tabletBr } from '../utils/breakpoints'
 import { grey1 } from './utils/colors'
 import { Button, ButtonProps } from '@chakra-ui/react'
-import { avenirNextCondensed, gillSans } from './utils/fontConfigs'
+import { avenirNextCondensed, gillSans, weight } from './utils/fontConfigs'
 
 const Container = styled.div`
   padding: 0 0.5rem;
@@ -69,12 +69,12 @@ const TitleH1 = styled.h1`
   text-decoration: none;
   color: white;
   font-style: normal;
-  font-weight: 600;
-  font-size: 40px;
-  line-height: 48px;
+  font-weight: ${weight.semiBold};
+  font-size: 36px;
+  line-height: 44px;
 
   @media screen and (max-width: ${mobileBr}) {
-    font-size: 20px;
+    font-size: 14px;
     line-height: 24px;
   }
 `
@@ -175,12 +175,14 @@ const FlexRow = styled.div`
 export const StyledButton = styled(Button).attrs({
   fontSize: '14px',
   colorScheme: 'black',
+  fontWeight: 500,
   border: '2px',
   borderColor: 'white',
   borderRadius: '100px',
 } as ButtonProps)`
   border-radius: 30px;
   background-color: black;
+  font-family: ${gillSans};
   color: white;
   border: 2px solid white;
   :hover {

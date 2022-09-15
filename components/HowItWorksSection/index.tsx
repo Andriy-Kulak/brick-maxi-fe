@@ -49,7 +49,7 @@ const BackgroundC = styled.div`
 
 const ImgC1 = styled.div`
   position: absolute;
-  top: 35px;
+  top: 75px;
   left: 25px;
   z-index: 20;
 

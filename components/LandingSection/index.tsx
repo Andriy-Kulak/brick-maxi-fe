@@ -57,8 +57,8 @@ const VerticalScrollText = styled.h4`
   font-weight: ${weight.bold};
   left: 34px;
   font-size: 20px;
+  font-weight: ${weight.light};
   font-family: ${avenirNextCondensed};
-  font-style: italic;
 
   @media screen and (max-width: ${tabletBr}) {
     display: none;
@@ -84,10 +84,9 @@ const LaunchText = styled.p`
   bottom: 70px;
   left: calc(50% - 100px);
   color: white;
-  font-style: italic;
   font-size: 20px;
   font-family: ${avenirNextCondensed};
-  font-weight: ${weight.bold};
+  font-weight: ${weight.semiBold};
 `
 
 // const MotionTitle = motion.div

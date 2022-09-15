@@ -41,13 +41,6 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Oswald&display=optional"
           />
-
-          {/* <link
-            rel="preload"
-            href="/fonts/AvenirNextCondensed.ttf"
-            as="font"
-            crossOrigin="anonymous"
-          /> */}
         </Head>
         <body>
           <Main />

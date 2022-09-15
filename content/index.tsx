@@ -116,7 +116,7 @@ export const tokenSection = {
 }
 
 export const teamProfiles = [
-  { name: 'Adam Fogel', role: 'founder', key: 1, imgSrc: adamFogelImg },
+  { name: 'ADAM FOGEL', role: 'founder', key: 1, imgSrc: adamFogelImg },
   { name: 'NAME', role: 'role', key: 2, imgSrc: imgSample },
   { name: 'NAME', role: 'role', key: 3, imgSrc: imgSample },
 ]

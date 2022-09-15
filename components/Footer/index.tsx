@@ -20,8 +20,8 @@ const Footer = () => {
   return (
     <Container>
       <span>
-        <Text>© Brick Maxi, LLC 2022</Text>
-        <Text>Terms of Service | Privacy Policy</Text>
+        <Text>© BRICK MAXI, LLC 2022</Text>
+        <Text>TERMS OF SERVICE | PRIVACY POLICY</Text>
       </span>
     </Container>
   )
