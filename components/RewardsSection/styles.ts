@@ -66,6 +66,11 @@ export const HeaderText = styled.p`
   line-height: 17px;
   text-align: left;
   margin: 5px;
+
+  @media screen and (max-width: ${tabletBr}) {
+    font-size: 12px;
+    line-height: 14px;
+  }
 `
 
 export const BottomContainer = styled.div`
