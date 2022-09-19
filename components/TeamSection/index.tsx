@@ -69,6 +69,7 @@ const Title = styled.h3`
 `
 
 const TeamLinks = styled.div`
+  margin-top: 5px;
   > a {
     margin: 5px;
   }
