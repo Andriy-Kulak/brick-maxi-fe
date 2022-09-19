@@ -69,7 +69,7 @@ const HorizontalScrollText = styled.h4`
   color: white;
   position: absolute;
   bottom: 110px;
-  left: calc(50% - 35px);
+  left: calc(50% - 26px);
   font-weight: ${weight.bold};
   font-size: 13px;
   font-family: ${gillSans};
@@ -82,7 +82,7 @@ const HorizontalScrollText = styled.h4`
 const LaunchText = styled.p`
   position: absolute;
   bottom: 70px;
-  left: calc(50% - 100px);
+  left: calc(50% - 84px);
   color: white;
   font-size: 20px;
   font-family: ${avenirNextCondensed};
