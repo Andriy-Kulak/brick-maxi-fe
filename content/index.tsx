@@ -125,15 +125,14 @@ export const teamProfiles = [
 
 export const rewardsTableContent = [
   {
-    date: 'mm/dd/yy',
+    date: '-',
     tokenId: '-',
     tokenNumbers: '-',
-    rewardsPer: '-',
     rewardsTotal: '-',
     key: 1,
   },
   {
-    date: 'mm/dd/yy',
+    date: '-',
     tokenId: '-',
     tokenNumbers: '-',
     rewardsPer: '-',
@@ -141,7 +140,7 @@ export const rewardsTableContent = [
     key: 2,
   },
   {
-    date: 'mm/dd/yy',
+    date: '-',
     tokenId: '-',
     tokenNumbers: '-',
     rewardsPer: '-',

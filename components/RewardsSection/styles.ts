@@ -93,6 +93,9 @@ export const BottomLeftC = styled.div`
   margin-top: 10px;
 `
 export const BottomRightC = styled.div`
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
   background-color: #f5f5f5;
   border-radius: 20px;
   width: 250px;
