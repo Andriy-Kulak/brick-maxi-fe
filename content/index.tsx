@@ -29,6 +29,7 @@ import rewardsBg from '../public/assets/rewards_bg_3.png'
 import mintBtn from '../public/assets/mint_button2.png'
 import collectBtn from '../public/assets/collect_button.png'
 import twitterLogo from '../public/assets/twitter_logo.png'
+import openseaLogo from '../public/assets/opensea_logo.png'
 import animatedLogo from '../public/assets/BRICKMAXI_LOGO_ANIMATED.gif'
 
 export const images = {
@@ -58,6 +59,7 @@ export const images = {
   bgArt2Mobile,
   teamBgMobile,
   twitterLogo,
+  openseaLogo,
 }
 
 export const artistSection = [
@@ -126,6 +128,7 @@ export const teamProfiles = [
     key: 1,
     imgSrc: adamImg,
     twitterUrl: 'https://twitter.com/adamfogel',
+    openseaUrl: 'https://opensea.io/adamfvault',
   },
   {
     name: 'MOLLY DICKSON',

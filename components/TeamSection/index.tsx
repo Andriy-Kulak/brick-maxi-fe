@@ -70,6 +70,10 @@ const Title = styled.h3`
 
 const TeamLinks = styled.div`
   margin-top: 5px;
+
+  > a {
+    margin-right: 5px;
+  }
 `
 
 const SubTitle = styled.p`
@@ -206,10 +210,20 @@ const TeamSection = () => {
                     <Image
                       src={images.twitterLogo}
                       width={20}
-                      height={16}
+                      height={20}
                       alt="twitter logo"
                     />
                   </a>
+                  {x.openseaUrl && (
+                    <a href={x.openseaUrl} target="blank">
+                      <Image
+                        src={images.openseaLogo}
+                        width={20}
+                        height={20}
+                        alt="opensea logo"
+                      />
+                    </a>
+                  )}
                 </TeamLinks>
               </div>
             ))}
