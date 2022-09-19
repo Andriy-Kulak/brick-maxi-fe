@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { stack as Menu } from 'react-burger-menu'
 import Image from 'next/image'
+import { Link } from 'react-scroll'
 import { StyledP, StyledButton } from '../sharedstyles'
 import { trimAddress } from '../../utils/helpers'
 import NextLink from 'next/link'
@@ -92,11 +93,11 @@ const MobileMenuC = styled.div`
 `
 
 const mobileContent = [
-  { key: 1, name: 'Home', href: '/' },
-  { key: 2, name: 'Upcoming Drops', href: '/#upcoming-section' },
-  { key: 5, name: 'Team', href: '/#team-section' },
-  { key: 3, name: 'Learn', href: '/#how-it-works-section' },
-  { key: 4, name: 'My Rewards', href: '/rewards' },
+  { key: 1, name: 'Home', href: '/', nextLink: true },
+  { key: 2, name: 'Upcoming Drops', href: 'upcoming-section' },
+  { key: 5, name: 'Team', href: 'team-section' },
+  { key: 3, name: 'Learn', href: 'how-it-works-section' },
+  { key: 4, name: 'My Rewards', href: '/rewards', nextLink: true },
 ]
 
 const Nav = ({
@@ -120,6 +121,7 @@ const Nav = ({
   }, [])
 
   const logSideLength = 55
+  const navbarScrollOffset = -70
 
   return (
     <>
@@ -129,22 +131,22 @@ const Nav = ({
           {pageWidth >= tabletBrPixels && (
             <>
               <MidFlexContainer left>
-                <NextLink href="/#upcoming-section">
+                <Link to="upcoming-section" offset={-70}>
                   <NavText className="nav-link" color="white">
                     Upcoming Drops
                   </NavText>
-                </NextLink>
-                <NextLink href="/#team-section">
+                </Link>
+                <Link to="team-section" offset={-70}>
                   <NavText className="nav-link" color="white">
                     Team
                   </NavText>
-                </NextLink>
+                </Link>
 
-                <NextLink href="/#how-it-works-section">
+                <Link to="how-it-works-section" offset={-70}>
                   <NavText className="nav-link" color="white">
                     Learn
                   </NavText>
-                </NextLink>
+                </Link>
               </MidFlexContainer>
 
               <div style={{ display: showLogo ? '' : 'none' }}>
@@ -235,15 +237,27 @@ const Nav = ({
 
                   {mobileContent.map((x) => (
                     <div key={x.key}>
-                      <NextLink href={x.href}>
-                        <MobileNavText
-                          className="nav-link"
-                          color="white"
-                          onClick={() => setMobileMenu(false)}
-                        >
-                          {x.name}
-                        </MobileNavText>
-                      </NextLink>
+                      {x.nextLink ? (
+                        <NextLink href={x.href}>
+                          <MobileNavText
+                            className="nav-link"
+                            color="white"
+                            onClick={() => setMobileMenu(false)}
+                          >
+                            {x.name}
+                          </MobileNavText>
+                        </NextLink>
+                      ) : (
+                        <Link to={x.href} offset={navbarScrollOffset}>
+                          <MobileNavText
+                            className="nav-link"
+                            color="white"
+                            onClick={() => setMobileMenu(false)}
+                          >
+                            {x.name}
+                          </MobileNavText>
+                        </Link>
+                      )}
                     </div>
                   ))}
                   {address && (
