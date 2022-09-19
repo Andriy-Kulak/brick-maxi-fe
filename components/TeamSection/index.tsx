@@ -68,6 +68,10 @@ const Title = styled.h3`
   }
 `
 
+const TeamLinks = styled.div`
+  margin-top: 5px;
+`
+
 const SubTitle = styled.p`
   font-family: ${gillSans};
   font-style: normal;
@@ -197,6 +201,16 @@ const TeamSection = () => {
                 />
                 <Title>{x.name}</Title>
                 <SubTitle>{x.role}</SubTitle>
+                <TeamLinks>
+                  <a href={x.twitterUrl} target="blank">
+                    <Image
+                      src={images.twitterLogo}
+                      width={20}
+                      height={16}
+                      alt="twitter logo"
+                    />
+                  </a>
+                </TeamLinks>
               </div>
             ))}
           </FlexBox>
