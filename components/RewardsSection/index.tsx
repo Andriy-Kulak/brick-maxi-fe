@@ -89,11 +89,7 @@ const RewardsSection = ({
           {address ? (
             <AddressDiv>{trimAddress(address)}</AddressDiv>
           ) : (
-            <StyledButton
-              onClick={connect}
-              colorScheme="black"
-              isDisabled={true}
-            >
+            <StyledButton onClick={connect} colorScheme="black">
               Connect
             </StyledButton>
           )}
