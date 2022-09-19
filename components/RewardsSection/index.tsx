@@ -38,6 +38,10 @@ const RewardsSection = ({
         </div>
       </HeaderC>
       <Table />
+      <Footer>
+        {/* *Rewards balance does not transfer with the sale of your tokens on
+        secondary markets. */}
+      </Footer>
       <BottomContainer>
         <BottomLeftC>
           <div>
@@ -60,10 +64,6 @@ const RewardsSection = ({
           </div>
         </BottomRightC>
       </BottomContainer>
-      <Footer>
-        *Rewards balance does not transfer with the sale of your tokens on
-        secondary markets.
-      </Footer>
     </>
   )
   return (
