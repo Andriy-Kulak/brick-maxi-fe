@@ -28,6 +28,8 @@ import andriyImg from '../public/assets/andriy.gif'
 import rewardsBg from '../public/assets/rewards_bg_3.png'
 import mintBtn from '../public/assets/mint_button2.png'
 import collectBtn from '../public/assets/collect_button.png'
+import twitterLogo from '../public/assets/twitter_logo.png'
+import openseaLogo from '../public/assets/opensea_logo.png'
 import animatedLogo from '../public/assets/BRICKMAXI_LOGO_ANIMATED.gif'
 
 export const images = {
@@ -56,6 +58,8 @@ export const images = {
   greyCube,
   bgArt2Mobile,
   teamBgMobile,
+  twitterLogo,
+  openseaLogo,
 }
 
 export const artistSection = [
@@ -118,22 +122,40 @@ export const tokenSection = {
 }
 
 export const teamProfiles = [
-  { name: 'ADAM FOGEL', role: 'founder', key: 1, imgSrc: adamImg },
-  { name: 'MOLLY DICKSON', role: 'lead designer', key: 2, imgSrc: mollyImg },
-  { name: 'ANDRIY KULAK', role: 'lead engineer', key: 3, imgSrc: andriyImg },
+  {
+    name: 'ADAM FOGEL',
+    role: 'founder',
+    key: 1,
+    imgSrc: adamImg,
+    twitterUrl: 'https://twitter.com/adamfogel',
+    openseaUrl: 'https://opensea.io/adamfvault',
+  },
+  {
+    name: 'MOLLY DICKSON',
+    role: 'lead designer',
+    key: 2,
+    imgSrc: mollyImg,
+    twitterUrl: 'https://twitter.com/savemolly',
+  },
+  {
+    name: 'ANDRIY KULAK',
+    role: 'lead engineer',
+    key: 3,
+    imgSrc: andriyImg,
+    twitterUrl: 'https://twitter.com/andriy3k',
+  },
 ]
 
 export const rewardsTableContent = [
   {
-    date: 'mm/dd/yy',
+    date: '-',
     tokenId: '-',
     tokenNumbers: '-',
-    rewardsPer: '-',
     rewardsTotal: '-',
     key: 1,
   },
   {
-    date: 'mm/dd/yy',
+    date: '-',
     tokenId: '-',
     tokenNumbers: '-',
     rewardsPer: '-',
@@ -141,7 +163,7 @@ export const rewardsTableContent = [
     key: 2,
   },
   {
-    date: 'mm/dd/yy',
+    date: '-',
     tokenId: '-',
     tokenNumbers: '-',
     rewardsPer: '-',

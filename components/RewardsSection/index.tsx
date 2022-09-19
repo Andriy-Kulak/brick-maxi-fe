@@ -34,10 +34,14 @@ const RewardsSection = ({
           <Image alt="cube" src={images.greyCube} width={20} height={23} />
         </div>
         <div>
-          <HeaderText color={grey1}>TOKENS IN WALLET: ####</HeaderText>
+          <HeaderText color={grey1}>TOKENS IN WALLET:</HeaderText>
         </div>
       </HeaderC>
       <Table />
+      <Footer>
+        {/* *Rewards balance does not transfer with the sale of your tokens on
+        secondary markets. */}
+      </Footer>
       <BottomContainer>
         <BottomLeftC>
           <div>
@@ -49,15 +53,17 @@ const RewardsSection = ({
           </div>
         </BottomLeftC>
         <BottomRightC>
-          <HeaderText weight={600}>REWARDS</HeaderText>
-          <HeaderText color={grey1}>COLLECTED TO DATE</HeaderText>
-          <HeaderText color={grey1}>LAST COLLECTED</HeaderText>
+          <div>
+            <HeaderText weight={600}>REWARDS</HeaderText>
+            <HeaderText color={grey1}>COLLECTED TO DATE</HeaderText>
+            <HeaderText color={grey1}>LAST COLLECTED</HeaderText>
+          </div>
+          <div>
+            <HeaderText weight={600}>-</HeaderText>
+            <HeaderText weight={600}>-</HeaderText>
+          </div>
         </BottomRightC>
       </BottomContainer>
-      <Footer>
-        *Rewards balance does not transfer with the sale of your tokens on
-        secondary markets.
-      </Footer>
     </>
   )
   return (
@@ -83,11 +89,7 @@ const RewardsSection = ({
           {address ? (
             <AddressDiv>{trimAddress(address)}</AddressDiv>
           ) : (
-            <StyledButton
-              onClick={connect}
-              colorScheme="black"
-              isDisabled={true}
-            >
+            <StyledButton onClick={connect} colorScheme="black">
               Connect
             </StyledButton>
           )}

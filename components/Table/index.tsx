@@ -51,20 +51,12 @@ const StyledTable = styled.table`
 
   thead th:nth-child(1),
   thead th:nth-child(2),
-  thead th:nth-child(3) {
-    width: 14%;
-
-    @media screen and (max-width: ${mobileBr}) {
-      width: 18%;
-    }
-  }
-
-  thead th:nth-child(4),
-  thead th:nth-child(5) {
+  thead th:nth-child(3),
+  thead th:nth-child(4) {
     width: 26%;
 
     @media screen and (max-width: ${mobileBr}) {
-      width: 22%;
+      width: 18%;
     }
   }
 
@@ -87,7 +79,6 @@ const Table = () => (
         <th>Date</th>
         <th>Token Id</th>
         <th># Tokens</th>
-        <th>Rewards / Token (USDC)</th>
         <th>Total Rewards (USDC)</th>
       </tr>
     </thead>
@@ -97,7 +88,6 @@ const Table = () => (
           <td>{x.date}</td>
           <td>{x.tokenId}</td>
           <td>{x.tokenNumbers}</td>
-          <td>{x.rewardsPer}</td>
           <td>{x.rewardsTotal}</td>
         </tr>
       ))}

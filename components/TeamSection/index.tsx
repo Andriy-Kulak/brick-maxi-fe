@@ -68,6 +68,13 @@ const Title = styled.h3`
   }
 `
 
+const TeamLinks = styled.div`
+  margin-top: 5px;
+  > a {
+    margin: 5px;
+  }
+`
+
 const SubTitle = styled.p`
   font-family: ${gillSans};
   font-style: normal;
@@ -197,6 +204,26 @@ const TeamSection = () => {
                 />
                 <Title>{x.name}</Title>
                 <SubTitle>{x.role}</SubTitle>
+                <TeamLinks>
+                  <a href={x.twitterUrl} target="blank">
+                    <Image
+                      src={images.twitterLogo}
+                      width={20}
+                      height={20}
+                      alt="twitter logo"
+                    />
+                  </a>
+                  {x.openseaUrl && (
+                    <a href={x.openseaUrl} target="blank">
+                      <Image
+                        src={images.openseaLogo}
+                        width={20}
+                        height={20}
+                        alt="opensea logo"
+                      />
+                    </a>
+                  )}
+                </TeamLinks>
               </div>
             ))}
           </FlexBox>
