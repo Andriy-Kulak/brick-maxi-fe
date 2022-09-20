@@ -99,20 +99,20 @@ const LandingSection = ({
 }) => {
   return (
     <LandingC>
-      <NextDesktopBgImg
+      <Image
         alt="bg-art-2"
         src={images.bgArt1}
         objectFit="cover"
         objectPosition="center"
         layout="fill"
       />
-      <NextMobileBgImg
+      {/* <NextMobileBgImg
         alt="bg-art-2"
         src={images.landingBgMobile}
         objectFit="cover"
         objectPosition="center"
         layout="fill"
-      />
+      /> */}
 
       <StyledMain>
         <ImageC

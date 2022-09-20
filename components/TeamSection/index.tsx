@@ -160,20 +160,20 @@ const TeamSection = () => {
       <MobileImgC>
         <Image height={52} width={17} src={images.teamTitle} alt="Team" />
       </MobileImgC>
-      <NextDesktopBgImg
+      <Image
         alt="bg-art-2"
         src={images.bgArt1}
         objectFit="cover"
         objectPosition="center"
         layout="fill"
       />
-      <NextMobileBgImg
+      {/* <NextMobileBgImg
         alt="bg-art-2"
         src={images.teamBgMobile}
         objectFit="cover"
         objectPosition="center"
         layout="fill"
-      />
+      /> */}
 
       <BlackC>
         <Main>
