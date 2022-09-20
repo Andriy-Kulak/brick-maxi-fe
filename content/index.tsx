@@ -29,7 +29,7 @@ import mintBtn from '../public/assets/mint_button2.png'
 import collectBtn from '../public/assets/collect_button.png'
 import twitterLogo from '../public/assets/twitter_logo.png'
 import openseaLogo from '../public/assets/opensea_logo.png'
-import animatedLogo from '../public/assets/BRICKMAXI_LOGO_ANIMATED.gif'
+import animatedLogo from '../public/assets/animated_logo_v2.gif'
 
 export const images = {
   brickMaxiLogo,
