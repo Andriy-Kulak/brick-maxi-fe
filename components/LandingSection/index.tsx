@@ -116,6 +116,7 @@ const LandingSection = ({
           <Image
             alt="Brick Maxi Logo"
             src={images.animatedLogo}
+            priority
             height={logoParams.w}
             width={logoParams.h}
           />
