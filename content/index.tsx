@@ -3,7 +3,7 @@ import bgArt1 from '../public/assets/first_section_bg.jpg'
 import bgArt2 from '../public/assets/howitworks_1920x1920.png'
 
 import teamBgMobile from '../public/assets/team_mobile_650x1920.png'
-
+import landingBgMobile from '../public/assets/landing_mobile_650x1200.png'
 import bgArt2Mobile from '../public/assets/howitworks_650x1200.png'
 import artImg from '../public/assets/token_art.png'
 import burgerIcon from '../public/assets/icons/hamburger.png'
@@ -57,6 +57,7 @@ export const images = {
   greyCube,
   bgArt2Mobile,
   teamBgMobile,
+  landingBgMobile,
   twitterLogo,
   openseaLogo,
 }
