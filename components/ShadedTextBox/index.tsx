@@ -142,16 +142,15 @@ const ShadedTextBox = () => {
               Token holders control their own fate.
               <br />
               <br />
-              A dedicated governance website will allow token holders to vote on
-              proposals and make investment decisions. How should funds be
-              allocated? Should property improvements be made? Should a buyout
-              offer be accepted to liquidate the investment?
+              A fully decentralized approach means that token holders vote on
+              proposals to control every step of the process. How should funds
+              be allocated? Should improvements be made? Is now the right time
+              to liquidate?
               <br />
               <br />
-              Brick Maxi’s in-house professionals act as facilitators, doing
-              research, filing paperwork, hiring management, and much more. We
-              streamline and simplify the process so token holders can maximize
-              their rewards.
+              Brick Maxi provides the technology for collectors to join forces
+              and maximize their rewards. We don’t offer financial advice or
+              management services of any kind.
             </StyledP>
           </div>
         </div>
