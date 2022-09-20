@@ -179,18 +179,15 @@ const TeamSection = () => {
         <Main>
           <TextContainer>
             <StyledP color="white">
-              <b>Brick Maxi</b> was born with a single purpose: the long-term
+              <b>Brick Maxi</b> was born with a simple purpose: the growth and
               sustainability of this beautiful culture.
               <br />
               <br />
               Just like you, we’ve become unlikely art collectors, spending our
-              days discovering new artists, learning about defi, and making new
-              friends. We’ve made it our mission to to broaden the reach of web3
-              and create a system where artist and collector work in harmony.
-              Collectors can confidently vault their favorite works and artists
-              can reach new audiences, especially those looking for a more
-              stable pricing environment. Let’s explore new use cases for the
-              chain and usher in the future.
+              days discovering new artists, learning about defi, and making
+              friends. We’ve made it our mission to broaden the reach of web3,
+              innovate, and help drive the space forward. Join us as we explore
+              new use cases for the chain.
             </StyledP>
           </TextContainer>
           <FlexBox>
