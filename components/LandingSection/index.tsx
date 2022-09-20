@@ -101,6 +101,7 @@ const LandingSection = ({
       <Image
         alt="bg-art-2"
         src={images.bgArt1}
+        priority
         objectFit="cover"
         objectPosition="center"
         layout="fill"
