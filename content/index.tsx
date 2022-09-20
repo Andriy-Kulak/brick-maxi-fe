@@ -1,6 +1,5 @@
 import brickMaxiLogo from '../public/assets/brick_maxi_logo2.png'
 import bgArt1 from '../public/assets/first_section_bg.jpg'
-// import bgArt2 from '../public/assets/howitworks_desktop_1200x1200.png'
 import bgArt2 from '../public/assets/howitworks_1920x1920.png'
 
 import teamBgMobile from '../public/assets/team_mobile_650x1920.png'
@@ -168,6 +167,24 @@ export const rewardsTableContent = [
     tokenNumbers: '-',
     rewardsPer: '-',
     rewardsTotal: '-',
+    key: 3,
+  },
+]
+
+export const howItWorksContent = [
+  {
+    title: 'VAULT YOUR ART',
+    desc: 'We’ve built a technology that brings collectors together and puts the reward earning power in their hands. After minting works by leading artists, collectors have the freedom to allocate mint funds as they see fit across IRL real estate assets. Income that’s earned by those assets is then shared among token holders, including funds from liquidation.',
+    key: 1,
+  },
+  {
+    title: 'THE MINT',
+    desc: 'We only mint one token at a time through the site, giving each artist their time and space. The entire design of the site gets taken over by the artist’s work, a homage to their history. Artist fees are prioritized when mint funds are collected, the platform takes its cut, and the rest is available for allocation.',
+    key: 2,
+  },
+  {
+    title: 'REWARDS',
+    desc: 'Imagine a rental property that collects rent checks every month (or perhaps a REIT paying regular dividends), paired with a technology that distributes that income to token holders. The more tokens you hold, the greater your rewards.',
     key: 3,
   },
 ]

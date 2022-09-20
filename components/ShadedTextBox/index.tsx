@@ -6,6 +6,7 @@ import {
   mobileBr,
   tabletBr,
 } from '../../utils/breakpoints'
+import { howItWorksContent } from '../../content'
 
 const H1 = styled.h1`
   font-family: ${avenirNextCondensed};
@@ -118,41 +119,19 @@ const ShadedTextBox = () => {
     <StyledContainer id="mission-section">
       <FlexBox>
         <div>
-          <div>
-            <H1>COLLECT ART YOU LOVE</H1>
-            <StyledP>
-              We&apos;ve formed partnerships with our favorite artists, so you
-              can add exclusive new works to your collections.
-            </StyledP>
-          </div>
-          <div>
-            <H1>MINT FUNDS ARE INVESTED</H1>
-            <StyledP>
-              Fractionalized real estate has arrived. We use mint funds to
-              purchase real estate assets that generate income. Your tokens
-              effectively represent shares of these assets and the income that
-              they earn.
-            </StyledP>
-          </div>
-          <div>
-            <H1>EARN REWARDS</H1>
-            <StyledP>
-              Investment income is regularly distributed back to token holders,
-              like receiving rent checks every month. When these assets are
-              liquidated, token holders receive their share. We hope to see
-              positive returns, which means that over time you could potentially
-              receive rewards in excessive of your original token price… and you
-              get to keep the art.*
-            </StyledP>
-          </div>
+          {howItWorksContent.map((x) => (
+            <div key={x.key}>
+              <H1>{x.title}</H1>
+              <StyledP>{x.desc}</StyledP>
+            </div>
+          ))}
           <Divider />
           <div>
             <StyledPItalic>
-              *Actual rewards are based on each individual asset&apos;s
-              performance. Due to risks associated with these types of
-              investments, Brick Maxi does not guarantee any amount of rewards.
-              Further, asset performance is heavily impacted by governance
-              decisions made by token holders.
+              *Actual rewards are based on decisions made by token holders and
+              each asset’s performance. Brick Maxi does not guarantee any amount
+              of rewards or that a token’s mint will generate sufficient
+              proceeds for there to be any allocation at all.
             </StyledPItalic>
           </div>
         </div>
