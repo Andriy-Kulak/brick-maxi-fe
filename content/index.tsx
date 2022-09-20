@@ -78,16 +78,6 @@ export const artistSection = [
 ]
 
 export const faqAccordion = [
-  {
-    title: 'How Investments are made?',
-    p: `  Each artwork minted through the platform represents a unique
-investment, with its own set of token holders, P&L, and subsequent
-rewards. As part of our services, we vet and negotiate investment
-oppurtunities, hire day-to-day management, and facilitate the voting
-process. In some cases, we may consolidate funds from multiple mints
-into one investment.`,
-    key: 1,
-  },
   { title: 'Earning rewards', p: '...tbd', key: 2 },
   {
     title: 'Where are communications managed?',
@@ -174,18 +164,18 @@ export const rewardsTableContent = [
 
 export const howItWorksContent = [
   {
-    title: 'VAULT YOUR ART',
-    desc: 'We’ve built a technology that brings collectors together and puts the reward earning power in their hands. After minting works by leading artists, collectors have the freedom to allocate mint funds as they see fit across IRL real estate assets. Income that’s earned by those assets is then shared among token holders, including funds from liquidation.',
+    title: 'COLLECT & VAULT',
+    desc: 'The platform brings collectors together and puts the power to earn rewards in their hands. After minting new works, collectors vote to determine how mint funds will be allocated across IRL real estate assets. Income that’s earned by these assets is then shared among token holders.',
     key: 1,
   },
   {
     title: 'THE MINT',
-    desc: 'We only mint one token at a time through the site, giving each artist their time and space. The entire design of the site gets taken over by the artist’s work, a homage to their history. Artist fees are prioritized when mint funds are collected, the platform takes its cut, and the rest is available for allocation.',
+    desc: 'We only mint one token at a time, giving each artist their time and space. Taking this focus even further, the entire site design takes on the past works of the artist, a homage of gratitude and appreciation. Artist fees are prioritized when funds are collected, the platform takes its cut, and the rest is available for allocation.',
     key: 2,
   },
   {
     title: 'REWARDS',
-    desc: 'Imagine a rental property that collects rent checks every month (or perhaps a REIT paying regular dividends), paired with a technology that distributes that income to token holders. The more tokens you hold, the greater your rewards.',
+    desc: 'Imagine a rental property collecting rent checks every month or perhaps a REIT paying regular dividends, paired with a technology that distributes that income to token holders. The more tokens you hold, the greater your rewards.',
     key: 3,
   },
 ]
