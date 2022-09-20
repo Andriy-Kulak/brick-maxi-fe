@@ -100,8 +100,8 @@ const LandingSection = ({
     <LandingC>
       <Image
         alt="bg-art-1"
-        priority
         src={images.bgArt1}
+        priority
         objectFit="cover"
         objectPosition="center"
         layout="fill"
@@ -116,6 +116,7 @@ const LandingSection = ({
           <Image
             alt="Brick Maxi Logo"
             src={images.animatedLogo}
+            priority
             height={logoParams.w}
             width={logoParams.h}
           />

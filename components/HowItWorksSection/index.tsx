@@ -115,9 +115,9 @@ const HowItWorksSection = () => (
         variants={textVariant}
         transition={{ delay: 0.5 }}
       >
-        <TitleH1>You collect art.</TitleH1>
-        <TitleH1>We purchase real estate.</TitleH1>
-        <TitleH1>You earn USDC rewards.</TitleH1>
+        <TitleH1>Collect art.</TitleH1>
+        <TitleH1>Purchase real estate.</TitleH1>
+        <TitleH1>Earn USDC rewards.</TitleH1>
       </StyledMain>
     </TextC>
     <BackgroundC>

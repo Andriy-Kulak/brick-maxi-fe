@@ -3,7 +3,7 @@ import bgArt1 from '../public/assets/first_section_bg.jpg'
 import bgArt2 from '../public/assets/howitworks_1920x1920.png'
 
 import teamBgMobile from '../public/assets/team_mobile_650x1920.png'
-
+import landingBgMobile from '../public/assets/landing_mobile_650x1200.png'
 import bgArt2Mobile from '../public/assets/howitworks_650x1200.png'
 import artImg from '../public/assets/token_art.png'
 import burgerIcon from '../public/assets/icons/hamburger.png'
@@ -29,7 +29,7 @@ import mintBtn from '../public/assets/mint_button2.png'
 import collectBtn from '../public/assets/collect_button.png'
 import twitterLogo from '../public/assets/twitter_logo.png'
 import openseaLogo from '../public/assets/opensea_logo.png'
-import animatedLogo from '../public/assets/BRICKMAXI_LOGO_ANIMATED.gif'
+import animatedLogo from '../public/assets/animated_logo_v2.gif'
 
 export const images = {
   brickMaxiLogo,
@@ -57,6 +57,7 @@ export const images = {
   greyCube,
   bgArt2Mobile,
   teamBgMobile,
+  landingBgMobile,
   twitterLogo,
   openseaLogo,
 }
