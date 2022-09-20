@@ -8,6 +8,7 @@ import { avenirNextCondensed, gillSans, weight } from '../utils/fontConfigs'
 import { motion } from 'framer-motion'
 import { textVariant } from '../../utils/motion'
 import { LogoParamProps } from '../../utils/hooks/useScrollEffects'
+import { NextDesktopBgImg, NextMobileBgImg } from '../BgImages'
 
 type ImageCProps = {
   hide?: boolean
@@ -98,9 +99,17 @@ const LandingSection = ({
 }) => {
   return (
     <LandingC>
-      <Image
+      <NextDesktopBgImg
         alt="bg-art-2"
-        src={images.bgArt1}
+        src={images.bgArt2}
+        priority
+        objectFit="cover"
+        objectPosition="center"
+        layout="fill"
+      />
+      <NextMobileBgImg
+        alt="bg-art-2"
+        src={images.landingBgMobile}
         priority
         objectFit="cover"
         objectPosition="center"
