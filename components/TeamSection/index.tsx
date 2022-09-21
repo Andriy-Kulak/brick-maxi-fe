@@ -6,8 +6,9 @@ import { mobileBr, tabletBr } from '../../utils/breakpoints'
 import { images, teamProfiles } from '../../content'
 import { avenirNextCondensed, gillSans, weight } from '../utils/fontConfigs'
 import { NextDesktopBgImg, NextMobileBgImg } from '../BgImages'
+import AnchorSpan from '../AnchorSpan'
 
-const { bold, semiBold } = weight
+const { bold } = weight
 
 export const StyledButton = styled(Button).attrs({
   colorScheme: 'black',
@@ -152,7 +153,8 @@ const BackgroundC = styled.div`
 
 const TeamSection = () => {
   return (
-    <BackgroundC id="team-section">
+    <BackgroundC>
+      <AnchorSpan id="team-section" />
       <DesktopImgC>
         <Image height={92} width={30} src={images.teamTitle} alt="Team" />
       </DesktopImgC>
