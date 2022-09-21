@@ -95,7 +95,7 @@ const mobileContent = [
   { key: 1, name: 'Home', href: '/' },
   { key: 2, name: 'Upcoming Drops', href: '/#upcoming-section' },
   { key: 5, name: 'Team', href: '/#team-section' },
-  { key: 3, name: 'Learn', href: '/#how-it-works-section' },
+  { key: 3, name: 'Learn', href: '/#learn-section' },
   { key: 4, name: 'My Rewards', href: '/rewards' },
 ]
 
@@ -140,7 +140,7 @@ const Nav = ({
                   </NavText>
                 </NextLink>
 
-                <NextLink href="/#how-it-works-section">
+                <NextLink href="/#learn-section">
                   <NavText className="nav-link" color="white">
                     Learn
                   </NavText>

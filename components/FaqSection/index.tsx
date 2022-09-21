@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { FaqAcccordion } from '../'
 import { faqAccordion, images } from '../../content'
 import { mobileBr, tabletBr } from '../../utils/breakpoints'
+import AnchorSpan from '../AnchorSpan'
 
 const MobileC = styled.div`
   padding: 50px 150px;
@@ -46,7 +47,8 @@ const Container = styled.div`
 
 const FaqSection = () => {
   return (
-    <Container id="learn-section">
+    <Container>
+      <AnchorSpan id="learn-section" />
       <TitleImgDesktop>
         <Image src={images.faqBlackTitle} width={30} height={65} alt="faq" />
       </TitleImgDesktop>

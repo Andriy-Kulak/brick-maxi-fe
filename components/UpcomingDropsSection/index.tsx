@@ -2,6 +2,7 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import { images } from '../../content'
 import { laptopSmallBr, mobileBr, tabletBr } from '../../utils/breakpoints'
+import AnchorSpan from '../AnchorSpan'
 import { StyledP, TitleH3 } from '../sharedstyles'
 
 const TextC = styled.div`
@@ -13,7 +14,7 @@ const TextC = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  min-height: 50vh;
+  min-height: 60vh;
 
   @media screen and (max-width: ${mobileBr}) {
     height: auto;
@@ -78,7 +79,8 @@ const MobileImgC1 = styled.div`
 
 const UpcomingDropsSection = () => {
   return (
-    <TextC id="upcoming-section">
+    <TextC>
+      <AnchorSpan id="upcoming-section" />
       <DesktopImgC1>
         <Image
           alt="upcoming drops"
