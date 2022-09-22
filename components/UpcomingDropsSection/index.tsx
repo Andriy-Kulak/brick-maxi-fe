@@ -99,21 +99,19 @@ const UpcomingDropsSection = () => {
       </MobileImgC1>
       <InnerTextC>
         <div>
-          <TitleH3 color="white">CURATED DROPS</TitleH3>
+          <TitleH3 color="white">COMING SOON!</TitleH3>
           <StyledP color="white">
-            Our artist drops are announced in pairs but only one token at a time
-            is minted through the site. The entire platform gets taken over by
-            the upcoming artist’s works, giving them our full attention and
-            showcasing a selection of their past works.
+            Keep an eye on our Twitter, we’ll soon be announcing our first two
+            artist drops! We curate artists into pairs and announce them
+            together, but only one token mints at a time.
           </StyledP>
 
           <TitleH3 color="white">ALLOW LIST</TitleH3>
           <StyledP color="white">
-            Mints are done in two phases: Allow List & Public. AL spots for our
-            first ever drop will be a combination of Premint winners from
-            partner communities and other factors, like the artist’s past
-            collectors. More details to be announced along with our first
-            artists announcement.
+            Each mint will be done in two phases: Allow List & Public. AL spots
+            for our first ever drop will be granted to a combination of Premint
+            winners from partner communities and other factors, like the
+            artist’s past collectors. More details to be announced shortly!
           </StyledP>
         </div>
       </InnerTextC>

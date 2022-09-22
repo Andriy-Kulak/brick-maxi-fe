@@ -129,15 +129,15 @@ const ShadedTextBox = () => {
           <div>
             <StyledPItalic>
               *Actual rewards are based on each asset’s performance. Brick Maxi
-              does not guarantee any amount of rewards or that a given mint will
-              generate sufficient proceeds for there to be any funds available
-              for allocation at all.
+              does not guarantee that any amount of rewards will be earned by
+              token holders or that a given mint will generate sufficient funds
+              for an allocation to be made.
             </StyledPItalic>
           </div>
         </div>
         <div>
           <div>
-            <H1>DECENTRALIZED GOVERNANCE</H1>
+            <H1>GOVERNANCE</H1>
             <StyledP>
               Token holders control their own fate.
               <br />
