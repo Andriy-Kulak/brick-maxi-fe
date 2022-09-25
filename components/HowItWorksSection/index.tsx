@@ -43,11 +43,11 @@ const BackgroundC = styled.div`
   }
 
   @media screen and (max-width: ${tabletBr}) {
-    height: 130vh;
+    height: 100vh;
   }
 
   @media screen and (max-width: ${smallMobileBr}) {
-    height: 150vh;
+    height: 110vh;
   }
 `
 
@@ -75,7 +75,7 @@ const SquiggleC1 = styled.div`
 
 const SquiggleC2 = styled.div`
   position: absolute;
-  top: 25px;
+  top: 20px;
   left: 40px;
   z-index: 21;
 
@@ -97,7 +97,7 @@ const ImgC2 = styled.div`
 const ImgC3 = styled.div`
   display: none;
   position: absolute;
-  top: 25px;
+  top: 20px;
   left: 15px;
   z-index: 3;
   @media screen and (max-width: ${mobileBr}) {
