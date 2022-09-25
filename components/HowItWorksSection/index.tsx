@@ -6,7 +6,6 @@ import { images } from '../../content'
 import {
   mobileBr,
   tabletBr,
-  laptopSmallBr,
   smallMobileBr,
   largeTabletBr,
 } from '../../utils/breakpoints'
@@ -22,21 +21,21 @@ const TextC = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  min-height: 40vh;
+  height: 50vh;
+
+  @media screen and (max-width: ${tabletBr}) {
+    height: 60vh;
+  }
 
   @media screen and (max-width: ${mobileBr}) {
     height: auto;
     min-height: 20vh;
   }
-
-  @media screen and (min-width: ${laptopSmallBr}) {
-    padding-bottom: 70px;
-  }
 `
 
 const BackgroundC = styled.div`
   position: relative;
-  height: 155vh;
+  height: 220vh;
   background-color: black;
 
   @media screen and (max-width: ${largeTabletBr}) {
@@ -44,11 +43,11 @@ const BackgroundC = styled.div`
   }
 
   @media screen and (max-width: ${tabletBr}) {
-    height: 120vh;
+    height: 130vh;
   }
 
   @media screen and (max-width: ${smallMobileBr}) {
-    height: 140vh;
+    height: 150vh;
   }
 `
 

@@ -63,7 +63,7 @@ const Main = styled.div`
 
 const TitleH1 = styled.h1`
   margin: 0;
-  font-family: ${gillSans};
+  font-family: ${avenirNextCondensed};
   text-align: center;
   text-decoration: none;
   color: white;
@@ -73,7 +73,7 @@ const TitleH1 = styled.h1`
   line-height: 59px;
 
   @media screen and (max-width: ${mobileBr}) {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 24px;
   }
 `
