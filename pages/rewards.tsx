@@ -4,6 +4,7 @@ import RewardsSection from '../components/RewardsSection'
 import useConnect from '../utils/hooks/useConnect'
 import { Nav } from '../components'
 import Footer from '../components/Footer'
+import HeadC from '../components/Head'
 
 export default function Rewards() {
   const [ci, setContract] = useState<{
@@ -20,6 +21,7 @@ export default function Rewards() {
   const [connectWallet, disconnect] = useConnect({ setContract })
   return (
     <>
+      <HeadC />
       <Nav
         connectWallet={connectWallet}
         address={ci.address}

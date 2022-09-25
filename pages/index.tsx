@@ -156,6 +156,7 @@ export default function Home() {
 
   return (
     <>
+      <Head />
       <ToastContainer />
       <Nav
         connectWallet={connectWallet}
