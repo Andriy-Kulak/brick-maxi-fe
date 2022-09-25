@@ -6,12 +6,9 @@ export default function HeadC() {
       <title>Brick Maxi 1</title>
       <meta property="og:url" content="https://brickmaxi.com/" />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="Social Media Preview Working?" />
+      <meta property="og:title" content="Brick Maxi" />
       <meta name="twitter:card" content="summary" />
-      <meta
-        property="og:description"
-        content="Hurray!! Yes Social Media Preview is Working"
-      />
+      <meta property="og:description" content="Art that pays dividens" />
       <meta property="og:image" content="../../assets/previewImg.png" />
     </Head>
   )
