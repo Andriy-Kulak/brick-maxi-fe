@@ -43,7 +43,7 @@ const BackgroundC = styled.div`
   }
 
   @media screen and (max-width: ${tabletBr}) {
-    height: 100vh;
+    height: 105vh;
   }
 
   @media screen and (max-width: ${smallMobileBr}) {
