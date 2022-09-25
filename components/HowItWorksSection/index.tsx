@@ -62,6 +62,28 @@ const ImgC1 = styled.div`
   }
 `
 
+const SquiggleC1 = styled.div`
+  position: absolute;
+  top: 190px;
+  left: 70px;
+  z-index: 21;
+
+  @media screen and (max-width: ${mobileBr}) {
+    display: none;
+  }
+`
+
+const SquiggleC2 = styled.div`
+  position: absolute;
+  top: 25px;
+  left: 40px;
+  z-index: 21;
+
+  @media screen and (min-width: ${mobileBr}) {
+    display: none;
+  }
+`
+
 const ImgC2 = styled.div`
   position: absolute;
   bottom: 225px;
@@ -102,6 +124,23 @@ const HowItWorksSection = () => (
           height={259}
         />
       </ImgC1>
+      <SquiggleC1>
+        <Image
+          alt="sqiggle"
+          src={images.whiteSquiggleLine}
+          width={11}
+          height={265}
+        />
+      </SquiggleC1>
+
+      <SquiggleC2>
+        <Image
+          alt="sqiggle"
+          src={images.whiteSquiggleLine}
+          width={6}
+          height={145}
+        />
+      </SquiggleC2>
 
       <ImgC3>
         <Image
