@@ -35,7 +35,7 @@ const TextC = styled.div`
 
 const BackgroundC = styled.div`
   position: relative;
-  height: 220vh;
+  height: 200vh;
   background-color: black;
 
   @media screen and (max-width: ${largeTabletBr}) {
