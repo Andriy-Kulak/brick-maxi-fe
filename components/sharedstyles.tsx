@@ -69,8 +69,8 @@ const TitleH1 = styled.h1`
   color: white;
   font-style: normal;
   font-weight: ${weight.semiBold};
-  font-size: 36px;
-  line-height: 44px;
+  font-size: 40px;
+  line-height: 59px;
 
   @media screen and (max-width: ${mobileBr}) {
     font-size: 14px;
@@ -85,7 +85,7 @@ const TitleH2 = styled.h2`
   color: white;
   font-style: italic;
   font-family: ${avenirNextCondensed};
-  font-weight: 600;
+  font-weight: 500;
   font-size: 40px;
   line-height: 82px;
 
@@ -154,8 +154,12 @@ const StyledP = styled.p`
   letter-spacing: normal;
   font-family: ${gillSans};
   font-style: normal;
-  font-size: 14px;
-  line-height: normal;
+  font-size: 12px;
+  line-height: 17px;
+
+  b {
+    font-weight: 700;
+  }
 
   @media screen and (max-width: ${mobileBr}) {
     font-size: 13px;

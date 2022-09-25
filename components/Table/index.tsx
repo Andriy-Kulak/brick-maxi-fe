@@ -10,8 +10,8 @@ const StyledTable = styled.table`
     font-family: ${gillSans};
     font-style: normal;
     font-weight: 400;
-    font-size: 13px;
-    line-height: 15px;
+    font-size: 11px;
+    line-height: 13px;
     text-transform: uppercase;
     color: #808080;
 

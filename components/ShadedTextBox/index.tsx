@@ -16,6 +16,7 @@ const H1 = styled.h1`
   line-height: 36px;
   text-align: center;
   color: black;
+  margin-bottom: 3px;
   @media screen and (max-width: ${mobileBr}) {
     font-size: 20px;
     line-height: 27px;

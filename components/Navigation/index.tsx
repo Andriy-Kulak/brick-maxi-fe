@@ -93,10 +93,10 @@ const MobileMenuC = styled.div`
 
 const mobileContent = [
   { key: 1, name: 'Home', href: '/' },
-  { key: 2, name: 'Upcoming Drops', href: '/#upcoming-section' },
-  { key: 5, name: 'Team', href: '/#team-section' },
-  { key: 3, name: 'Learn', href: '/#learn-section' },
-  { key: 4, name: 'My Rewards', href: '/rewards' },
+  { key: 2, name: 'My Rewards', href: '/rewards' },
+  { key: 3, name: 'Upcoming Drops', href: '/#upcoming-section' },
+  { key: 4, name: 'Team', href: '/#team-section' },
+  { key: 5, name: 'Learn', href: '/#learn-section' },
 ]
 
 const Nav = ({
