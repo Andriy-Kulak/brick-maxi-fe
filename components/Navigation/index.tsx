@@ -166,6 +166,7 @@ const Nav = ({
                 </NextLink>
                 <div>
                   <StyledButton
+                    fontSize="12px"
                     onClick={() => connectWallet()}
                     colorScheme="black"
                   >
@@ -223,6 +224,7 @@ const Nav = ({
                 >
                   <div>
                     <StyledButton
+                      fontSize="12px"
                       onClick={() => {
                         setMobileMenu(false)
                         connectWallet()
@@ -249,6 +251,7 @@ const Nav = ({
                   {address && (
                     <div style={{ paddingTop: '50px' }}>
                       <StyledButton
+                        fontSize="12px"
                         onClick={() => {
                           setMobileMenu(false)
                           disconnect()

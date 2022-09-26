@@ -45,7 +45,9 @@ const RewardsSection = ({
       <BottomContainer>
         <BottomLeftC>
           <div>
-            <HeaderText weight={700}>CURRENT BALANCE</HeaderText>
+            <HeaderText extra weight={700}>
+              CURRENT BALANCE
+            </HeaderText>
             <HeaderText weight={700}>0.00 USDC</HeaderText>
           </div>
           <div>
@@ -89,7 +91,7 @@ const RewardsSection = ({
           {address ? (
             <AddressDiv>{trimAddress(address)}</AddressDiv>
           ) : (
-            <StyledButton onClick={connect} colorScheme="black">
+            <StyledButton fontSize="14px" onClick={connect} colorScheme="black">
               Connect
             </StyledButton>
           )}

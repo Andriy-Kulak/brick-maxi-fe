@@ -56,11 +56,17 @@ export const Footer = styled.p`
   text-align: left;
 `
 
-export const HeaderText = styled.p`
+type HeaderTextType = {
+  weight?: number
+  extra?: boolean
+  color?: string
+}
+
+export const HeaderText = styled.p<HeaderTextType>`
   font-family: ${gillSans};
   font-style: normal;
   font-weight: ${(props: { weight?: number }) => props.weight || 400};
-  font-size: 14px;
+  font-size: ${(props: { extra?: boolean }) => (props.extra ? '13px' : '12px')};
   color: ${(props: { color?: string }) => props.color || 'black'};
 
   line-height: 17px;

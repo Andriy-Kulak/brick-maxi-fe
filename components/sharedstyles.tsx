@@ -176,7 +176,6 @@ const FlexRow = styled.div`
 `
 
 export const StyledButton = styled(Button).attrs({
-  fontSize: '12px',
   colorScheme: 'black',
   fontWeight: 500,
   border: '2px',
