@@ -8,6 +8,7 @@ import {
   tabletBr,
   smallMobileBr,
   largeTabletBr,
+  laptopSmallBr,
 } from '../../utils/breakpoints'
 import { motion } from 'framer-motion'
 import { textVariant } from '../../utils/motion'
@@ -35,7 +36,7 @@ const TextC = styled.div`
 
 const BackgroundC = styled.div`
   position: relative;
-  height: 200vh;
+  min-height: 155vh;
   background-color: black;
 
   @media screen and (max-width: ${largeTabletBr}) {
