@@ -31,6 +31,7 @@ import {
   ContractInstance,
   MintPhases,
 } from '../utils/types/reactState'
+import HeadC from '../components/Head'
 
 export default function Home() {
   const [mintPhase, setMintPhase] = useState<MintPhases>(MintPhases.COMING_SOON)
@@ -156,6 +157,7 @@ export default function Home() {
 
   return (
     <>
+      <HeadC />
       <ToastContainer />
       <Nav
         connectWallet={connectWallet}

@@ -222,6 +222,16 @@ const TeamSection = () => {
                       />
                     </a>
                   )}
+                  {x.tezosUrl && (
+                    <a href={x.tezosUrl} target="blank">
+                      <Image
+                        src={images.tezosLogo}
+                        width={20}
+                        height={24}
+                        alt="tezos logo"
+                      />
+                    </a>
+                  )}
                 </TeamLinks>
               </div>
             ))}

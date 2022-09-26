@@ -16,6 +16,7 @@ const H1 = styled.h1`
   line-height: 36px;
   text-align: center;
   color: black;
+  margin-bottom: 3px;
   @media screen and (max-width: ${mobileBr}) {
     font-size: 20px;
     line-height: 27px;
@@ -24,7 +25,7 @@ const H1 = styled.h1`
 
 const StyledContainer = styled.div`
   width: 100%;
-  position: absolute;
+  position: relative;
   height: 100%;
   z-index: 2;
 `
@@ -75,6 +76,7 @@ const FlexBox = styled.div`
     margin: 30px 10px;
     padding: 30px;
     width: 60%;
+    max-width: 750px;
     @media screen and (max-width: ${tabletBr}) {
       width: auto;
       margin: 10px 20px;
@@ -99,10 +101,10 @@ const FlexBox = styled.div`
 
 const Divider = styled.hr`
   border: 0.5px solid black;
-  margin: 50px 150px;
+  margin: 50px 70px;
 
   @media screen and (max-width: ${laptopSmallBr}) {
-    margin: 30px 100px;
+    margin: 30px 40px;
   }
 
   @media screen and (max-width: ${tabletBr}) {

@@ -6,12 +6,13 @@ import { gillSans } from '../utils/fontConfigs'
 
 const StyledTable = styled.table`
   text-align: left;
+  width: 100%;
   th {
     font-family: ${gillSans};
     font-style: normal;
     font-weight: 400;
-    font-size: 13px;
-    line-height: 15px;
+    font-size: 11px;
+    line-height: 13px;
     text-transform: uppercase;
     color: #808080;
 

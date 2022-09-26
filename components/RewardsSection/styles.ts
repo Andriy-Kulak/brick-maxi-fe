@@ -18,13 +18,13 @@ export const LandingC = styled.div`
 
 export const Main = styled.div`
   position: relative;
-  padding: 60px 80px;
+  padding: 60px 80px 0px;
   display: flex;
   flex-direction: column;
   justify-content: ${(props: { justifyContent?: string }) =>
     props.justifyContent || 'center'};
   align-items: center;
-  min-height: 100vh;
+  min-height: 80vh;
   background-color: white;
   background-clip: content-box;
   z-index: 1;
@@ -49,18 +49,24 @@ export const Footer = styled.p`
   font-family: ${gillSans};
   font-style: italic;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 11px;
   margin-top: 30px;
   color: #808080;
   text-align: left;
 `
 
-export const HeaderText = styled.p`
+type HeaderTextType = {
+  weight?: number
+  extra?: boolean
+  color?: string
+}
+
+export const HeaderText = styled.p<HeaderTextType>`
   font-family: ${gillSans};
   font-style: normal;
   font-weight: ${(props: { weight?: number }) => props.weight || 400};
-  font-size: 14px;
+  font-size: ${(props: { extra?: boolean }) => (props.extra ? '13px' : '12px')};
   color: ${(props: { color?: string }) => props.color || 'black'};
 
   line-height: 17px;

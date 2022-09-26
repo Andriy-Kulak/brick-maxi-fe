@@ -29,6 +29,7 @@ const TextC = styled.div`
 const InnerTextC = styled.div`
   text-align: center;
   width: 60%;
+  max-width: 750px;
   > div {
     padding: 0px 20px;
   }
@@ -77,6 +78,17 @@ const MobileImgC1 = styled.div`
   }
 `
 
+const SquiggleC1 = styled.div`
+  position: absolute;
+  top: 160px;
+  left: 70px;
+  z-index: 21;
+
+  @media screen and (max-width: ${tabletBr}) {
+    display: none;
+  }
+`
+
 const UpcomingDropsSection = () => {
   return (
     <TextC>
@@ -89,6 +101,14 @@ const UpcomingDropsSection = () => {
           height={259}
         />
       </DesktopImgC1>
+      <SquiggleC1>
+        <Image
+          alt="sqiggle"
+          src={images.whiteSquiggleLine}
+          width={11}
+          height={265}
+        />
+      </SquiggleC1>
       <MobileImgC1>
         <Image
           alt="upcoming drops"

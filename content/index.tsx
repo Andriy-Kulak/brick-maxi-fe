@@ -8,6 +8,7 @@ import bgArt2Mobile from '../public/assets/howitworks_650x1200.png'
 import artImg from '../public/assets/token_art.png'
 import burgerIcon from '../public/assets/icons/hamburger.png'
 import xIcon from '../public/assets/icons/x.png'
+import whiteArrow from '../public/assets/icons/white_arrow.png'
 import ethescanLogo from '../public/assets/icons/etherscan-logo.webp'
 import apecoinLogo from '../public/assets/icons/apecoin.png'
 import greyCube from '../public/assets/icons/grey_cube.png'
@@ -29,6 +30,7 @@ import mintBtn from '../public/assets/mint_button2.png'
 import collectBtn from '../public/assets/collect_button.png'
 import twitterLogo from '../public/assets/twitter_logo.png'
 import openseaLogo from '../public/assets/opensea_logo.png'
+import tezosLogo from '../public/assets/tezos_logo.png'
 import animatedLogo from '../public/assets/animated_logo_v2.gif'
 
 export const images = {
@@ -60,6 +62,8 @@ export const images = {
   landingBgMobile,
   twitterLogo,
   openseaLogo,
+  tezosLogo,
+  whiteArrow,
 }
 
 export const artistSection = [
@@ -131,7 +135,9 @@ export const teamProfiles = [
     key: 1,
     imgSrc: adamImg,
     twitterUrl: 'https://twitter.com/adamfogel',
-    openseaUrl: 'https://opensea.io/adamfvault',
+    openseaUrl: 'https://bit.ly/3eyeG9s',
+    tezosUrl:
+      'https://objkt.com/profile/adamf/owned?sort=lowest_ask:desc&page=1',
   },
   {
     name: 'MOLLY DICKSON',
