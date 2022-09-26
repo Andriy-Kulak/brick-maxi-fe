@@ -25,7 +25,7 @@ const H1 = styled.h1`
 
 const StyledContainer = styled.div`
   width: 100%;
-  position: absolute;
+  position: relative;
   height: 100%;
   z-index: 2;
 `

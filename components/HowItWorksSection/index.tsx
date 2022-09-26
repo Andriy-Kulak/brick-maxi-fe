@@ -3,12 +3,7 @@ import styled from 'styled-components'
 import { Main, TitleH1 } from '../sharedstyles'
 import { ShadedTextBox } from '../'
 import { images } from '../../content'
-import {
-  mobileBr,
-  tabletBr,
-  smallMobileBr,
-  largeTabletBr,
-} from '../../utils/breakpoints'
+import { mobileBr, tabletBr } from '../../utils/breakpoints'
 import { motion } from 'framer-motion'
 import { textVariant } from '../../utils/motion'
 import { NextDesktopBgImg, NextMobileBgImg } from '../BgImages'
@@ -38,17 +33,11 @@ const BackgroundC = styled.div`
   position: relative;
   min-height: 155vh;
   background-color: black;
+  padding: 40px 0px;
+  min-height: 70vh;
 
-  @media screen and (max-width: ${largeTabletBr}) {
-    height: 175vh;
-  }
-
-  @media screen and (max-width: ${tabletBr}) {
-    height: 115vh;
-  }
-
-  @media screen and (max-width: ${smallMobileBr}) {
-    height: 125vh;
+  @media screen and (max-width: ${mobileBr}) {
+    padding: 38px 0px;
   }
 `
 
