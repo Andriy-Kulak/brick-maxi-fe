@@ -4,7 +4,7 @@ export default function HeadC() {
   return (
     <Head>
       <title>Brick Maxi 1</title>
-      <link rel="shortcut icon" href="../../assets/favicon.png" />
+      <link rel="shortcut icon" href="favicon.ico" sizes="48x48" />
       <meta property="og:url" content="https://brickmaxi.com/" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content="Brick Maxi" />
