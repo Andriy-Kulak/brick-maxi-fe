@@ -175,14 +175,15 @@ const FlexRow = styled.div`
 `
 
 export const StyledButton = styled(Button).attrs({
-  fontSize: '14px',
+  fontSize: '12px',
   colorScheme: 'black',
   fontWeight: 500,
   border: '2px',
   borderColor: 'white',
   borderRadius: '100px',
+  height: '35px !important',
 } as ButtonProps)`
-  border-radius: 30px;
+  border-radius: 35px;
   background-color: black;
   font-family: ${gillSans};
   color: white;
