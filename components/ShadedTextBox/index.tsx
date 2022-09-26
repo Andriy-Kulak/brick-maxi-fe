@@ -101,10 +101,10 @@ const FlexBox = styled.div`
 
 const Divider = styled.hr`
   border: 0.5px solid black;
-  margin: 50px 150px;
+  margin: 50px 70px;
 
   @media screen and (max-width: ${laptopSmallBr}) {
-    margin: 30px 100px;
+    margin: 30px 40px;
   }
 
   @media screen and (max-width: ${tabletBr}) {

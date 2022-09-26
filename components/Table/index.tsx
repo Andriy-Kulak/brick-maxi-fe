@@ -6,6 +6,7 @@ import { gillSans } from '../utils/fontConfigs'
 
 const StyledTable = styled.table`
   text-align: left;
+  width: 100%;
   th {
     font-family: ${gillSans};
     font-style: normal;

@@ -76,7 +76,7 @@ const RewardsSection = ({
         objectPosition="center"
         layout="fill"
       />
-      <Main>
+      <Main justifyContent="flex-start">
         <ImageC>
           <Image
             alt="Brick Maxi Logo"

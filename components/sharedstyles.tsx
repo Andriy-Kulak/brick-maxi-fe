@@ -81,6 +81,7 @@ const TitleH1 = styled.h1`
 const TitleH2 = styled.h2`
   margin: 0;
   text-align: center;
+  font-style: italic;
   text-decoration: none;
   color: white;
   font-family: ${avenirNextCondensed};
