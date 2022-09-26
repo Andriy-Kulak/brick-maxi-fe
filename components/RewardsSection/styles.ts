@@ -18,13 +18,13 @@ export const LandingC = styled.div`
 
 export const Main = styled.div`
   position: relative;
-  padding: 60px 80px;
+  padding: 60px 80px 0px;
   display: flex;
   flex-direction: column;
   justify-content: ${(props: { justifyContent?: string }) =>
     props.justifyContent || 'center'};
   align-items: center;
-  min-height: 100vh;
+  min-height: 80vh;
   background-color: white;
   background-clip: content-box;
   z-index: 1;
