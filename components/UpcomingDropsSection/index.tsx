@@ -29,6 +29,7 @@ const TextC = styled.div`
 const InnerTextC = styled.div`
   text-align: center;
   width: 60%;
+  max-width: 750px;
   > div {
     padding: 0px 20px;
   }

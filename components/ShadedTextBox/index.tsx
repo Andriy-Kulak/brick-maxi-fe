@@ -76,6 +76,7 @@ const FlexBox = styled.div`
     margin: 30px 10px;
     padding: 30px;
     width: 60%;
+    max-width: 750px;
     @media screen and (max-width: ${tabletBr}) {
       width: auto;
       margin: 10px 20px;
