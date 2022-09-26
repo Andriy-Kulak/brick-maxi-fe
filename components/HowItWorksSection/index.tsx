@@ -8,11 +8,11 @@ import {
   tabletBr,
   smallMobileBr,
   largeTabletBr,
-  laptopSmallBr,
 } from '../../utils/breakpoints'
 import { motion } from 'framer-motion'
 import { textVariant } from '../../utils/motion'
 import { NextDesktopBgImg, NextMobileBgImg } from '../BgImages'
+import ArrowImg from '../ArrowImg'
 
 const TextC = styled.div`
   position: relative;
@@ -114,6 +114,14 @@ const StyledMain = styled(Main)`
   }
 `
 
+const TitleC = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  > h1 {
+    margin: 0px 11px;
+  }
+`
 const HowItWorksSection = () => (
   <>
     <TextC id="how-it-works-section">
@@ -159,7 +167,13 @@ const HowItWorksSection = () => (
         variants={textVariant}
         transition={{ delay: 0.5 }}
       >
-        <TitleH1>Art → Real Estate → Rewards</TitleH1>
+        <TitleC>
+          <TitleH1>Art</TitleH1>
+          <ArrowImg />
+          <TitleH1>Real Estate</TitleH1>
+          <ArrowImg />
+          <TitleH1>Rewards</TitleH1>
+        </TitleC>
       </StyledMain>
     </TextC>
     <BackgroundC>

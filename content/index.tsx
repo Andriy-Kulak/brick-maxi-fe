@@ -8,6 +8,7 @@ import bgArt2Mobile from '../public/assets/howitworks_650x1200.png'
 import artImg from '../public/assets/token_art.png'
 import burgerIcon from '../public/assets/icons/hamburger.png'
 import xIcon from '../public/assets/icons/x.png'
+import whiteArrow from '../public/assets/icons/white_arrow.png'
 import ethescanLogo from '../public/assets/icons/etherscan-logo.webp'
 import apecoinLogo from '../public/assets/icons/apecoin.png'
 import greyCube from '../public/assets/icons/grey_cube.png'
@@ -60,6 +61,7 @@ export const images = {
   landingBgMobile,
   twitterLogo,
   openseaLogo,
+  whiteArrow,
 }
 
 export const artistSection = [
