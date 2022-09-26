@@ -49,7 +49,7 @@ export const Footer = styled.p`
   font-family: ${gillSans};
   font-style: italic;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 11px;
   margin-top: 30px;
   color: #808080;
