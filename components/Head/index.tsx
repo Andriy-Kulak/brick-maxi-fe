@@ -9,8 +9,8 @@ export default function HeadC() {
       <meta property="og:title" content="Brick Maxi" />
       <meta name="twitter:card" content="summary" />
       <meta property="og:description" content="Art that pays dividens" />
-      <meta property="og:image:width" content="600" />
-      <meta property="og:image:height" content="300" />
+      <meta property="og:image:width" content="400" />
+      <meta property="og:image:height" content="400" />
       <meta property="og:image" content="../../assets/previewImg.png" />
     </Head>
   )
