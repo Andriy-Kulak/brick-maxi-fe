@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { avenirNextCondensed, gillSans } from '../utils/fontConfigs'
+import { oswaldFont, montserratFont } from '../utils/fontConfigs'
 import {
   laptopLargeBr,
   laptopSmallBr,
@@ -9,7 +9,7 @@ import {
 import { howItWorksContent } from '../../content'
 
 const H1 = styled.h1`
-  font-family: ${avenirNextCondensed};
+  font-family: ${oswaldFont};
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -31,7 +31,7 @@ const StyledContainer = styled.div`
 `
 
 const StyledP = styled.p`
-  font-family: ${gillSans};
+  font-family: ${montserratFont};
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -48,7 +48,7 @@ const StyledP = styled.p`
 `
 
 const StyledPItalic = styled.p`
-  font-family: ${gillSans};
+  font-family: ${montserratFont};
   font-style: italic;
   font-weight: 400;
   font-size: 10px;

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { gillSans } from '../utils/fontConfigs'
+import { montserratFont } from '../utils/fontConfigs'
 
 const Container = styled.div`
   height: 55px;
@@ -13,7 +13,7 @@ const Container = styled.div`
 const Text = styled.p`
   color: white;
   font-size: 10px;
-  font-family: ${gillSans};
+  font-family: ${montserratFont};
 `
 
 const Footer = () => {

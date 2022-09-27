@@ -5,7 +5,7 @@ import { Button, ButtonProps } from '@chakra-ui/react'
 import { mobileBr, tabletBr } from '../../utils/breakpoints'
 import { images, teamProfiles } from '../../content'
 import NextLink from 'next/link'
-import { avenirNextCondensed, gillSans, weight } from '../utils/fontConfigs'
+import { oswaldFont, montserratFont, weight } from '../utils/fontConfigs'
 
 const { bold } = weight
 
@@ -69,14 +69,14 @@ const FlexBox = styled.div`
 
 const Title = styled.h3`
   font-size: 24px;
-  font-family: ${avenirNextCondensed};
+  font-family: ${oswaldFont};
   text-align: center;
   color: white;
   font-weight: ${bold};
 `
 
 const SubTitle = styled.p`
-  font-family: ${gillSans};
+  font-family: ${montserratFont};
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
