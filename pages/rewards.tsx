@@ -29,7 +29,8 @@ export default function Rewards() {
       />
       <RewardsSection
         connect={() => connectWallet()}
-        address={displayAddress}
+        ethAddress={ci.ethAddress}
+        ensAddress={ci.ensAddress}
       />
       <Footer />
     </>

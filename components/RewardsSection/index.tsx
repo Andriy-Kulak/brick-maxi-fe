@@ -22,10 +22,12 @@ import { grey1 } from '../utils/colors'
 
 const RewardsSection = ({
   connect,
-  address,
+  ethAddress,
+  ensAddress,
 }: {
   connect: () => void
-  address: string
+  ethAddress: string
+  ensAddress: string | null
 }) => {
   const tableC = () => (
     <>
@@ -88,8 +90,8 @@ const RewardsSection = ({
           />
         </ImageC>
         <div>
-          {address ? (
-            <AddressDiv>{trimAddress(address)}</AddressDiv>
+          {ethAddress ? (
+            <AddressDiv>{ensAddress || trimAddress(ethAddress)}</AddressDiv>
           ) : (
             <StyledButton fontSize="14px" onClick={connect} colorScheme="black">
               Connect
