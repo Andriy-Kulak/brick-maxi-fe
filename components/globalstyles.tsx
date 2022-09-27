@@ -169,6 +169,10 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 
+  .web3modal-modal-lightbox {
+    z-index: 200 !important;
+  }
+
 
   @font-face {
     font-family: "Avenir Next Condensed";
