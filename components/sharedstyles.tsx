@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { laptopSmallBr, mobileBr, tabletBr } from '../utils/breakpoints'
 import { grey1 } from './utils/colors'
 import { Button, ButtonProps } from '@chakra-ui/react'
-import { avenirNextCondensed, gillSans, weight } from './utils/fontConfigs'
+import { oswald, montserrat, weight } from './utils/fontConfigs'
 
 const Container = styled.div`
   padding: 0 0.5rem;
@@ -63,7 +63,7 @@ const Main = styled.div`
 
 const TitleH1 = styled.h1`
   margin: 0;
-  font-family: ${avenirNextCondensed};
+  font-family: ${oswald};
   text-align: center;
   text-decoration: none;
   color: white;
@@ -84,7 +84,7 @@ const TitleH2 = styled.h2`
   font-style: italic;
   text-decoration: none;
   color: white;
-  font-family: ${avenirNextCondensed};
+  font-family: ${oswald};
   font-weight: 500;
   font-size: 40px;
   line-height: 82px;
@@ -106,7 +106,7 @@ const TitleH2Small = styled.h2`
   text-decoration: none;
   color: white;
   font-style: italic;
-  font-family: ${avenirNextCondensed};
+  font-family: ${oswald};
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
@@ -123,7 +123,7 @@ const TitleH3 = styled.h3`
   font-weight: 600;
   color: ${(props: { color?: string }) => props.color || 'black'};
   text-decoration: none;
-  font-family: ${avenirNextCondensed};
+  font-family: ${oswald};
   margin-bottom: 15px;
 
   @media screen and (max-width: ${mobileBr}) {
@@ -140,7 +140,7 @@ const TitleH4 = styled.h4`
   color: ${(props: { color?: string }) => props.color || grey1};
   text-decoration: none;
   letter-spacing: normal;
-  font-family: ${gillSans};
+  font-family: ${montserrat};
 
   font-style: normal;
 `
@@ -152,7 +152,7 @@ const StyledP = styled.p`
   color: ${(props: { color?: string }) => props.color || 'black'};
   text-decoration: none;
   letter-spacing: normal;
-  font-family: ${gillSans};
+  font-family: ${montserrat};
   font-style: normal;
   font-size: 12px;
   line-height: 17px;
@@ -185,7 +185,7 @@ export const StyledButton = styled(Button).attrs({
 } as ButtonProps)`
   border-radius: 35px;
   background-color: black;
-  font-family: ${gillSans};
+  font-family: ${montserrat};
   color: white;
   border: 2px solid white;
   :hover {

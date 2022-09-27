@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { TitleH2, Main100h } from '../sharedstyles'
 import { images } from '../../content'
 import { mobileBr, tabletBr } from '../../utils/breakpoints'
-import { avenirNextCondensed, gillSans, weight } from '../utils/fontConfigs'
+import { oswald, montserrat, weight } from '../utils/fontConfigs'
 import { motion } from 'framer-motion'
 import { textVariant } from '../../utils/motion'
 import { LogoParamProps } from '../../utils/hooks/useScrollEffects'
@@ -58,7 +58,7 @@ const VerticalScrollText = styled.h4`
   left: 34px;
   font-size: 20px;
   font-weight: ${weight.light};
-  font-family: ${avenirNextCondensed};
+  font-family: ${oswald};
 
   @media screen and (max-width: ${tabletBr}) {
     display: none;
@@ -72,7 +72,7 @@ const HorizontalScrollText = styled.h4`
   left: calc(50% - 26px);
   font-weight: ${weight.bold};
   font-size: 13px;
-  font-family: ${gillSans};
+  font-family: ${montserrat};
 
   @media screen and (min-width: ${tabletBr}) {
     display: none;
@@ -85,7 +85,7 @@ const LaunchText = styled.p`
   left: calc(50% - 84px);
   color: white;
   font-size: 20px;
-  font-family: ${avenirNextCondensed};
+  font-family: ${oswald};
   font-weight: ${weight.semiBold};
 `
 

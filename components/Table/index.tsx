@@ -2,13 +2,13 @@ import styled from 'styled-components'
 import { rewardsTableContent } from '../../content'
 import { mobileBr } from '../../utils/breakpoints'
 
-import { gillSans } from '../utils/fontConfigs'
+import { montserrat } from '../utils/fontConfigs'
 
 const StyledTable = styled.table`
   text-align: left;
   width: 100%;
   th {
-    font-family: ${gillSans};
+    font-family: ${montserrat};
     font-style: normal;
     font-weight: 400;
     font-size: 11px;
@@ -23,7 +23,7 @@ const StyledTable = styled.table`
   }
 
   td {
-    font-family: ${gillSans};
+    font-family: ${montserrat};
     font-style: normal;
     font-weight: 400;
     font-size: 13px;

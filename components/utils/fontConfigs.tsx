@@ -1,6 +1,5 @@
-// export const avenirNext = 'Avenir Next'
-export const avenirNextCondensed = 'Oswald'
-export const gillSans = 'Montserrat'
+export const oswald = 'Oswald'
+export const montserrat = 'Montserrat'
 
 export const weight = {
   light: 300,

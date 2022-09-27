@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { mobileBr, tabletBr } from '../../utils/breakpoints'
-import { gillSans, weight } from '../utils/fontConfigs'
+import { montserrat, weight } from '../utils/fontConfigs'
 
 export const ImageC = styled.div`
   padding-top: 20px;
@@ -48,7 +48,7 @@ export const Main2 = styled.div`
 `
 
 export const Footer = styled.p`
-  font-family: ${gillSans};
+  font-family: ${montserrat};
   font-style: italic;
   font-weight: 400;
   font-size: 10px;
@@ -65,7 +65,7 @@ type HeaderTextType = {
 }
 
 export const HeaderText = styled.p<HeaderTextType>`
-  font-family: ${gillSans};
+  font-family: ${montserrat};
   font-style: normal;
   font-weight: ${(props: { weight?: number }) => props.weight || 400};
   font-size: ${(props: { extra?: boolean }) => (props.extra ? '13px' : '12px')};
@@ -141,7 +141,7 @@ export const HeaderC = styled.div`
 export const AddressDiv = styled.div`
   font-size: 14px;
   font-weight: ${weight.bold};
-  font-family: ${gillSans};
+  font-family: ${montserrat};
   color: black;
   text-align: center;
   width: 115px;

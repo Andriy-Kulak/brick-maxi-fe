@@ -4,7 +4,7 @@ import { StyledP } from '../sharedstyles'
 import { Button, ButtonProps } from '@chakra-ui/react'
 import { mobileBr, tabletBr } from '../../utils/breakpoints'
 import { images, teamProfiles } from '../../content'
-import { avenirNextCondensed, gillSans, weight } from '../utils/fontConfigs'
+import { oswald, montserrat, weight } from '../utils/fontConfigs'
 import { NextDesktopBgImg, NextMobileBgImg } from '../BgImages'
 import AnchorSpan from '../AnchorSpan'
 
@@ -58,7 +58,7 @@ const FlexBox = styled.div`
 
 const Title = styled.h3`
   font-size: 24px;
-  font-family: ${avenirNextCondensed};
+  font-family: ${oswald};
   text-align: center;
   color: white;
   font-weight: ${bold};
@@ -77,7 +77,7 @@ const TeamLinks = styled.div`
 `
 
 const SubTitle = styled.p`
-  font-family: ${gillSans};
+  font-family: ${montserrat};
   font-style: normal;
   font-weight: ${bold};
   font-size: 15px;

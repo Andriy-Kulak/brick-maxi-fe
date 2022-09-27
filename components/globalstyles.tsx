@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { gillSans } from './utils/fontConfigs'
+import { montserrat } from './utils/fontConfigs'
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -67,7 +67,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .menu-item {
-    font-family: ${gillSans};
+    font-family: ${montserrat};
     font-size: 20px;
   }
   
@@ -170,13 +170,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
 
-  @font-face {
-    font-family: "Avenir Next Condensed";
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: optional;
-    src: url('/fonts/AvenirNextCondensed.ttf') format('truetype');
-  }
 `
 
 export default GlobalStyle
