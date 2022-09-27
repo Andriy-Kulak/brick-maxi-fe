@@ -7,7 +7,7 @@ import { images } from '../../content'
 import { tabletBr } from '../../utils/breakpoints'
 import { Box, Button } from '@chakra-ui/react'
 import { selectedNet } from '../../utils/web3'
-import { avenirNextCondensed, gillSans } from '../utils/fontConfigs'
+import { oswaldFont, montserratFont } from '../utils/fontConfigs'
 import { MintState, MintStatus } from '../../utils/types/reactState'
 
 export const StyledBackground = styled.div`
@@ -25,7 +25,7 @@ const ToastFlex = styled.div`
   display: flex;
   text-align: center;
   justify-content: space-around;
-  font-family: ${gillSans};
+  font-family: ${montserratFont};
   padding: 8px 7px 5px;
   > div:first-child {
     margin-right: 5px;
@@ -49,7 +49,7 @@ const MintSectionC = styled.div`
 `
 
 const StyledMessage = styled(StyledP)`
-  font-family: ${avenirNextCondensed};
+  font-family: ${oswaldFont};
   font-weight: 600;
   letter-spacing: 0.5px;
 `
