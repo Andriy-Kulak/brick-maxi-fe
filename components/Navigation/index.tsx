@@ -108,9 +108,10 @@ const Nav = ({
   connectWallet: () => Promise<void>
   disconnect: () => void
   showLogo: boolean
-  address?: string
+  address: string
 }) => {
   const [pageWidth, setPageWidth] = useState(0)
+  const [isHoverOnButton, setHover] = useState(false)
   const [isMobileOpen, setMobileMenu] = useState(false)
   useEffect(() => {
     setPageWidth(window.innerWidth)
@@ -120,6 +121,21 @@ const Nav = ({
   }, [])
 
   const logSideLength = 55
+
+  const isLoggedIn = address && address.length > 0
+  const loggedInButtonText = isHoverOnButton
+    ? 'Disconnect'
+    : trimAddress(address)
+  const desktopButtonText = isLoggedIn ? loggedInButtonText : 'Connect'
+
+  const desktopOnClick = async () => {
+    console.log('are we hitting this isLoggedIn', isLoggedIn)
+    if (isLoggedIn) {
+      return disconnect()
+    } else {
+      return connectWallet()
+    }
+  }
 
   return (
     <>
@@ -167,10 +183,12 @@ const Nav = ({
                 <div>
                   <StyledButton
                     fontSize="12px"
-                    onClick={() => connectWallet()}
+                    onMouseOver={() => setHover(true)}
+                    onMouseOut={() => setHover(false)}
+                    onClick={() => desktopOnClick()}
                     colorScheme="black"
                   >
-                    {address ? trimAddress(address) : 'Connect'}
+                    {desktopButtonText}
                   </StyledButton>
                 </div>
               </MidFlexContainer>
