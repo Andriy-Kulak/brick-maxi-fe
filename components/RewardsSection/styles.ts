@@ -17,8 +17,10 @@ export const LandingC = styled.div`
 `
 
 export const Main = styled.div`
+  max-width: 940px;
   position: relative;
   padding: 60px 80px 0px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: ${(props: { justifyContent?: string }) =>

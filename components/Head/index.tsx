@@ -3,7 +3,7 @@ import Head from 'next/head'
 export default function HeadC() {
   return (
     <Head>
-      <title>Brick Maxi 1</title>
+      <title>Brick Maxi</title>
       <link rel="shortcut icon" href="favicon.ico" sizes="48x48" />
       <meta property="og:url" content="https://brickmaxi.com/" />
       <meta property="og:type" content="website" />
