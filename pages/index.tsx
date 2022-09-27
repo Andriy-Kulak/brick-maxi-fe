@@ -46,7 +46,8 @@ export default function Home() {
     contract: null,
     signer: null,
     provider: null,
-    address: '',
+    ethAddress: '',
+    ensAddress: null,
   })
 
   const [mintValues, setMintValues] = useState<{
@@ -103,7 +104,7 @@ export default function Home() {
 
           const balance = await erc20Contract
             .connect(ci.signer)
-            .allowance(ci.address, contractAddress)
+            .allowance(ci.ethAddress, contractAddress)
 
           toast.info(`Transaction is pending!`)
           if (Number(ethers.utils.formatEther(balance)) < apeCost) {
@@ -161,7 +162,7 @@ export default function Home() {
       <ToastContainer />
       <Nav
         connectWallet={connectWallet}
-        address={ci.address}
+        address={ci.ensAddress || ci.ethAddress}
         disconnect={disconnect}
         showLogo={logoParams.isSwitchLogo}
       />

@@ -17,7 +17,8 @@ export type ContractInstance = {
   contract: ethers.Contract | null
   signer: ethers.Signer | null
   provider: ethers.providers.Web3Provider | null
-  address: string
+  ethAddress: string
+  ensAddress: null | string
 }
 
 export enum MintPhases {

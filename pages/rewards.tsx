@@ -5,30 +5,32 @@ import useConnect from '../utils/hooks/useConnect'
 import { Nav } from '../components'
 import Footer from '../components/Footer'
 import HeadC from '../components/Head'
+import { ContractInstance } from '../utils/types/reactState'
 
 export default function Rewards() {
-  const [ci, setContract] = useState<{
-    contract: ethers.Contract | null
-    signer: ethers.Signer | null
-    provider: ethers.providers.Web3Provider | null
-    address: string
-  }>({
+  const [ci, setContract] = useState<ContractInstance>({
     contract: null,
     signer: null,
     provider: null,
-    address: '',
+    ethAddress: '',
+    ensAddress: null,
   })
   const [connectWallet, disconnect] = useConnect({ setContract })
+
+  const displayAddress = ci.ensAddress || ci.ethAddress
   return (
     <>
       <HeadC />
       <Nav
         connectWallet={connectWallet}
-        address={ci.address}
+        address={displayAddress}
         disconnect={disconnect}
         showLogo={true}
       />
-      <RewardsSection connect={() => connectWallet()} address={ci.address} />
+      <RewardsSection
+        connect={() => connectWallet()}
+        address={displayAddress}
+      />
       <Footer />
     </>
   )
