@@ -11,7 +11,7 @@ import FaqAcccordion from '../FaqAcccordion'
 import { Divider, StyledSwitch } from '../'
 
 import { images, tokenSection } from '../../content'
-import { weight } from '../utils/fontConfigs'
+import { montserratFont, weight } from '../utils/fontConfigs'
 import { black, grey1 } from '../utils/colors'
 import {
   DesktopView,
@@ -49,6 +49,13 @@ const ApeContainer = styled.div`
   > h4:first-child {
     margin-right: 4px;
   }
+`
+
+const StyledPItalic = styled.p`
+  font-size: 10px;
+  font-family: ${montserratFont};
+  font-weight: 600;
+  font-style: italic;
 `
 
 const imageContainer = (
@@ -93,10 +100,10 @@ const TokenSection = ({
   console.log('1 - percentage', 1 - percentage)
   const remainingText = (
     <>
-      <TitleH4>REMAINING</TitleH4>
+      {/* <TitleH4>REMAINING</TitleH4>
       <StyledP weight={bold}>
         {mintValues.tokensLeft} / {mintValues.maxSupply}
-      </StyledP>
+      </StyledP> */}
       <div style={{ width: '65px' }}>
         <CircularProgressbarWithChildren
           value={1 - percentage}
@@ -117,7 +124,6 @@ const TokenSection = ({
               background: 'grey',
               textColor: 'black',
               width: '2px',
-              // This needs to be equal to props.strokeWidth
               height: `${14}%`,
             }}
           />
@@ -161,17 +167,14 @@ const TokenSection = ({
             <StyledP>{description}</StyledP>
             <Divider thick={0.5} color={grey1} />
 
-            <FlexRow>
-              <div style={{ width: '40%' }}>
+            <FlexRow justifyContent="flex-start">
+              <div>
                 {mintText}
-                <br />
-                <StyledSwitch currencySwitch={currencySwitch} />
+
+                <StyledSwitch currencySwitch={currencySwitch} isEth={isEth} />
+                <StyledPItalic>May require two transactions</StyledPItalic>
               </div>
-              <div style={{ width: '30%' }}>{remainingText}</div>
-              <div style={{ width: '30%' }}>
-                <TitleH4>ASSET TYPE</TitleH4>
-                <StyledP weight={bold}>{type}</StyledP>
-              </div>
+              <div>{remainingText}</div>
             </FlexRow>
             <Divider thick={0.5} color={grey1} />
             <MintSection
@@ -193,7 +196,7 @@ const TokenSection = ({
         <SwitchC>
           <div>
             {mintText}
-            <StyledSwitch currencySwitch={currencySwitch} />
+            <StyledSwitch currencySwitch={currencySwitch} isEth={isEth} />
           </div>
           <div>{remainingText}</div>
         </SwitchC>
