@@ -1,13 +1,12 @@
 import bgArt1 from '../public/assets/marcelo/loading.jpg'
 import bgArt2 from '../public/assets/marcelo/howitworks_desktop_1920x1920.png'
 import teamDesktop from '../public/assets/marcelo/team_desktop.jpg'
-
 import teamBgMobile from '../public/assets/marcelo/team_mobile_1920x650.png'
-import landingBgMobile from '../public/assets/landing_mobile_650x1200.png'
 import bgArt2Mobile from '../public/assets/marcelo/howitworks_mobile_1920x650.png'
-import artImg from '../public/assets/token_art.png'
 import rewardsBg from '../public/assets/marcelo/rewards.png'
 
+import landingBgMobile from '../public/assets/landing_mobile_650x1200.png'
+import artImg from '../public/assets/token_art.png'
 import brickMaxiLogo from '../public/assets/brick_maxi_logo2.png'
 import imgSample from '../public/assets/brickMaxiSample.png'
 import burgerIcon from '../public/assets/icons/hamburger.png'
