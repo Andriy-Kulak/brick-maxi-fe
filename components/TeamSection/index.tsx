@@ -164,7 +164,7 @@ const TeamSection = () => {
       </MobileImgC>
       <NextDesktopBgImg
         alt="bg-art-2"
-        src={images.bgArt1}
+        src={images.teamDesktop}
         objectFit="cover"
         objectPosition="center"
         layout="fill"

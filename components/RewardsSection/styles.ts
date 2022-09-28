@@ -18,6 +18,7 @@ export const LandingC = styled.div`
 
 export const Main = styled.div`
   position: relative;
+  margin: 0 auto;
   padding: 60px 80px 0px;
   display: flex;
   flex-direction: column;
@@ -25,6 +26,7 @@ export const Main = styled.div`
     props.justifyContent || 'center'};
   align-items: center;
   min-height: 80vh;
+  max-width: 940px;
   background-color: white;
   background-clip: content-box;
   z-index: 1;

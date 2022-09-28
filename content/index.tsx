@@ -1,11 +1,15 @@
-import brickMaxiLogo from '../public/assets/brick_maxi_logo2.png'
-import bgArt1 from '../public/assets/first_section_bg.jpg'
-import bgArt2 from '../public/assets/howitworks_1920x1920.png'
+import bgArt1 from '../public/assets/marcelo/loading.jpg'
+import bgArt2 from '../public/assets/marcelo/howitworks_desktop_1920x1920.png'
+import teamDesktop from '../public/assets/marcelo/team_desktop.jpg'
 
-import teamBgMobile from '../public/assets/team_mobile_650x1920.png'
+import teamBgMobile from '../public/assets/marcelo/team_mobile_1920x650.png'
 import landingBgMobile from '../public/assets/landing_mobile_650x1200.png'
-import bgArt2Mobile from '../public/assets/howitworks_650x1200.png'
+import bgArt2Mobile from '../public/assets/marcelo/howitworks_mobile_1920x650.png'
 import artImg from '../public/assets/token_art.png'
+import rewardsBg from '../public/assets/marcelo/rewards.png'
+
+import brickMaxiLogo from '../public/assets/brick_maxi_logo2.png'
+import imgSample from '../public/assets/brickMaxiSample.png'
 import burgerIcon from '../public/assets/icons/hamburger.png'
 import xIcon from '../public/assets/icons/x.png'
 import whiteArrow from '../public/assets/icons/white_arrow.png'
@@ -21,11 +25,9 @@ import rewardsTitle from '../public/assets/titles/REWARDS_HEADING.png'
 import faqWhiteTitle from '../public/assets/titles/FAQ_WHITE.png'
 import faqBlackTitle from '../public/assets/titles/FAQ_BLACK.png'
 import whiteSquiggleLine from '../public/assets/titles/WHITE_SQUIGGLE_LINE.png'
-import imgSample from '../public/assets/brickMaxiSample.png'
 import adamImg from '../public/assets/adam.gif'
 import mollyImg from '../public/assets/molly.gif'
 import andriyImg from '../public/assets/andriy.gif'
-import rewardsBg from '../public/assets/rewards_bg_3.png'
 import mintBtn from '../public/assets/mint_button2.png'
 import collectBtn from '../public/assets/collect_button.png'
 import twitterLogo from '../public/assets/twitter_logo.png'
@@ -64,6 +66,7 @@ export const images = {
   openseaLogo,
   tezosLogo,
   whiteArrow,
+  teamDesktop,
 }
 
 export const artistSection = [
