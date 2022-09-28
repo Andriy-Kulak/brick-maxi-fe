@@ -9,16 +9,12 @@ import {
   isLandingPage,
   selectedNet,
 } from '../web3'
+import { ContractInstance } from '../types/reactState'
 
 function useConnect({
   setContract,
 }: {
-  setContract: (x: {
-    contract: ethers.Contract | null
-    signer: ethers.Signer | null
-    provider: ethers.providers.Web3Provider | null
-    address: string
-  }) => void
+  setContract: (x: ContractInstance) => void
 }) {
   const [web3Modal, setWeb3Modal] = useState<Web3Modal | null>(null)
 
@@ -77,18 +73,22 @@ function useConnect({
       return
     }
     const signer = await ethersProvider.getSigner()
-    const userAddress = await signer.getAddress()
+    const ethAddress = await signer.getAddress()
 
     const contract = new ethers.Contract(
       contractAddress,
       contractAbi,
       ethersProvider
     )
+
+    const ensAddress = await ethersProvider.lookupAddress(ethAddress)
+
     setContract({
       contract,
       signer,
       provider: ethersProvider,
-      address: userAddress,
+      ethAddress,
+      ensAddress,
     })
   }
 
@@ -101,7 +101,8 @@ function useConnect({
       contract: null,
       signer: null,
       provider: null,
-      address: '',
+      ensAddress: null,
+      ethAddress: '',
     })
   }
   return [connectWallet as any, disconnect]
