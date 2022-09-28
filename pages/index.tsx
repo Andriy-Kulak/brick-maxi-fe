@@ -34,7 +34,7 @@ import {
 import HeadC from '../components/Head'
 
 export default function Home() {
-  const [mintPhase, setMintPhase] = useState<MintPhases>(MintPhases.COMING_SOON)
+  const [mintPhase, setMintPhase] = useState<MintPhases>(MintPhases.LIVE)
   const [mintState, setMintLoading] = useState<MintStatus>({
     type: MintState.NONE, // mintSuccess // erc20Allowance
     text: null,

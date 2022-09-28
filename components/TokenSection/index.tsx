@@ -1,5 +1,11 @@
 import Image from 'next/image'
 import styled from 'styled-components'
+import {
+  CircularProgressbar,
+  buildStyles,
+  CircularProgressbarWithChildren,
+} from 'react-circular-progressbar'
+import 'react-circular-progressbar/dist/styles.css'
 import { TitleH3, FlexRow, TitleH4, StyledP } from '../sharedstyles'
 import FaqAcccordion from '../FaqAcccordion'
 import { Divider, StyledSwitch } from '../'
@@ -22,6 +28,7 @@ import {
 import { tabletBr } from '../../utils/breakpoints'
 import { MintStatus } from '../../utils/types/reactState'
 import MintSection from '../MintSection'
+import { RadialSeparators, Separator } from '../Separator'
 const { bold } = weight
 
 const { title, artist, description, type } = tokenSection
@@ -78,12 +85,99 @@ const TokenSection = ({
     tokensLeft: null | number
   }
 }) => {
+  const percentage =
+    mintValues.tokensLeft && mintValues.maxSupply
+      ? mintValues.tokensLeft / mintValues.maxSupply
+      : 0
+
+  console.log('1 - percentage', 1 - percentage)
   const remainingText = (
     <>
       <TitleH4>REMAINING</TitleH4>
       <StyledP weight={bold}>
         {mintValues.tokensLeft} / {mintValues.maxSupply}
       </StyledP>
+      {/* <CircularProgressbar
+        value={50}
+        text={`${50}%`}
+        styles={buildStyles({
+          trailColor: '#d6d6d6',
+          pathColor: `rgba(62, 152, 199, ${50 / 100})`,
+          // Rotation of path and trail, in number of turns (0-1)
+
+          // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+          strokeLinecap: 'butt',
+        })}
+      /> */}
+      <div style={{ width: '100px' }}>
+        <CircularProgressbarWithChildren
+          value={0.25}
+          maxValue={1}
+          styles={buildStyles({
+            pathColor: 'grey',
+            textColor: 'black',
+            trailColor: '#eee',
+            strokeLinecap: 'butt',
+          })}
+        >
+          {/* Foreground path */}
+          <CircularProgressbar
+            value={1 - percentage}
+            maxValue={1}
+            text={`${Math.round(100 - percentage * 100)}%`}
+            styles={buildStyles({
+              pathColor: 'black',
+              textColor: 'black',
+              trailColor: 'transparent',
+              strokeLinecap: 'butt',
+            })}
+          />
+        </CircularProgressbarWithChildren>
+        <CircularProgressbarWithChildren
+          value={1 - percentage}
+          maxValue={1}
+          text={`${Math.round(100 - percentage * 100)}% be4`}
+          styles={buildStyles({
+            pathColor: 'black',
+            trailColor: '#eee',
+            textColor: 'black',
+            strokeLinecap: 'butt',
+          })}
+        >
+          <Separator
+            turns={0.25}
+            style={{
+              background: 'grey',
+              textColor: 'black',
+              width: '2px',
+              // This needs to be equal to props.strokeWidth
+              height: `${8}%`,
+            }}
+          />
+        </CircularProgressbarWithChildren>
+
+        <CircularProgressbarWithChildren
+          value={0.7}
+          maxValue={1}
+          text={`${70}% aftr`}
+          styles={buildStyles({
+            pathColor: 'black',
+            trailColor: '#eee',
+            strokeLinecap: 'butt',
+          })}
+        >
+          <Separator
+            turns={0.25}
+            style={{
+              background: 'grey',
+              textColor: 'black',
+              width: '2px',
+              // This needs to be equal to props.strokeWidth
+              height: `${8}%`,
+            }}
+          />
+        </CircularProgressbarWithChildren>
+      </div>
     </>
   )
 
