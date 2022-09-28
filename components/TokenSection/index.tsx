@@ -97,48 +97,15 @@ const TokenSection = ({
       <StyledP weight={bold}>
         {mintValues.tokensLeft} / {mintValues.maxSupply}
       </StyledP>
-      {/* <CircularProgressbar
-        value={50}
-        text={`${50}%`}
-        styles={buildStyles({
-          trailColor: '#d6d6d6',
-          pathColor: `rgba(62, 152, 199, ${50 / 100})`,
-          // Rotation of path and trail, in number of turns (0-1)
-
-          // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
-          strokeLinecap: 'butt',
-        })}
-      /> */}
-      <div style={{ width: '100px' }}>
-        <CircularProgressbarWithChildren
-          value={0.25}
-          maxValue={1}
-          styles={buildStyles({
-            pathColor: 'grey',
-            textColor: 'black',
-            trailColor: '#eee',
-            strokeLinecap: 'butt',
-          })}
-        >
-          {/* Foreground path */}
-          <CircularProgressbar
-            value={1 - percentage}
-            maxValue={1}
-            text={`${Math.round(100 - percentage * 100)}%`}
-            styles={buildStyles({
-              pathColor: 'black',
-              textColor: 'black',
-              trailColor: 'transparent',
-              strokeLinecap: 'butt',
-            })}
-          />
-        </CircularProgressbarWithChildren>
+      <div style={{ width: '65px' }}>
         <CircularProgressbarWithChildren
           value={1 - percentage}
           maxValue={1}
-          text={`${Math.round(100 - percentage * 100)}% be4`}
+          strokeWidth={14}
+          text={`${Math.round(100 - percentage * 100)}%`}
           styles={buildStyles({
             pathColor: 'black',
+            textSize: '20px',
             trailColor: '#eee',
             textColor: 'black',
             strokeLinecap: 'butt',
@@ -151,30 +118,7 @@ const TokenSection = ({
               textColor: 'black',
               width: '2px',
               // This needs to be equal to props.strokeWidth
-              height: `${8}%`,
-            }}
-          />
-        </CircularProgressbarWithChildren>
-
-        <CircularProgressbarWithChildren
-          value={0.7}
-          maxValue={1}
-          text={`${70}% aftr`}
-          styles={buildStyles({
-            pathColor: 'black',
-            textColor: 'black',
-            trailColor: '#eee',
-            strokeLinecap: 'butt',
-          })}
-        >
-          <Separator
-            turns={0.25}
-            style={{
-              background: 'grey',
-              textColor: 'black',
-              width: '2px',
-              // This needs to be equal to props.strokeWidth
-              height: `${8}%`,
+              height: `${14}%`,
             }}
           />
         </CircularProgressbarWithChildren>

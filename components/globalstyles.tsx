@@ -181,6 +181,11 @@ const GlobalStyle = createGlobalStyle`
     font-display: optional;
     src: url('/fonts/AvenirNextCondensed.ttf') format('truetype');
   }
+
+  .CircularProgressbar-text {
+    font-weight: 600 !important;
+    font-family: ${montserratFont} !important;
+  }
 `
 
 export default GlobalStyle
