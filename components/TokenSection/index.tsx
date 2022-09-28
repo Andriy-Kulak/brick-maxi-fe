@@ -162,6 +162,7 @@ const TokenSection = ({
           text={`${70}% aftr`}
           styles={buildStyles({
             pathColor: 'black',
+            textColor: 'black',
             trailColor: '#eee',
             strokeLinecap: 'butt',
           })}
