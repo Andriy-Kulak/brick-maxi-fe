@@ -58,6 +58,17 @@ const StyledPItalic = styled.p`
   font-style: italic;
 `
 
+const StyledProgres = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  > div:first-child {
+    width: 65px;
+    margin-right: 10px;
+  }
+`
+
 const imageContainer = (
   <ImageContainer>
     <StyledP weight={700} style={{ lineHeight: '13px' }}>
@@ -100,11 +111,7 @@ const TokenSection = ({
   console.log('1 - percentage', 1 - percentage)
   const remainingText = (
     <>
-      {/* <TitleH4>REMAINING</TitleH4>
-      <StyledP weight={bold}>
-        {mintValues.tokensLeft} / {mintValues.maxSupply}
-      </StyledP> */}
-      <div style={{ width: '65px' }}>
+      <StyledProgres>
         <CircularProgressbarWithChildren
           value={1 - percentage}
           maxValue={1}
@@ -128,7 +135,11 @@ const TokenSection = ({
             }}
           />
         </CircularProgressbarWithChildren>
-      </div>
+
+        <TitleH4 weight={weight.bold} color="black">
+          MINTED
+        </TitleH4>
+      </StyledProgres>
     </>
   )
 
@@ -165,7 +176,7 @@ const TokenSection = ({
 
             <TitleH4>DESCRIPTION</TitleH4>
             <StyledP>{description}</StyledP>
-            <Divider thick={0.5} color={grey1} />
+            <br />
 
             <FlexRow justifyContent="flex-start">
               <div>
