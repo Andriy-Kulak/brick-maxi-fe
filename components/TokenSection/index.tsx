@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import styled from 'styled-components'
 import {
-  CircularProgressbar,
   buildStyles,
   CircularProgressbarWithChildren,
 } from 'react-circular-progressbar'
+import { Tooltip } from '@chakra-ui/react'
 import 'react-circular-progressbar/dist/styles.css'
 import { TitleH3, FlexRow, TitleH4, StyledP } from '../sharedstyles'
 import FaqAcccordion from '../FaqAcccordion'
@@ -58,7 +58,7 @@ const StyledPItalic = styled.p`
   font-style: italic;
 `
 
-const StyledProgres = styled.div`
+const StyledProgress = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -66,6 +66,11 @@ const StyledProgres = styled.div`
   > div:first-child {
     width: 65px;
     margin-right: 10px;
+  }
+
+  > div:nth-child(3) {
+    margin-left: 5px;
+    height: 20px;
   }
 `
 
@@ -111,7 +116,7 @@ const TokenSection = ({
   console.log('1 - percentage', 1 - percentage)
   const remainingText = (
     <>
-      <StyledProgres>
+      <StyledProgress>
         <CircularProgressbarWithChildren
           value={1 - percentage}
           maxValue={1}
@@ -128,7 +133,7 @@ const TokenSection = ({
           <Separator
             turns={0.25}
             style={{
-              background: 'grey',
+              background: 'black',
               textColor: 'black',
               width: '2px',
               height: `${14}%`,
@@ -139,7 +144,19 @@ const TokenSection = ({
         <TitleH4 weight={weight.bold} color="black">
           MINTED
         </TitleH4>
-      </StyledProgres>
+        <div>
+          <Tooltip label="Text explaining how much an artist gets">
+            <span>
+              <Image
+                src={images.questionmark}
+                width={16}
+                height={16}
+                alt="questionmark"
+              />
+            </span>
+          </Tooltip>
+        </div>
+      </StyledProgress>
     </>
   )
 

@@ -1,11 +1,12 @@
 import brickMaxiLogo from '../public/assets/brick_maxi_logo2.png'
 import bgArt1 from '../public/assets/first_section_bg.jpg'
 import bgArt2 from '../public/assets/howitworks_1920x1920.png'
-
 import teamBgMobile from '../public/assets/team_mobile_650x1920.png'
 import landingBgMobile from '../public/assets/landing_mobile_650x1200.png'
 import bgArt2Mobile from '../public/assets/howitworks_650x1200.png'
 import artImg from '../public/assets/token_art.png'
+import rewardsBg from '../public/assets/rewards_bg_3.png'
+
 import burgerIcon from '../public/assets/icons/hamburger.png'
 import xIcon from '../public/assets/icons/x.png'
 import whiteArrow from '../public/assets/icons/white_arrow.png'
@@ -25,12 +26,12 @@ import imgSample from '../public/assets/brickMaxiSample.png'
 import adamImg from '../public/assets/adam.gif'
 import mollyImg from '../public/assets/molly.gif'
 import andriyImg from '../public/assets/andriy.gif'
-import rewardsBg from '../public/assets/rewards_bg_3.png'
 import mintBtn from '../public/assets/mint_button2.png'
 import collectBtn from '../public/assets/collect_button.png'
 import twitterLogo from '../public/assets/twitter_logo.png'
 import openseaLogo from '../public/assets/opensea_logo.png'
 import tezosLogo from '../public/assets/tezos_logo.png'
+import questionmark from '../public/assets/questionmark.png'
 import animatedLogo from '../public/assets/animated_logo_v2.gif'
 
 export const images = {
@@ -64,6 +65,7 @@ export const images = {
   openseaLogo,
   tezosLogo,
   whiteArrow,
+  questionmark,
 }
 
 export const artistSection = [
