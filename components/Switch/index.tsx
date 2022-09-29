@@ -12,6 +12,7 @@ const StyledSwitch = ({
   <FormControl display="flex" alignItems="center" margin="8px 0px">
     <StyledP weight={isEth ? weight.bold : weight.normal}>ETH</StyledP>
     <Switch
+      isChecked={!isEth} // isEth === true means switch needs to be false
       onChange={currencySwitch}
       size="md"
       colorScheme="red"

@@ -112,8 +112,6 @@ const TokenSection = ({
     mintValues.tokensLeft && mintValues.maxSupply
       ? mintValues.tokensLeft / mintValues.maxSupply
       : 0
-
-  console.log('1 - percentage', 1 - percentage)
   const remainingText = (
     <>
       <StyledProgress>
