@@ -12,15 +12,16 @@ import { weight } from '../utils/fontConfigs'
 
 const { normal } = weight
 
-const StyledPwMargin = styled(StyledP)`
+const StyledPwMargin = styled(StyledP)<{
+  black?: boolean
+  weight?: number
+}>`
   font-size: 13px;
   margin-left: 20px;
-  font-weight: ${(props: { weight?: number }) =>
-    props.weight || 400} !important;
+  font-weight: ${(props) => props.weight || 400} !important;
   background-color: transparent !important;
 
-  color: ${(props: { black?: boolean }) =>
-    props.black ? 'white' : 'black'} !important;
+  color: ${(props) => (props.black ? 'white' : 'black')} !important;
 
   @media screen and (max-width: ${mobileBr}) {
     margin-left: 10px;
