@@ -180,20 +180,20 @@ const ShadedTextBox = () => {
             showMobile
             showTablet
             img={images.mobileTopLeftCorner}
-            width={28}
-            height={28}
-            top={20}
-            left={20}
+            width={15}
+            height={15}
+            top={10}
+            left={10}
             alt="mobile top left corner 3"
           />
           <AbsoluteImg
             showMobile
             showTablet
             img={images.mobileTopRightCorner}
-            width={28}
-            height={28}
-            top={20}
-            right={20}
+            width={15}
+            height={15}
+            top={10}
+            right={10}
             alt="mobile top right corner 3"
           />
         </div>
@@ -238,20 +238,20 @@ const ShadedTextBox = () => {
             showMobile
             showTablet
             img={images.mobileBottomLeftCorner}
-            width={28}
-            height={28}
-            bottom={20}
-            left={20}
+            width={15}
+            height={15}
+            bottom={10}
+            left={10}
             alt="mobile bottom left corner 3"
           />
           <AbsoluteImg
             showMobile
             showTablet
             img={images.mobileBottomRightCorner}
-            width={28}
-            height={28}
-            bottom={20}
-            right={20}
+            width={15}
+            height={15}
+            bottom={10}
+            right={10}
             alt="mobile bottom right corner 3"
           />
         </div>
