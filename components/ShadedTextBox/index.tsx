@@ -6,7 +6,8 @@ import {
   mobileBr,
   tabletBr,
 } from '../../utils/breakpoints'
-import { howItWorksContent } from '../../content'
+import { howItWorksContent, images } from '../../content'
+import AbsoluteImg from '../AbsoluteImg'
 
 const H1 = styled.h1`
   font-family: ${oswaldFont};
@@ -71,7 +72,8 @@ const FlexBox = styled.div`
   justify-content: center;
   align-items: center;
 
-  > div {
+  .white-box {
+    position: relative;
     background: rgba(255, 255, 255, 0.95);
     margin: 30px 10px;
     padding: 30px;
@@ -87,7 +89,7 @@ const FlexBox = styled.div`
     }
   }
 
-  > div > div {
+  .inner-p {
     margin: 50px 70px;
     @media screen and (max-width: ${laptopLargeBr}) {
       margin: 40px 40px;
@@ -120,9 +122,9 @@ const ShadedTextBox = () => {
   return (
     <StyledContainer id="mission-section">
       <FlexBox>
-        <div>
+        <div className="white-box">
           {howItWorksContent.map((x) => (
-            <div key={x.key}>
+            <div key={x.key} className="inner-p">
               <H1>{x.title}</H1>
               <StyledP>{x.desc}</StyledP>
             </div>
@@ -136,9 +138,67 @@ const ShadedTextBox = () => {
               for an allocation to be made.
             </StyledPItalic>
           </div>
+          <AbsoluteImg
+            showDesktop
+            img={images.topLeftCorner}
+            width={28}
+            height={28}
+            top={-20}
+            left={-20}
+            alt="top left corner 2"
+          />
+          <AbsoluteImg
+            showDesktop
+            img={images.topRightCorner}
+            width={28}
+            height={28}
+            top={-20}
+            right={-20}
+            alt="top right corner 2"
+          />
+
+          <AbsoluteImg
+            showDesktop
+            img={images.leftSideMiddleCorner}
+            width={29}
+            height={28}
+            bottom={-50}
+            left={-20}
+            alt="middle left corner 2"
+          />
+          <AbsoluteImg
+            showDesktop
+            img={images.rightSideMiddleCorner}
+            width={29}
+            height={28}
+            bottom={-50}
+            right={-20}
+            alt="middle right corner 2"
+          />
+
+          <AbsoluteImg
+            showMobile
+            showTablet
+            img={images.mobileTopLeftCorner}
+            width={15}
+            height={15}
+            top={10}
+            left={10}
+            alt="mobile top left corner 3"
+          />
+          <AbsoluteImg
+            showMobile
+            showTablet
+            img={images.mobileTopRightCorner}
+            width={15}
+            height={15}
+            top={10}
+            right={10}
+            alt="mobile top right corner 3"
+          />
         </div>
-        <div>
-          <div>
+        <div className="white-box">
+          <div className="inner-p">
             <H1>GOVERNANCE</H1>
             <StyledP>
               Token holders control their own fate.
@@ -155,6 +215,45 @@ const ShadedTextBox = () => {
               management services of any kind.
             </StyledP>
           </div>
+          <AbsoluteImg
+            showDesktop
+            img={images.bottomLeftCorner}
+            width={28}
+            height={28}
+            bottom={-25}
+            left={-20}
+            alt="bottom left corner 2"
+          />
+          <AbsoluteImg
+            showDesktop
+            img={images.bottomRightCorner}
+            width={28}
+            height={28}
+            bottom={-25}
+            right={-20}
+            alt="bottom right corner 2"
+          />
+
+          <AbsoluteImg
+            showMobile
+            showTablet
+            img={images.mobileBottomLeftCorner}
+            width={15}
+            height={15}
+            bottom={10}
+            left={10}
+            alt="mobile bottom left corner 3"
+          />
+          <AbsoluteImg
+            showMobile
+            showTablet
+            img={images.mobileBottomRightCorner}
+            width={15}
+            height={15}
+            bottom={10}
+            right={10}
+            alt="mobile bottom right corner 3"
+          />
         </div>
       </FlexBox>
     </StyledContainer>

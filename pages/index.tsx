@@ -182,7 +182,6 @@ export default function Home() {
       <HowItWorksSection />
       <UpcomingDropsSection />
       <TeamSection />
-      {/* <ArtistSection content={artistSection} /> */}
       <FaqSection />
       <Footer />
     </>

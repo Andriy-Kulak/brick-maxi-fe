@@ -150,15 +150,19 @@ const imageContainer = (
     <AbsoluteImg
       top={-24}
       left={-20}
+      width={15}
+      height={20}
       img={images.mintLineTop}
-      hideTablet
+      showDesktop
       alt="top decorative line"
     />
     <AbsoluteImg
       bottom={-2}
+      width={15}
+      height={20}
       left={-20}
       img={images.mintLineBottom}
-      hideTablet
+      showDesktop
       alt="bottom decorative line"
     />
     <StyledP weight={600} style={{ lineHeight: '29px' }}>

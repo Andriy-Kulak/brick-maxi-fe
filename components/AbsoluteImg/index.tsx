@@ -3,19 +3,26 @@ import styled from 'styled-components'
 import { mobileBr, tabletBr } from '../../utils/breakpoints'
 
 const StyledContainer = styled.div<{
-  hideMobile?: boolean
-  hideTablet?: boolean
+  showMobile?: boolean
+  showTablet?: boolean
+  showDesktop?: boolean
 }>`
   position: absolute;
+  display: none;
+
+  @media screen and (min-width: ${tabletBr}) {
+    display: ${(props: { showDesktop?: boolean }) =>
+      props.showDesktop ? 'inherit' : 'none'};
+  }
 
   @media screen and (max-width: ${tabletBr}) {
-    display: ${(props: { hideTablet?: boolean }) =>
-      props.hideTablet ? 'none' : 'inheit'};
+    display: ${(props: { showTablet?: boolean }) =>
+      props.showTablet ? 'inherit' : 'none'};
   }
 
   @media screen and (max-width: ${mobileBr}) {
-    display: ${(props: { hideMobile?: boolean }) =>
-      props.hideMobile ? 'none' : 'inheit'};
+    display: ${(props: { showMobile?: boolean }) =>
+      props.showMobile ? 'inherit' : 'none'};
   }
 `
 
@@ -26,24 +33,31 @@ const AbsoluteImg = ({
   bottom,
   right,
   alt,
-  hideMobile,
-  hideTablet,
+  showDesktop,
+  showTablet,
+  showMobile,
+  width,
+  height,
 }: {
   img: StaticImageData
   alt: string
+  width: number
+  height: number
   top?: number
   left?: number
   bottom?: number
   right?: number
-  hideMobile?: boolean
-  hideTablet?: boolean
+  showMobile?: boolean
+  showTablet?: boolean
+  showDesktop?: boolean
 }) => (
   <StyledContainer
-    hideMobile={hideMobile}
-    hideTablet={hideTablet}
+    showDesktop={showDesktop}
+    showTablet={showTablet}
+    showMobile={showMobile}
     style={{ top, left, bottom, right }}
   >
-    <Image src={img} width={15} height={20} alt={alt} />
+    <Image src={img} width={width} height={height} alt={alt} />
   </StyledContainer>
 )
 
