@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { laptopSmallBr, tabletBr } from '../../utils/breakpoints'
+import { laptopSmallBr, mobileBr, tabletBr } from '../../utils/breakpoints'
 import { Main, TitleH3, StyledP } from '../sharedstyles'
 
 export const ImageContainer = styled.div`
@@ -8,6 +8,11 @@ export const ImageContainer = styled.div`
   }
   @media screen and (max-width: ${tabletBr}) {
     margin: 0px;
+    width: auto;
+  }
+
+  @media screen and (max-width: ${tabletBr}) {
+    margin: 0 20px;
     width: auto;
   }
 `
@@ -73,6 +78,9 @@ export const MobileStyledP = styled(StyledP)`
 
 export const MobileTextC = styled.div`
   margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 export const SwitchC = styled.div`
@@ -81,7 +89,11 @@ export const SwitchC = styled.div`
   justify-content: space-between;
   width: 100%;
   max-width: 500px;
-  padding: 10px 15px 20px;
+  padding: 10px 15px 10px;
+
+  @media screen and (max-width: ${mobileBr}) {
+    padding: 10px 0px 0px;
+  }
 `
 
 export const MintSectionC = styled.div`

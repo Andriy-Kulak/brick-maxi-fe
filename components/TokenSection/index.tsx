@@ -56,6 +56,8 @@ const StyledPItalic = styled.p`
   font-family: ${montserratFont};
   font-weight: 600;
   font-style: italic;
+  width: 100%;
+  text-align: left;
 `
 
 const StyledProgress = styled.div`
@@ -89,7 +91,33 @@ const ArtistStyledP = styled(StyledP)`
   }
 
   display: flex;
+
+  @media screen and (max-width: ${tabletBr}) {
+    font-size: 15px;
+  }
 `
+
+const artistTitle = (
+  <ArtistStyledP weight={bold}>
+    {artist}
+    <a href={tokenSection.superRareUrl} target="blank">
+      <Image
+        src={images.superrareLogo}
+        width={16}
+        height={16}
+        alt="superrare logo"
+      />
+    </a>
+    <a href={tokenSection.twitterUrl} target="blank">
+      <Image
+        src={images.twitterLogo}
+        width={16}
+        height={16}
+        alt="twitter logo"
+      />
+    </a>
+  </ArtistStyledP>
+)
 
 const imageContainer = (
   <ImageContainer>
@@ -220,25 +248,7 @@ const TokenSection = ({
             <TitleH3>{title}</TitleH3>
             <div>
               <TitleH4 weight={bold}>ARTIST</TitleH4>
-              <ArtistStyledP weight={bold}>
-                {artist}
-                <a href={tokenSection.superRareUrl} target="blank">
-                  <Image
-                    src={images.superrareLogo}
-                    width={16}
-                    height={16}
-                    alt="superrare logo"
-                  />
-                </a>
-                <a href={tokenSection.twitterUrl} target="blank">
-                  <Image
-                    src={images.twitterLogo}
-                    width={16}
-                    height={16}
-                    alt="twitter logo"
-                  />
-                </a>
-              </ArtistStyledP>
+              {artistTitle}
               <br />
             </div>
 
@@ -271,7 +281,7 @@ const TokenSection = ({
       <MobileView>
         <MobileTextC>
           <MobileTitleH3>{title}</MobileTitleH3>
-          <MobileStyledP weight={bold}>{artist}</MobileStyledP>
+          {artistTitle}
         </MobileTextC>
         {imageContainer}
         <SwitchC>
@@ -279,9 +289,11 @@ const TokenSection = ({
             {mintText}
             <StyledSwitch currencySwitch={currencySwitch} isEth={isEth} />
           </div>
+
           <div>{remainingText}</div>
         </SwitchC>
-        <Divider thick={1} color="#D9D9D9" />
+        {!isEth && <StyledPItalic>May require two transactions</StyledPItalic>}
+        <Divider thick={1} margin="5px" color="#D9D9D9" />
         <FaqAcccordion
           content={[
             {
@@ -290,8 +302,8 @@ const TokenSection = ({
               p: 'This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at.',
             },
           ]}
-        ></FaqAcccordion>
-        <Divider thick={1} color="#D9D9D9" />
+        />
+        <Divider thick={1} margin="5px" color="#D9D9D9" />
         <MintSection
           setMintLoading={setMintLoading}
           mintState={mintState}
