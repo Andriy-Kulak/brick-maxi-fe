@@ -29,7 +29,7 @@ export const TextContainer = styled.div`
 export const LiveSpan = styled.span`
   background-color: black;
   color: white;
-  font-weight: 400;
+  font-weight: 600;
   margin-right: 10px;
   padding: 0px 10px;
 `

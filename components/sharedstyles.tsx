@@ -145,7 +145,10 @@ const TitleH4 = styled.h4`
   font-style: normal;
 `
 
-const StyledP = styled.p`
+const StyledP = styled.p<{
+  weight?: number
+  fontSize?: string
+}>`
   margin: 0;
 
   font-weight: ${(props: { weight?: number }) => props.weight || 400};
@@ -154,7 +157,7 @@ const StyledP = styled.p`
   letter-spacing: normal;
   font-family: ${montserratFont};
   font-style: normal;
-  font-size: 12px;
+  font-size: ${(props: { fontSize?: string }) => props.fontSize || '12px'};
   line-height: 17px;
 
   b {

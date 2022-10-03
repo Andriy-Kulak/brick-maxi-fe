@@ -128,6 +128,10 @@ export const tokenSection = {
   description:
     'This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at. This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at. This is the info that goes here that is the info that',
   type: 'Residential',
+  superRareUrl: 'https://www.instagram.com/savemolly',
+  twitterUrl: 'https://www.instagram.com/savemolly',
+  looksrareUrl: 'https://www.instagram.com/savemolly',
+  openseaUrl: 'https://www.instagram.com/savemolly',
 }
 
 export const teamProfiles = [

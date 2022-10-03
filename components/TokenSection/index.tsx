@@ -31,7 +31,7 @@ import MintSection from '../MintSection'
 import { RadialSeparators, Separator } from '../Separator'
 const { bold } = weight
 
-const { title, artist, description, type } = tokenSection
+const { title, artist, description } = tokenSection
 
 export const StyledBackground = styled.div`
   background-color: white;
@@ -76,9 +76,9 @@ const StyledProgress = styled.div`
 
 const imageContainer = (
   <ImageContainer>
-    <StyledP weight={700} style={{ lineHeight: '13px' }}>
+    <StyledP weight={600} style={{ lineHeight: '13px' }}>
       <LiveSpan>LIVE</LiveSpan>
-      04/28/1983 4:40PM PST
+      04/28/23 4:40PM PST
     </StyledP>
     <Image alt="art image 1" width={430} height={430} src={images.artImg} />
   </ImageContainer>
@@ -184,13 +184,13 @@ const TokenSection = ({
           <TextContainer>
             <TitleH3>{title}</TitleH3>
             <div>
-              <TitleH4>ARTIST</TitleH4>
+              <TitleH4 weight={bold}>ARTIST</TitleH4>
               <StyledP weight={bold}>{artist}</StyledP>
               <br />
             </div>
 
-            <TitleH4>DESCRIPTION</TitleH4>
-            <StyledP>{description}</StyledP>
+            <TitleH4 weight={bold}>DESCRIPTION</TitleH4>
+            <StyledP weight={bold}>{description}</StyledP>
             <br />
 
             <FlexRow justifyContent="flex-start">
@@ -198,7 +198,9 @@ const TokenSection = ({
                 {mintText}
 
                 <StyledSwitch currencySwitch={currencySwitch} isEth={isEth} />
-                <StyledPItalic>May require two transactions</StyledPItalic>
+                {!isEth && (
+                  <StyledPItalic>May require two transactions</StyledPItalic>
+                )}
               </div>
               <div>{remainingText}</div>
             </FlexRow>

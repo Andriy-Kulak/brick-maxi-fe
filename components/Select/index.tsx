@@ -1,5 +1,6 @@
 import { Select } from '@chakra-ui/react'
 import { StyledP } from '../sharedstyles'
+import { weight } from '../utils/fontConfigs'
 
 const QuantitySelect = ({
   quantity,
@@ -15,7 +16,9 @@ const QuantitySelect = ({
 
   return (
     <div style={{ width: '70px' }}>
-      <StyledP style={{ textAlign: 'left' }}>QTY</StyledP>
+      <StyledP weight={weight.bold} style={{ textAlign: 'left' }}>
+        QTY
+      </StyledP>
       <Select onChange={handleChange} value={quantity.toString()}>
         {valArray.map((x: number) => (
           <option key={x} value={x}>
