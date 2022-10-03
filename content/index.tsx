@@ -38,6 +38,16 @@ import shareIcon from '../public/assets/icons/share.png'
 import superrareLogo from '../public/assets/icons/SR-mintpage.png'
 import mintLineBottom from '../public/assets/mint_line_bottom.png'
 import mintLineTop from '../public/assets/mint_line_top.png'
+import bottomLeftCorner from '../public/assets/corners/bottom_left.png'
+import bottomRightCorner from '../public/assets/corners/bottom_right.png'
+import topLeftCorner from '../public/assets/corners/top_left.png'
+import topRightCorner from '../public/assets/corners/top_right.png'
+import leftSideMiddleCorner from '../public/assets/corners/leftside_middle.png'
+import rightSideMiddleCorner from '../public/assets/corners/rightside_middle.png'
+import mobileTopLeftCorner from '../public/assets/corners/mobile_top_left.png'
+import mobileTopRightCorner from '../public/assets/corners/mobile_top_right.png'
+import mobileBottomLeftCorner from '../public/assets/corners/mobile_bottom_left.png'
+import mobileBottomRightCorner from '../public/assets/corners/mobile_bottom_right.png'
 
 export const images = {
   brickMaxiLogo,
@@ -76,6 +86,16 @@ export const images = {
   superrareLogo,
   mintLineBottom,
   mintLineTop,
+  bottomLeftCorner,
+  bottomRightCorner,
+  topLeftCorner,
+  topRightCorner,
+  leftSideMiddleCorner,
+  rightSideMiddleCorner,
+  mobileTopLeftCorner,
+  mobileTopRightCorner,
+  mobileBottomLeftCorner,
+  mobileBottomRightCorner,
 }
 
 export const artistSection = [

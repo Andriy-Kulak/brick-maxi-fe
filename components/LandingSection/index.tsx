@@ -8,6 +8,7 @@ import { oswaldFont, montserratFont, weight } from '../utils/fontConfigs'
 import { motion } from 'framer-motion'
 import { textVariant } from '../../utils/motion'
 import { LogoParamProps } from '../../utils/hooks/useScrollEffects'
+import AbsoluteImg from '../AbsoluteImg'
 
 type ImageCProps = {
   hide?: boolean
@@ -106,6 +107,7 @@ const LandingSection = ({
         objectPosition="center"
         layout="fill"
       />
+
       <StyledMain>
         <ImageC
           ref={logoRef}
@@ -134,6 +136,47 @@ const LandingSection = ({
       </StyledMain>
       <HorizontalScrollText>SCROLL</HorizontalScrollText>
       <LaunchText>+ launching fall 2022 +</LaunchText>
+
+      <AbsoluteImg
+        showDesktop
+        showTablet
+        img={images.topLeftCorner}
+        width={28}
+        height={28}
+        top={25}
+        left={25}
+        alt="top left corner"
+      />
+      <AbsoluteImg
+        showDesktop
+        showTablet
+        img={images.topRightCorner}
+        width={28}
+        height={28}
+        top={25}
+        right={25}
+        alt="top right corner"
+      />
+      <AbsoluteImg
+        showDesktop
+        showTablet
+        img={images.bottomLeftCorner}
+        width={28}
+        height={28}
+        bottom={25}
+        left={25}
+        alt="bottom left corner"
+      />
+      <AbsoluteImg
+        showDesktop
+        showTablet
+        img={images.bottomRightCorner}
+        width={28}
+        height={28}
+        bottom={25}
+        right={25}
+        alt="bottom right corner"
+      />
     </LandingC>
   )
 }
