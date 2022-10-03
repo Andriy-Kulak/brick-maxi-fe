@@ -3,6 +3,7 @@ import { laptopSmallBr, mobileBr, tabletBr } from '../../utils/breakpoints'
 import { Main, TitleH3, StyledP } from '../sharedstyles'
 
 export const ImageContainer = styled.div`
+  position: relative;
   @media screen and (max-width: ${laptopSmallBr}) {
     width: 35%;
   }

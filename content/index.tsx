@@ -36,6 +36,8 @@ import animatedLogo from '../public/assets/animated_logo_v2.gif'
 import looksrareLogo from '../public/assets/icons/looks_mintpage.png'
 import shareIcon from '../public/assets/icons/share.png'
 import superrareLogo from '../public/assets/icons/SR-mintpage.png'
+import mintLineBottom from '../public/assets/mint_line_bottom.png'
+import mintLineTop from '../public/assets/mint_line_top.png'
 
 export const images = {
   brickMaxiLogo,
@@ -72,6 +74,8 @@ export const images = {
   looksrareLogo,
   shareIcon,
   superrareLogo,
+  mintLineBottom,
+  mintLineTop,
 }
 
 export const artistSection = [

@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import styled from 'styled-components'
 import {
   buildStyles,
@@ -17,7 +17,6 @@ import {
   DesktopView,
   ImageContainer,
   LiveSpan,
-  MobileStyledP,
   MobileTextC,
   MobileTitleH3,
   MobileView,
@@ -28,7 +27,8 @@ import {
 import { mobileBr, tabletBr } from '../../utils/breakpoints'
 import { MintStatus } from '../../utils/types/reactState'
 import MintSection from '../MintSection'
-import { RadialSeparators, Separator } from '../Separator'
+import { Separator } from '../Separator'
+import AbsoluteImg from '../AbsoluteImg'
 const { bold } = weight
 
 const { title, artist, description } = tokenSection
@@ -147,6 +147,20 @@ const artistTitle = (
 
 const imageContainer = (
   <ImageContainer>
+    <AbsoluteImg
+      top={-24}
+      left={-20}
+      img={images.mintLineTop}
+      hideTablet
+      alt="top decorative line"
+    />
+    <AbsoluteImg
+      bottom={-2}
+      left={-20}
+      img={images.mintLineBottom}
+      hideTablet
+      alt="bottom decorative line"
+    />
     <StyledP weight={600} style={{ lineHeight: '29px' }}>
       <LiveSpan>LIVE</LiveSpan>
       <LiveSpan bgColor="white" color="black">
