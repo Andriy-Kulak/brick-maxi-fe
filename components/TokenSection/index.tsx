@@ -11,7 +11,7 @@ import FaqAcccordion from '../FaqAcccordion'
 import { Divider, StyledSwitch } from '../'
 
 import { images, tokenSection } from '../../content'
-import { montserratFont, weight } from '../utils/fontConfigs'
+import { montserratFont, oswaldFont, weight } from '../utils/fontConfigs'
 import { black, grey1 } from '../utils/colors'
 import {
   DesktopView,
@@ -25,7 +25,7 @@ import {
   TextContainer,
 } from './styles'
 
-import { tabletBr } from '../../utils/breakpoints'
+import { mobileBr, tabletBr } from '../../utils/breakpoints'
 import { MintStatus } from '../../utils/types/reactState'
 import MintSection from '../MintSection'
 import { RadialSeparators, Separator } from '../Separator'
@@ -82,6 +82,33 @@ const ArtLinksContainer = styled.div`
 
   > a {
     margin-left: 3px;
+  }
+`
+
+const MiniTextC = styled.div`
+  background-color: black;
+  width: 100%;
+  padding: 20px 50px 0px;
+  margin: 0;
+
+  @media screen and (max-width: ${mobileBr}) {
+    padding: 10px 0px 0px;
+  }
+`
+
+const TitleH2Small = styled.h2`
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-style: italic;
+  font-family: ${oswaldFont};
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  @media screen and (max-width: ${mobileBr}) {
+    font-size: 17px;
+    line-height: 23px;
   }
 `
 
@@ -240,79 +267,103 @@ const TokenSection = ({
   )
 
   return (
-    <StyledBackground>
-      <DesktopView>
-        <FlexRow>
-          {imageContainer}
-          <TextContainer>
-            <TitleH3>{title}</TitleH3>
-            <div>
-              <TitleH4 weight={bold}>ARTIST</TitleH4>
-              {artistTitle}
+    <>
+      <StyledBackground>
+        <DesktopView>
+          <FlexRow>
+            {imageContainer}
+            <TextContainer>
+              <TitleH3>{title}</TitleH3>
+              <div>
+                <TitleH4 weight={bold}>ARTIST</TitleH4>
+                {artistTitle}
+                <br />
+              </div>
+
+              <TitleH4 weight={bold}>DESCRIPTION</TitleH4>
+              <StyledP weight={bold}>{description}</StyledP>
               <br />
+
+              <FlexRow justifyContent="flex-start">
+                <div>
+                  {mintText}
+
+                  <StyledSwitch currencySwitch={currencySwitch} isEth={isEth} />
+                  {!isEth && (
+                    <StyledPItalic>May require two transactions</StyledPItalic>
+                  )}
+                </div>
+                <div>{remainingText}</div>
+              </FlexRow>
+              <Divider thick={0.5} color={grey1} />
+              <MintSection
+                setMintLoading={setMintLoading}
+                mintState={mintState}
+                mint={mint}
+                quantity={quantity}
+                setQuantity={setQuantity}
+              />
+            </TextContainer>
+          </FlexRow>
+        </DesktopView>
+        <MobileView>
+          <MobileTextC>
+            <MobileTitleH3>{title}</MobileTitleH3>
+            {artistTitle}
+          </MobileTextC>
+          {imageContainer}
+          <SwitchC>
+            <div>
+              {mintText}
+              <StyledSwitch currencySwitch={currencySwitch} isEth={isEth} />
             </div>
 
-            <TitleH4 weight={bold}>DESCRIPTION</TitleH4>
-            <StyledP weight={bold}>{description}</StyledP>
-            <br />
+            <div>{remainingText}</div>
+          </SwitchC>
+          {!isEth && (
+            <StyledPItalic>May require two transactions</StyledPItalic>
+          )}
+          <Divider
+            thick={1}
+            marginMobile="5px"
+            marginDesktop="5px"
+            color="#D9D9D9"
+          />
+          <FaqAcccordion
+            content={[
+              {
+                key: 1,
+                title: 'DETAILS',
+                p: 'This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at.',
+              },
+            ]}
+          />
+          <Divider
+            thick={1}
+            marginMobile="5px"
+            marginDesktop="5px"
+            color="#D9D9D9"
+          />
+          <MintSection
+            setMintLoading={setMintLoading}
+            mintState={mintState}
+            mint={mint}
+            quantity={quantity}
+            setQuantity={setQuantity}
+          />
+        </MobileView>
+      </StyledBackground>
 
-            <FlexRow justifyContent="flex-start">
-              <div>
-                {mintText}
-
-                <StyledSwitch currencySwitch={currencySwitch} isEth={isEth} />
-                {!isEth && (
-                  <StyledPItalic>May require two transactions</StyledPItalic>
-                )}
-              </div>
-              <div>{remainingText}</div>
-            </FlexRow>
-            <Divider thick={0.5} color={grey1} />
-            <MintSection
-              setMintLoading={setMintLoading}
-              mintState={mintState}
-              mint={mint}
-              quantity={quantity}
-              setQuantity={setQuantity}
-            />
-          </TextContainer>
-        </FlexRow>
-      </DesktopView>
-      <MobileView>
-        <MobileTextC>
-          <MobileTitleH3>{title}</MobileTitleH3>
-          {artistTitle}
-        </MobileTextC>
-        {imageContainer}
-        <SwitchC>
-          <div>
-            {mintText}
-            <StyledSwitch currencySwitch={currencySwitch} isEth={isEth} />
-          </div>
-
-          <div>{remainingText}</div>
-        </SwitchC>
-        {!isEth && <StyledPItalic>May require two transactions</StyledPItalic>}
-        <Divider thick={1} margin="5px" color="#D9D9D9" />
-        <FaqAcccordion
-          content={[
-            {
-              key: 1,
-              title: 'DETAILS',
-              p: 'This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at.',
-            },
-          ]}
+      <MiniTextC>
+        <TitleH2Small>ART THAT PAYS DIVIDENDS.</TitleH2Small>
+        <Divider
+          thick={0.5}
+          marginMobile="10px 0px 0px"
+          marginDesktop="15px 0px 0px"
+          color="white"
         />
-        <Divider thick={1} margin="5px" color="#D9D9D9" />
-        <MintSection
-          setMintLoading={setMintLoading}
-          mintState={mintState}
-          mint={mint}
-          quantity={quantity}
-          setQuantity={setQuantity}
-        />
-      </MobileView>
-    </StyledBackground>
+      </MiniTextC>
+    </>
   )
 }
 
