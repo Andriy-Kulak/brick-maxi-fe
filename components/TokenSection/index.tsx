@@ -40,7 +40,6 @@ export const StyledBackground = styled.div`
   @media screen and (max-width: ${tabletBr}) {
     height: auto;
   }
-  min-height: 80vh;
 `
 
 const ApeContainer = styled.div`
@@ -148,9 +147,11 @@ const artistTitle = (
 
 const imageContainer = (
   <ImageContainer>
-    <StyledP weight={600} style={{ lineHeight: '13px' }}>
+    <StyledP weight={600} style={{ lineHeight: '29px' }}>
       <LiveSpan>LIVE</LiveSpan>
-      04/28/23 4:40PM PST
+      <LiveSpan bgColor="white" color="black">
+        04/28/23 4:40PM PST
+      </LiveSpan>
     </StyledP>
     <Image alt="art image 1" width={430} height={430} src={images.artImg} />
     <ArtLinksContainer>

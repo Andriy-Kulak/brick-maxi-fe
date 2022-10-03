@@ -18,7 +18,7 @@ export const ImageContainer = styled.div`
 `
 
 export const TextContainer = styled.div`
-  margin: 10px 20px 0px 60px;
+  margin: 10px 20px 0px 25px;
   width: 40%;
 
   @media screen and (max-width: ${laptopSmallBr}) {
@@ -28,11 +28,16 @@ export const TextContainer = styled.div`
 `
 
 export const LiveSpan = styled.span`
-  background-color: black;
-  color: white;
+  background-color: ${(props: { bgColor?: string }) =>
+    props.bgColor || 'black'};
+  height: 29px;
+  vertical-align: baseline;
+  line-height: 29px;
+  color: ${(props: { color?: string }) => props.color || 'white'};
   font-weight: 600;
   margin-right: 10px;
   padding: 0px 10px;
+  display: table-cell;
 `
 
 export const DesktopView = styled(Main)`
@@ -46,6 +51,7 @@ export const MobileView = styled(Main)`
   max-width: 430px;
   margin: 0 auto;
   display: none;
+  padding: 25px 0px;
   @media screen and (max-width: ${tabletBr}) {
     display: flex;
   }
