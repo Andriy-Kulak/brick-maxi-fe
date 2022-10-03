@@ -3,11 +3,7 @@ import { laptopSmallBr, tabletBr } from '../../utils/breakpoints'
 import { Main, TitleH3, StyledP } from '../sharedstyles'
 
 export const ImageContainer = styled.div`
-  margin: 0px 60px 0px 0px;
-
   @media screen and (max-width: ${laptopSmallBr}) {
-    /* margin: 0px 20px; */
-    margin: 0px 20px 0px 0px;
     width: 35%;
   }
   @media screen and (max-width: ${tabletBr}) {
@@ -17,12 +13,12 @@ export const ImageContainer = styled.div`
 `
 
 export const TextContainer = styled.div`
-  margin-top: 10px;
-  margin-right: 20px;
+  margin: 10px 20px 0px 60px;
   width: 40%;
 
   @media screen and (max-width: ${laptopSmallBr}) {
     width: 50%;
+    margin-left: 20px;
   }
 `
 

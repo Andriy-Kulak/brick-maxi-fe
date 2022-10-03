@@ -33,6 +33,9 @@ import openseaLogo from '../public/assets/opensea_logo.png'
 import tezosLogo from '../public/assets/tezos_logo.png'
 import questionmark from '../public/assets/questionmark.png'
 import animatedLogo from '../public/assets/animated_logo_v2.gif'
+import looksrareLogo from '../public/assets/icons/looks_mintpage.png'
+import shareIcon from '../public/assets/icons/share.png'
+import superrareLogo from '../public/assets/icons/SR-mintpage.png'
 
 export const images = {
   brickMaxiLogo,
@@ -66,6 +69,9 @@ export const images = {
   tezosLogo,
   whiteArrow,
   questionmark,
+  looksrareLogo,
+  shareIcon,
+  superrareLogo,
 }
 
 export const artistSection = [

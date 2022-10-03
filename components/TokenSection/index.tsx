@@ -74,6 +74,23 @@ const StyledProgress = styled.div`
   }
 `
 
+const ArtLinksContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+
+  > a {
+    margin-left: 3px;
+  }
+`
+
+const ArtistStyledP = styled(StyledP)`
+  > a {
+    margin-left: 3px;
+  }
+
+  display: flex;
+`
+
 const imageContainer = (
   <ImageContainer>
     <StyledP weight={600} style={{ lineHeight: '13px' }}>
@@ -81,6 +98,24 @@ const imageContainer = (
       04/28/23 4:40PM PST
     </StyledP>
     <Image alt="art image 1" width={430} height={430} src={images.artImg} />
+    <ArtLinksContainer>
+      <a href={tokenSection.looksrareUrl} target="blank">
+        <Image
+          src={images.looksrareLogo}
+          width={16}
+          height={16}
+          alt="looksrare logo"
+        />
+      </a>
+      <a href={tokenSection.openseaUrl} target="blank">
+        <Image
+          src={images.openseaLogo}
+          width={16}
+          height={16}
+          alt="opensea logo"
+        />
+      </a>
+    </ArtLinksContainer>
   </ImageContainer>
 )
 
@@ -185,7 +220,25 @@ const TokenSection = ({
             <TitleH3>{title}</TitleH3>
             <div>
               <TitleH4 weight={bold}>ARTIST</TitleH4>
-              <StyledP weight={bold}>{artist}</StyledP>
+              <ArtistStyledP weight={bold}>
+                {artist}
+                <a href={tokenSection.superRareUrl} target="blank">
+                  <Image
+                    src={images.superrareLogo}
+                    width={16}
+                    height={16}
+                    alt="superrare logo"
+                  />
+                </a>
+                <a href={tokenSection.twitterUrl} target="blank">
+                  <Image
+                    src={images.twitterLogo}
+                    width={16}
+                    height={16}
+                    alt="twitter logo"
+                  />
+                </a>
+              </ArtistStyledP>
               <br />
             </div>
 
