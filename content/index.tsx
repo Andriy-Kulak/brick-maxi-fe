@@ -1,11 +1,12 @@
 import brickMaxiLogo from '../public/assets/brick_maxi_logo2.png'
 import bgArt1 from '../public/assets/first_section_bg.jpg'
 import bgArt2 from '../public/assets/howitworks_1920x1920.png'
-
 import teamBgMobile from '../public/assets/team_mobile_650x1920.png'
 import landingBgMobile from '../public/assets/landing_mobile_650x1200.png'
 import bgArt2Mobile from '../public/assets/howitworks_650x1200.png'
 import artImg from '../public/assets/token_art.png'
+import rewardsBg from '../public/assets/rewards_bg_3.png'
+
 import burgerIcon from '../public/assets/icons/hamburger.png'
 import xIcon from '../public/assets/icons/x.png'
 import whiteArrow from '../public/assets/icons/white_arrow.png'
@@ -25,13 +26,18 @@ import imgSample from '../public/assets/brickMaxiSample.png'
 import adamImg from '../public/assets/adam.gif'
 import mollyImg from '../public/assets/molly.gif'
 import andriyImg from '../public/assets/andriy.gif'
-import rewardsBg from '../public/assets/rewards_bg_3.png'
 import mintBtn from '../public/assets/mint_button2.png'
 import collectBtn from '../public/assets/collect_button.png'
 import twitterLogo from '../public/assets/twitter_logo.png'
 import openseaLogo from '../public/assets/opensea_logo.png'
 import tezosLogo from '../public/assets/tezos_logo.png'
+import questionmark from '../public/assets/questionmark.png'
 import animatedLogo from '../public/assets/animated_logo_v2.gif'
+import looksrareLogo from '../public/assets/icons/looks_mintpage.png'
+import shareIcon from '../public/assets/icons/share.png'
+import superrareLogo from '../public/assets/icons/SR-mintpage.png'
+import mintLineBottom from '../public/assets/mint_line_bottom.png'
+import mintLineTop from '../public/assets/mint_line_top.png'
 
 export const images = {
   brickMaxiLogo,
@@ -64,6 +70,12 @@ export const images = {
   openseaLogo,
   tezosLogo,
   whiteArrow,
+  questionmark,
+  looksrareLogo,
+  shareIcon,
+  superrareLogo,
+  mintLineBottom,
+  mintLineTop,
 }
 
 export const artistSection = [
@@ -126,6 +138,10 @@ export const tokenSection = {
   description:
     'This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at. This is the info that goes here that is the info that people want to know when they are looking for all the info about what they are looking at. This is the info that goes here that is the info that',
   type: 'Residential',
+  superRareUrl: 'https://www.instagram.com/savemolly',
+  twitterUrl: 'https://www.instagram.com/savemolly',
+  looksrareUrl: 'https://www.instagram.com/savemolly',
+  openseaUrl: 'https://www.instagram.com/savemolly',
 }
 
 export const teamProfiles = [

@@ -1,37 +1,44 @@
 import styled from 'styled-components'
-import { laptopSmallBr, tabletBr } from '../../utils/breakpoints'
+import { laptopSmallBr, mobileBr, tabletBr } from '../../utils/breakpoints'
 import { Main, TitleH3, StyledP } from '../sharedstyles'
 
 export const ImageContainer = styled.div`
-  margin: 0px 60px 0px 0px;
-
+  position: relative;
   @media screen and (max-width: ${laptopSmallBr}) {
-    /* margin: 0px 20px; */
-    margin: 0px 20px 0px 0px;
     width: 35%;
   }
   @media screen and (max-width: ${tabletBr}) {
     margin: 0px;
     width: auto;
   }
+
+  @media screen and (max-width: ${tabletBr}) {
+    margin: 0 20px;
+    width: auto;
+  }
 `
 
 export const TextContainer = styled.div`
-  margin-top: 10px;
-  margin-right: 20px;
+  margin: 10px 20px 0px 25px;
   width: 40%;
 
   @media screen and (max-width: ${laptopSmallBr}) {
     width: 50%;
+    margin-left: 20px;
   }
 `
 
 export const LiveSpan = styled.span`
-  background-color: black;
-  color: white;
-  font-weight: 400;
+  background-color: ${(props: { bgColor?: string }) =>
+    props.bgColor || 'black'};
+  height: 29px;
+  vertical-align: baseline;
+  line-height: 29px;
+  color: ${(props: { color?: string }) => props.color || 'white'};
+  font-weight: 600;
   margin-right: 10px;
   padding: 0px 10px;
+  display: table-cell;
 `
 
 export const DesktopView = styled(Main)`
@@ -45,6 +52,7 @@ export const MobileView = styled(Main)`
   max-width: 430px;
   margin: 0 auto;
   display: none;
+  padding: 25px 0px;
   @media screen and (max-width: ${tabletBr}) {
     display: flex;
   }
@@ -77,6 +85,9 @@ export const MobileStyledP = styled(StyledP)`
 
 export const MobileTextC = styled.div`
   margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 export const SwitchC = styled.div`
@@ -85,7 +96,11 @@ export const SwitchC = styled.div`
   justify-content: space-between;
   width: 100%;
   max-width: 500px;
-  padding: 10px 15px 20px;
+  padding: 10px 15px 10px;
+
+  @media screen and (max-width: ${mobileBr}) {
+    padding: 10px 0px 0px;
+  }
 `
 
 export const MintSectionC = styled.div`
