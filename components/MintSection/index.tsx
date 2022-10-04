@@ -24,11 +24,12 @@ export const StyledBackground = styled.div`
 const ToastFlex = styled.div`
   display: flex;
   text-align: center;
+  font-size: 16px;
   justify-content: space-around;
   font-family: ${montserratFont};
   padding: 8px 7px 5px;
-  > div:first-child {
-    margin-right: 5px;
+  > div {
+    margin-right: 10px;
   }
 `
 
@@ -49,9 +50,10 @@ const MintSectionC = styled.div`
 `
 
 const StyledMessage = styled(StyledP)`
-  font-family: ${oswaldFont};
+  font-family: ${montserratFont};
   font-weight: 600;
-  letter-spacing: 0.5px;
+  font-size: 14px;
+  line-height: 20px;
 `
 const Main = styled.div`
   position: relative;
