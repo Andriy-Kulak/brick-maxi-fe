@@ -36,6 +36,9 @@ export const Main = styled.div`
     padding: 30px 30px 0px;
     min-height: 0px;
   }
+
+  max-width: 940px;
+  margin: 0 auto;
 `
 
 export const Main2 = styled.div`
