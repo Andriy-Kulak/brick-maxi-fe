@@ -2,8 +2,9 @@ import { ethers, providers } from 'ethers'
 
 // // https://rinkeby.etherscan.io/address/0x069968Fb86c8b81fD990CF781CE732F110F8b6d6#code
 // https://goerli.etherscan.io/address/0x50e9084dcc50F6FBd26232D94FF6fB7cC60DED9E#code
-export const contractAddress = '0xA675C91Ed549bD9Da4b0696ECD4e4282EBe56a8E'
-
+// export const contractAddress = '0x726C1B8CC5de8102c804EF03108fa3F4d199ae03' // this is latest normal one
+// export const contractAddress = '0xE1C25B075F7175CD1d8943cb80B8adf53aB63038' // this is the 2x one
+export const contractAddress = '0x7f94B55F5c02F8416218b880d8a9F968d9bC6E93' // this is the 2x ipfs one
 const nets = [
   {
     name: 'rinkeby',
