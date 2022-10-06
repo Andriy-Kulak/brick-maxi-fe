@@ -32,12 +32,18 @@ const ImageC = styled.div<ImageCProps>`
 `
 
 const LandingC = styled.div`
+  top: -70px;
+
+  margin-bottom: -70px;
+
   position: relative;
-  height: 90vh;
+  height: 100vh;
   background-color: black;
 
   @media screen and (max-width: ${tabletBr}) {
     height: 88vh;
+    top: 0px;
+    margin-bottom: 0px;
   }
 
   @media screen and (max-width: ${mobileBr}) {
