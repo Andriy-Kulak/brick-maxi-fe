@@ -41,6 +41,8 @@ const LandingC = styled.div`
 
   @media screen and (max-width: ${tabletBr}) {
     height: 88vh;
+    top: 0px;
+    margin-bottom: 0px;
   }
 
   @media screen and (max-width: ${mobileBr}) {
