@@ -11,14 +11,18 @@ export const LandingC = styled.div`
   position: relative;
   min-height: 91vh;
 
+  position: relative;
+  top: -70px;
+
   @media screen and (max-width: ${tabletBr}) {
     min-height: 88vh;
+    top: 0px;
   }
 `
 
 export const Main = styled.div`
   position: relative;
-  padding: 60px 80px 0px;
+  padding: 130px 80px 0px;
   display: flex;
   flex-direction: column;
   justify-content: ${(props: { justifyContent?: string }) =>
