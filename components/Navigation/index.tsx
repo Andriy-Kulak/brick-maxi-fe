@@ -17,11 +17,12 @@ const StyledSticky = styled.div`
   top: 0;
   left: 0;
   position: sticky;
-  background-color: black;
   color: white;
   width: 100%;
   z-index: ${(props: { isMobileOpen: boolean }) =>
     props.isMobileOpen ? 300 : 200};
+
+  display: flex;
 `
 
 const NavText = styled(StyledP)`
@@ -41,12 +42,14 @@ const TopFlexContainer = styled.div`
   align-content: center;
   flex-direction: row;
   height: 70px;
+  width: 100%;
+  background-color: black;
 
   div {
     margin: 5px 60px 0px;
 
     @media screen and (max-width: ${laptopLargeBr}) {
-      margin: 5px 30px 0px;
+      margin: 5px 0px 0px;
     }
 
     @media screen and (max-width: ${tabletBr}) {
@@ -87,6 +90,22 @@ const MidFlexContainer = styled.div`
 const MobileMenuC = styled.div`
   display: flex;
   @media screen and(min-width: ${tabletBr} ) {
+    display: none;
+  }
+`
+
+const Triangle = styled.div<{
+  isLeft?: boolean
+  isRight?: boolean
+}>`
+  width: 0;
+  height: 0;
+  border-left: ${(props) => (props.isLeft ? '50px solid transparent' : '')};
+  border-right: ${(props) => (props.isRight ? '50px solid transparent' : '')};
+
+  border-top: 70px solid black;
+
+  @media screen and (max-width: ${tabletBr}) {
     display: none;
   }
 `
@@ -140,6 +159,7 @@ const Nav = ({
   return (
     <>
       <StyledSticky isMobileOpen={isMobileOpen}>
+        <Triangle isLeft />
         <TopFlexContainer>
           {pageWidth === 0 && <></>}
           {pageWidth >= tabletBrPixels && (
@@ -285,6 +305,7 @@ const Nav = ({
             </>
           )}
         </TopFlexContainer>
+        <Triangle isRight />
       </StyledSticky>
     </>
   )
