@@ -145,27 +145,24 @@ const LandingSection = ({
 
       <AbsoluteImg
         showDesktop
-        showTablet
         img={images.topLeftCorner}
         width={28}
         height={28}
-        top={25}
+        top={95}
         left={25}
         alt="top left corner"
       />
       <AbsoluteImg
         showDesktop
-        showTablet
         img={images.topRightCorner}
         width={28}
         height={28}
-        top={25}
+        top={95}
         right={25}
         alt="top right corner"
       />
       <AbsoluteImg
         showDesktop
-        showTablet
         img={images.bottomLeftCorner}
         width={28}
         height={28}
@@ -175,7 +172,6 @@ const LandingSection = ({
       />
       <AbsoluteImg
         showDesktop
-        showTablet
         img={images.bottomRightCorner}
         width={28}
         height={28}
