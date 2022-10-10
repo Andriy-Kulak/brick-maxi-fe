@@ -5,7 +5,7 @@ import teamBgMobile from '../public/assets/team_mobile_650x1920.png'
 import landingBgMobile from '../public/assets/landing_mobile_650x1200.png'
 import bgArt2Mobile from '../public/assets/howitworks_650x1200.png'
 import artImg from '../public/assets/token_art.png'
-import rewardsBg from '../public/assets/rewards_bg_3.png'
+import rewardsBg from '../public/assets/rewards_bg_full.jpeg'
 
 import burgerIcon from '../public/assets/icons/hamburger.png'
 import xIcon from '../public/assets/icons/x.png'
