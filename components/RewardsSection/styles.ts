@@ -134,7 +134,6 @@ export const AddressDiv = styled.div`
   font-family: ${montserratFont};
   color: black;
   text-align: center;
-  width: 115px;
   height: 35px;
   line-height: 35px;
 `
