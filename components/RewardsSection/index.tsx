@@ -12,10 +12,9 @@ import {
   BottomContainer,
   BottomLeftC,
   BottomRightC,
-  DesktopTableC,
   HeaderC,
   AddressDiv,
-  MobileTableC,
+  TableContainer,
 } from './styles'
 import { trimAddress } from '../../utils/helpers'
 import { grey1 } from '../utils/colors'
@@ -99,10 +98,8 @@ const RewardsSection = ({
           )}
         </div>
 
-        <DesktopTableC>{tableC()}</DesktopTableC>
+        <TableContainer>{tableC()}</TableContainer>
       </Main>
-
-      <MobileTableC>{tableC()}</MobileTableC>
     </LandingC>
   )
 }

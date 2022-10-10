@@ -16,8 +16,8 @@ export const LandingC = styled.div`
   margin-bottom: -70px;
 
   @media screen and (max-width: ${tabletBr}) {
-    min-height: 88vh;
     top: 0px;
+    margin-bottom: 0px;
   }
 `
 
@@ -39,10 +39,9 @@ export const Main = styled.div`
 
   @media screen and (max-width: ${tabletBr}) {
     padding: 30px 30px 0px;
-    min-height: 0px;
   }
 
-  max-width: 940px;
+  max-width: 1050px;
   margin: 0 auto;
 `
 
@@ -115,31 +114,16 @@ export const BottomRightC = styled.div`
   width: 250px;
   padding: 10px 18px;
 `
-export const DesktopTableC = styled.div`
+export const TableContainer = styled.div`
+  /* position: relative; */
+  /* height: 100%; */
   width: 700px;
   @media screen and (max-width: ${tabletBr}) {
     width: 100%;
     padding: 60px 20px 0px;
   }
-
-  @media screen and (max-width: ${mobileBr}) {
-    display: none;
-  }
 `
 
-export const MobileTableC = styled.div`
-  background-color: white;
-  position: relative;
-
-  @media screen and (max-width: ${tabletBr}) {
-    width: 100%;
-    padding: 20px 10px 0px;
-  }
-
-  @media screen and (min-width: ${mobileBr}) {
-    display: none;
-  }
-`
 export const HeaderC = styled.div`
   display: flex;
 `
