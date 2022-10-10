@@ -29,7 +29,6 @@ export const Main = styled.div`
   justify-content: ${(props: { justifyContent?: string }) =>
     props.justifyContent || 'center'};
   align-items: center;
-  min-height: 80vh;
   background-color: white;
   background-clip: content-box;
   z-index: 1;
@@ -118,9 +117,10 @@ export const TableContainer = styled.div`
   /* position: relative; */
   /* height: 100%; */
   width: 700px;
+  padding-bottom: 30px;
   @media screen and (max-width: ${tabletBr}) {
     width: 100%;
-    padding: 60px 20px 0px;
+    padding: 60px 20px 30px;
   }
 `
 
