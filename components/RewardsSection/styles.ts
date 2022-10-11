@@ -18,6 +18,8 @@ export const LandingC = styled.div`
   @media screen and (max-width: ${tabletBr}) {
     top: 0px;
     margin-bottom: 0px;
+    padding-bottom: 30px;
+    min-height: calc(100vh - 125px);
   }
 `
 
