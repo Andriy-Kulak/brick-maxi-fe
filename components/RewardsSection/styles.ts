@@ -9,14 +9,15 @@ export const ImageC = styled.div`
 
 export const LandingC = styled.div`
   position: relative;
-  min-height: 91vh;
+  min-height: 100vh;
 
   position: relative;
   top: -70px;
+  margin-bottom: -70px;
 
   @media screen and (max-width: ${tabletBr}) {
-    min-height: 88vh;
     top: 0px;
+    margin-bottom: 0px;
   }
 `
 
@@ -28,7 +29,6 @@ export const Main = styled.div`
   justify-content: ${(props: { justifyContent?: string }) =>
     props.justifyContent || 'center'};
   align-items: center;
-  min-height: 80vh;
   background-color: white;
   background-clip: content-box;
   z-index: 1;
@@ -38,10 +38,9 @@ export const Main = styled.div`
 
   @media screen and (max-width: ${tabletBr}) {
     padding: 30px 30px 0px;
-    min-height: 0px;
   }
 
-  max-width: 940px;
+  max-width: 1050px;
   margin: 0 auto;
 `
 
@@ -114,31 +113,17 @@ export const BottomRightC = styled.div`
   width: 250px;
   padding: 10px 18px;
 `
-export const DesktopTableC = styled.div`
+export const TableContainer = styled.div`
+  /* position: relative; */
+  /* height: 100%; */
   width: 700px;
+  padding-bottom: 30px;
   @media screen and (max-width: ${tabletBr}) {
     width: 100%;
-    padding: 60px 20px 0px;
-  }
-
-  @media screen and (max-width: ${mobileBr}) {
-    display: none;
+    padding: 60px 20px 30px;
   }
 `
 
-export const MobileTableC = styled.div`
-  background-color: white;
-  position: relative;
-
-  @media screen and (max-width: ${tabletBr}) {
-    width: 100%;
-    padding: 20px 10px 0px;
-  }
-
-  @media screen and (min-width: ${mobileBr}) {
-    display: none;
-  }
-`
 export const HeaderC = styled.div`
   display: flex;
 `
@@ -149,7 +134,6 @@ export const AddressDiv = styled.div`
   font-family: ${montserratFont};
   color: black;
   text-align: center;
-  width: 115px;
   height: 35px;
   line-height: 35px;
 `

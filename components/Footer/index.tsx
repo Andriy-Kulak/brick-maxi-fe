@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { montserratFont } from '../utils/fontConfigs'
 
 const Container = styled.div`
+  position: relative;
   height: 55px;
   width: 100%;
   background-color: black;

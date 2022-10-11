@@ -5,7 +5,7 @@ import teamBgMobile from '../public/assets/team_mobile_650x1920.png'
 import landingBgMobile from '../public/assets/landing_mobile_650x1200.png'
 import bgArt2Mobile from '../public/assets/howitworks_650x1200.png'
 import artImg from '../public/assets/token_art.png'
-import rewardsBg from '../public/assets/rewards_bg_3.png'
+import rewardsBg from '../public/assets/rewards_bg_full.jpeg'
 
 import burgerIcon from '../public/assets/icons/hamburger.png'
 import xIcon from '../public/assets/icons/x.png'
@@ -32,7 +32,7 @@ import twitterLogo from '../public/assets/twitter_logo.png'
 import openseaLogo from '../public/assets/opensea_logo.png'
 import tezosLogo from '../public/assets/tezos_logo.png'
 import questionmark from '../public/assets/questionmark.png'
-import animatedLogo from '../public/assets/animated_logo_v2.gif'
+import whiteLogo from '../public/assets/logo_white.png'
 import looksrareLogo from '../public/assets/icons/looks_mintpage.png'
 import shareIcon from '../public/assets/icons/share.png'
 import superrareLogo from '../public/assets/icons/SR-mintpage.png'
@@ -71,7 +71,7 @@ export const images = {
   whiteSquiggleLine,
   upcomingDropsTitle,
   teamTitle,
-  animatedLogo,
+  whiteLogo,
   greyCube,
   bgArt2Mobile,
   teamBgMobile,
