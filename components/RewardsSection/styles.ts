@@ -9,7 +9,8 @@ export const ImageC = styled.div`
 
 export const LandingC = styled.div`
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - 55px);
+  padding-bottom: 30px;
 
   position: relative;
   top: -70px;
@@ -18,7 +19,7 @@ export const LandingC = styled.div`
   @media screen and (max-width: ${tabletBr}) {
     top: 0px;
     margin-bottom: 0px;
-    padding-bottom: 30px;
+
     min-height: calc(100vh - 125px);
   }
 `
