@@ -121,7 +121,7 @@ export const faqAccordion = [
   },
   {
     title: 'How are mint funds allocated?',
-    p: 'Artists have first priority to mint funds. Their fees are negotiated on a case by case basis as they can vary greatly from artist to artist. Any mint funds collected in excess of the artist fees will be available for platform fees and collector allocation. We typically aim to mint 8-10x the artist fee and in some cases more. ',
+    p: 'Artists have first priority to mint funds. These fees are negotiated on a case by case basis as they vary greatly from artist to artist. Any mint funds collected in excess of the artist fees will be available for collector investment and platform fees.',
     key: 3,
   },
   {
@@ -220,17 +220,17 @@ export const rewardsTableContent = [
 export const howItWorksContent = [
   {
     title: 'COLLECT & VAULT',
-    desc: 'The platform brings collectors together and puts the power to earn rewards in their hands. After minting new works, collectors vote to determine how mint funds will be allocated across IRL real estate assets. Income that’s earned by these assets is then shared among token holders.',
+    desc: "Brick Maxi aligns everyone to the long term, so collectors can pass their works on to the next generation. If a mint is successful, collectors vote to determine how mint funds will be invested across real world, real estate assets. The artworks represent ownership stakes in these assets and grant holders unlimited USDC rewards from income that's earned.",
     key: 1,
   },
   {
     title: 'THE MINT',
-    desc: 'We only mint one token at a time, giving each artist their time and space. Taking this focus even further, the entire site design takes on the past works of the artist, a homage of gratitude and appreciation. Artist fees are prioritized when funds are collected, the platform takes its cut, and the rest is available for allocation.',
+    desc: "Each artist is given our undivided attention. We only mint one project at a time and keep its economics separate from other projects. Mint proceeds go exclusively to the artist until their fee is fully paid. Any additional funds are made available for collector investment and the platform's fee.",
     key: 2,
   },
   {
-    title: 'REWARDS',
-    desc: 'Imagine a rental property collecting rent checks every month or perhaps a REIT paying regular dividends, paired with a technology that distributes that income to token holders. The more tokens you hold, the greater your rewards.',
+    title: 'KEEPING IT ON-CHAIN',
+    desc: 'Real estate is a $320 trillion industry that’s being disrupted by the blockchain, resulting in dozens of on-chain investment opportunities with varying risk/reward profiles. These include investment marketplaces, lending protocols, real estate backed stablecoins, and more. Keeping it on-chain means reducing asymmetry of information, maintaining transparency, and lowering transaction costs.',
     key: 3,
   },
 ]

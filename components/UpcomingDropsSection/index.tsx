@@ -121,17 +121,16 @@ const UpcomingDropsSection = () => {
         <div>
           <TitleH3 color="white">COMING SOON!</TitleH3>
           <StyledP color="white">
-            Keep an eye on our Twitter, we’ll soon be announcing our first two
-            artist drops! We curate artists into pairs and announce them
-            together, but only one token mints at a time.
+            Keep an eye on our Twitter, we’ll soon be announcing our first
+            artist drops!
           </StyledP>
 
           <TitleH3 color="white">ALLOW LIST</TitleH3>
           <StyledP color="white">
             Each mint will be done in two phases: Allow List & Public. AL spots
-            for our first ever drop will be granted to a combination of Premint
-            winners from partner communities and other factors, like the
-            artist’s past collectors. More details to be announced shortly!
+            for our first ever drop will be granted to twitter followers,
+            Premint winners from partner communities, and other factors, like
+            the artist’s past collectors.
           </StyledP>
         </div>
       </InnerTextC>
